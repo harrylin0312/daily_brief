@@ -53,3 +53,5 @@ python3 -m http.server 8000
 遠端：https://github.com/harrylin0312/daily_brief
 
 本機詳細操作指引另存於 `AGENTS.md`；該檔目前由本機 Git 排除，公開且可版本追蹤的授權與守則以本 README 為準。
+
+<!-- 自動推送測試：2026-11-06，驗證已授權的本機提交與推送流程。 -->
