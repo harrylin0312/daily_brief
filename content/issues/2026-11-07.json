@@ -1,0 +1,74 @@
+{
+  "date": "2026-11-07",
+  "title": "AI 開始做事，權限也該跟上。",
+  "intro": "從資安模型到銀行帳戶串接，AI 正走進更真實的工作。能力之外，今天更值得問的是：它能看什麼、能做什麼，又會在哪裡停下來？",
+  "generated_at": "2026-11-07T00:38:00+08:00",
+  "coverage": {"from": "2026-11-05", "to": "2026-11-06"},
+  "editor_note": "首期回看近兩日可核對的官方更新。以下消息主要發布於 11 月 5 日；功能是否可用，仍要看地區、方案與推出進度。",
+  "hero": {
+    "story_id": "gpt-6-cyber",
+    "image": "assets/signal-loop-2026-11-07.jpg",
+    "alt": "紙帶連接模組化運算結構，藍色與橘色訊號沿著路徑流動，象徵 AI 工作流程。",
+    "kind": "ai",
+    "credit": "封面由 OpenAI 圖像工具於 2026-11-07 生成，為 AI 工作流程的概念插圖，非實際產品或事件照片。文中圖表由 Daily Brief 依所列官方來源整理，並非獨立實測。"
+  },
+  "source_checks": [
+    {"name": "OpenAI", "url": "https://openai.com/index/introducing-gpt-6-cyber/", "status": "checked", "note": "已閱讀模型公告，核對存取限制與評測數字。"},
+    {"name": "Anthropic", "url": "https://claude.com/resources/articles/introducing-personal-finance-in-claude", "status": "checked", "note": "已閱讀產品公告及企業安全更新，核對方案、地區與唯讀限制。"},
+    {"name": "GitHub", "url": "https://github.blog/changelog/2026-11-05-new-pull-request-overview-page-in-public-preview/", "status": "checked", "note": "已閱讀官方更新，確認仍為自願加入的公開預覽。"},
+    {"name": "NVIDIA", "url": "https://blogs.nvidia.com/blog/memory-full-stack-codesign/", "status": "checked", "note": "已閱讀官方技術文章；採用架構說明，未引用未經獨立驗證的效能宣稱。"}
+  ],
+  "stories": [
+    {
+      "id": "gpt-6-cyber",
+      "category": "development",
+      "title": "GPT-6 Cyber 發布，存取限於經驗證的資安團隊",
+      "summary": "OpenAI 推出用於授權資安工作的 GPT-6 Cyber，可協助尋找、驗證漏洞與提出修補。模型透過 Daybreak Red 限制存取，需要身分驗證及組織安全要求，並非所有 ChatGPT 使用者都能直接啟用。",
+      "why": "資安 AI 的進展不只在找出更多問題，也在遵守指定範圍。對開發者而言，仍應以授權邊界、可重現證據及修補驗證來評估工具。",
+      "limit": "下圖為 OpenAI 公布的單項評測，並非獨立實測，也不代表所有真實環境的表現。",
+      "visual": {"type": "bars", "caption": "ExploitGym 成功率｜官方評測，同一項任務比較；百分比越高表示該測試成功率越高。", "source_url": "https://openai.com/index/introducing-gpt-6-cyber/", "items": [{"label": "GPT-5.6 Cyber", "value": 32.1}, {"label": "GPT-6 Cyber", "value": 48.5}]},
+      "sources": [
+        {"name": "OpenAI 官方公告", "url": "https://openai.com/index/introducing-gpt-6-cyber/", "published": "2026-11-05", "checked_at": "2026-11-07T00:31:00+08:00", "verification_method": "web", "verification_note": "以網頁工具閱讀官方公告全文，核對 ExploitGym 32.1%／48.5% 及 Daybreak Red 存取限制；直接 curl 受站方 HTTP 403 限制。"},
+        {"name": "OpenAI 模型系統卡", "url": "https://deploymentsafety.openai.com/gpt-6-cyber", "published": "2026-11-05", "checked_at": "2026-11-07T00:31:00+08:00"}
+      ]
+    },
+    {
+      "id": "claude-personal-finance",
+      "category": "practical",
+      "title": "Claude 可串接財務帳戶，但只讀資料、不動資金",
+      "summary": "Personal Finance 在美國向 Pro、Max、Ultra 方案逐步開放測試。使用者透過 Plaid 連接帳戶後，可詢問餘額與交易、整理支出；Claude 不會轉帳、管理或投資你的資金。",
+      "why": "這是 AI 直接理解個人資料的一個具體案例。對臺灣讀者，目前先看清使用邊界即可，不必把美國測試誤認成全球已開放。",
+      "limit": "目前僅限美國且為逐步推出的測試功能；回答仍可能有誤，重要數字需回到銀行紀錄確認。",
+      "sources": [{"name": "Anthropic 官方公告", "url": "https://claude.com/resources/articles/introducing-personal-finance-in-claude", "published": "2026-11-05", "checked_at": "2026-11-07T00:31:00+08:00"}]
+    },
+    {
+      "id": "claude-enterprise-hooks",
+      "category": "development",
+      "title": "Claude 企業安全更新：在提示與工具呼叫前檢查政策",
+      "summary": "Claude Enterprise 的 inference hooks 正式開放，可將提示與執行前的工具呼叫交給企業安全工具檢查。另有測試中的安全中心，集中比對組織設定與 Anthropic 建議設定。",
+      "why": "讓 Agent 接近真實工作時，除了最終答案，執行前的政策檢查與設定可見性也很重要。這些控制讓企業有機會把既有安全規則接進 AI 流程。",
+      "limit": "正式開放與測試中的功能須分開看；安全中心是設定指引，不是合規認證，也不是安全保證。",
+      "visual": {"type": "flow", "items": ["提示或工具請求", "企業政策檢查", "依政策決定處理"], "caption": "依官方說明整理的概念流程，並非產品介面截圖。"},
+      "sources": [{"name": "Anthropic 企業更新", "url": "https://claude.com/resources/articles/claude-enterprise-security-updates", "published": "2026-11-05", "checked_at": "2026-11-07T00:33:00+08:00"}]
+    },
+    {
+      "id": "github-pr-overview",
+      "category": "practical",
+      "title": "GitHub PR 新總覽，把「還差什麼才能合併」移到最上方",
+      "summary": "GitHub 開放自願加入的 Pull Request Overview 公開預覽，將合併準備狀態、檢查與下一步放到頁面頂部，也提供未解決討論篩選與最新留言排序。",
+      "why": "如果你常讓 AI 開分支、提交修改，這種集中顯示阻礙的介面，能減少在長串留言中來回尋找檢查結果的時間。",
+      "limit": "目前是公開預覽，分批推出；可從 PR 頁首選擇試用，也可切回原本介面。",
+      "sources": [{"name": "GitHub Changelog", "url": "https://github.blog/changelog/2026-11-05-new-pull-request-overview-page-in-public-preview/", "published": "2026-11-05", "checked_at": "2026-11-07T00:32:00+08:00"}]
+    },
+    {
+      "id": "nvidia-memory-hierarchy",
+      "category": "industry",
+      "title": "AI 的記憶體壓力，不能只靠堆更多 HBM 解決",
+      "summary": "NVIDIA 在技術文章中說明：長上下文與 Agent 工作會推高 KV cache 用量，因此要協同管理 GPU 記憶體、CPU 記憶體與儲存，並縮小權重、搬移暫時不用的上下文。",
+      "why": "理解 AI 基礎建設時，除了 GPU 算力與記憶體容量，也值得看頻寬、資料放在哪裡，以及能否及時搬回運算端。",
+      "limit": "這是供應商的架構說明，並非新產品實測；下圖只呈現層級關係，不表示實際速度或容量比例。",
+      "visual": {"type": "memory", "items": ["GPU HBM｜當下運算", "CPU 記憶體｜鄰近等待", "儲存層｜較大容量"], "caption": "AI 記憶體層級示意｜位置、速度、容量與成本之間的取捨；非按比例繪製。"},
+      "sources": [{"name": "NVIDIA 技術文章", "url": "https://blogs.nvidia.com/blog/memory-full-stack-codesign/", "published": "2026-11-05", "checked_at": "2026-11-07T00:32:00+08:00"}]
+    }
+  ]
+}
