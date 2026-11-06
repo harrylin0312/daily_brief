@@ -1,2 +1,2 @@
-# daily-signal-demo
-日訊 Daily Signal｜純 HTML / CSS 科技日報展示
+# daily_brief
+每日快報 Daily Brief｜純 HTML / CSS 科技日報展示
