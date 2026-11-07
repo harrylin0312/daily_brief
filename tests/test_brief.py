@@ -5,6 +5,7 @@ from pathlib import Path
 import tempfile
 import unittest
 from unittest.mock import patch
+from xml.etree import ElementTree
 
 ROOT = Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location("brief", ROOT / "scripts/brief.py")
@@ -116,6 +117,83 @@ class BriefTests(unittest.TestCase):
         self.issue["stories"][0]["sources"][0]["published"] = "2099-01-01"
         with self.assertRaisesRegex(ValueError, "超出刊期"):
             brief.validate_issue(self.issue)
+
+    def test_new_categories_and_legacy_editions_are_compatible(self):
+        for category in brief.CATEGORIES:
+            issue = copy.deepcopy(self.issue)
+            issue["stories"][0]["category"] = category
+            brief.validate_issue(issue)
+        self.assertEqual(brief.category_id(self.issue["stories"][0]), "tech")
+
+    def test_list_is_compact_and_links_to_independent_detail(self):
+        s = self.issue["stories"][0]
+        output = brief.story_card(s, 1, self.issue["date"])
+        self.assertIn("stories/2026-11-07/gpt-6-cyber.html", output)
+        self.assertIn("了解更多", output)
+        self.assertNotIn("<figure", output)
+        self.assertNotIn('<p class="why">', output)
+        self.assertNotIn("<details", output)
+
+    def test_detail_has_original_facts_charts_sources_and_return_link(self):
+        s = self.issue["stories"][0]
+        output = brief.story_page(self.issue, s, brief.config())
+        for value in (s["summary"], s["why"], s["limit"]):
+            self.assertIn(brief.esc(value), output)
+        self.assertIn("32.1%", output)
+        self.assertIn("../../issues/2026-11-07.html#gpt-6-cyber", output)
+        self.assertIn(s["sources"][0]["url"], output)
+        self.assertIn("AI 生成概念圖", output)
+
+    def test_custom_detail_is_searchable_and_escaped(self):
+        s = self.issue["stories"][0]
+        s["teaser"] = "一眼看懂重點。"
+        s["details"] = [{"heading": "修補資訊", "points": ['測試用唯一關鍵字 <script>alert(1)</script>']}]
+        brief.validate_issue(self.issue)
+        card = brief.story_card(s, 1, self.issue["date"])
+        self.assertIn("測試用唯一關鍵字", card)
+        self.assertNotIn("<script>", card)
+        detail = brief.story_page(self.issue, s, brief.config())
+        self.assertIn("修補資訊", detail)
+        self.assertNotIn("<script>alert", detail)
+
+    def test_invalid_or_long_details_rejected(self):
+        for details in ([], [{"heading": "", "points": ["test"]}], [{"heading": "test", "points": ["x" * 801]}]):
+            with self.subTest(details=details):
+                s = copy.deepcopy(self.issue)
+                s["stories"][0]["details"] = details
+                with self.assertRaises(ValueError):
+                    brief.validate_issue(s)
+
+    def test_images_are_optional_for_nonempty_editions(self):
+        self.issue["hero"] = None
+        brief.validate_issue(self.issue)
+        output = brief.issue_page(self.issue, [self.issue], brief.config())
+        self.assertNotIn("<img", output)
+
+    def test_only_categories_with_stories_get_filter_buttons(self):
+        self.issue["stories"][0]["category"] = "f1"
+        output = brief.issue_page(self.issue, [self.issue], brief.config())
+        self.assertIn('data-category="f1" aria-pressed', output)
+        self.assertIn('data-category="tech" aria-pressed', output)
+        self.assertNotIn('data-category="markets" aria-pressed', output)
+        self.assertNotIn('data-category="security" aria-pressed', output)
+
+    def test_cross_page_anchors_are_validated(self):
+        output = brief.render(ROOT)
+        path = "stories/2026-11-07/gpt-6-cyber.html"
+        output[path] = output[path].replace("#gpt-6-cyber", "#nonexistent-story")
+        with self.assertRaisesRegex(ValueError, "錨點不存在"):
+            brief.validate_outputs(output, ROOT)
+
+    def test_feed_links_to_each_detail_page(self):
+        output = brief.render(ROOT)
+        feed = ElementTree.fromstring(output["feed.xml"])
+        links = feed.findall("{http://www.w3.org/2005/Atom}entry/{http://www.w3.org/2005/Atom}link")
+        self.assertEqual(len(links), len(self.issue["stories"]))
+        for link in links:
+            relative = link.attrib["href"].removeprefix(brief.config()["url"])
+            self.assertIn(relative, output)
+            self.assertTrue(relative.startswith("stories/"))
 
 
 if __name__ == "__main__":

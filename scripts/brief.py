@@ -18,10 +18,50 @@ from urllib.parse import urlsplit, unquote
 from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
-CATEGORIES = {"practical": ("AI 實用情報", "TOOLS & MODELS"),
-              "development": ("AI 開發與技術", "BUILD & CREATE"),
-              "industry": ("科技與產業大事", "THE BIG PICTURE")}
+CATEGORIES = {"tech": ("科技與 AI", "TECHNOLOGY"),
+              "markets": ("投資市場", "MARKETS"),
+              "security": ("重大資安漏洞", "SECURITY"),
+              "f1": ("F1", "FORMULA 1")}
+LEGACY_CATEGORIES = {"practical", "development", "industry"}
 GENERATED = ("index.html", "archive.html", "feed.xml", "content/index.json")
+
+
+def category_id(story):
+    value = story["category"]
+    return "tech" if value in LEGACY_CATEGORIES else value
+
+
+def story_path(issue, story):
+    return f'stories/{issue["date"]}/{story["id"]}.html'
+
+
+def teaser(story):
+    # Older editions retain their original facts; their first sentence is the preview.
+    if story.get("teaser"):
+        return story["teaser"]
+    return re.split(r"(?<=[。！？])", story["summary"], maxsplit=1)[0]
+
+
+def detail_sections(story):
+    return story.get("details") or [
+        {"heading": "發生什麼事", "points": [story["summary"]]},
+        {"heading": "為何值得注意", "points": [story["why"]]},
+        {"heading": "需要留意", "points": [story["limit"]]},
+    ]
+
+
+def image_for(issue, story):
+    if story.get("image"):
+        return story["image"]
+    hero = issue.get("hero")
+    return hero if hero and hero["story_id"] == story["id"] else None
+
+
+def validate_image(image, root):
+    require(all(image.get(k) for k in ("image", "alt", "credit", "kind")), "圖片需路徑、替代文字與來源標示")
+    require(image["kind"] in ("ai", "official", "original"), "圖片類型無效")
+    require(len(image["credit"]) > 5, "圖片必須有出處說明")
+    local_asset(image["image"], root)
 
 
 def esc(value):
@@ -78,8 +118,21 @@ def validate_issue(issue, root=ROOT):
         require(all(s.get(k) for k in ("id", "category", "title", "summary", "why", "limit", "sources")), "新聞欄位不完整")
         require(re.fullmatch(r"[a-z0-9-]+", s["id"]) and s["id"] not in ids, "新聞 ID 無效或重複")
         ids.add(s["id"])
-        require(s["category"] in CATEGORIES, "未知主題分類")
+        require(s["category"] in CATEGORIES or s["category"] in LEGACY_CATEGORIES, "未知主題分類")
         require(len(s["title"]) <= 70 and len(s["summary"]) <= 400 and len(s["why"]) <= 220, "新聞過長，請精簡")
+        if "teaser" in s:
+            require(isinstance(s["teaser"], str) and 0 < len(s["teaser"].strip()) <= 140, "列表簡述須為 1–140 字")
+        if "details" in s:
+            require(isinstance(s["details"], list) and 1 <= len(s["details"]) <= 4, "詳細內容須為 1–4 個重點段落")
+            total = 0
+            for section in s["details"]:
+                require(isinstance(section, dict) and isinstance(section.get("heading"), str) and 0 < len(section["heading"]) <= 30, "詳細內容需要簡短小標")
+                points = section.get("points")
+                require(isinstance(points, list) and 1 <= len(points) <= 4 and all(isinstance(p, str) and p.strip() for p in points), "詳細重點須為非空文字條列")
+                total += sum(len(p) for p in points)
+            require(total <= 800, "詳細內容過長，請聚焦重點；目標約 200–350 字")
+        if s.get("image"):
+            validate_image(s["image"], root)
         for source in s["sources"]:
             require(all(source.get(k) for k in ("name", "url", "published", "checked_at")), "來源欄位不完整")
             valid_url(source["url"])
@@ -102,13 +155,10 @@ def validate_issue(issue, root=ROOT):
             else:
                 require(1 <= len(v["items"]) <= 5 and all(v["items"]), "圖解項目無效")
     hero = issue.get("hero")
-    if issue["stories"]:
-        require(hero and hero["story_id"] in ids, "焦點新聞不存在")
-        require(all(hero.get(k) for k in ("image", "alt", "credit", "kind")), "封面需圖片、替代文字與來源標示")
-        require(hero["kind"] in ("ai", "official", "original"), "封面圖片類型無效")
-        require(len(hero["credit"]) > 5, "圖片必須有出處說明")
-        local_asset(hero["image"], root)
-    else:
+    if hero:
+        require(hero["story_id"] in ids, "焦點新聞不存在")
+        validate_image(hero, root)
+    if not issue["stories"]:
         require(bool(issue.get("empty_reason")), "零新聞刊期需寫明原因，擷取失敗不可當作無新聞")
     return issue
 
@@ -137,12 +187,12 @@ def page(title, description, body, prefix, canonical, cfg):
 <meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(description)}"><meta property="og:type" content="website">
 <meta property="og:url" content="{esc(canonical)}"><link rel="canonical" href="{esc(canonical)}">
 <link rel="icon" href="{prefix}favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="{prefix}assets/site.css">
-<link rel="alternate" type="application/atom+xml" title="每日科技快報" href="{prefix}feed.xml"><script src="{prefix}app.js" defer></script></head>
+<link rel="alternate" type="application/atom+xml" title="每日快報" href="{prefix}feed.xml"><script src="{prefix}app.js" defer></script></head>
 <body><a class="skip" href="#main">跳到內容</a><div class="shell">
-<header class="masthead"><a class="brand" href="{prefix}index.html" aria-label="每日科技快報首頁"><span class="brand-mark" aria-hidden="true">d<span>•</span>b</span><span>DAILY BRIEF<small>每日科技快報</small></span></a>
+<header class="masthead"><a class="brand" href="{prefix}index.html" aria-label="每日快報首頁"><span class="brand-mark" aria-hidden="true">d<span>•</span>b</span><span>DAILY BRIEF<small>每日快報</small></span></a>
 <nav aria-label="主選單"><a href="{prefix}index.html">最新一期</a><a href="{prefix}archive.html">歷史日報 <span aria-hidden="true">↗</span></a><a class="nav-about" href="#approach">關於快報</a></nav></header>
 {body}
-<section class="approach" id="approach"><p class="eyebrow">A LITTLE LESS NOISE</p><h2>資訊很多，值得讀的就好。</h2><p>以原始來源為起點，由 Codex 蒐集、查核並整理。只挑重要的，不湊篇數；事實、解讀與限制分開呈現。內容可能有誤，重要決策請回到原文核對。</p><details><summary>我們如何選題與使用圖片</summary><p>優先官方公告、開發文件與原始研究，依實際影響與新資訊選題。同事件合併，未確認消息不當作事實。數據圖保留出處，概念圖與 AI 生成圖片明確標示，不當作事件照片。部分來源失敗會在當期揭露；關鍵查核失敗則不發布新刊。</p></details></section>
+<section class="approach" id="approach"><p class="eyebrow">A LITTLE LESS NOISE</p><h2>資訊很多，值得讀的就好。</h2><p>全球科技與 AI、投資市場、重大資安漏洞、F1。由 Codex 蒐集、查核並整理，只挑重要的，不要求每類每天都有消息。先看重點，有興趣再了解更多。</p><details><summary>我們如何選題與使用圖片</summary><p>優先官方公告、開發文件與原始研究，依實際影響與新資訊選題。同事件合併，未確認消息不當作事實。市場資訊標明時間與比較基準，資安資訊以影響與修補為重點，F1 排除未確認傳聞。數據圖保留出處，AI 概念圖不當作事件照片。關鍵查核失敗則不發布新刊；重要決策請回到原文核對。</p></details></section>
 <footer><a class="footer-brand" href="{prefix}index.html">Daily Brief<span>少一點雜訊，多一點理解。</span></a><p>繁體中文 · Asia/Taipei<br>每天 05:00 開始整理，完成後更新</p><a href="{prefix}feed.xml">訂閱 RSS <span aria-hidden="true">↗</span></a><a href="https://github.com/harrylin0312/daily_brief" rel="noopener noreferrer">GitHub ↗</a></footer>
 </div></body></html>'''
 
@@ -160,16 +210,46 @@ def visual(v):
     return f'<figure class="data-visual">{inner}<figcaption>{esc(v["caption"])}</figcaption></figure>'
 
 
-def story_card(s, number):
-    category, english = CATEGORIES[s["category"]]
-    sources = "".join(f'<li><a href="{esc(x["url"])}" target="_blank" rel="noopener noreferrer">{esc(x["name"])} <span aria-hidden="true">↗</span></a><span>發布 {esc(x["published"])} · 查核 {esc(x["checked_at"])}</span></li>' for x in s["sources"])
-    update = f'<p class="limitation">後續更新：{esc(s["update_note"])}</p>' if s.get("update_note") else ""
-    return f'''<article class="story" id="{esc(s["id"])}" data-story data-category="{esc(s["category"])}">
-<div class="card-top"><span class="category {s["category"]}">{category}</span><span class="story-no">{number:02d} / {english}</span></div>
-<h3>{esc(s["title"])}</h3><p class="summary">{esc(s["summary"])}</p>{visual(s.get("visual"))}
-<p class="why"><span>值得注意</span>{esc(s["why"])}</p><p class="limitation">{esc(s["limit"])}</p>{update}
-<div class="card-bottom"><span>{esc(s["sources"][0]["name"])} · {esc(s["sources"][0]["published"])}</span><a href="{esc(s["sources"][0]["url"])}" target="_blank" rel="noopener noreferrer">閱讀原文 ↗</a></div>
-<details class="sources"><summary>來源與查核紀錄</summary><ul>{sources}</ul></details></article>'''
+def story_card(s, number, issue_date="", prefix="./"):
+    category = category_id(s)
+    name, english = CATEGORIES[category]
+    href = prefix + f'stories/{issue_date}/{s["id"]}.html'
+    search_text = " ".join([s["title"], s["summary"], s["why"], s["limit"],
+                            *(point for section in detail_sections(s) for point in section["points"])])
+    return f'''<article class="story story-row" id="{esc(s["id"])}" data-story data-category="{category}" data-search="{esc(search_text)}">
+<span class="row-number" aria-hidden="true">{number:02d}</span><div class="row-copy">
+<div class="card-top"><span class="category {category}">{name}</span><span class="story-no">{english} · {esc(s["sources"][0]["published"])}</span></div>
+<h3><a data-story-link href="{esc(href)}">{esc(s["title"])}</a></h3><p class="summary">{esc(teaser(s))}</p></div>
+<a class="learn-more" data-story-link href="{esc(href)}" aria-label="了解更多：{esc(s["title"])}">了解更多 <span aria-hidden="true">↗</span></a></article>'''
+
+
+def source_list(story):
+    return "".join(f'<li><a href="{esc(x["url"])}" target="_blank" rel="noopener noreferrer">{esc(x["name"])} ↗</a><span>發布 {esc(x["published"])} · 查核 {esc(x["checked_at"])}</span></li>' for x in story["sources"])
+
+
+def image_markup(image, prefix):
+    if not image:
+        return ""
+    kind = {"ai": "AI 生成概念圖，非事件照片", "official": "官方圖片", "original": "原創圖解"}[image["kind"]]
+    return f'''<figure class="article-image"><img src="{prefix}{esc(image["image"])}" alt="{esc(image["alt"])}" width="1536" height="1024" loading="lazy"><figcaption><strong>{kind}</strong> · {esc(image["credit"])}</figcaption></figure>'''
+
+
+def story_page(issue, story, cfg):
+    prefix = "../../"
+    category = category_id(story)
+    sections = detail_sections(story)
+    section_html = "".join(f'<section class="reader-section"><h2>{esc(section["heading"])}</h2><ul>{"".join(f"<li>{esc(point)}</li>" for point in section["points"])}</ul></section>' for section in sections)
+    update = f'<p class="update-note">後續更新：{esc(story["update_note"])}</p>' if story.get("update_note") else ""
+    minutes = max(1, round(sum(len(point) for section in sections for point in section["points"]) / 400))
+    back = f'{prefix}issues/{issue["date"]}.html#{story["id"]}'
+    image = image_for(issue, story)
+    body = f'''<main id="main" class="reader" data-detail data-issue-date="{issue["date"]}" data-story-id="{esc(story["id"])}" data-home-list="{prefix}index.html" data-issue-list="{prefix}issues/{issue["date"]}.html">
+<a class="back-link" data-back-link href="{back}">← 返回 {issue["date"]} 日報</a>
+<header class="reader-header"><p class="eyebrow">{esc(CATEGORIES[category][1])} / THE ESSENTIALS</p><div class="reader-meta"><span class="category {category}">{CATEGORIES[category][0]}</span><span>原文 {esc(story["sources"][0]["published"])} · 約 {minutes} 分鐘讀懂</span></div><h1>{esc(story["title"])}</h1><p class="reader-subtitle">收錄於 {issue["date"]} 日報 · {esc(story["sources"][0]["name"])}</p></header>
+<div class="reader-body">{section_html}{update}{visual(story.get("visual"))}{image_markup(image, prefix)}</div>
+<section class="reader-sources"><h2>原文與查核</h2><p>以上為整理與解讀，重要細節請回到原文核對。</p><ul class="check-list">{source_list(story)}</ul></section>
+<nav class="reader-end" aria-label="返回日報"><a data-back-link href="{back}">← 返回列表</a><a href="{prefix}archive.html">歷史日報 ↗</a></nav></main>'''
+    return page(story["title"] + " — Daily Brief", teaser(story), body, prefix, cfg["url"] + story_path(issue, story), cfg)
 
 
 def issue_page(issue, all_issues, cfg, archived=False):
@@ -181,27 +261,24 @@ def issue_page(issue, all_issues, cfg, archived=False):
     timestamp = dt.datetime.fromisoformat(issue["generated_at"]).astimezone(ZoneInfo("Asia/Taipei"))
     freshness = "" if archived else f'<p class="freshness" data-freshness="{issue["date"]}" hidden>目前顯示最近一期（{issue["date"]}）。新刊尚未更新，請稍後再看。</p>'
     archived_banner = f'<p class="archive-banner">你正在閱讀歷史日報。<a href="../index.html">查看最新一期 →</a></p>' if archived else ""
-    header = f'''<main id="main">{archived_banner}{freshness}<div class="issue-line"><span><span class="live-dot" aria-hidden="true"></span>{day:%Y.%m.%d} <span class="muted">星期{weekday}</span></span><span>VOL. {number:03d} <span class="line-separator">/</span> {count} 則精選 · 約 {max(1, round(count * .7))} 分鐘</span></div>'''
-    if count:
-        hero = issue["hero"]
-        focus = next(x for x in issue["stories"] if x["id"] == hero["story_id"])
-        kind = {"ai": "AI 生成概念圖，非事件照片", "official": "官方圖片", "original": "原創圖解"}[hero["kind"]]
-        lead = f'''<section class="hero" aria-labelledby="issue-title"><div class="hero-copy"><p class="eyebrow"><span>今日焦點</span> / THE DAILY SIGNAL</p><h1 id="issue-title">{esc(issue["title"])}</h1><p class="hero-dek">{esc(issue["intro"])}</p><a class="read-focus" href="#{esc(focus["id"])}">讀懂這件事 <span aria-hidden="true">↘</span></a><p class="hero-meta">{esc(focus["sources"][0]["name"])} · {esc(CATEGORIES[focus["category"]][0])}</p></div><figure class="hero-art"><img src="{prefix}{esc(hero["image"])}" alt="{esc(hero["alt"])}" width="1536" height="1024" fetchpriority="high"><figcaption><span>{esc(kind)}</span><span>DAILY BRIEF / {number:03d}</span></figcaption></figure></section>'''
-    else:
-        lead = f'<section class="empty-issue"><p class="eyebrow">TODAY, LESS IS MORE</p><h1 id="issue-title">{esc(issue["title"])}</h1><p>{esc(issue["empty_reason"])}</p></section>'
-    items = "".join(story_card(s, i) for i, s in enumerate(issue["stories"], 1))
-    filters = "".join(f'<button type="button" data-category="{k}" aria-pressed="false">{v[0]}</button>' for k, v in CATEGORIES.items())
-    skipped = [v[0] for k, v in CATEGORIES.items() if not any(s["category"] == k for s in issue["stories"])]
-    omitted = f'<p class="muted category-note">本期未收錄：{esc("、".join(skipped))}。沒有值得補充的消息，就不湊數。</p>' if skipped else ""
+    header = f'''<main id="main" data-issue-date="{issue["date"]}">{archived_banner}{freshness}<div class="issue-line"><span><span class="live-dot" aria-hidden="true"></span>{day:%Y.%m.%d} <span class="muted">星期{weekday}</span></span><span>VOL. {number:03d} <span class="line-separator">/</span> {count} 則精選</span></div>'''
+    label = "TODAY, LESS IS MORE" if not count else "A QUICK LOOK AT THE WORLD"
+    intro = issue["intro"] if count else issue["empty_reason"]
+    lead = f'''<section class="edition-heading" aria-labelledby="issue-title"><p class="eyebrow">{label}</p><h1 id="issue-title">{esc(issue["title"])}</h1><p>{esc(intro)}</p><div class="topic-line" aria-label="選題範圍"><span>全球視野</span>科技與 AI <b>·</b> 投資市場 <b>·</b> 重大資安漏洞 <b>·</b> F1</div></section>'''
+    items = "".join(story_card(story, i, issue["date"], prefix) for i, story in enumerate(issue["stories"], 1))
+    present = {category_id(story) for story in issue["stories"]}
+    filters = "".join(f'<button type="button" data-category="{key}" aria-pressed="false">{value[0]}</button>' for key, value in CATEGORIES.items() if key in present)
     coverage = issue["coverage"]
-    checked = "".join(f'<li><a href="{esc(c["url"])}" target="_blank" rel="noopener noreferrer">{esc(c["name"])} ↗</a><span>{"已查閱" if c["status"] == "checked" else "查閱失敗"} · {esc(c["note"])}</span></li>' for c in issue["source_checks"])
+    checked = "".join(f'<li><a href="{esc(check["url"])}" target="_blank" rel="noopener noreferrer">{esc(check["name"])} ↗</a><span>{"已查閱" if check["status"] == "checked" else "查閱失敗"} · {esc(check["note"])}</span></li>' for check in issue["source_checks"])
     previous = next((x for x in all_issues if x["date"] < issue["date"]), None)
     previous_link = f'<a href="{prefix}issues/{previous["date"]}.html">← 上一期 · {previous["date"]}</a>' if previous else '<span>這是第一期，從今天開始。</span>'
+    credits = list(dict.fromkeys(image["credit"] for story in issue["stories"] if (image := image_for(issue, story))))
+    credit_html = "".join(f'<p>{esc(credit)}</p>' for credit in credits) or '<p>本期沒有新聞配圖。</p>'
     rest = f'''<div class="editor-strip"><span class="strip-label">編輯手記</span><p>{esc(issue["editor_note"])}</p><span class="edition-tag">NO FILLER.<br>JUST SIGNAL.</span></div>
-<section class="briefs" aria-labelledby="briefs-title"><div class="section-title"><div><p class="eyebrow">YOUR DAILY READING LIST</p><h2 id="briefs-title">今天，值得知道的事<span class="tiny-count">{count:02d}</span></h2></div><span class="muted">精簡重點 · 保留脈絡</span></div>
-<div data-interactive hidden class="reading-tools"><div class="filters" data-filters role="group" aria-label="篩選新聞主題"><button type="button" data-category="all" aria-pressed="true">全部</button>{filters}</div><label class="search"><span class="sr-only">搜尋本期新聞</span><input id="story-search" type="search" placeholder="搜尋本期關鍵字" autocomplete="off"><span aria-hidden="true">⌕</span></label></div>
-<p class="result-count" data-result-count aria-live="polite">顯示 {count} 則精選</p><div class="story-grid">{items}</div><p class="empty-results" data-empty hidden>沒有符合的新聞，試試其他關鍵字或分類。</p>{omitted}</section>
-<aside class="edition-notes"><div><p class="eyebrow">ABOUT THIS EDITION</p><h2>每一則，都能回到來源。</h2></div><div><p>整理於 <time datetime="{esc(issue["generated_at"])}">{timestamp:%Y-%m-%d %H:%M}（臺灣時間）</time><br>本期來源發布日期：{coverage["from"]} — {coverage["to"]}</p><details><summary>本期來源檢查與圖片出處</summary><ul class="check-list">{checked}</ul><p>{esc((issue.get("hero") or {}).get("credit", "本期無封面圖片。"))}</p></details></div></aside>
+<section class="briefs" aria-labelledby="briefs-title"><div class="section-title"><div><p class="eyebrow">YOUR DAILY READING LIST</p><h2 id="briefs-title">先看重點，再讀細節<span class="tiny-count">{count:02d}</span></h2></div><span class="muted">點「了解更多」閱讀詳細內容</span></div>
+<div data-interactive hidden class="reading-tools"><div class="filters" data-filters role="group" aria-label="篩選新聞主題"><button type="button" data-category="all" aria-pressed="true">全部</button>{filters}</div><label class="search"><span class="sr-only">搜尋本期新聞</span><input id="story-search" type="search" placeholder="搜尋標題與詳細內容" autocomplete="off"><span aria-hidden="true">⌕</span></label></div>
+<p class="result-count" data-result-count aria-live="polite">顯示 {count} 則精選</p><div class="story-grid story-list">{items}</div><p class="empty-results" data-empty hidden>沒有符合的新聞，試試其他關鍵字或分類。</p></section>
+<aside class="edition-notes"><div><p class="eyebrow">ABOUT THIS EDITION</p><h2>每一則，都能回到來源。</h2></div><div><p>整理於 <time datetime="{esc(issue["generated_at"])}">{timestamp:%Y-%m-%d %H:%M}（臺灣時間）</time><br>本期來源發布日期：{coverage["from"]} — {coverage["to"]}</p><details><summary>本期來源檢查與圖片出處</summary><ul class="check-list">{checked}</ul>{credit_html}</details></div></aside>
 <nav class="issue-pager" aria-label="期數導覽">{previous_link}<a href="{prefix}archive.html">所有歷史日報 ↗</a></nav></main>'''
     canonical = cfg["url"] + (f'issues/{issue["date"]}.html' if archived else "")
     return page(f'{issue["date"]}｜{issue["title"]} — Daily Brief', issue["intro"], header + lead + rest, prefix, canonical, cfg)
@@ -213,12 +290,21 @@ def render(root=ROOT):
     outputs = {"index.html": issue_page(issues[0], issues, cfg)}
     for issue in issues:
         outputs[f'issues/{issue["date"]}.html'] = issue_page(issue, issues, cfg, True)
-    rows = "".join(f'''<a class="archive-row" href="./issues/{i["date"]}.html"><span class="archive-date">{esc(i["date"])}</span><div><h2>{esc(i["title"])}</h2><p>{esc(i["intro"])}</p></div><span class="archive-count">{len(i["stories"])} 則精選 <span aria-hidden="true">↗</span></span></a>''' for i in issues)
-    body = f'<main id="main" class="archive-main"><p class="eyebrow">THE READING ROOM</p><h1>每天一點，<br>慢慢讀懂世界。</h1><p class="archive-intro">所有已刊出的科技快報，保留當時的重點與來源。</p><div class="section-title"><h2>歷史日報</h2><span class="muted">共 {len(issues)} 期</span></div><div class="archive-list">{rows}</div></main>'
-    outputs["archive.html"] = page("歷史日報 — Daily Brief", "回顧每一期每日科技快報。", body, "./", cfg["url"] + "archive.html", cfg)
-    outputs["content/index.json"] = json.dumps([{"date": i["date"], "title": i["title"], "count": len(i["stories"])} for i in issues], ensure_ascii=False, indent=2) + "\n"
-    entries = "".join(f'<entry><title>{esc(i["title"])}</title><id>{cfg["url"]}issues/{i["date"]}.html</id><link href="{cfg["url"]}issues/{i["date"]}.html"/><updated>{esc(i["generated_at"])}</updated><summary>{esc(i["intro"])}</summary></entry>' for i in issues)
-    outputs["feed.xml"] = f'<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Daily Brief 每日科技快報</title><id>{cfg["url"]}</id><link href="{cfg["url"]}feed.xml" rel="self"/><link href="{cfg["url"]}"/><updated>{issues[0]["generated_at"]}</updated><author><name>Daily Brief</name></author>{entries}</feed>\n'
+        for story in issue["stories"]:
+            outputs[story_path(issue, story)] = story_page(issue, story, cfg)
+    rows = "".join(f'''<a class="archive-row" href="./issues/{issue["date"]}.html"><span class="archive-date">{esc(issue["date"])}</span><div><h2>{esc(issue["title"])}</h2><p>{esc(issue["intro"])}</p></div><span class="archive-count">{len(issue["stories"])} 則精選 <span aria-hidden="true">↗</span></span></a>''' for issue in issues)
+    body = f'<main id="main" class="archive-main"><p class="eyebrow">THE READING ROOM</p><h1>每天一點，<br>慢慢讀懂世界。</h1><p class="archive-intro">科技與 AI、投資市場、重大資安漏洞、F1。保留每一期當時的重點與來源。</p><div class="section-title"><h2>歷史日報</h2><span class="muted">共 {len(issues)} 期</span></div><div class="archive-list">{rows}</div></main>'
+    outputs["archive.html"] = page("歷史日報 — Daily Brief", "回顧每一期每日快報。", body, "./", cfg["url"] + "archive.html", cfg)
+    outputs["content/index.json"] = json.dumps([{"date": issue["date"], "title": issue["title"], "count": len(issue["stories"])} for issue in issues], ensure_ascii=False, indent=2) + "\n"
+    entries = []
+    for issue in issues:
+        if not issue["stories"]:
+            url = cfg["url"] + f'issues/{issue["date"]}.html'
+            entries.append(f'<entry><title>{esc(issue["title"])}</title><id>{url}</id><link href="{url}"/><updated>{issue["generated_at"]}</updated><summary>{esc(issue["empty_reason"])}</summary></entry>')
+        for story in issue["stories"]:
+            url = cfg["url"] + story_path(issue, story)
+            entries.append(f'<entry><title>{esc(story["title"])}</title><id>{url}</id><link href="{url}"/><updated>{issue["generated_at"]}</updated><summary>{esc(teaser(story))}</summary></entry>')
+    outputs["feed.xml"] = f'<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Daily Brief 每日快報</title><id>{cfg["url"]}</id><link href="{cfg["url"]}feed.xml" rel="self"/><link href="{cfg["url"]}"/><updated>{issues[0]["generated_at"]}</updated><author><name>Daily Brief</name></author>{"".join(entries)}</feed>\n'
     return outputs
 
 
@@ -240,11 +326,15 @@ class LinkParser(HTMLParser):
 
 
 def validate_outputs(outputs, root=ROOT):
+    parsed = {}
+    for name, text in outputs.items():
+        if name.endswith(".html"):
+            parsed[name] = LinkParser()
+            parsed[name].feed(text)
     for name, text in outputs.items():
         if not name.endswith(".html"):
             continue
-        p = LinkParser()
-        p.feed(text)
+        p = parsed[name]
         require('lang="zh-Hant"' in text and 'name="viewport"' in text, "頁面缺少語言或行動裝置設定")
         for ref in p.refs:
             u = urlsplit(ref)
@@ -256,8 +346,10 @@ def validate_outputs(outputs, root=ROOT):
             require(target.is_relative_to(root.resolve()), "資產路徑超出專案")
             relative = str(target.relative_to(root.resolve()))
             require(relative in outputs or target.is_file(), f"頁面連結不存在：{name} → {ref}")
-            if u.fragment and (not u.path or relative == name):
-                require(u.fragment in p.ids, f"錨點不存在：{name} → {ref}")
+            if u.fragment:
+                target_page = parsed.get(relative)
+                if target_page:
+                    require(unquote(u.fragment) in target_page.ids, f"錨點不存在：{name} → {ref}")
 
 
 def build(root=ROOT, check=False):
@@ -325,9 +417,13 @@ def verify_deploy(root=ROOT):
     # run strips the final newline, so compare normalized text.
     require(result == (root / "index.html").read_text().strip(), "GitHub Pages 尚未提供本次版本；push 可能成功，但部署未確認。請稍後重跑 verify-deploy")
     latest = load_issues(root)[0]
-    assets = ["assets/site.css", "app.js", "archive.html", f'issues/{latest["date"]}.html', "content/index.json"]
-    if latest.get("hero"):
-        assets.append(latest["hero"]["image"])
+    assets = ["assets/site.css", "app.js", "archive.html", "feed.xml", f'issues/{latest["date"]}.html', "content/index.json"]
+    for story in latest["stories"]:
+        assets.append(story_path(latest, story))
+        image = image_for(latest, story)
+        if image:
+            assets.append(image["image"])
+    assets = list(dict.fromkeys(assets))
     for asset in assets:
         response = subprocess.run(["curl", "--fail", "--location", "--silent", "--show-error", "--max-time", "25", cfg_url(root, asset)], capture_output=True)
         require(response.returncode == 0 and response.stdout == (root / asset).read_bytes(), f"部署資產尚未一致：{asset}")
@@ -354,7 +450,8 @@ def publish(root=ROOT):
     issue = load_issues(root)[0]
     require(issue["date"] == today().isoformat(), "只允許自動發布臺灣當日刊期")
     paths = run("git", "ls-files", "--modified", "--others", "--exclude-standard", root=root).splitlines()
-    allowed = lambda p: p in GENERATED or p == f'content/issues/{issue["date"]}.json' or bool(re.fullmatch(r"issues/\d{4}-\d{2}-\d{2}\.html", p)) or (p.startswith("assets/") and Path(p).suffix.lower() in (".png", ".jpg", ".webp", ".svg"))
+    expected_outputs = set(render(root))
+    allowed = lambda p: p in expected_outputs or p == f'content/issues/{issue["date"]}.json' or (p.startswith("assets/") and Path(p).suffix.lower() in (".png", ".jpg", ".webp", ".svg"))
     require(all(allowed(p) for p in paths), "存在非每日內容修改，停止；程式變更需另外驗證與提交")
     require(not run("git", "ls-files", "--deleted", root=root), "存在檔案刪除，停止")
     build(root)
