@@ -1,0 +1,94 @@
+{
+  "date": "2026-11-09",
+  "title": "Norris 雨戰奪冠，Mercedes 拿下車隊總冠軍。",
+  "intro": "聖保羅正賽落幕，Verstappen 從第 21 位追上頒獎台。本期集中整理賽後重大進展，其餘三類完成官方來源檢視後不硬湊消息。",
+  "generated_at": "2026-11-09T05:01:39+08:00",
+  "coverage": {
+    "from": "2026-11-08",
+    "to": "2026-11-08"
+  },
+  "editor_note": "本期為臺灣 11 月 9 日清晨版，更新前期的聖保羅排位消息。科技、市場與資安的已查來源沒有選出需另報的重要新進展，查核範圍與限制列於來源紀錄；賽後調查與後續判罰仍以 FIA 更新為準。",
+  "hero": null,
+  "source_checks": [
+    {
+      "name": "FIA 與 Formula 1",
+      "url": "https://www.fia.com/news/f1-norris-triumphs-sao-paulo-mercedes-secure-2026-constructors-championship",
+      "status": "checked",
+      "note": "F1：實際閱讀兩份 11 月 8 日賽後報導，比對前三名、差距與 Mercedes 車隊冠軍；賽後調查未據此宣稱已結案。",
+      "checked_at": "2026-11-09T05:01:39+08:00"
+    },
+    {
+      "name": "GitHub Changelog",
+      "url": "https://github.blog/changelog/",
+      "status": "checked",
+      "note": "科技與 AI：讀取官方更新列表，最新仍為 11 月 6 日；本次未挑出上期之後值得另報的重大更新，並非涵蓋全球所有科技消息。",
+      "checked_at": "2026-11-09T05:01:39+08:00"
+    },
+    {
+      "name": "Federal Reserve",
+      "url": "https://www.federalreserve.gov/newsevents.htm",
+      "status": "checked",
+      "note": "投資市場：閱讀央行新聞與活動頁，最新新聞為 11 月 5 日執法措施結束；未找到需獨立刊登的新重大政策變化，不以週末例行報價湊數。",
+      "checked_at": "2026-11-09T05:01:39+08:00"
+    },
+    {
+      "name": "CISA KEV 官方資料",
+      "url": "https://raw.githubusercontent.com/cisagov/kev-data/main/known_exploited_vulnerabilities.json",
+      "status": "checked",
+      "note": "重大漏洞：以網頁工具及直接 HTTP 查閱官方 JSON，目錄版本仍為 2026.11.06、1769 筆；未重刊前期 SonicWall 漏洞。本次檢視範圍不代表所有供應商皆無新漏洞。",
+      "checked_at": "2026-11-09T05:01:39+08:00"
+    }
+  ],
+  "stories": [
+    {
+      "id": "sao-paulo-race-mercedes-title",
+      "category": "f1",
+      "title": "Norris 贏聖保羅雨戰，Mercedes 確定車隊封王",
+      "teaser": "Norris 領先 Verstappen 14.602 秒奪冠，Hadjar 第三；Russell 與 Antonelli 分居第四、第五，讓 Mercedes 拿下 2026 車隊總冠軍。",
+      "summary": "11 月 8 日聖保羅正賽，Norris 贏得本季第三勝；Verstappen 從第 21 位起跑追至第二，Hadjar 第三。Mercedes 以第四與第五名確定車隊總冠軍。",
+      "why": "相較前期排位，這次已有正賽結果及車隊冠軍的重要進展；雨勢與輪胎切換決定比賽走向。",
+      "limit": "名次依查核時 FIA 與 F1 官方賽後報導；Antonelli 的維修區駛出事件仍被列為賽後調查，未聲稱後續判罰全部定案。",
+      "update_of": "2026-11-08",
+      "update_note": "由排位進展至正賽結果，新增 Norris 勝出及 Mercedes 車隊冠軍確認。",
+      "details": [
+        {
+          "heading": "正賽結果",
+          "points": [
+            "11 月 8 日巴西聖保羅站跑完 71 圈。Norris 以 1:35:23.504 完賽，拿下本季第三勝；Verstappen 落後 14.602 秒，Hadjar 落後 24.485 秒，Red Bull 包辦第二、第三。",
+            "Verstappen 從第 21 位起跑追至第二；Russell 第四、Antonelli 第五，兩人的積分足以讓 Mercedes 確定拿下 2026 車隊總冠軍。"
+          ]
+        },
+        {
+          "heading": "勝負關鍵與限制",
+          "points": [
+            "賽道由濕轉乾、尾段再下雨，車手先用半雨胎、改乾胎，最後再換回半雨胎。Antonelli 在領先時打滑，Norris 取得領先並守住勝果。",
+            "這是前期排位報導之後的正賽更新。官方報導仍提到 Antonelli 維修區駛出事件的賽後調查；本期採報導所列結果，後續處分須以 FIA 公告為準。"
+          ]
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "Norris｜冠軍",
+          "Verstappen｜+14.602 秒",
+          "Hadjar｜+24.485 秒"
+        ],
+        "caption": "官方賽後報導前三名；順序表示名次，時間差以冠軍為基準。"
+      },
+      "sources": [
+        {
+          "name": "FIA 賽後報導",
+          "url": "https://www.fia.com/news/f1-norris-triumphs-sao-paulo-mercedes-secure-2026-constructors-championship",
+          "published": "2026-11-08",
+          "checked_at": "2026-11-09T05:01:39+08:00"
+        },
+        {
+          "name": "Formula 1 賽後報導",
+          "url": "https://www.formula1.com/en/latest/article/norris-beats-verstappen-in-wet-sao-paulo-gp-thriller-as-mercedes-win-constructors-championship.7JN7MXLZf5lk5l0C3gfKGI",
+          "published": "2026-11-08",
+          "checked_at": "2026-11-09T05:01:39+08:00"
+        }
+      ]
+    }
+  ]
+}
