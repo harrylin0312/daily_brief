@@ -189,11 +189,20 @@ class BriefTests(unittest.TestCase):
         output = brief.render(ROOT)
         feed = ElementTree.fromstring(output["feed.xml"])
         links = feed.findall("{http://www.w3.org/2005/Atom}entry/{http://www.w3.org/2005/Atom}link")
-        self.assertEqual(len(links), len(self.issue["stories"]))
+        issues = brief.load_issues(ROOT)
+        expected = {
+            brief.story_path(issue, story)
+            for issue in issues for story in issue["stories"]
+        } | {
+            f'issues/{issue["date"]}.html'
+            for issue in issues if not issue["stories"]
+        }
+        self.assertEqual(len(links), len(expected))
+        self.assertEqual({link.attrib["href"].removeprefix(brief.config()["url"]) for link in links}, expected)
         for link in links:
             relative = link.attrib["href"].removeprefix(brief.config()["url"])
             self.assertIn(relative, output)
-            self.assertTrue(relative.startswith("stories/"))
+            self.assertIn(relative, expected)
 
 
 if __name__ == "__main__":
