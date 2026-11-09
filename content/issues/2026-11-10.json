@@ -1,0 +1,296 @@
+{
+  "date": "2026-11-10",
+  "title": "遠端入口先補洞，開發日誌也要看住密鑰。",
+  "intro": "三項已遭利用漏洞新增至 CISA 目錄，SSH、AI 部署與電話服務各有修補重點。另看 GitHub 日誌掃描、NVIDIA 董事會調查與 F1 經紀人事變動。",
+  "generated_at": "2026-11-10T05:04:29+08:00",
+  "coverage": {
+    "from": "2026-07-31",
+    "to": "2026-11-09"
+  },
+  "editor_note": "本期新聞進展集中於 11 月 8–9 日；涵蓋日期較早是因保留 GPUStack 7 月、FreeSWITCH 10 月及 Alpine 11 月 5 日原始修補公告日期，並非回填舊聞。三項漏洞的新進展為 11 月 9 日列入 KEV。市場已查央行官方來源，但 AP 原文無法讀取，未提供未核實行情；不以來源失敗宣稱市場無事。",
+  "hero": null,
+  "source_checks": [
+    {
+      "name": "CISA KEV",
+      "url": "https://raw.githubusercontent.com/cisagov/kev-data/main/known_exploited_vulnerabilities.json",
+      "status": "checked",
+      "note": "重大漏洞：實讀 2026.11.09 目錄，1772 筆，新增 GPUStack、OpenSSH 與 FreeSWITCH；逐一比對官方修補公告。",
+      "checked_at": "2026-11-10T05:04:29+08:00"
+    },
+    {
+      "name": "Alpine Linux",
+      "url": "https://alpinelinux.org/posts/2026-11-05-openssh-password-authentication-bypass/",
+      "status": "checked",
+      "note": "重大漏洞：核對適用設定、各套件分支版本及更新後重啟要求。",
+      "checked_at": "2026-11-10T05:04:29+08:00"
+    },
+    {
+      "name": "GPUStack",
+      "url": "https://github.com/gpustack/gpustack/security/advisories/GHSA-gj9m-f8ph-pmhr",
+      "status": "checked",
+      "note": "重大漏洞：核對低於 2.2.0 的影響、修補與暫時緩解。",
+      "checked_at": "2026-11-10T05:04:29+08:00"
+    },
+    {
+      "name": "SignalWire",
+      "url": "https://github.com/signalwire/freeswitch/security/advisories/GHSA-mg63-h38w-8p9p",
+      "status": "checked",
+      "note": "重大漏洞：核對 1.11.2 及以前受影響、1.11.3 起修補及緩解限制。",
+      "checked_at": "2026-11-10T05:04:29+08:00"
+    },
+    {
+      "name": "GitHub",
+      "url": "https://github.blog/changelog/2026-11-09-secret-scanning-detects-secrets-in-github-actions-workflow-logs/",
+      "status": "checked",
+      "note": "科技：查閱 Actions 日誌掃描預覽與授權／回溯／通知限制。",
+      "checked_at": "2026-11-10T05:04:29+08:00"
+    },
+    {
+      "name": "NVIDIA 公司聲明",
+      "url": "https://www.globenewswire.com/news-release/2026/11/08/3398017/0/en/statement-from-nvidia-board-of-directors.html",
+      "status": "checked",
+      "note": "科技：閱讀公司董事會原始聲明，區分調查啟動與尚未確認的外洩。",
+      "checked_at": "2026-11-10T05:04:29+08:00"
+    },
+    {
+      "name": "Federal Reserve",
+      "url": "https://www.federalreserve.gov/newsevents.htm",
+      "status": "checked",
+      "note": "投資市場：檢視官方新聞，11 月 9 日新增銀行申請核准，未選為重大市場消息；此頁不代表所有資產市場。",
+      "checked_at": "2026-11-10T05:04:29+08:00"
+    },
+    {
+      "name": "AP 市場報導",
+      "url": "https://apnews.com/article/d938f8e6ff42b3706e1d36e6245ec56b",
+      "status": "failed",
+      "note": "市場報導原文工具無法讀取，未採搜尋摘要的價格或原因，也未將失敗當作沒有市場消息；本期不提供完整行情綜述。",
+      "checked_at": "2026-11-10T05:04:29+08:00"
+    },
+    {
+      "name": "Formula 1",
+      "url": "https://www.formula1.com/en/latest/article/piastri-and-management-team-mutually-terminate-agreement.a59N6pYIBGSiFmwMY1Xkk",
+      "status": "checked",
+      "note": "F1：閱讀 Piastri 與 Webber 團隊共同聲明報導；不重刊前期正賽結果。",
+      "checked_at": "2026-11-10T05:04:29+08:00"
+    }
+  ],
+  "stories": [
+    {
+      "id": "openssh-alpine-kev",
+      "category": "security",
+      "title": "OpenSSH 驗證繞過列入 KEV，Alpine 更新後仍須重啟服務",
+      "teaser": "CISA 11 月 9 日將 CVE-2026-123158 列入已遭利用目錄；Alpine 管理者應核對套件分支，更新並重啟 sshd。",
+      "summary": "CISA 新增 OpenSSH 驗證繞過漏洞；Alpine 公告提供受影響設定、各分支修補版本及重啟要求。",
+      "why": "SSH 是遠端管理入口，金鑰帳號也不能直接假設安全；修補套件後舊程序仍可能在運作。",
+      "limit": "不是所有 OpenSSH 部署都受影響；Alpine 的套件修訂號不可套用到其他發行版。",
+      "details": [
+        {
+          "heading": "風險與適用範圍",
+          "points": [
+            "新進展是 CISA 於 11 月 9 日把 CVE-2026-123158 加入已遭利用目錄；Alpine 修補公告原本於 11 月 5 日發布。",
+            "Alpine 指出未使用 PAM、開啟密碼驗證且帳號／密碼雜湊條件符合時可能受影響；使用 PAM 驗證或已停用密碼登入的部署不在其列出的影響條件內。"
+          ]
+        },
+        {
+          "heading": "先做什麼",
+          "points": [
+            "依分支更新 openssh：3.24 至 10.3_p1-r2、3.23 至 10.2_p1-r1、3.22 至 10.0_p1-r11、3.21 至 9.9_p2-r1，或其後版本，並重啟 sshd；其他分支查原文版本表。",
+            "暫時不能更新時可停用密碼登入並重啟，但先確保有可用金鑰或主控台避免失聯。CISA 的 11 月 12 日期限針對適用聯邦機關，不是全球統一期限。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Alpine 官方修補公告",
+          "url": "https://alpinelinux.org/posts/2026-11-05-openssh-password-authentication-bypass/",
+          "published": "2026-11-05",
+          "checked_at": "2026-11-10T05:04:29+08:00"
+        },
+        {
+          "name": "CISA KEV 新增紀錄",
+          "url": "https://raw.githubusercontent.com/cisagov/kev-data/main/known_exploited_vulnerabilities.json",
+          "published": "2026-11-09",
+          "checked_at": "2026-11-10T05:04:29+08:00"
+        }
+      ]
+    },
+    {
+      "id": "gpustack-auth-bypass-kev",
+      "category": "security",
+      "title": "GPUStack 管理員驗證繞過已遭利用，升級至 2.2.0",
+      "teaser": "CISA 新增 GPUStack 的 CVE-2026-102895；低於 2.2.0 的部署可能遭未授權管理存取，應升級並檢查金鑰與工作節點。",
+      "summary": "GPUStack 在特定來源判斷下可跳過驗證；官方修補版為 2.2.0，CISA 11 月 9 日列入 KEV。",
+      "why": "受害面可能從模型管理延伸到雲端憑證與工作節點，單純更換登入密碼不足以涵蓋後續調查。",
+      "limit": "漏洞公告原始發布於 7 月 31 日，本期新消息為 KEV 收錄；不代表所有 AI 平台都有同一漏洞。",
+      "details": [
+        {
+          "heading": "新進展與影響",
+          "points": [
+            "CISA 11 月 9 日新增 CVE-2026-102895。GPUStack 官方公告列出受影響版本低於 2.2.0，並記錄過 2.1.1 部署遭實際利用。",
+            "問題在於把本機來源視為可信任管理員；反向代理等配置可能使外部請求被錯誤信任，進而暴露使用者、模型、金鑰與工作節點。"
+          ]
+        },
+        {
+          "heading": "修補與檢查",
+          "points": [
+            "升級至 2.2.0 或更新版本；無法立即升級時，官方建議強制本機來源也須驗證、限制 API 網路暴露並檢查代理的來源標頭處理。",
+            "若懷疑已受侵害，檢查非預期管理 API 金鑰、自訂後端與節點活動，評估撤銷外洩憑證。公告早於本期，重點是已知遭利用風險提升，不是今天才發現漏洞。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "GPUStack 官方安全公告",
+          "url": "https://github.com/gpustack/gpustack/security/advisories/GHSA-gj9m-f8ph-pmhr",
+          "published": "2026-07-31",
+          "checked_at": "2026-11-10T05:04:29+08:00"
+        },
+        {
+          "name": "CISA KEV 新增紀錄",
+          "url": "https://raw.githubusercontent.com/cisagov/kev-data/main/known_exploited_vulnerabilities.json",
+          "published": "2026-11-09",
+          "checked_at": "2026-11-10T05:04:29+08:00"
+        }
+      ]
+    },
+    {
+      "id": "freeswitch-message-kev",
+      "category": "security",
+      "title": "FreeSWITCH 命令執行漏洞列入 KEV，1.11.3 起修補",
+      "teaser": "CVE-2026-116779 已被 CISA 收錄；接受 SIP MESSAGE 的 FreeSWITCH 服務應優先修補，僅調整驗證或 ACL 不能視為完整防護。",
+      "summary": "FreeSWITCH 官方公告確認 SIP 訊息處理可導致服務權限下的命令執行，受影響版本為 1.11.2 及以前。",
+      "why": "風險涉及通話控制、設定與憑證，直接影響電話服務的機密性與可用性。",
+      "limit": "是否可觸及服務與 SIP 設定影響風險；本期不提供利用細節，修補後仍須調查可能入侵。",
+      "details": [
+        {
+          "heading": "影響範圍",
+          "points": [
+            "CISA 11 月 9 日將 CVE-2026-116779 列入已遭利用目錄。廠商公告原始發布於 10 月 28 日，列出 FreeSWITCH 1.11.2 及以前受影響，1.11.3 起修補。",
+            "接受入站 SIP MESSAGE 的服務可能使訊息路由進入命令介面，造成設定與憑證外洩、通話控制及服務程序權限下的程式執行；官方確認有實際利用。"
+          ]
+        },
+        {
+          "heading": "修補與暫時緩解",
+          "points": [
+            "優先升級至 1.11.3 或較新修補版。不需入站 SIP 聊天的 profile，可依官方方式設定 enable-chat=false，並確認所有相關 profile 都已處理。",
+            "單獨開啟訊息驗證、加嚴 ACL 或停用某一個系統命令都不代表路徑已封閉。盤點對外服務、非預期設定變更與憑證使用，避免把套件更新當成完成入侵調查。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "SignalWire 官方安全公告",
+          "url": "https://github.com/signalwire/freeswitch/security/advisories/GHSA-mg63-h38w-8p9p",
+          "published": "2026-10-28",
+          "checked_at": "2026-11-10T05:04:29+08:00"
+        },
+        {
+          "name": "CISA KEV 新增紀錄",
+          "url": "https://raw.githubusercontent.com/cisagov/kev-data/main/known_exploited_vulnerabilities.json",
+          "published": "2026-11-09",
+          "checked_at": "2026-11-10T05:04:29+08:00"
+        }
+      ]
+    },
+    {
+      "id": "github-actions-log-secret-scanning",
+      "category": "tech",
+      "title": "GitHub 開放 Actions 日誌密鑰掃描預覽，須企業手動啟用",
+      "teaser": "新功能在工作流程完成後掃描日誌，補上程式碼之外的外洩面；預覽有授權、回溯與通知限制，不能當成即時攔截。",
+      "summary": "GitHub 11 月 9 日推出 Actions workflow logs secret scanning 公開預覽，結果整合至儲存庫密鑰警示。",
+      "why": "建置輸出也可能洩漏憑證，但預覽不會自動通知，管理者需要主動查看結果。",
+      "limit": "僅符合授權的 GitHub Enterprise Cloud 企業適用；預設關閉，不回掃既有日誌。",
+      "details": [
+        {
+          "heading": "它做什麼",
+          "points": [
+            "工作流程執行完成後，GitHub 依供應商密鑰模式掃描日誌；發現項目出現在儲存庫 secret scanning 警示列表，可連回原日誌，刪除日誌後警示仍保留。"
+          ]
+        },
+        {
+          "heading": "啟用前先看限制",
+          "points": [
+            "公開預覽限 GitHub Enterprise Cloud 且具 Secret Protection 或 Advanced Security 授權，包含 GHE.com 資料落地企業。企業擁有者須在安全政策手動啟用，儲存庫本身也須符合密鑰掃描條件。",
+            "只掃啟用後完成的執行，不回溯；不涵蓋通用、自訂、AI 偵測模式或 Actions 已遮罩的密鑰。預覽警示不發通知，應主動查看列表並處理外洩憑證，不能期待它即時阻止輸出。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "GitHub Changelog",
+          "url": "https://github.blog/changelog/2026-11-09-secret-scanning-detects-secrets-in-github-actions-workflow-logs/",
+          "published": "2026-11-09",
+          "checked_at": "2026-11-10T05:04:29+08:00"
+        }
+      ]
+    },
+    {
+      "id": "nvidia-board-independent-inquiry",
+      "category": "tech",
+      "title": "NVIDIA 董事會啟動獨立調查，未確認機密外洩",
+      "teaser": "董事會因黃仁勳遭外國情報活動鎖定的相關報導啟動調查；公司目前表示沒有理由相信國安或公司機密已受損。",
+      "summary": "NVIDIA 董事會 11 月 8 日聲明，將由獨立董事委員會與外部獨立法律顧問監督調查。",
+      "why": "涉及大型晶片公司的治理與機密保護；已啟動調查和已證實外洩是兩件不同的事。",
+      "limit": "本期根據公司聲明描述調查範圍，未把外界報導當作已確認的滲透或資料外洩，也不推測股價影響。",
+      "details": [
+        {
+          "heading": "已確認的是調查",
+          "points": [
+            "NVIDIA 董事會在 11 月 8 日美東時間 15:00 的聲明中表示，因近期有關創辦人暨執行長黃仁勳遭外國情報活動鎖定的報導，啟動獨立調查。",
+            "調查由獨立董事組成的委員會監督，並由外部獨立法律顧問協助；黃仁勳支持審查並承諾配合。"
+          ]
+        },
+        {
+          "heading": "目前還不能下的結論",
+          "points": [
+            "董事會表示，目前沒有理由相信美國國家安全或 NVIDIA 機密遭到損害，但會檢視可取得資訊，並表達對黃仁勳及管理團隊的信任。",
+            "這份聲明確認的是公司治理程序，而非調查結論。外國情報活動的具體事實、是否發生外洩及責任歸屬仍不能由這份聲明證實，後續須看正式更新。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "NVIDIA 董事會原始聲明（公司發布）",
+          "url": "https://www.globenewswire.com/news-release/2026/11/08/3398017/0/en/statement-from-nvidia-board-of-directors.html",
+          "published": "2026-11-08",
+          "checked_at": "2026-11-10T05:04:29+08:00",
+          "verification_method": "web",
+          "verification_note": "本次以網頁工具實際讀取公司發布的原文：頁面標示 November 08, 2026 15:00 ET、Source NVIDIA；正文確認獨立董事委員會及外部獨立律師監督調查，董事會沒有理由相信國安或公司機密受損，黃仁勳支持並配合。直接 HTTP 檢查為 403；未以搜尋摘要替代。"
+        }
+      ]
+    },
+    {
+      "id": "piastri-webber-management-split",
+      "category": "f1",
+      "title": "Piastri 與 Webber 經紀團隊合意終止合作",
+      "teaser": "Piastri 與 Mark、Ann Webber 結束經紀協議，將採新管理架構；這項人事消息本身沒有宣布更換車隊。",
+      "summary": "F1 官方 11 月 9 日報導雙方共同聲明，確認經紀合作結束。",
+      "why": "Webber 團隊曾協助 Piastri 進入 F1；這是管理團隊實質變更，與前期聖保羅賽果不同事件。",
+      "limit": "報導沒有公布完整接任架構或宣布車手合約變動，不應延伸成轉隊傳聞。",
+      "details": [
+        {
+          "heading": "雙方正式確認",
+          "points": [
+            "F1 官方 11 月 9 日 10:27 UTC（臺灣 18:27）報導，Piastri 與由 Mark、Ann Webber 領導的經紀團隊合意終止管理協議，未來採新管理架構。",
+            "Webber 團隊自 2019 年起與他合作，協助其初期職涯與進入 F1。雙方聲明互致感謝，Webber 表示本季已減少第一線賽道參與，認為此時結束合作適當。"
+          ]
+        },
+        {
+          "heading": "如何理解這項人事變化",
+          "points": [
+            "這是車手身邊的經紀與管理安排變更。官方報導仍將 Piastri 列為 McLaren 車手，沒有宣布他離隊、換車隊或變更車手合約。",
+            "接任團隊的完整職責與安排未在這份報導中說明；先保留已確認的人事事實，不以終止經紀協議推論其他未公布動向。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Formula 1 官方報導",
+          "url": "https://www.formula1.com/en/latest/article/piastri-and-management-team-mutually-terminate-agreement.a59N6pYIBGSiFmwMY1Xkk",
+          "published": "2026-11-09",
+          "checked_at": "2026-11-10T05:04:29+08:00"
+        }
+      ]
+    }
+  ]
+}
