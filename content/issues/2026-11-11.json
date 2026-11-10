@@ -1,0 +1,164 @@
+{
+  "date": "2026-11-11",
+  "title": "通膨月比與年比要分清，已遭利用漏洞先修補。",
+  "intro": "美國公布 10 月 CPI，但部分年增率缺少基期資料。Outlook 已遭利用漏洞提供修補，GitHub 則預告閒置專案的依賴警示政策。",
+  "generated_at": "2026-11-11T04:58:31+08:00",
+  "coverage": {
+    "from": "2026-11-10",
+    "to": "2026-11-10"
+  },
+  "editor_note": "本期整理 11 月 10 日官方新公告；四類均已檢視相關來源，F1 未選入新事件。CPI 只報可核對數據，不捏造市場預期或收盤反應；Microsoft 動態頁改以官方 CVRF 資料核對，來源限制保留於查核紀錄。",
+  "hero": null,
+  "source_checks": [
+    {
+      "name": "Microsoft CVRF",
+      "url": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2026-Nov",
+      "status": "checked",
+      "note": "重大漏洞：網頁動態公告與 API 的網頁閱讀失敗後，改用直接 HTTP 讀取官方 JSON，核對 CVE、產品 ID 對照、修補組建、利用狀態及預覽窗格 FAQ。",
+      "checked_at": "2026-11-11T04:58:31+08:00"
+    },
+    {
+      "name": "CISA KEV",
+      "url": "https://raw.githubusercontent.com/cisagov/kev-data/main/known_exploited_vulnerabilities.json",
+      "status": "checked",
+      "note": "重大漏洞：實讀 2026.11.10 目錄，1779 筆，新增七筆；本期優先報廣泛使用的 Outlook 已利用漏洞，不逐筆湊數，也不重刊前期三項漏洞。",
+      "checked_at": "2026-11-11T04:58:31+08:00"
+    },
+    {
+      "name": "BLS CPI",
+      "url": "https://www.bls.gov/news.release/cpi.nr0.htm",
+      "status": "checked",
+      "note": "投資市場：實際閱讀 10 月數據、發布時間與缺少 2025 年 10 月基期警示；存檔網址未能讀取，保留本次實讀的官方現行頁。",
+      "checked_at": "2026-11-11T04:58:31+08:00"
+    },
+    {
+      "name": "Federal Reserve",
+      "url": "https://www.federalreserve.gov/newsevents.htm",
+      "status": "failed",
+      "note": "市場：本次網頁工具回應失敗，未據此宣稱沒有政策消息；另以 BLS 官方發布完成查核。",
+      "checked_at": "2026-11-11T04:58:31+08:00"
+    },
+    {
+      "name": "GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-11-10-dependabot-alerts-will-pause-on-inactive-repositories/",
+      "status": "checked",
+      "note": "科技與 AI：閱讀閒置儲存庫政策的生效日、恢復方式及企業例外；未重刊前期日誌掃描。",
+      "checked_at": "2026-11-11T04:58:31+08:00"
+    },
+    {
+      "name": "Formula 1",
+      "url": "https://www.formula1.com/en/latest",
+      "status": "checked",
+      "note": "F1：檢視官方最新消息，主要為聖保羅回顧、技術分析及 F1 ACADEMY 賽曆；未選出需重報的 F1 正賽、人事或規則新進展，不代表所有車隊均無更新。",
+      "checked_at": "2026-11-11T04:58:31+08:00"
+    }
+  ],
+  "stories": [
+    {
+      "id": "us-october-cpi-monthly",
+      "category": "markets",
+      "title": "美國 10 月 CPI 月增 0.4%，部分年增率因基期缺資料無法發布",
+      "teaser": "BLS 公布整體 CPI 季調月增 0.4%、核心月增 0.3%。部分 2025 年 10 月指數缺資料，使本次對應年增率無法發布，判讀通膨時不能自行補算。",
+      "summary": "11 月 10 日公布的美國 10 月 CPI，整體季調月增 0.4%，低於 9 月的 0.6%；核心月增 0.3%。",
+      "why": "通膨是利率與債券評價的重要輸入；本期資料有年度比較缺口，不能只用一個年增數字判斷走勢。",
+      "limit": "未取得可獨立核對的市場收盤反應與預期共識，本期只報官方數據，不聲稱超預期或把股債變動歸因於單一數據。",
+      "details": [
+        {
+          "heading": "數據與比較基準",
+          "points": [
+            "BLS 於 11 月 10 日美東 08:30（臺灣 21:30）發布 2026 年 10 月 CPI。整體指數經季節調整較 9 月增加 0.4%，前月增幅為 0.6%；排除食品與能源後月增 0.3%。",
+            "住房月增 0.3%，占整體當月漲幅逾三成；食品月增 0.5%、能源月增 0.7%。這些均為月比變化，不是年增率。"
+          ]
+        },
+        {
+          "heading": "怎麼讀與不能推論什麼",
+          "points": [
+            "BLS 表示，2025 年 10 月因撥款中斷未蒐集調查資料，許多指數缺少去年同月值，因此對應的 2026 年 10 月年增率無法發布；不能拿估計值補成官方數字。",
+            "編輯解讀：數據有助觀察通膨與利率風險，但單月不能確認政策轉向。本期未核實市場預期及收盤反應，不推論升降息時點或提供買賣建議。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "美國勞工統計局 CPI 原始發布",
+          "url": "https://www.bls.gov/news.release/cpi.nr0.htm",
+          "published": "2026-11-10",
+          "checked_at": "2026-11-11T04:58:31+08:00",
+          "verification_method": "web",
+          "verification_note": "本次網頁工具實讀 BLS Consumer Price Index Summary，標示 2026 年 11 月 10 日美東 08:30 發布；核對 10 月季調整體月增 0.4%、核心 0.3%，以及因 2025 年 10 月撥款中斷缺資料而不能發布對應年增率的原文警示。直接 HTTP 為 403；存檔頁工具無法讀取，使用本次已讀的現行發布頁。"
+        }
+      ]
+    },
+    {
+      "id": "outlook-spoofing-kev",
+      "category": "security",
+      "title": "Outlook 已遭利用漏洞公布修補，預覽窗格不是觸發途徑",
+      "teaser": "Microsoft 與 CISA 確認 CVE-2026-124194 已遭利用。受影響 Office 使用者應部署對應安全更新；此漏洞需要使用者開啟惡意檔案，不能寫成零點擊攻擊。",
+      "summary": "Microsoft 11 月 10 日公告 Outlook 網路冒用漏洞，可能洩露驗證資訊；CISA 同日列入 KEV。",
+      "why": "已遭利用比單看嚴重程度評分更值得優先處理；驗證資料外洩可能帶來帳號冒用風險。",
+      "limit": "依 Microsoft 官方 FAQ，此漏洞需要使用者互動且不經預覽窗格觸發；不可推論所有 Outlook 或作業系統都受影響。",
+      "details": [
+        {
+          "heading": "影響與觸發條件",
+          "points": [
+            "CVE-2026-124194 涉及 Outlook 缺少外部內容安全警告，使用者開啟惡意檔案後可能洩露 NTLMv2 驗證資訊。Microsoft 標示已偵測到利用，CISA 11 月 10 日也列入已遭利用目錄。",
+            "官方 FAQ 明確指出需要使用者開啟檔案；預覽窗格不是攻擊途徑。受影響產品表包含 Office LTSC 2021、LTSC 2024 與 Microsoft 365 Apps for Enterprise 的 32／64 位元版本。"
+          ]
+        },
+        {
+          "heading": "更新與限制",
+          "points": [
+            "LTSC 2021 修補組建為 16.0.14334.21048，LTSC 2024 為 16.0.17932.21140；Microsoft 365 Apps 須依更新通道的安全版本表部署，不能套用單一組建號。",
+            "優先盤點與更新受影響端點，並檢查可疑檔案開啟及驗證活動。CISA 11 月 24 日期限適用其聯邦規範範圍，不是全球統一期限。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Microsoft 官方 2026 年 11 月 CVRF 資料",
+          "url": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2026-Nov",
+          "published": "2026-11-10",
+          "checked_at": "2026-11-11T04:58:31+08:00"
+        },
+        {
+          "name": "CISA KEV",
+          "url": "https://raw.githubusercontent.com/cisagov/kev-data/main/known_exploited_vulnerabilities.json",
+          "published": "2026-11-10",
+          "checked_at": "2026-11-11T04:58:31+08:00"
+        }
+      ]
+    },
+    {
+      "id": "dependabot-inactive-repositories",
+      "category": "tech",
+      "title": "Dependabot 12 月起暫停閒置儲存庫警示，維護者先盤點",
+      "teaser": "GitHub 宣布 12 月 8 日起，多數一年無活動的儲存庫將停用 Dependabot alerts。既有警示封存而非刪除，推送或手動開啟可恢復。",
+      "summary": "GitHub 11 月 10 日宣布 Dependabot 閒置政策，適用 github.com 與含資料落地的 Enterprise Cloud，不含 Enterprise Server。",
+      "why": "仍在線上使用、但長期沒有程式碼變動的服務，也需要確認其依賴漏洞警示能否持續運作。",
+      "limit": "這是 12 月 8 日才開始的政策，不是今天已停用所有警示；強制安全設定與特定企業政策有例外。",
+      "details": [
+        {
+          "heading": "什麼會改變",
+          "points": [
+            "2026 年 12 月 8 日起，多數過去一年沒有活動的儲存庫會停用 Dependabot alerts；既有警示封存而非刪除。GitHub 將任何分支或標籤推送、建立儲存庫、開啟警示視為活動。"
+          ]
+        },
+        {
+          "heading": "維護者怎麼處理",
+          "points": [
+            "盤點仍提供服務但少有提交的專案，確認警示設定。任何推送或在設定重新啟用都能恢復警示，封存項目會回來，並重新計算一年期限。",
+            "若儲存庫有強制啟用警示的安全設定，或企業政策不允許管理員切換警示，GitHub 不會因此停用。政策適用 github.com 與 Enterprise Cloud，不含 Enterprise Server；不要為維持警示製造無意義提交，應選擇適合的安全政策。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "GitHub Changelog",
+          "url": "https://github.blog/changelog/2026-11-10-dependabot-alerts-will-pause-on-inactive-repositories/",
+          "published": "2026-11-10",
+          "checked_at": "2026-11-11T04:58:31+08:00"
+        }
+      ]
+    }
+  ]
+}
