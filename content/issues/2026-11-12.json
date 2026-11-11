@@ -1,0 +1,123 @@
+{
+  "date": "2026-11-12",
+  "title": "利率看條件，IPO 看程序，別把預期當定案。",
+  "intro": "聯準會官員談 12 月政策選擇，Anthropic 公布 IPO 路演條件。兩則都要分清「個人意向／擬議條件」與「已經決定／已經完成」。",
+  "generated_at": "2026-11-12T05:05:02+08:00",
+  "coverage": {
+    "from": "2026-11-10",
+    "to": "2026-11-10"
+  },
+  "editor_note": "本期補入近 48 小時內、前期未收錄的 11 月 10 日原始公告；不是將舊日期改成今日發布。四類均檢視官方來源，本期只選兩則市場重要進展。利率演說不等於會議決議，路演也不等於上市；未提供行情收盤綜述或未核實傳聞。",
+  "hero": null,
+  "source_checks": [
+    {
+      "name": "Federal Reserve 演說",
+      "url": "https://www.federalreserve.gov/newsevents/speech/waller20261110a.htm",
+      "status": "checked",
+      "note": "投資市場：實讀 Waller 與 Bowman 11 月 10 日演說，確認個人政策立場、CPI 發布前時間限制及條件式措辭；未編造市場價格反應。",
+      "checked_at": "2026-11-12T05:05:02+08:00"
+    },
+    {
+      "name": "Anthropic",
+      "url": "https://www.anthropic.com/news/roadshow-launch",
+      "status": "checked",
+      "note": "投資市場／科技：實讀路演原始公告，核對股數、價格區間、預期代號及註冊尚未生效狀態；未採提價傳聞。",
+      "checked_at": "2026-11-12T05:05:02+08:00"
+    },
+    {
+      "name": "GitHub Changelog",
+      "url": "https://github.blog/changelog/",
+      "status": "checked",
+      "note": "科技：檢視 11 月 11 日個人帳號 issue types／fields 更新及近期列表；未選為重大消息，不重刊前期 Dependabot 政策。",
+      "checked_at": "2026-11-12T05:05:02+08:00"
+    },
+    {
+      "name": "CISA KEV",
+      "url": "https://raw.githubusercontent.com/cisagov/kev-data/main/known_exploited_vulnerabilities.json",
+      "status": "checked",
+      "note": "重大漏洞：網頁實讀版本仍為 2026.11.10、1779 筆；不重刊前期 Outlook，檢視範圍不等於所有廠商皆無新漏洞。",
+      "checked_at": "2026-11-12T05:05:02+08:00"
+    },
+    {
+      "name": "Formula 1",
+      "url": "https://www.formula1.com/en/latest",
+      "status": "checked",
+      "note": "F1：實讀官方最新列表，主要為人物訪談、冠軍歷史與聖保羅回顧；未選出重大正賽、規則或人事新事件，不例行報賽前賠率。",
+      "checked_at": "2026-11-12T05:05:02+08:00"
+    }
+  ],
+  "stories": [
+    {
+      "id": "fed-december-rate-views",
+      "category": "markets",
+      "title": "Waller 傾向 12 月再升息，仍是官員立場而非 FOMC 決議",
+      "teaser": "Waller 在 11 月 10 日演說中傾向 12 月升息 25 基點，並提出通膨更強時考慮更大幅度；Bowman 則強調觀察數據與金融條件。",
+      "summary": "聯準會官員 11 月 10 日演說揭示利率風險判斷；Waller 談到 12 月升息可能，Bowman 關注能源及 AI 融資風險。",
+      "why": "政策路徑會影響債券、外匯與股票估值，但個別官員意向不能當作已實施的利率變動。",
+      "limit": "Waller 演說在當日 CPI 公布前，條件式措辭不等於已宣布 50 基點升息；未核對市場定價與收盤反應。",
+      "details": [
+        {
+          "heading": "政策訊號與時間",
+          "points": [
+            "Waller 在 11 月 10 日官方演說中表示，依其預期發展，傾向支持 12 月升息 25 基點；若通膨仍強，認為應考慮 50 基點。這是他個人對未來會議的看法，不是 FOMC 決議。",
+            "演說明確寫於當日 CPI 發布之前，不能把文中的條件式推演改寫成看到數據後的新承諾。本期不重報前期 CPI 數字，也未聲稱市場已完全反映特定幅度。"
+          ]
+        },
+        {
+          "heading": "觀察重點",
+          "points": [
+            "Bowman 同日說明支持 10 月維持利率區間 3.75%–4%，並將觀察通膨、勞動市場與金融條件；她也關注能源價格傳導及 AI 投資外部融資的風險。",
+            "編輯解讀：兩份演說提醒政策仍受數據與風險評估影響。投資人可留意利率敏感資產的風險，但本期沒有升降息保證、價格預測或個人買賣建議。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Waller 官方演說",
+          "url": "https://www.federalreserve.gov/newsevents/speech/waller20261110a.htm",
+          "published": "2026-11-10",
+          "checked_at": "2026-11-12T05:05:02+08:00"
+        },
+        {
+          "name": "Bowman 官方演說",
+          "url": "https://www.federalreserve.gov/newsevents/speech/bowman20261110a.htm",
+          "published": "2026-11-10",
+          "checked_at": "2026-11-12T05:05:02+08:00"
+        }
+      ]
+    },
+    {
+      "id": "anthropic-ipo-roadshow",
+      "category": "markets",
+      "title": "Anthropic 啟動 IPO 路演，70–78 美元仍是預期區間",
+      "teaser": "公司公告擬發售 8.25 億股，申請以 ANT 在 Nasdaq 掛牌；公告時註冊聲明尚未生效，不能當成已定價或已上市。",
+      "summary": "Anthropic 於 11 月 10 日啟動 A 類股擬議 IPO 路演，公布預期價格區間及公司／舊股東售股組成。",
+      "why": "這是大型 AI 公司的募資進展；新股資金流入公司，舊股東售股則不會給公司帶來所得款項。",
+      "limit": "所有股數與價格均依公司 11 月 10 日路演公告，非最終定價；未採後續媒體報導的提價傳聞。",
+      "details": [
+        {
+          "heading": "擬議發行內容",
+          "points": [
+            "Anthropic 11 月 10 日公告啟動 IPO 路演，擬發售 825,000,000 股 A 類股，預期每股 70–78 美元，並申請在 Nasdaq Global Select Market 以 ANT 為代號掛牌。",
+            "其中公司擬售 801,351,354 股，既有股東擬售 23,648,646 股；公司不會收到舊股東售股所得。另預期給承銷商 30 天選擇權，額外購買最多 123,750,000 股。"
+          ]
+        },
+        {
+          "heading": "尚未完成的步驟",
+          "points": [
+            "公告寫明註冊聲明已提交但尚未生效，生效前不得出售證券或接受購買要約；路演啟動不等於最終定價、配售完成或股票已開始交易。",
+            "編輯解讀：觀察募資時應區分新股與舊股，以及預期區間與最終條件。本期不把區間推算為確定市值，也未核實其後定價變化；後續以有效申報與正式公告為準。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Anthropic 公司路演公告",
+          "url": "https://www.anthropic.com/news/roadshow-launch",
+          "published": "2026-11-10",
+          "checked_at": "2026-11-12T05:05:02+08:00"
+        }
+      ]
+    }
+  ]
+}
