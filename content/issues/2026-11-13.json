@@ -1,0 +1,124 @@
+{
+  "date": "2026-11-13",
+  "title": "NVIDIA 正式交接，F1 正賽與後備席位分清。",
+  "intro": "NVIDIA 宣布黃仁勳即刻辭任，Colette Kress 暫代執行長。F1 方面，Racing Bulls 原班車手續留，Tsolov 的任命則是兩隊共用後備。",
+  "generated_at": "2026-11-13T05:02:18+08:00",
+  "coverage": {
+    "from": "2026-11-12",
+    "to": "2026-11-12"
+  },
+  "editor_note": "本期聚焦 11 月 12 日正式公告，四類均已檢視官方來源，選入科技產業與 F1 兩則。市場與資安不硬湊條目；未提供行情收盤綜述。NVIDIA 人事交接與調查結論分開，F1 後備任命也不當成正賽合約。",
+  "hero": null,
+  "source_checks": [
+    {
+      "name": "NVIDIA",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition",
+      "status": "checked",
+      "note": "科技／產業：實際讀取正式 CEO 交接公告，核對即刻生效、暫代與董事長任命；未把人事消息推論成調查結論。",
+      "checked_at": "2026-11-13T05:02:18+08:00"
+    },
+    {
+      "name": "Formula 1",
+      "url": "https://www.formula1.com/en/latest/article/lawson-and-lindblad-to-remain-at-racing-bulls-for-2027-as-team-confirm-unchanged-line-up.1vwKafZKAx8zw2Tb4B8fPx",
+      "status": "checked",
+      "note": "F1：閱讀 Racing Bulls 續約及 Tsolov 後備任命兩篇原文；合併同一陣容事件，不採席位傳聞。",
+      "checked_at": "2026-11-13T05:02:18+08:00"
+    },
+    {
+      "name": "Federal Reserve",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261112a.htm",
+      "status": "checked",
+      "note": "投資市場：閱讀 2027 FOMC 暫定會議日程調整；未視為今日利率決策，不重刊前期官員演說，未提供未核實行情。",
+      "checked_at": "2026-11-13T05:02:18+08:00"
+    },
+    {
+      "name": "CISA KEV",
+      "url": "https://raw.githubusercontent.com/cisagov/kev-data/main/known_exploited_vulnerabilities.json",
+      "status": "checked",
+      "note": "重大漏洞：網頁實讀目錄仍為 2026.11.10、1779 筆；未重刊前期漏洞，本次範圍不代表所有供應商無新公告。",
+      "checked_at": "2026-11-13T05:02:18+08:00"
+    },
+    {
+      "name": "GitHub Changelog",
+      "url": "https://github.blog/changelog/",
+      "status": "checked",
+      "note": "科技：檢視 11 月 12 日 Cloudflare token 偵測與公開監測連結更新，未因條目存在就湊成重大消息。",
+      "checked_at": "2026-11-13T05:02:18+08:00"
+    }
+  ],
+  "stories": [
+    {
+      "id": "nvidia-ceo-transition",
+      "category": "tech",
+      "title": "NVIDIA 宣布黃仁勳辭任，CFO Colette Kress 暫代執行長",
+      "teaser": "公司 11 月 12 日正式公告人事交接：黃仁勳辭去總裁、執行長及董事職務，即刻生效；董事會啟動永久接班人搜尋。",
+      "summary": "NVIDIA 董事會公告黃仁勳即刻辭任，Colette Kress 暫代 CEO 並續任 CFO，Harvey C. Jones 出任董事長。",
+      "why": "這是繼前期董事會調查之後、已正式確認的重大領導層變動，影響公司治理與交接安排。",
+      "limit": "公告未提出調查結論或確認機密外洩；公司預期營運與產品路線持續，不等於未來履約保證，亦不據此推測股價。",
+      "details": [
+        {
+          "heading": "正式交接安排",
+          "points": [
+            "NVIDIA 11 月 12 日公告，黃仁勳已辭去總裁、執行長與董事職務，即刻生效。現任財務長 Colette Kress 接任暫代執行長，同時繼續擔任執行副總裁及 CFO。",
+            "董事會將從內部與外部搜尋永久執行長；Harvey C. Jones 出任公司首位董事長。暫代任命與永久接班人尚未確定，必須分開看。"
+          ]
+        },
+        {
+          "heading": "影響與尚未確認之處",
+          "points": [
+            "公司表示預期營運、客戶承諾與產品路線不受中斷，並維持 11 月 17 日公布 2027 會計年度第三季財報的安排；這些是公司當前聲明，不是外部驗證的未來保證。",
+            "本期更新前期董事會啟動獨立調查的事件，但這份人事公告沒有公布調查結論；不能把辭任當成已證實不當行為或機密外洩，也不採媒體傳聞補足原因。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "NVIDIA 董事會正式公告",
+          "url": "https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition",
+          "published": "2026-11-12",
+          "checked_at": "2026-11-13T05:02:18+08:00"
+        }
+      ],
+      "update_of": "2026-11-10",
+      "update_note": "前期為董事會啟動獨立調查；本次公司正式宣布黃仁勳即刻辭任及暫代／董事長任命，尚非調查結論。"
+    },
+    {
+      "id": "racing-bulls-2027-lineup",
+      "category": "f1",
+      "title": "Racing Bulls 確認 2027 原班車手，Tsolov 擔任兩隊共用後備",
+      "teaser": "Lawson 與 Lindblad 續留 Racing Bulls；Red Bull 與 Racing Bulls 另確認 Tsolov 將任 2027 共用後備車手，並非取得正賽席位。",
+      "summary": "F1 官方 11 月 12 日分別報導 Racing Bulls 續約兩位車手，以及 Tsolov 的共用後備任命。",
+      "why": "正式公告釐清同一車手市場的正賽與後備安排，取代先前的升遷猜測。",
+      "limit": "不以此推論 Red Bull 未公布的正賽席位；後備工作與未來晉升願景不等於保證出賽。",
+      "details": [
+        {
+          "heading": "正賽陣容已確認",
+          "points": [
+            "Racing Bulls 確認 Liam Lawson 與 Arvid Lindblad 續約，2027 年維持原班搭檔。兩人將延續目前的隊友關係；這是車隊已確認的正賽人事安排，取代先前關於席位的猜測。"
+          ]
+        },
+        {
+          "heading": "後備角色要分清",
+          "points": [
+            "另一份官方報導確認 Nikola Tsolov 將擔任 Red Bull 與 Racing Bulls 的共用後備車手，必要時待命替補，並參與模擬器、更多 FP1 與舊車測試工作。",
+            "兩項公告合併看，Tsolov 此次取得的是後備角色，並未獲得 Racing Bulls 全季正賽席位。官方提到未來培養方向，也不等於保證日後升任；其他未公告的車隊席位仍須等正式消息。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Formula 1：Racing Bulls 續約公告",
+          "url": "https://www.formula1.com/en/latest/article/lawson-and-lindblad-to-remain-at-racing-bulls-for-2027-as-team-confirm-unchanged-line-up.1vwKafZKAx8zw2Tb4B8fPx",
+          "published": "2026-11-12",
+          "checked_at": "2026-11-13T05:02:18+08:00"
+        },
+        {
+          "name": "Formula 1：Tsolov 後備任命",
+          "url": "https://www.formula1.com/en/latest/article/tsolov-to-join-red-bull-and-racing-bulls-as-reserve-driver-for-2027.390fvkyiS2t5fnyVjvxqFq",
+          "published": "2026-11-12",
+          "checked_at": "2026-11-13T05:02:18+08:00"
+        }
+      ]
+    }
+  ]
+}
