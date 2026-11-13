@@ -7,7 +7,7 @@
     "from": "2026-11-12",
     "to": "2026-11-12"
   },
-  "editor_note": "本期聚焦 11 月 12 日正式公告，四類均已檢視官方來源，選入科技產業與 F1 兩則。市場與資安不硬湊條目；未提供行情收盤綜述。NVIDIA 人事交接與調查結論分開，F1 後備任命也不當成正賽合約。",
+  "editor_note": "本期聚焦 11 月 12 日正式公告，四類均已檢視官方來源，選入科技產業與 F1 兩則。市場與資安不硬湊條目；未提供行情收盤綜述。NVIDIA 人事交接與調查結論分開，F1 後備任命也不當成正賽合約。 本期已補上逐則配圖評估與兩張原創職務／陣容對照圖；新聞原始發布與查核時間保留。",
   "hero": null,
   "source_checks": [
     {
@@ -80,7 +80,13 @@
         }
       ],
       "update_of": "2026-11-10",
-      "update_note": "前期為董事會啟動獨立調查；本次公司正式宣布黃仁勳即刻辭任及暫代／董事長任命，尚非調查結論。"
+      "update_note": "前期為董事會啟動獨立調查；本次公司正式宣布黃仁勳即刻辭任及暫代／董事長任命，尚非調查結論。",
+      "image": {
+        "image": "assets/nvidia-leadership-2026-11-13.svg",
+        "alt": "NVIDIA 職務交接：黃仁勳辭任；Colette Kress 暫代執行長並續任 CFO；Harvey C. Jones 出任董事長；永久執行長仍在搜尋。",
+        "kind": "original",
+        "credit": "Daily Brief 原創資訊圖；依本則下方官方來源整理，非事件照片。"
+      }
     },
     {
       "id": "racing-bulls-2027-lineup",
@@ -118,7 +124,27 @@
           "published": "2026-11-12",
           "checked_at": "2026-11-13T05:02:18+08:00"
         }
-      ]
+      ],
+      "image": {
+        "image": "assets/racing-bulls-lineup-2026-11-13.svg",
+        "alt": "2027 Racing Bulls 正賽車手為 Lawson 與 Lindblad；Tsolov 是 Red Bull 與 Racing Bulls 共用後備，並非全季正賽席位。",
+        "kind": "original",
+        "credit": "Daily Brief 原創資訊圖；依本則下方官方來源整理，非事件照片。"
+      }
+    }
+  ],
+  "visual_review": [
+    {
+      "story_id": "nvidia-ceo-transition",
+      "decision": "diagram",
+      "reason": "三個人涉及不同職務與確定程度，對照圖能避免將暫代 CEO、永久接班人與董事長混為一談；原創圖解比裝飾性肖像更直接。",
+      "implementation": "assets/nvidia-leadership-2026-11-13.svg"
+    },
+    {
+      "story_id": "racing-bulls-2027-lineup",
+      "decision": "diagram",
+      "reason": "將兩位正賽車手與兩隊共用後備分組，清楚區分續約與後備任命；不需轉載權利不明的賽事照片。",
+      "implementation": "assets/racing-bulls-lineup-2026-11-13.svg"
     }
   ]
 }
