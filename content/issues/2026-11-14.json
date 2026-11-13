@@ -1,0 +1,218 @@
+{
+  "date": "2026-11-14",
+  "title": "通膨看清比較基準，漏洞與模型遷移提前處理。",
+  "intro": "美國 PPI 月增放緩、年增仍高；UnrealIRCd 已利用漏洞新增至 KEV。開發者另留意 Copilot 的 12 月模型淘汰日與例外。",
+  "generated_at": "2026-11-14T05:07:20+08:00",
+  "coverage": {
+    "from": "2026-11-07",
+    "to": "2026-11-13"
+  },
+  "editor_note": "新進展集中於 11 月 13 日；11 月 7 日僅為保留漏洞修補公告原始日期。四類均檢視官方來源，F1 不硬湊。Check Point 版本表未能讀取，未刊未核實修補資訊。每則完成配圖評估：PPI 用數據圖，漏洞與模型遷移用適合手機閱讀的原創流程圖。",
+  "hero": null,
+  "source_checks": [
+    {
+      "name": "BLS",
+      "url": "https://www.bls.gov/news.release/ppi.nr0.htm",
+      "status": "checked",
+      "note": "市場：實讀 10 月 PPI 原文，核對月比、年比、9 月修正值與發布時間；存檔頁未讀取，使用本次實讀的現行發布頁。",
+      "checked_at": "2026-11-14T05:07:20+08:00"
+    },
+    {
+      "name": "CISA KEV",
+      "url": "https://raw.githubusercontent.com/cisagov/kev-data/main/known_exploited_vulnerabilities.json",
+      "status": "checked",
+      "note": "重大漏洞：實讀版本 2026.11.13、1781 筆，新增 UnrealIRCd 與 Check Point；未重刊前期漏洞。",
+      "checked_at": "2026-11-14T05:07:20+08:00"
+    },
+    {
+      "name": "UnrealIRCd",
+      "url": "https://forums.unrealircd.org/viewtopic.php?t=9487",
+      "status": "checked",
+      "note": "重大漏洞：核對原始公告日期、已利用、受影響版本與修補方式；只刊防護重點。",
+      "checked_at": "2026-11-14T05:07:20+08:00"
+    },
+    {
+      "name": "Check Point",
+      "url": "https://support.checkpoint.com/results/sk/sk1000362",
+      "status": "failed",
+      "note": "重大漏洞：官方頁要求 JavaScript／人機驗證，未讀到修補版本表；未刊未確認版本資訊，不把此失敗當無新聞。",
+      "checked_at": "2026-11-14T05:07:20+08:00"
+    },
+    {
+      "name": "GitHub",
+      "url": "https://github.blog/changelog/2026-11-13-upcoming-deprecation-of-selected-github-copilot-models-in-december/",
+      "status": "checked",
+      "note": "科技：閱讀 Copilot 淘汰清單、到期日及個人年繳例外，未使用 Gemini 或另計費 API。",
+      "checked_at": "2026-11-14T05:07:20+08:00"
+    },
+    {
+      "name": "Formula 1",
+      "url": "https://www.formula1.com/en/latest",
+      "status": "checked",
+      "note": "F1：檢視官方列表，主要為訪談、回顧、青年系列與賽前預測；未選出重大 F1 正賽／規則／人事新進展，不重刊前期 Racing Bulls。",
+      "checked_at": "2026-11-14T05:07:20+08:00"
+    },
+    {
+      "name": "Federal Reserve",
+      "url": "https://www.federalreserve.gov/newsevents.htm",
+      "status": "checked",
+      "note": "市場：檢視央行更新；本期選入重要的新通膨數據，不例行重刊會議時程或官員舊演說。",
+      "checked_at": "2026-11-14T05:07:20+08:00"
+    }
+  ],
+  "stories": [
+    {
+      "id": "us-october-ppi",
+      "category": "markets",
+      "title": "美國 10 月 PPI 月增降至 0.3%，年增仍達 6.5%",
+      "teaser": "BLS 公布最終需求 PPI 季調月增 0.3%，低於修正後 9 月的 1.4%；未季調年增 6.5%，月度放緩與年度壓力必須分開看。",
+      "summary": "美國 10 月最終需求 PPI 月增 0.3%、年增 6.5%；商品與服務分別月增 0.5%、0.2%。",
+      "why": "生產端通膨是評估成本與利率風險的重要資料，但不能直接當成 CPI 或降息訊號。",
+      "limit": "未核實市場預期與收盤反應，不使用超預期等比較，也不把價格走勢歸因於單一數據。",
+      "details": [
+        {
+          "heading": "數據與比較基準",
+          "points": [
+            "BLS 於 11 月 13 日美東 08:30（臺灣 21:30）公布 10 月數據：最終需求 PPI 經季節調整月增 0.3%，前月修正後為 1.4%；未季調年增 6.5%，為 2022 年 11 月以來最大增幅。",
+            "最終需求商品月增 0.5%、服務月增 0.2%；排除食品、能源及貿易服務後，指數月增 0.5%、年增 4.9%。不同排除方式的指標不能混用。"
+          ]
+        },
+        {
+          "heading": "怎麼理解",
+          "points": [
+            "月增放緩表示相對前月的上漲速度下降，不表示價格下跌；年增比較去年同月，回答的是另一個問題。9 月數據已有修正，應採本次發布的比較值。",
+            "編輯解讀：生產端成本仍有壓力，但 PPI 與消費者物價的涵蓋範圍不同，不能直接預言 CPI、政策決策或投資報酬。本期僅報官方數據，不提供買賣建議。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "BLS 原始發布",
+          "url": "https://www.bls.gov/news.release/ppi.nr0.htm",
+          "published": "2026-11-13",
+          "checked_at": "2026-11-14T05:07:20+08:00",
+          "verification_method": "web",
+          "verification_note": "本次網頁工具實讀 BLS PPI News Release Summary，標示 11 月 13 日美東 08:30；核對 10 月月增 0.3%、9 月修正 1.4%、年增 6.5%，商品 0.5%、服務 0.2% 及排除食品能源貿易服務 0.5%／4.9%；直接 HTTP 如為 403，可用此實讀證據，存檔頁未能讀取。"
+        }
+      ],
+      "image": {
+        "image": "assets/ppi-monthly-2026-11-14.svg",
+        "alt": "PPI 季調月增率：9 月修正後 1.4%，10 月 0.3%，共同以零為起點；10 月未季調年增 6.5% 另列，不混用比較基準。",
+        "kind": "original",
+        "credit": "Daily Brief 原創圖表；數據來源：BLS 2026 年 11 月 13 日 PPI 發布。"
+      }
+    },
+    {
+      "id": "unrealircd-kev",
+      "category": "security",
+      "title": "UnrealIRCd 嚴重漏洞列入 KEV，連線伺服器網路優先修補",
+      "teaser": "CISA 11 月 13 日新增 CVE-2026-114713；廠商已確認實際利用。管理者應套用官方熱修補或升級至 6.2.7.1，並確認每台伺服器生效。",
+      "summary": "UnrealIRCd 漏洞可讓一般使用者在連結伺服器的 IRC 網路取得伺服器指令權限；修補版與熱修補已提供。",
+      "why": "風險涉及跨伺服器管理權限，僅處理單台或只做暫時過濾可能留下缺口。",
+      "limit": "不是作業系統 root 漏洞；CISA 期限針對適用聯邦機關。原始修補公告為 11 月 7 日，本期新進展為 KEV 收錄。",
+      "details": [
+        {
+          "heading": "影響與新進展",
+          "points": [
+            "CISA 11 月 13 日將 CVE-2026-114713 列入已遭利用目錄；其描述涉及兩台以上連結伺服器的 IRC 網路，一般使用者可能觸發以伺服器權限執行的指令。廠商也已確認網路上的實際利用。",
+            "官方 11 月 7 日公告提供 UnrealIRCd 6.0.0–6.2.7 的熱修補，或升級至 6.2.7.1；5.x 也受影響但已停止支援，應遷移至受支援版本。"
+          ]
+        },
+        {
+          "heading": "處理順序",
+          "points": [
+            "依官方公告先採適用的暫時緩解，再逐台套用熱修補並驗證；Windows 或無法熱修補時，升級並重啟。不要只看到工具成功訊息就略過各節點的生效確認。",
+            "公告的暫時過濾有版本條件，也不能修復同批全部問題。CISA 所列 11 月 16 日期限不是全球統一要求；若懷疑入侵，修補之外仍須檢查異常管理操作。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "UnrealIRCd 官方修補公告",
+          "url": "https://forums.unrealircd.org/viewtopic.php?t=9487",
+          "published": "2026-11-07",
+          "checked_at": "2026-11-14T05:07:20+08:00",
+          "verification_method": "web",
+          "verification_note": "本次以網頁工具實際閱讀 UnrealIRCd 官方論壇原文，作者 Syzop、原始日期 2026-11-07；核對 UPDATE 已出現實際利用、6.0.0–6.2.7 熱修補與 6.2.7.1 升級、Windows／熱修補失敗須升級、逐台檢查模組狀態及 5.x 停止支援提醒。直接 HTTP 為 403，未以摘要代替原文。"
+        },
+        {
+          "name": "CISA KEV 新增紀錄",
+          "url": "https://raw.githubusercontent.com/cisagov/kev-data/main/known_exploited_vulnerabilities.json",
+          "published": "2026-11-13",
+          "checked_at": "2026-11-14T05:07:20+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "盤點每個連結節點與版本",
+          "依官方條件先做暫時緩解",
+          "熱修補或升級並逐台驗證"
+        ],
+        "caption": "原創防護流程：暫時緩解不等於完整修補；Windows 或熱修補失敗時依公告升級並重啟。"
+      }
+    },
+    {
+      "id": "copilot-december-model-retirement",
+      "category": "tech",
+      "title": "Copilot 預告 12 月 14 日淘汰部分模型，工作流程先盤點",
+      "teaser": "GitHub 公布六款模型的淘汰安排，涵蓋聊天、編輯、代理與補全。管理者應確認替代模型政策；Haiku 4.5 的個人年繳訂閱有例外。",
+      "summary": "GitHub 11 月 13 日預告部分 Copilot 模型將於 12 月 14 日淘汰，請使用者提前更新工作流程與整合。",
+      "why": "固定指定模型的團隊需要提前驗證替代選項與權限，避免到期才發現工作流程不可用。",
+      "limit": "這是 GitHub Copilot 內的可用性變更，不代表原廠 API 全面停用；本流程未啟用或呼叫任何另計費模型。",
+      "details": [
+        {
+          "heading": "生效日與範圍",
+          "points": [
+            "GitHub 公告 12 月 14 日起在 Copilot 聊天、行內編輯、ask／agent 模式及程式碼補全中淘汰六款模型，包括 Claude Fable 5、Haiku 4.5、兩款 Gemini、Grok 4.6 與 Kimi K3。",
+            "公告建議 Fable 5 改用 5.1、Haiku 4.5 改用 5.5；Kimi K3 替代方案尚待公布。個人 Copilot 年繳訂閱仍可使用 Haiku 4.5，不適用該項淘汰。"
+          ]
+        },
+        {
+          "heading": "團隊先確認什麼",
+          "points": [
+            "先盤點固定模型的整合與日常工作流程，再確認替代模型能否在團隊政策下啟用並測試。Business／Enterprise 若採預設啟用政策，建議替代模型通常自動啟用；全域或個別停用設定仍會影響存取。",
+            "這是 Copilot 平台內的淘汰日，不應延伸成模型原廠其他產品或 API 同日停止服務。遷移不只換名稱，也應檢查結果、限制與使用權限；完整名單回到原公告。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "GitHub Changelog",
+          "url": "https://github.blog/changelog/2026-11-13-upcoming-deprecation-of-selected-github-copilot-models-in-december/",
+          "published": "2026-11-13",
+          "checked_at": "2026-11-14T05:07:20+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "現在：盤點固定模型與整合",
+          "到期前：啟用替代方案並測試",
+          "12 月 14 日：淘汰生效"
+        ],
+        "caption": "原創遷移時間線；Haiku 4.5 個人年繳例外，Kimi K3 替代方案仍待公告。"
+      }
+    }
+  ],
+  "visual_review": [
+    {
+      "story_id": "us-october-ppi",
+      "decision": "diagram",
+      "reason": "月比與年比容易混淆；以共同零基準比較兩個月的月增率，年比另列提示。",
+      "implementation": "assets/ppi-monthly-2026-11-14.svg"
+    },
+    {
+      "story_id": "unrealircd-kev",
+      "decision": "diagram",
+      "reason": "修補需要分辨暫時緩解與逐台完整修補，流程圖比無關事件照片更能指引理解。",
+      "implementation": "visual.type=flow"
+    },
+    {
+      "story_id": "copilot-december-model-retirement",
+      "decision": "diagram",
+      "reason": "需要分清公告、到期前準備與淘汰日，時間線有助安排遷移。",
+      "implementation": "visual.type=flow"
+    }
+  ]
+}
