@@ -1,0 +1,238 @@
+{
+  "date": "2026-11-15",
+  "title": "服務恢復之後，仍有需要逐項確認的事。",
+  "intro": "更新 Microsoft 365 恢復紀錄與 JetBlue 復航安排；四類均已掃描，不重刊昨日數據或以傳聞湊數。",
+  "generated_at": "2026-11-15T05:06:52+08:00",
+  "coverage": {
+    "from": "2026-11-13",
+    "to": "2026-11-14"
+  },
+  "editor_note": "新版依重大事件掃描後逐則評估視覺，兩則均製作原創圖解。Microsoft 採公開轉載並揭露限制；FAA 最新交通部與機場聲明讀取受阻，改以可實讀的航空公司公告限定報導復航範圍。Check Point 修補表仍待查，不將來源失敗當作沒有消息。",
+  "hero": null,
+  "source_checks": [
+    {
+      "name": "PennO365 Microsoft 事故紀錄",
+      "url": "https://mailservices.isc.upenn.edu/computing/email/penno365/alerts/ms-incidents.html",
+      "status": "checked",
+      "note": "科技：實讀 MO1550821 serviceRestored、11 月 14 日最新紀錄、初步原因及事後報告安排；公開轉載不是直接登入微軟管理中心。",
+      "checked_at": "2026-11-15T05:06:52+08:00"
+    },
+    {
+      "name": "JetBlue",
+      "url": "https://www.jetblue.com/travel-alerts",
+      "status": "checked",
+      "note": "科技基礎設施：實讀 11 月 14 日 13:00 ET 復航公告、適用原行程與改票期限；不推論所有航空公司正常。",
+      "checked_at": "2026-11-15T05:06:52+08:00"
+    },
+    {
+      "name": "FAA",
+      "url": "https://www.faa.gov/newsroom/faa-statement-nationwide-ground-stop",
+      "status": "checked",
+      "note": "科技基礎設施：實讀 11 月 13 日初步聲明，確認多個航管中心通訊問題；該頁未更新恢復狀態。",
+      "checked_at": "2026-11-15T05:06:52+08:00"
+    },
+    {
+      "name": "Federal Reserve",
+      "url": "https://www.federalreserve.gov/newsevents.htm",
+      "status": "checked",
+      "note": "市場：檢視官方近期公告；未選入新的重大政策決策，不重刊昨日 PPI 與例行價格變動。",
+      "checked_at": "2026-11-15T05:06:52+08:00"
+    },
+    {
+      "name": "CISA KEV",
+      "url": "https://raw.githubusercontent.com/cisagov/kev-data/main/known_exploited_vulnerabilities.json",
+      "status": "checked",
+      "note": "資安：實讀 2026.11.13 版本、1781 筆；不重刊 UnrealIRCd。Check Point 修補表仍需進一步查核。",
+      "checked_at": "2026-11-15T05:06:52+08:00"
+    },
+    {
+      "name": "Formula 1",
+      "url": "https://www.formula1.com/en/latest",
+      "status": "checked",
+      "note": "F1：閱讀官方最新列表，主要訪談、回顧、預測與已刊 Racing Bulls 陣容；未選入新的重大結果或人事。",
+      "checked_at": "2026-11-15T05:06:52+08:00"
+    },
+    {
+      "name": "Check Point",
+      "url": "https://support.checkpoint.com/results/sk/sk1000362",
+      "status": "failed",
+      "note": "官方頁要求 JavaScript／人機驗證，未取得受影響及修補版本；保留待查，不解讀成無資安消息。",
+      "checked_at": "2026-11-15T05:06:52+08:00"
+    },
+    {
+      "name": "Microsoft 公開狀態頁",
+      "url": "https://status.cloud.microsoft/",
+      "status": "failed",
+      "note": "動態頁無法讀取，以大學公開轉載事故紀錄查核，揭露轉載時間與限制。",
+      "checked_at": "2026-11-15T05:06:52+08:00"
+    }
+  ],
+  "stories": [
+    {
+      "id": "microsoft365-restored",
+      "category": "tech",
+      "title": "Microsoft 365 事故紀錄改為恢復，初步原因指向網路變更",
+      "teaser": "公開轉載的微軟事故紀錄已標為服務恢復，較昨日仍監測有實質進展；初步原因涉及先前網路容量升級與近期變更，完整事後報告仍待公布。",
+      "summary": "MO1550821 已標示 serviceRestored，初步原因為先前容量升級的問題在近期網路變更後浮現。",
+      "why": "恢復狀態與初步原因有助企業核對業務復原及追蹤後續改善，不能只以能登入判定所有工作流程正常。",
+      "limit": "來源為大學公開轉載，未直接登入微軟管理中心；各租戶仍須自行核對，完整事後分析尚未公布。",
+      "update_of": "2026-11-14",
+      "update_note": "前期仍在延長監測；新紀錄已標示 serviceRestored，並提供初步原因與事後報告安排。",
+      "details": [
+        {
+          "heading": "相較昨日更新了什麼",
+          "points": [
+            "賓州大學公開轉載的 Microsoft MO1550821 紀錄已標示 serviceRestored；最新更新為 11 月 14 日 14:24 UTC（臺灣 22:24）。這是事故紀錄狀態的實質變化，不是所有租戶的即時健康保證。",
+            "初步原因指向先前網路容量升級留下的問題，在近期網路變更後浮現。微軟表示屬技術問題，與網攻或 AI／代理無關；完整事後分析仍待公布。"
+          ]
+        },
+        {
+          "heading": "恢復後仍要確認",
+          "points": [
+            "紀錄說明採分階段恢復並驗證穩定性，預計於兩個工作日內提供初步、五個工作日內提供最終事後報告。管理者仍應確認積壓郵件及關鍵整合流程。",
+            "受影響的是 Exchange 與依賴它的部分功能，不能說所有 Teams 核心通話聊天都中斷；也不能把這起事故與 FAA 通訊故障連成同一原因。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "賓州大學公開轉載 Microsoft 事故紀錄",
+          "url": "https://mailservices.isc.upenn.edu/computing/email/penno365/alerts/ms-incidents.html",
+          "published": "2026-11-14",
+          "checked_at": "2026-11-15T05:06:52+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "昨日：持續恢復與監測",
+          "新紀錄：serviceRestored",
+          "後續：初步及最終事後報告"
+        ],
+        "caption": "原創恢復進展圖；依 MO1550821 公開轉載紀錄，狀態更新為臺灣 11 月 14 日 22:24。"
+      }
+    },
+    {
+      "id": "jetblue-resumes-after-ground-stop",
+      "category": "tech",
+      "title": "航管事故後 JetBlue 宣布復航，改票與退款有期限",
+      "teaser": "JetBlue 官方更新確認航班已恢復，正常營運仍在重建。11 月 13–15 日的適用旅客可依條件改票或退款，出發前仍須逐班查詢。",
+      "summary": "JetBlue 11 月 14 日美東 13:00 公告航管全國起飛限制後已復航，並提供適用旅客改票及退款安排。",
+      "why": "起飛限制後的復航不等於航班全面準點，旅客需要可直接採取行動的官方資訊。",
+      "limit": "只適用 JetBlue 公告及其條件，不代表所有航空公司均恢復，也未核實最終航管根因。",
+      "details": [
+        {
+          "heading": "復航與行程調整",
+          "points": [
+            "JetBlue 於 11 月 14 日美東 13:00（臺灣 15 日 02:00）更新官方頁：全國起飛限制後航班已恢復，仍在恢復正常營運。不要把復航解讀成每班都準點。",
+            "原訂 11 月 13–15 日、且於 13 日之前訂購的 JetBlue 營運航班，依公告可免更改／取消費及票價差額，改至 18 日前旅行；須在原航班出發前辦理。"
+          ]
+        },
+        {
+          "heading": "出發前再確認",
+          "points": [
+            "符合條件者也可在原出發時間前取消並退回原付款方式；十人以上團體需另聯絡航空公司。詳細資格以官方最新條款為準。",
+            "FAA 原始聲明確認多個航管中心通訊問題，但該頁仍為初步資訊；本則用航空公司自己的復航公告確認服務進展，不推論全美營運已正常或事故最終原因。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "JetBlue 官方旅行公告",
+          "url": "https://www.jetblue.com/travel-alerts",
+          "published": "2026-11-14",
+          "checked_at": "2026-11-15T05:06:52+08:00"
+        },
+        {
+          "name": "FAA 初步事故聲明",
+          "url": "https://www.faa.gov/newsroom/faa-statement-nationwide-ground-stop",
+          "published": "2026-11-13",
+          "checked_at": "2026-11-15T05:06:52+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "先查個別航班最新狀態",
+          "核對原行程及訂票日期",
+          "原出發前辦理改票或退款"
+        ],
+        "caption": "原創旅客處理流程；此處資格與期限僅指 JetBlue 11 月 14 日公告。"
+      }
+    }
+  ],
+  "visual_review": [
+    {
+      "story_id": "microsoft365-restored",
+      "decision": "diagram",
+      "reason": "用狀態流程區分先前監測、恢復與尚待公布報告，避免沿用昨日未結案圖。",
+      "implementation": "visual.type=flow"
+    },
+    {
+      "story_id": "jetblue-resumes-after-ground-stop",
+      "decision": "diagram",
+      "reason": "旅客需要按順序核對航班、資格與辦理期限，流程比無法確認權利的機場照片更有幫助。",
+      "implementation": "visual.type=flow"
+    }
+  ],
+  "discovery_review": {
+    "searches": [
+      {
+        "topic": "November 14 2026 Microsoft 365 outage FAA ground stop restored",
+        "checked_at": "2026-11-15T05:06:52+08:00"
+      },
+      {
+        "topic": "November 14 2026 global markets major news cybersecurity Formula 1",
+        "checked_at": "2026-11-15T05:06:52+08:00"
+      },
+      {
+        "topic": "November 14 2026 cybersecurity exploited vulnerability security news",
+        "checked_at": "2026-11-15T05:06:52+08:00"
+      },
+      {
+        "topic": "November 14 2026 markets Reuters central bank stocks",
+        "checked_at": "2026-11-15T05:06:52+08:00"
+      },
+      {
+        "topic": "November 14 2026 Formula 1 news",
+        "checked_at": "2026-11-15T05:06:52+08:00"
+      }
+    ],
+    "candidates": [
+      {
+        "event": "Microsoft 365 恢復",
+        "url": "https://mailservices.isc.upenn.edu/computing/email/penno365/alerts/ms-incidents.html",
+        "decision": "included",
+        "reason": "較昨日有確認狀態變化與初步原因。"
+      },
+      {
+        "event": "航管事故後 JetBlue 復航",
+        "url": "https://www.jetblue.com/travel-alerts",
+        "decision": "included",
+        "reason": "可讀官方營運及旅客措施，限定報導範圍。"
+      },
+      {
+        "event": "Check Point 已利用漏洞",
+        "url": "https://support.checkpoint.com/results/sk/sk1000362",
+        "decision": "pending",
+        "reason": "官方版本與修補表無法讀取，不捏造。"
+      },
+      {
+        "event": "市場例行漲跌與昨日 PPI",
+        "url": "https://www.federalreserve.gov/newsevents.htm",
+        "decision": "omitted",
+        "reason": "未找到需另刊的新重大政策；不重複數據。"
+      },
+      {
+        "event": "F1 訪談與陣容舊聞",
+        "url": "https://www.formula1.com/en/latest",
+        "decision": "omitted",
+        "reason": "未有重大新進展，不以預測湊數。"
+      }
+    ],
+    "final_check": {
+      "checked_at": "2026-11-15T05:06:52+08:00",
+      "result": "再次比對重大頭條，優先兩起基礎設施事故的實質進展；未核實最終根因及漏洞修補表不刊為事實，無法保證零遺漏。"
+    }
+  }
+}
