@@ -1,13 +1,13 @@
 {
   "date": "2026-11-14",
-  "title": "通膨看清比較基準，漏洞與模型遷移提前處理。",
-  "intro": "美國 PPI 月增放緩、年增仍高；UnrealIRCd 已利用漏洞新增至 KEV。開發者另留意 Copilot 的 12 月模型淘汰日與例外。",
-  "generated_at": "2026-11-14T05:07:20+08:00",
+  "title": "從辦公室到機場，兩起基礎設施事故都要分清恢復狀態。",
+  "intro": "Microsoft 365 大規模中斷仍在恢復監測，美國航管通訊故障則造成全國起飛限制。另看美國 PPI、已遭利用漏洞與開發工作流程的遷移提醒。",
+  "generated_at": "2026-11-14T09:12:10+08:00",
   "coverage": {
     "from": "2026-11-07",
     "to": "2026-11-13"
   },
-  "editor_note": "新進展集中於 11 月 13 日；11 月 7 日僅為保留漏洞修補公告原始日期。四類均檢視官方來源，F1 不硬湊。Check Point 版本表未能讀取，未刊未核實修補資訊。每則完成配圖評估：PPI 用數據圖，漏洞與模型遷移用適合手機閱讀的原創流程圖。",
+  "editor_note": "本期修訂補入原版遺漏的 Microsoft 365 與 FAA 重大事故，依影響優先排序；保留原刊期與原有文章網址。兩起事故沒有已核實因果關係。Microsoft 採最新取得的官方紀錄公開轉載，FAA 採可信媒體原文，均揭露即時狀態頁讀取限制。圖表保留來源時間，原有新聞與查核日期不偽裝成重新發生。",
   "hero": null,
   "source_checks": [
     {
@@ -58,9 +58,148 @@
       "status": "checked",
       "note": "市場：檢視央行更新；本期選入重要的新通膨數據，不例行重刊會議時程或官員舊演說。",
       "checked_at": "2026-11-14T05:07:20+08:00"
+    },
+    {
+      "name": "Microsoft 365 公開狀態頁",
+      "url": "https://status.cloud.microsoft/",
+      "status": "failed",
+      "note": "官方動態頁僅顯示需 JavaScript；改讀 Microsoft 事故紀錄的大學公開轉載與媒體原文，不宣稱直接讀到官方狀態。",
+      "checked_at": "2026-11-14T09:12:10+08:00"
+    },
+    {
+      "name": "PennO365 事故紀錄",
+      "url": "https://mailservices.isc.upenn.edu/computing/email/penno365/alerts/ms-incidents.html",
+      "status": "checked",
+      "note": "實讀 MO1550821 最新取得 11 月 13 日 22:00:22 UTC 更新，持續恢復、監測與郵件積壓未結案，區分 Teams 核心與依賴功能。",
+      "checked_at": "2026-11-14T09:12:10+08:00"
+    },
+    {
+      "name": "BleepingComputer",
+      "url": "https://www.bleepingcomputer.com/news/microsoft/massive-microsoft-365-outage-disrupts-outlook-teams-copilot-worldwide/",
+      "status": "checked",
+      "note": "閱讀受影響服務與 11 月 13 日更新，與事故紀錄交叉核對，不以回復進展當全面正常。",
+      "checked_at": "2026-11-14T09:12:10+08:00"
+    },
+    {
+      "name": "FAA 即時狀態",
+      "url": "https://nasstatus.faa.gov/",
+      "status": "failed",
+      "note": "官方動態頁需 JavaScript，未讀到即時限制；另讀 Reuters 與 ABC13 已報導事實，不把早先狀態當即時狀態。",
+      "checked_at": "2026-11-14T09:12:10+08:00"
+    },
+    {
+      "name": "Reuters FAA 報導",
+      "url": "https://www.streetinsider.com/Reuters/FAA%2Bissues%2Bnational%2Bground%2Bstop%2Bdue%2Bto%2Bextraordinary%2Bcircumstance%2Band%2Breasons%2Bfor%2Bsafety/27343831.html",
+      "status": "checked",
+      "note": "實讀全國起飛限制、發布時間、空中航班可落地及原因仍待調查。",
+      "checked_at": "2026-11-14T09:12:10+08:00"
+    },
+    {
+      "name": "ABC13 FAA 報導",
+      "url": "https://abc13.com/post/faa-ground-stop-ordered-nationwide-including-iah-hobby-airports/20038938/",
+      "status": "checked",
+      "note": "實讀現場報導及 United 聲明，區分國內出發、國際逐案處理與已在空中航班。",
+      "checked_at": "2026-11-14T09:12:10+08:00"
     }
   ],
   "stories": [
+    {
+      "id": "microsoft365-outage-recovery",
+      "category": "tech",
+      "title": "Microsoft 365 大規模中斷後持續恢復，事故尚未結案",
+      "teaser": "Outlook／Exchange 郵件及部分依賴功能受影響。最新取得的 11 月 14 日臺灣 06:00 更新仍在監測恢復與郵件積壓，不能當成全部服務已正常。",
+      "summary": "MO1550821 大規模事故影響郵件及多項 Microsoft 365 依賴功能；最新取得更新表示持續恢復，尚未結案。",
+      "why": "企業郵件、排程與依賴工作資料的功能同時受影響，影響範圍與業務持續性遠大於一般產品更新。",
+      "limit": "Microsoft 公開狀態頁需 JavaScript，改讀賓州大學公開轉載的 Microsoft 事故紀錄並與獨立媒體交叉核對；狀態截至取得的更新，並非即時服務保證。",
+      "details": [
+        {
+          "heading": "影響與目前進展",
+          "points": [
+            "Microsoft 365 套件事故 MO1550821 記錄起於 11 月 12 日 18:26 UTC（臺灣 13 日 02:26）；這是套件事故時間，不能當作所有產品的共同起始時間。Outlook／Exchange 信箱與郵件投遞、部分日曆與 Copilot 工作資料功能受影響。",
+            "賓州大學公開轉載的 Microsoft 最新取得更新為 11 月 13 日 22:00 UTC（臺灣 14 日 06:00）：服務持續恢復，但仍須延長監測並確認積壓郵件處理，事故尚未標為結案。"
+          ]
+        },
+        {
+          "heading": "不要把影響範圍放大",
+          "points": [
+            "紀錄指出 Teams 通話、會議及一般聊天等多數核心功能不在同一影響範圍，依賴 Exchange 的排程等情境才受波及；不能簡化成所有 Teams 功能全部中斷。",
+            "企業應核對自身租戶狀態、郵件投遞與業務備援。最終根因仍未在該紀錄公布；沒有證據就不能稱為網攻，也不能把局部恢復當成全面正常。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "賓州大學公開轉載 Microsoft 事故紀錄",
+          "url": "https://mailservices.isc.upenn.edu/computing/email/penno365/alerts/ms-incidents.html",
+          "published": "2026-11-13",
+          "checked_at": "2026-11-14T09:12:10+08:00"
+        },
+        {
+          "name": "BleepingComputer 現場報導與更新",
+          "url": "https://www.bleepingcomputer.com/news/microsoft/massive-microsoft-365-outage-disrupts-outlook-teams-copilot-worldwide/",
+          "published": "2026-11-12",
+          "checked_at": "2026-11-14T09:12:10+08:00",
+          "verification_method": "web",
+          "verification_note": "本次網頁工具實讀 BleepingComputer 原文及 11 月 13 日 08:05／12:06 美東更新：服務逐步恢復、仍有間歇連線／投遞延遲、48 小時郵件逾時保護，未公布最終根因；本機直接 HTTP 403，非以搜尋摘要代替。"
+        }
+      ],
+      "image": {
+        "image": "assets/microsoft365-impact-2026-11-14.svg",
+        "alt": "Microsoft 365 事故影響 Exchange 郵件與部分依賴功能；Teams 多數核心通話聊天未受同一影響。最新取得臺灣 11 月 14 日 06:00 更新為持續恢復、仍監測與處理積壓，未結案。",
+        "kind": "original",
+        "credit": "Daily Brief 原創資訊圖；依賓州大學公開轉載的 Microsoft MO1550821 事故紀錄整理，狀態時間見圖。"
+      }
+    },
+    {
+      "id": "faa-nationwide-ground-stop",
+      "category": "tech",
+      "title": "美國航管通訊故障觸發全國起飛限制，航班須逐班確認",
+      "teaser": "FAA 在 11 月 13 日美東下午因航管通訊問題下令全國 ground stop。限制主要針對起飛，在空中航班可落地；不能推論所有飛行一律停飛。",
+      "summary": "美國 FAA 因航管中心通訊故障下達全國起飛限制，航空公司調整航班並處理取消、轉降與機場壅塞。",
+      "why": "關鍵通訊系統故障造成跨機場連鎖影響，是科技基礎設施與交通營運的重大事件。",
+      "limit": "FAA 即時狀態頁需 JavaScript；此則依已讀 Reuters／ABC13 報導與其載明 FAA、航空公司說明，不宣稱查核時每座機場仍受同一限制，也未證實與微軟事故有關。",
+      "details": [
+        {
+          "heading": "已確認的事件",
+          "points": [
+            "Reuters 報導 FAA 於 11 月 13 日美東 15:54（臺灣 14 日 04:54）因航管中心通訊問題下達全國 ground stop。這是起飛放行限制，在空中航班仍可落地，不能解讀為全美空域完全關閉。",
+            "ABC13 公布的 United 說明指出，限制期間新的美國國內航班不出發，國際出發由 FAA 逐案處理；機場壅塞也可能造成取消與轉降。"
+          ]
+        },
+        {
+          "heading": "旅客需要確認什麼",
+          "points": [
+            "出發前查看航空公司最新航班、轉機與改票資訊；就算限制後續解除，飛機與機組調度仍可能延遲。本期不把早先報導中的限制直接當成查核當下全國即時狀態。",
+            "FAA 即時頁本次未能讀取完整內容；來源尚未證實最終根因與復原時間。也沒有取得與 Microsoft 365 中斷有因果關係的證據，兩件事故分開報導。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Reuters 原文（StreetInsider 刊載）",
+          "url": "https://www.streetinsider.com/Reuters/FAA%2Bissues%2Bnational%2Bground%2Bstop%2Bdue%2Bto%2Bextraordinary%2Bcircumstance%2Band%2Breasons%2Bfor%2Bsafety/27343831.html",
+          "published": "2026-11-13",
+          "checked_at": "2026-11-14T09:12:10+08:00",
+          "verification_method": "web",
+          "verification_note": "本次網頁工具實讀 StreetInsider 刊載 Reuters 原文，作者 David Shepardson、Rajesh Kumar Singh、Dan Catchpole；正文確認 FAA 於 11 月 13 日 15:54 美東下達全國起飛限制、空中航班允許落地、通訊故障原因仍在調查。直接 HTTP 403，原文已與 ABC13 現場及航空公司聲明交叉核對。"
+        },
+        {
+          "name": "ABC13 現場報導與航空公司聲明",
+          "url": "https://abc13.com/post/faa-ground-stop-ordered-nationwide-including-iah-hobby-airports/20038938/",
+          "published": "2026-11-13",
+          "checked_at": "2026-11-14T09:12:10+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "出發前：查航空公司航班狀態",
+          "轉機／取消：確認備選行程",
+          "變更安排：核對改票豁免與通知"
+        ],
+        "caption": "原創旅客應對流程；限制是否解除與個別航班能否準時是兩個問題。"
+      }
+    },
     {
       "id": "us-october-ppi",
       "category": "markets",
@@ -197,6 +336,18 @@
   ],
   "visual_review": [
     {
+      "story_id": "microsoft365-outage-recovery",
+      "decision": "diagram",
+      "reason": "多項服務受到不同程度影響；對照圖清楚區分受影響、未受同一影響與仍在監測，避免全掛或全好兩種錯讀。",
+      "implementation": "assets/microsoft365-impact-2026-11-14.svg"
+    },
+    {
+      "story_id": "faa-nationwide-ground-stop",
+      "decision": "diagram",
+      "reason": "現場照片權利未確認，也不能表達限制變化；原創旅客流程可清楚提示查航班、轉機與改票。",
+      "implementation": "visual.type=flow"
+    },
+    {
       "story_id": "us-october-ppi",
       "decision": "diagram",
       "reason": "月比與年比容易混淆；以共同零基準比較兩個月的月增率，年比另列提示。",
@@ -214,5 +365,85 @@
       "reason": "需要分清公告、到期前準備與淘汰日，時間線有助安排遷移。",
       "implementation": "visual.type=flow"
     }
-  ]
+  ],
+  "revision_note": {
+    "revised_at": "2026-11-14T09:12:10+08:00",
+    "reason": "使用者要求依新版重大事件掃描與配圖流程重整當期。"
+  },
+  "discovery_review": {
+    "searches": [
+      {
+        "topic": "Microsoft 365 outage November 14 2026 recovery MO1550821",
+        "checked_at": "2026-11-14T09:12:10+08:00"
+      },
+      {
+        "topic": "November 14 2026 major technology markets security F1 news",
+        "checked_at": "2026-11-14T09:12:10+08:00"
+      },
+      {
+        "topic": "site.faa.gov November 13 2026 ground stop communications outage",
+        "checked_at": "2026-11-14T09:12:10+08:00"
+      },
+      {
+        "topic": "November 14 2026 major cybersecurity exploited outage",
+        "checked_at": "2026-11-14T09:12:10+08:00"
+      },
+      {
+        "topic": "November 13 2026 markets major stocks bonds Reuters PPI",
+        "checked_at": "2026-11-14T09:12:10+08:00"
+      },
+      {
+        "topic": "November 14 2026 F1 major news official",
+        "checked_at": "2026-11-14T09:12:10+08:00"
+      }
+    ],
+    "candidates": [
+      {
+        "event": "Microsoft 365 大規模中斷後持續恢復，事故尚未結案",
+        "url": "https://mailservices.isc.upenn.edu/computing/email/penno365/alerts/ms-incidents.html",
+        "decision": "included",
+        "reason": "跨服務重大中斷，原版漏報，優先補入並更新恢復限制。"
+      },
+      {
+        "event": "美國航管通訊故障觸發全國起飛限制，航班須逐班確認",
+        "url": "https://www.streetinsider.com/Reuters/FAA%2Bissues%2Bnational%2Bground%2Bstop%2Bdue%2Bto%2Bextraordinary%2Bcircumstance%2Band%2Breasons%2Bfor%2Bsafety/27343831.html",
+        "decision": "included",
+        "reason": "關鍵通訊事故造成全國起飛限制，屬重大基礎設施事件。"
+      },
+      {
+        "event": "美國 PPI",
+        "url": "https://www.bls.gov/news.release/ppi.nr0.htm",
+        "decision": "included",
+        "reason": "新通膨原始數據，保留已核對數字與比較基準。"
+      },
+      {
+        "event": "UnrealIRCd 已利用漏洞",
+        "url": "https://forums.unrealircd.org/viewtopic.php?t=9487",
+        "decision": "included",
+        "reason": "新列 KEV 且有實際利用，保留防護資訊。"
+      },
+      {
+        "event": "Copilot 模型淘汰",
+        "url": "https://github.blog/changelog/2026-11-13-upcoming-deprecation-of-selected-github-copilot-models-in-december/",
+        "decision": "included",
+        "reason": "保留已刊且有到期行動需求的文章，排序降於重大事故。"
+      },
+      {
+        "event": "F1 訪談／賽前預測",
+        "url": "https://www.formula1.com/en/latest",
+        "decision": "omitted",
+        "reason": "官方列表未見需另報的重大新賽果人事規則，不重刊昨日陣容。"
+      },
+      {
+        "event": "Check Point 新列漏洞",
+        "url": "https://support.checkpoint.com/results/sk/sk1000362",
+        "decision": "pending",
+        "reason": "原版記錄版本表無法讀取；未補刊未確認修補資訊。"
+      }
+    ],
+    "final_check": {
+      "checked_at": "2026-11-14T09:12:10+08:00",
+      "result": "比對跨來源重大事件，補入 Microsoft 與 FAA；市場保留原始通膨數據，資安保留已利用漏洞，F1 不以傳聞湊數。不能保證零遺漏。"
+    }
+  }
 }
