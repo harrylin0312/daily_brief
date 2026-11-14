@@ -69,7 +69,9 @@ def esc(value):
 
 
 def config(root=ROOT):
-    return json.loads((root / "site.json").read_text())
+    cfg = json.loads((root / "site.json").read_text())
+    cfg["css_version"] = hashlib.sha256((root / "assets/site.css").read_bytes()).hexdigest()[:12]
+    return cfg
 
 
 def today():
@@ -186,7 +188,7 @@ def page(title, description, body, prefix, canonical, cfg):
 <title>{esc(title)}</title><meta name="description" content="{esc(description)}"><meta name="theme-color" content="#f5f3ed">
 <meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(description)}"><meta property="og:type" content="website">
 <meta property="og:url" content="{esc(canonical)}"><link rel="canonical" href="{esc(canonical)}">
-<link rel="icon" href="{prefix}favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="{prefix}assets/site.css">
+<link rel="icon" href="{prefix}favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="{prefix}assets/site.css?v={cfg["css_version"]}">
 <link rel="alternate" type="application/atom+xml" title="每日快報" href="{prefix}feed.xml"><script src="{prefix}app.js" defer></script></head>
 <body><a class="skip" href="#main">跳到內容</a><div class="shell">
 <header class="masthead"><a class="brand" href="{prefix}index.html" aria-label="每日快報首頁"><span class="brand-mark" aria-hidden="true">d<span>•</span>b</span><span>DAILY BRIEF<small>每日快報</small></span></a>
