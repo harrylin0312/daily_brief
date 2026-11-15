@@ -1,0 +1,255 @@
+{
+  "date": "2026-11-16",
+  "title": "急跌後的報價，與需要優先修補的漏洞。",
+  "intro": "比特幣週末急跌後反彈；Check Point 找到可讀官方替代公告，補足前期待查資訊。四類均已掃描，不以訪談、舊事故或小功能湊數。",
+  "generated_at": "2026-11-16T04:59:46+08:00",
+  "coverage": {
+    "from": "2026-11-12",
+    "to": "2026-11-15"
+  },
+  "editor_note": "Check Point 為前兩期因來源受限未報的 11 月 12–13 日資訊，今日補足查核並清楚保留原日期。市場採可實讀原始報導，引用的第三方統計與原因推測另列限制。兩則皆完成視覺評估，製作防護流程與報價對照圖。",
+  "hero": null,
+  "source_checks": [
+    {
+      "name": "Check Point CheckMates",
+      "url": "https://community.checkpoint.com/t5/General-Topics/ACTION-REQUIRED-Security-Advisory-Three-Vulnerabilities-Fixed-in/m-p/284887",
+      "status": "checked",
+      "note": "資安：實讀官方管理員公告，核對 R80.30–R82.20、已利用、新 JHF 與 Spark 範圍。",
+      "checked_at": "2026-11-16T04:59:46+08:00"
+    },
+    {
+      "name": "加拿大資安中心",
+      "url": "https://www.cyber.gc.ca/en/alerts-advisories/check-point-security-advisory-av26-1154",
+      "status": "checked",
+      "note": "資安：實讀 11 月 12 日公告及 13 日更新，確認利用與 KEV。",
+      "checked_at": "2026-11-16T04:59:46+08:00"
+    },
+    {
+      "name": "CISA KEV",
+      "url": "https://raw.githubusercontent.com/cisagov/kev-data/main/known_exploited_vulnerabilities.json",
+      "status": "checked",
+      "note": "資安：實讀 2026.11.13、1781 筆；未把目錄未更新當成全球無漏洞。",
+      "checked_at": "2026-11-16T04:59:46+08:00"
+    },
+    {
+      "name": "Federal Reserve",
+      "url": "https://www.federalreserve.gov/newsevents.htm",
+      "status": "checked",
+      "note": "市場：閱讀官方列表，未選入新的重大決策；另查加密市場重大變動。",
+      "checked_at": "2026-11-16T04:59:46+08:00"
+    },
+    {
+      "name": "Investing.com",
+      "url": "https://ca.investing.com/news/cryptocurrency-news/bitcoin-slides-toward-60000-as-etf-outflows-and-liquidations-intensify-4958935",
+      "status": "checked",
+      "note": "市場：實讀原始報導，核對報價時間與清算統計區間；不採未獨立核對 ETF 總量及原因推測為事實。",
+      "checked_at": "2026-11-16T04:59:46+08:00"
+    },
+    {
+      "name": "Formula 1",
+      "url": "https://www.formula1.com/en/latest",
+      "status": "checked",
+      "note": "F1：實讀最新列表為訪談、回顧與冠軍分析，無需重刊已報陣容或賽果。",
+      "checked_at": "2026-11-16T04:59:46+08:00"
+    },
+    {
+      "name": "Cloudflare",
+      "url": "https://www.cloudflarestatus.com/",
+      "status": "checked",
+      "note": "科技：實讀頁面未列近期事故，維護不當重大中斷；此結果不代表全部網路服務正常。",
+      "checked_at": "2026-11-16T04:59:46+08:00"
+    },
+    {
+      "name": "OpenAI Status",
+      "url": "https://status.openai.com/",
+      "status": "checked",
+      "note": "科技：實讀 Compliance API 成本資料延遲為 monitoring，不擴大成全面 ChatGPT 中斷；未列為重大新事故。",
+      "checked_at": "2026-11-16T04:59:46+08:00"
+    },
+    {
+      "name": "PennO365",
+      "url": "https://mailservices.isc.upenn.edu/computing/email/penno365/alerts/ms-incidents.html",
+      "status": "checked",
+      "note": "科技：檢視公開事故列表，不重刊昨日已報 Microsoft 恢復。",
+      "checked_at": "2026-11-16T04:59:46+08:00"
+    },
+    {
+      "name": "Apache",
+      "url": "https://httpd.apache.org/security/vulnerabilities_24.html",
+      "status": "checked",
+      "note": "資安：核對 11 月 11 日 2.4.71 修復及版本範圍；非近 48 小時新進展，本期優先已確認利用且補足待查的 Check Point。",
+      "checked_at": "2026-11-16T04:59:46+08:00"
+    }
+  ],
+  "stories": [
+    {
+      "id": "checkpoint-gaia-exploited",
+      "category": "security",
+      "title": "Check Point 已遭利用的 Gaia 漏洞，官方替代公告確認修補方向",
+      "teaser": "前兩期待查的漏洞現已找到可讀官方公告：CVE-2026-123039 影響 R80.30–R82.20 的多類設備，管理者應依產品版本安裝新的 Jumbo Hotfix。",
+      "summary": "Check Point 確認 DynamicCLI 本機權限提升漏洞有實際利用，受影響環境需按版本安裝新 JHF。",
+      "why": "防火牆與管理設備遭取得更高權限可能擴大入侵影響；已有利用證據，應優先處理。",
+      "limit": "公告原始日期為 11 月 12 日，本期是補足前兩期待查資訊，不是今日新漏洞。詳細 JHF take 表仍未讀取，不提供未確認套件編號。",
+      "details": [
+        {
+          "heading": "確認範圍與利用情況",
+          "points": [
+            "廠商官方社群公告確認 CVE-2026-123039 為 DynamicCLI 本機權限提升漏洞，影響 R80.30–R82.20 的 Management、Multi-Domain、Log Servers 與 Security Gateway，且已知有實際利用。不能把本機提權誤寫成無須前置條件的遠端入侵。",
+            "加拿大資安中心 11 月 13 日更新也確認已列 CISA KEV；此則補足前期待查資訊，並非把舊公告改成今日發生。"
+          ]
+        },
+        {
+          "heading": "防護處理",
+          "points": [
+            "依自身產品版本安裝新的 Jumbo Hotfix。官方另列暫停 DynamicCLI 的緩解方向，但會犧牲相關功能，應按官方維護程序評估。",
+            "詳細修補 take 表本次仍未取得，勿猜測版本或把其他漏洞的 October hotfix 當成同一修復。Spark 不受此批三項新漏洞影響，也不表示不受其他漏洞影響。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Check Point 官方 CheckMates 公告",
+          "url": "https://community.checkpoint.com/t5/General-Topics/ACTION-REQUIRED-Security-Advisory-Three-Vulnerabilities-Fixed-in/m-p/284887",
+          "published": "2026-11-12",
+          "checked_at": "2026-11-16T04:59:46+08:00",
+          "verification_method": "web",
+          "verification_note": "本次網頁工具實讀 Check Point 官方 CheckMates 管理員公告：CVE-2026-123039、7.8 High、R80.30–R82.20、實際利用、新 JHF、停用 DynamicCLI 會損失功能，Spark 不受此批三項新 CVE 影響。直接 HTTP 403；並已與加拿大資安中心原文交叉查核，未讀到詳細 take 表故未捏造編號。"
+        },
+        {
+          "name": "加拿大資安中心更新",
+          "url": "https://www.cyber.gc.ca/en/alerts-advisories/check-point-security-advisory-av26-1154",
+          "published": "2026-11-13",
+          "checked_at": "2026-11-16T04:59:46+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "盤點產品、角色與版本",
+          "依版本取得新 JHF",
+          "維護後驗證修補與異常紀錄"
+        ],
+        "caption": "原創防護流程；暫時停用功能與永久修補不同，詳細套件以廠商對應版本公告為準。"
+      }
+    },
+    {
+      "id": "bitcoin-weekend-selloff",
+      "category": "markets",
+      "title": "比特幣週末一度跌至約 6.2 萬美元，反彈仍伴隨清算壓力",
+      "teaser": "11 月 15 日報導記錄比特幣一度觸及 62,086 美元，15:15 UTC 約為 64,695 美元。這是不同時間的報價，不是單一交易日收盤。",
+      "summary": "比特幣週末跌至 7 月以來低位後回升至約 6.47 萬美元；報導同時指出加密市場出現大規模部位清算。",
+      "why": "大幅價格波動伴隨槓桿清算，反彈價格不足以單獨說明風險已解除。",
+      "limit": "報價依 Investing.com 當時紀錄，並非查核當下即時價；清算額由其引用 CoinGlass，未獨立重算。資金輪動說法是受訪者解讀，不能當成已證實單一原因。",
+      "details": [
+        {
+          "heading": "時間與比較基準",
+          "points": [
+            "Investing.com 11 月 15 日更新記錄，比特幣當日稍早觸及 62,086 美元，為 7 月 13 日以來低位；美東 10:15／UTC 15:15（臺灣 23:15）約為 64,695 美元。加密市場全天交易，這不是美股收盤價。",
+            "報導引用 CoinGlass 稱，截至新加坡週日早上之前的 24 小時，加密資產約 20 億美元部位遭清算。此區間與上述報價時點不同，不能當作完全同步的數據。"
+          ]
+        },
+        {
+          "heading": "原因仍需區分證據",
+          "points": [
+            "市場人士提出資金輪動等解釋，屬分析而非單一原因定論；本期不以未獨立核對的 ETF 流量推導精確因果。",
+            "編輯解讀：清算可能放大波動，從低點反彈也不保證下跌結束。圖中只呈現兩個已報導時間點，不補造中間走勢或提供買賣指令。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Investing.com 原始市場報導",
+          "url": "https://ca.investing.com/news/cryptocurrency-news/bitcoin-slides-toward-60000-as-etf-outflows-and-liquidations-intensify-4958935",
+          "published": "2026-11-15",
+          "checked_at": "2026-11-16T04:59:46+08:00",
+          "verification_method": "web",
+          "verification_note": "本次網頁工具實讀 Investing.com 原始報導及 11 月 15 日 10:18 更新：15:15 GMT 報價 64,695 美元、稍早低點 62,086，清算額引用 CoinGlass 且區間截至新加坡週日早上；原因為受訪者分析而非定論。直接 HTTP 403，未以搜尋摘要代替原文。"
+        }
+      ],
+      "image": {
+        "image": "assets/bitcoin-snapshots-2026-11-16.svg",
+        "alt": "比特幣兩個報價紀錄：11 月 15 日稍早低點 62,086 美元，15:15 UTC 報價 64,695 美元；非同步、非收盤、無中間走勢。",
+        "kind": "original",
+        "credit": "Daily Brief 原創報價對照；數據依 Investing.com 2026 年 11 月 15 日報導。"
+      }
+    }
+  ],
+  "visual_review": [
+    {
+      "story_id": "checkpoint-gaia-exploited",
+      "decision": "diagram",
+      "reason": "需要區分產品盤點、取得相符版本修補與完成驗證，原創流程有助理解而無攻擊細節。",
+      "implementation": "visual.type=flow"
+    },
+    {
+      "story_id": "bitcoin-weekend-selloff",
+      "decision": "image",
+      "reason": "兩個報價時間點容易被誤當同一交易日收盤，以分開卡片顯示時間，不假造線圖或截短座標。",
+      "implementation": "assets/bitcoin-snapshots-2026-11-16.svg"
+    }
+  ],
+  "discovery_review": {
+    "searches": [
+      {
+        "topic": "November 15 2026 major technology cloud outage news",
+        "checked_at": "2026-11-16T04:59:46+08:00"
+      },
+      {
+        "topic": "November 15 2026 global markets stocks bonds crypto major news",
+        "checked_at": "2026-11-16T04:59:46+08:00"
+      },
+      {
+        "topic": "November 15 2026 cybersecurity exploited vulnerabilities",
+        "checked_at": "2026-11-16T04:59:46+08:00"
+      },
+      {
+        "topic": "November 15 2026 Formula 1 news",
+        "checked_at": "2026-11-16T04:59:46+08:00"
+      },
+      {
+        "topic": "site.checkpoint.com CVE-2026-123039",
+        "checked_at": "2026-11-16T04:59:46+08:00"
+      },
+      {
+        "topic": "November 15 2026 major news technology security markets FAA bitcoin Reuters",
+        "checked_at": "2026-11-16T04:59:46+08:00"
+      }
+    ],
+    "candidates": [
+      {
+        "event": "Check Point 已利用漏洞",
+        "url": "https://community.checkpoint.com/t5/General-Topics/ACTION-REQUIRED-Security-Advisory-Three-Vulnerabilities-Fixed-in/m-p/284887",
+        "decision": "included",
+        "reason": "找到可讀官方替代公告，補足前兩期待查；原日期不改為今日。"
+      },
+      {
+        "event": "比特幣週末急跌與清算",
+        "url": "https://ca.investing.com/news/cryptocurrency-news/bitcoin-slides-toward-60000-as-etf-outflows-and-liquidations-intensify-4958935",
+        "decision": "included",
+        "reason": "較例行漲跌重大，保留時間並區分統計及原因推測。"
+      },
+      {
+        "event": "Microsoft／FAA 恢復",
+        "url": "https://mailservices.isc.upenn.edu/computing/email/penno365/alerts/ms-incidents.html",
+        "decision": "omitted",
+        "reason": "昨日已報恢復，不重複刊登未取得的完整事後分析。"
+      },
+      {
+        "event": "F1 回顧與訪談",
+        "url": "https://www.formula1.com/en/latest",
+        "decision": "omitted",
+        "reason": "無本期選入的重大新進展。"
+      },
+      {
+        "event": "Apache 2.4.71",
+        "url": "https://httpd.apache.org/security/vulnerabilities_24.html",
+        "decision": "omitted",
+        "reason": "公告早於主要時窗，未找到實質新進展，優先已確認利用事件。"
+      }
+    ],
+    "final_check": {
+      "checked_at": "2026-11-16T04:59:46+08:00",
+      "result": "比對跨來源重大頭條後，選入市場急跌與已利用漏洞，不重刊事故恢復。官方修補細表受限，限定已核實內容；不保證零遺漏。"
+    }
+  }
+}
