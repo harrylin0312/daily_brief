@@ -1,0 +1,312 @@
+{
+  "date": "2026-11-18",
+  "title": "恢復要逐項確認，防護也不能只做一半。",
+  "intro": "Apple 各服務恢復狀態分歧、ScreenConnect 客戶端仍需防護；另看美國遠端算力新規及零售初估的統計限制。",
+  "generated_at": "2026-11-18T05:07:20+08:00",
+  "coverage": {
+    "from": "2026-11-16",
+    "to": "2026-11-17"
+  },
+  "editor_note": "四類均先廣泛掃描再查原文；Apple 採直接實讀官方 JSON，區分已恢復與進行中。未以事故同時發生推論共同原因。F1 無選入重大新進展，不湊分類。",
+  "hero": null,
+  "stories": [
+    {
+      "id": "apple-services-partial-recovery",
+      "category": "tech",
+      "title": "Apple 多項服務故障，App Store 恢復不代表 iCloud 全部正常",
+      "teaser": "官方狀態資料顯示 App Store 與部分購買服務已恢復，但 iCloud 登入及部分企業／教育服務仍列進行中。必須逐項確認，不能一概說全面恢復。",
+      "summary": "Apple 官方狀態資料最新標示 11 月 17 日 13:00 PST（臺灣 18 日 05:00）。App Store／大量採購服務事故為 08:45–12:00 PST，即臺灣 00:45–04:00，已列 resolved。",
+      "why": "個人帳號、應用商店與企業／教育管理有不同恢復狀態，直接影響使用與管理流程。",
+      "limit": "資料是公開狀態快照，非所有使用者即時體驗；部分欄位文字及時間存在不一致，以各項 eventStatus 限定說明。",
+      "details": [
+        {
+          "heading": "已確認的重點",
+          "points": [
+            "Apple 官方狀態資料最新標示 11 月 17 日 13:00 PST（臺灣 18 日 05:00）。App Store／大量採購服務事故為 08:45–12:00 PST，即臺灣 00:45–04:00，已列 resolved。",
+            "同份資料的 iCloud Account & Sign In、iCloud 網頁服務、Apple Business 及 Apple School Manager 仍列 ongoing；iCloud Mail 已標示 resolved。不同項目不可用一個總狀態概括。"
+          ]
+        },
+        {
+          "heading": "如何理解與應對",
+          "points": [
+            "若登入或企業管理仍有問題，先核對所用服務與官方新更新；本次不把網友通報的 Apple Pay 問題當作官方確認，也未從狀態資料證實內部根因或與其他公司事故有關。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Apple 官方狀態資料",
+          "url": "https://www.apple.com/support/systemstatus/data/system_status_en_US.js",
+          "published": "2026-11-17",
+          "checked_at": "2026-11-18T05:07:20+08:00"
+        }
+      ],
+      "image": {
+        "image": "assets/apple-status-2026-11-18.svg",
+        "alt": "Apple 官方快照中 App Store、大量採購與 iCloud Mail 已恢復，登入、網頁、企業及學校管理仍有進行中事件。",
+        "kind": "original",
+        "credit": "Daily Brief 原創狀態對照；依 Apple 11 月 17 日 13:00 PST 官方資料。"
+      }
+    },
+    {
+      "id": "screenconnect-investigation-actions",
+      "category": "security",
+      "title": "ScreenConnect 調查結束仍須防護：停用外掛、逐台更新技術員端",
+      "teaser": "ConnectWise 最新公告要求本機部署停用指定外掛，所有部署都須確認技術員客戶端至少 26.6.5；只更新伺服器不夠，既有入侵仍須另行清查。",
+      "summary": "ConnectWise 11 月 16 日 20:00 UTC 更新稱調查已完成，但研究人員仍回報未停用外掛、未更新的本機環境遭鎖定。調查結束不表示個別客戶環境安全。",
+      "why": "遠端維運端點與技術員設備相連，僅更新控制台容易留下防護缺口。",
+      "limit": "修復版本於 9 月已發布，本期新進展為 11 月 16 日調查結束與仍須執行的行動；不將外掛存在等同入侵。",
+      "details": [
+        {
+          "heading": "已確認的重點",
+          "points": [
+            "ConnectWise 11 月 16 日 20:00 UTC 更新稱調查已完成，但研究人員仍回報未停用外掛、未更新的本機環境遭鎖定。調查結束不表示個別客戶環境安全。",
+            "本機部署須停用 Labtech Plus、RMM Plus、RMM+、RMM Plus Password Link、RMM+ Password Link。所有部署逐台核對技術員客戶端為 26.6.5 或更新版本，該版含 CVE-2026-84869 修復。"
+          ]
+        },
+        {
+          "heading": "如何理解與應對",
+          "points": [
+            "停用外掛與更新客戶端處理不同風險，不能互相替代；亦不會清除已建立的未授權存取。疑似遭入侵者應保留證據，依官方指引採獨立安全工具調查，勿用受影響的遠端工具清理。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "ConnectWise 官方最新防護公告",
+          "url": "https://www.connectwise.com/company/trust/advisories",
+          "published": "2026-11-16",
+          "checked_at": "2026-11-18T05:07:20+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "本機部署停用指定外掛",
+          "逐台核對技術員端 ≥26.6.5",
+          "獨立工具調查既有入侵"
+        ],
+        "caption": "原創防護流程；三項處理不同風險，不能只更新伺服器或以調查完成推論個別環境安全。"
+      }
+    },
+    {
+      "id": "bis-remote-compute-rule",
+      "category": "tech",
+      "title": "美國 BIS 新規瞄準海外遠端算力，防止繞過晶片限制",
+      "teaser": "BIS 公布暫行最終規則，將第三國資料中心的遠端運算安排納入管制思考，避免以租用算力繞過既有先進晶片限制。",
+      "summary": "BIS 11 月 16 日宣布針對先進運算晶片與伺服器遠端存取的暫行最終規則，目的為防止透過第三國資料中心的遠端安排規避既有限制。",
+      "why": "遠端存取與實體晶片出口的關係改變，涉及全球算力供應鏈及合規安排。",
+      "limit": "只整理官方新聞稿確認的方向，未逐條審查規則全文，不提供法律適用結論。",
+      "details": [
+        {
+          "heading": "已確認的重點",
+          "points": [
+            "BIS 11 月 16 日宣布針對先進運算晶片與伺服器遠端存取的暫行最終規則，目的為防止透過第三國資料中心的遠端安排規避既有限制。",
+            "官方說明要使遠端運算能力的防護與敏感技術實體出貨管制更一致。這不只是晶片搬到哪裡，也涉及算力由誰遠端使用。"
+          ]
+        },
+        {
+          "heading": "如何理解與應對",
+          "points": [
+            "跨國算力供應與資料中心業者應核對規則本文、適用交易與客戶；新聞稿未完整列明生效及過渡安排，本期不把媒體所稱期限當成所有條款共同生效日，也不宣稱所有海外雲端服務遭禁。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "BIS 官方新規新聞稿",
+          "url": "https://www.bis.gov/press-release/bis-issues-rule-addressing-remote-access-american-super-intelligence-technology",
+          "published": "2026-11-16",
+          "checked_at": "2026-11-18T05:07:20+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "先進晶片與伺服器",
+          "第三國資料中心",
+          "遠端算力使用者"
+        ],
+        "caption": "原創關係示意；管制不能只看實體出貨目的地，具體義務仍須回到規則本文。"
+      }
+    },
+    {
+      "id": "us-october-retail-sales",
+      "category": "markets",
+      "title": "美國 10 月零售額月增估 0.2%，不能忽略統計不確定性",
+      "teaser": "人口普查局公布 10 月零售與餐飲銷售額估增 0.2%，低於 9 月的 0.8%；但月增誤差為 ±0.4 個百分點，且金額未扣除物價變化。",
+      "summary": "美國人口普查局 11 月 17 日公布，10 月零售及餐飲銷售額估為 7,482 億美元，季調後較前月增 0.2%（±0.4%），較去年同月增 6.8%（±0.5%）。9 月月增 0.8% 維持未修正。",
+      "why": "消費資料攸關景氣判斷，但統計誤差與物價調整會影響解讀。",
+      "limit": "本期報官方初估及原公布誤差，不提供買賣指令或單因股價歸因。",
+      "details": [
+        {
+          "heading": "已確認的重點",
+          "points": [
+            "美國人口普查局 11 月 17 日公布，10 月零售及餐飲銷售額估為 7,482 億美元，季調後較前月增 0.2%（±0.4%），較去年同月增 6.8%（±0.5%）。9 月月增 0.8% 維持未修正。",
+            "資料調整季節、假日及交易日差異，但沒有調整價格變化。因此不能把名目銷售增幅直接當成實質消費數量增幅；月比與年比也須分開。"
+          ]
+        },
+        {
+          "heading": "如何理解與應對",
+          "points": [
+            "月增估計小於其誤差範圍，不能僅憑 0.2% 宣稱消費確定成長或衰退。此為初估，後續仍可能修正；未取得一致市場預期，不稱超預期，也不以單項數據預言利率或股價。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "美國人口普查局零售原始發布",
+          "url": "https://www.census.gov/retail/sales.html",
+          "published": "2026-11-17",
+          "checked_at": "2026-11-18T05:07:20+08:00"
+        }
+      ],
+      "image": {
+        "image": "assets/retail-monthly-2026-11-18.svg",
+        "alt": "美國零售季調月增：9 月 0.8%，10 月初估 0.2% 且誤差正負 0.4 個百分點；非實質消費增幅。",
+        "kind": "original",
+        "credit": "Daily Brief 原創數據卡；來源為美國人口普查局 11 月 17 日發布。"
+      }
+    }
+  ],
+  "source_checks": [
+    {
+      "name": "Apple 官方狀態資料",
+      "url": "https://www.apple.com/support/systemstatus/data/system_status_en_US.js",
+      "status": "checked",
+      "note": "實讀原始來源；資料是公開狀態快照，非所有使用者即時體驗；部分欄位文字及時間存在不一致，以各項 eventStatus 限定說明。",
+      "checked_at": "2026-11-18T05:07:20+08:00"
+    },
+    {
+      "name": "ConnectWise 官方最新防護公告",
+      "url": "https://www.connectwise.com/company/trust/advisories",
+      "status": "checked",
+      "note": "實讀原始來源；修復版本於 9 月已發布，本期新進展為 11 月 16 日調查結束與仍須執行的行動；不將外掛存在等同入侵。",
+      "checked_at": "2026-11-18T05:07:20+08:00"
+    },
+    {
+      "name": "BIS 官方新規新聞稿",
+      "url": "https://www.bis.gov/press-release/bis-issues-rule-addressing-remote-access-american-super-intelligence-technology",
+      "status": "checked",
+      "note": "實讀原始來源；只整理官方新聞稿確認的方向，未逐條審查規則全文，不提供法律適用結論。",
+      "checked_at": "2026-11-18T05:07:20+08:00"
+    },
+    {
+      "name": "美國人口普查局零售原始發布",
+      "url": "https://www.census.gov/retail/sales.html",
+      "status": "checked",
+      "note": "實讀原始來源；本期報官方初估及原公布誤差，不提供買賣指令或單因股價歸因。",
+      "checked_at": "2026-11-18T05:07:20+08:00"
+    },
+    {
+      "name": "Formula 1",
+      "url": "https://www.formula1.com/en/latest",
+      "status": "checked",
+      "note": "實讀官方最新列表，主要塗裝、訪談與 F1 Academy 陣容；未選入重大 F1 正賽／規則新進展，不重刊昨日 Haas。",
+      "checked_at": "2026-11-18T05:07:20+08:00"
+    },
+    {
+      "name": "Apple 狀態頁",
+      "url": "https://www.apple.com/support/systemstatus/",
+      "status": "failed",
+      "note": "網頁工具只讀到外殼，改以直接 HTTP 成功讀取其公開官方 JSON 原文，未以 AP 摘要充當已讀報導。",
+      "checked_at": "2026-11-18T05:07:20+08:00"
+    }
+  ],
+  "visual_review": [
+    {
+      "story_id": "apple-services-partial-recovery",
+      "decision": "image",
+      "reason": "不同服務恢復狀態容易被一句全面恢復掩蓋，製作並列狀態卡。",
+      "implementation": "assets/apple-status-2026-11-18.svg"
+    },
+    {
+      "story_id": "screenconnect-investigation-actions",
+      "decision": "diagram",
+      "reason": "停外掛、更新客戶端與清查既有入侵不可互代，以三步呈現。",
+      "implementation": "visual.type=flow"
+    },
+    {
+      "story_id": "bis-remote-compute-rule",
+      "decision": "diagram",
+      "reason": "第三國設備位置與遠端使用者是不同角色，用關係鏈降低理解成本。",
+      "implementation": "visual.type=flow"
+    },
+    {
+      "story_id": "us-october-retail-sales",
+      "decision": "image",
+      "reason": "月增點估計及誤差需一起看，用同單位數據卡而非忽略誤差的比例圖。",
+      "implementation": "assets/retail-monthly-2026-11-18.svg"
+    }
+  ],
+  "discovery_review": {
+    "searches": [
+      {
+        "topic": "November 17 2026 major technology cloud outage news",
+        "checked_at": "2026-11-18T05:07:20+08:00"
+      },
+      {
+        "topic": "November 17 2026 markets stocks bonds earnings Reuters",
+        "checked_at": "2026-11-18T05:07:20+08:00"
+      },
+      {
+        "topic": "November 17 2026 cybersecurity exploited vulnerability latest",
+        "checked_at": "2026-11-18T05:07:20+08:00"
+      },
+      {
+        "topic": "November 17 2026 Formula 1 latest news regulations",
+        "checked_at": "2026-11-18T05:07:20+08:00"
+      },
+      {
+        "topic": "Apple November 17 2026 update issue iOS official",
+        "checked_at": "2026-11-18T05:07:20+08:00"
+      },
+      {
+        "topic": "site.bis.gov November 16 2026 data",
+        "checked_at": "2026-11-18T05:07:20+08:00"
+      }
+    ],
+    "candidates": [
+      {
+        "event": "Apple 多項服務故障，App Store 恢復不代表 iCloud 全部正常",
+        "url": "https://www.apple.com/support/systemstatus/data/system_status_en_US.js",
+        "decision": "included",
+        "reason": "重大事故、防護行動、政策或原始經濟資料；已核對原文。"
+      },
+      {
+        "event": "ScreenConnect 調查結束仍須防護：停用外掛、逐台更新技術員端",
+        "url": "https://www.connectwise.com/company/trust/advisories",
+        "decision": "included",
+        "reason": "重大事故、防護行動、政策或原始經濟資料；已核對原文。"
+      },
+      {
+        "event": "美國 BIS 新規瞄準海外遠端算力，防止繞過晶片限制",
+        "url": "https://www.bis.gov/press-release/bis-issues-rule-addressing-remote-access-american-super-intelligence-technology",
+        "decision": "included",
+        "reason": "重大事故、防護行動、政策或原始經濟資料；已核對原文。"
+      },
+      {
+        "event": "美國 10 月零售額月增估 0.2%，不能忽略統計不確定性",
+        "url": "https://www.census.gov/retail/sales.html",
+        "decision": "included",
+        "reason": "重大事故、防護行動、政策或原始經濟資料；已核對原文。"
+      },
+      {
+        "event": "F1 塗裝與訪談",
+        "url": "https://www.formula1.com/en/latest",
+        "decision": "omitted",
+        "reason": "不以塗裝與預測充當重大賽況。"
+      },
+      {
+        "event": "NVIDIA 財報預期及盤中股價",
+        "url": "https://nvidianews.nvidia.com/",
+        "decision": "pending",
+        "reason": "未讀到本次正式財報原文，不把盤前預期或盤中價格當成已公布結果。"
+      }
+    ],
+    "final_check": {
+      "checked_at": "2026-11-18T05:07:20+08:00",
+      "result": "再次掃描最新重大頭條，補入 BIS 遠端算力新規，優先 Apple 事故及 ScreenConnect 防護；未報未核實財報及無關事故因果。"
+    }
+  }
+}
