@@ -1,0 +1,380 @@
+{
+  "date": "2026-11-17",
+  "title": "從交易恢復到網站供應鏈，重要的是分清影響與證據。",
+  "intro": "今日補刊五則已核實重點，涵蓋科技、市場、資安與 F1。AWS 候選事件仍待查，不以單則來源受阻讓整期缺刊。",
+  "generated_at": "2026-11-17T21:32:07+08:00",
+  "coverage": {
+    "from": "2026-11-16",
+    "to": "2026-11-17"
+  },
+  "editor_note": "本期於晚間重新查核後補刊，未偽裝成清晨已發布。AWS 事故原文仍受限，暫緩該則；已核實內容照常刊登。每則已評估配圖，採原創關係／流程圖，避免未確認轉載權的新聞照片。",
+  "hero": null,
+  "stories": [
+    {
+      "id": "optimizely-malicious-javascript",
+      "category": "security",
+      "title": "Optimizely 確認惡意 JavaScript 注入，修復後仍在監測",
+      "teaser": "官方確認未授權者利用漏洞，向部分客戶專案加入惡意 JavaScript；已修補並移除程式碼，但事故狀態仍是監測。",
+      "summary": "官方於 11 月 17 日 01:02 UTC（臺灣 09:02）公告 Web Experimentation 安全事故，表示已修補漏洞、移除被注入程式碼，並保護受影響帳號及加強交付防護。",
+      "why": "第三方腳本供應鏈可能把平台風險傳遞到客戶網站，應優先核對自身是否受影響。",
+      "limit": "未確認資料外洩範圍與完整影響名單；不提供攻擊操作。",
+      "details": [
+        {
+          "heading": "已確認的重點",
+          "points": [
+            "官方於 11 月 17 日 01:02 UTC（臺灣 09:02）公告 Web Experimentation 安全事故，表示已修補漏洞、移除被注入程式碼，並保護受影響帳號及加強交付防護。",
+            "事故仍標示 Monitoring，不能等同調查結束。公告未提供完整受害名單、版本表或資料外洩規模，本期不採媒體名單當作官方確認。"
+          ]
+        },
+        {
+          "heading": "理解與限制",
+          "points": [
+            "編輯建議：使用此服務的網站應核對供應商通知、專案變更與載入的第三方腳本；修補完成與確認歷史影響是不同工作。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Optimizely 官方事故狀態",
+          "url": "https://status.optimizely.com/",
+          "published": "2026-11-17",
+          "checked_at": "2026-11-17T21:32:07+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "平台漏洞被利用",
+          "部分專案遭注入腳本",
+          "官方修復後持續監測"
+        ],
+        "caption": "Daily Brief 原創重點圖解；依本文所列來源整理，狀態以來源更新時間為準。"
+      }
+    },
+    {
+      "id": "jpmorgan-transactions-restored",
+      "category": "tech",
+      "title": "JPMorgan 交易處理恢復，不能把延遲解讀成銀行全面停擺",
+      "teaser": "銀行發言人確認紐約週一晚間交易恢復正常；事故涉及本機系統軟體問題，跨行交易延遲不代表其他銀行系統全部故障。",
+      "summary": "The Edge 刊載的 11 月 17 日報導指出，JPMorgan 發言人確認紐約週一晚間交易已正常處理。銀行表示先前是本機硬體系統中的軟體問題，期間客戶仍可存取帳戶與資金。",
+      "why": "支付依賴關係使單一機構故障可能影響跨行流程，需分清處理延遲、存取及資金狀態。",
+      "limit": "未取得完整事後報告；恢復時間僅報來源提供的紐約週一晚間，不捏造精確分鐘。",
+      "details": [
+        {
+          "heading": "已確認的重點",
+          "points": [
+            "The Edge 刊載的 11 月 17 日報導指出，JPMorgan 發言人確認紐約週一晚間交易已正常處理。銀行表示先前是本機硬體系統中的軟體問題，期間客戶仍可存取帳戶與資金。",
+            "Reuters 11 月 16 日更新也引述銀行說法：其他銀行可能因與 JPMorgan 互為交易方而受到延遲影響；不能由使用者通報直接推論所有銀行同時故障。"
+          ]
+        },
+        {
+          "heading": "理解與限制",
+          "points": [
+            "恢復是銀行對其交易處理的說明，並非逐筆款項已完成的保證。仍有未完成交易者宜透過銀行官方管道核對，勿把這起事故與 Microsoft 或 FAA 故障視為同一事件。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "The Edge 恢復報導",
+          "url": "https://theedgemalaysia.com/node/826050",
+          "published": "2026-11-17",
+          "checked_at": "2026-11-17T21:32:07+08:00"
+        },
+        {
+          "name": "Reuters 銀行聲明原文",
+          "url": "https://www.investing.com/news/stock-market-news/downdetector-reports-outages-at-major-us-banks-5030747",
+          "published": "2026-11-16",
+          "checked_at": "2026-11-17T21:32:07+08:00",
+          "verification_method": "web",
+          "verification_note": "本次網頁工具實讀 Reuters 11 月 16 日 18:06 更新，確認本機系統軟體問題、帳戶資金可存取與跨行往來延遲範圍。直接 HTTP 若為 403，以此次真實原文查核記錄，不以摘要代替。"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "銀行內部軟體問題",
+          "部分交易及跨行往來延遲",
+          "發言人確認交易正常處理"
+        ],
+        "caption": "Daily Brief 原創重點圖解；依本文所列來源整理，狀態以來源更新時間為準。"
+      }
+    },
+    {
+      "id": "nvidia-security-oversight",
+      "category": "tech",
+      "title": "NVIDIA 成立國安與出口管制委員會，強化董事會監督",
+      "teaser": "新常設委員會由 Suzanne Nora Johnson 主持，監督國家安全政策、出口管制與全球貿易風險；這是治理措施，不是調查結論。",
+      "summary": "NVIDIA 11 月 17 日宣布新設董事會常設委員會，主席為 Suzanne Nora Johnson，成員另有 Stephen C. Neal、John O. Dabiri；至少每季開會。",
+      "why": "先進晶片的出口與國安風險新增董事會層級持續監督，值得追蹤落實結果。",
+      "limit": "公司公告說明組織與職責，不是獨立調查結論或出口規則修訂。",
+      "details": [
+        {
+          "heading": "已確認的重點",
+          "points": [
+            "NVIDIA 11 月 17 日宣布新設董事會常設委員會，主席為 Suzanne Nora Johnson，成員另有 Stephen C. Neal、John O. Dabiri；至少每季開會。",
+            "既有國安與全球貿易合規團隊直接向委員會報告，日常營運也向代理執行長 Colette Kress 報告；委員會將聘獨立外部法律、國安及貿易專家。"
+          ]
+        },
+        {
+          "heading": "理解與限制",
+          "points": [
+            "此為前期管理層交接之後的新治理進展。設立監督架構不等於已證明或排除違法、外洩，公告也沒有改變代理執行長安排。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "NVIDIA 官方公告",
+          "url": "https://nvidianews.nvidia.com/news/nvidia-board-of-directors-establishes-national-security-and-export-control-oversight-committee",
+          "published": "2026-11-17",
+          "checked_at": "2026-11-17T21:32:07+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "董事會常設委員會",
+          "國安及貿易合規監督",
+          "獨立外部專家支援"
+        ],
+        "caption": "Daily Brief 原創重點圖解；依本文所列來源整理，狀態以來源更新時間為準。"
+      }
+    },
+    {
+      "id": "fed-ai-financing-risks",
+      "category": "markets",
+      "title": "Fed Barr 提醒 AI 融資風險：不只看帳面債務",
+      "teaser": "Barr 最新演說將資料中心債務、循環融資與複雜承諾列為金融穩定觀察重點；這是風險分析，不是利率決策或崩盤預告。",
+      "summary": "Fed 理事 Michael Barr 11 月 16 日演說指出，AI 基礎建設融資須關注債務增長、循環融資及複雜金融承諾。大企業投資小公司、小公司再向投資方購買算力，可能使資金與需求關係更難判讀。",
+      "why": "評估 AI 投資風險需看融資結構與風險傳遞，不只看晶片銷售及股價。",
+      "limit": "為官員風險分析，並非個人投資建議、政策變更或損失預測。",
+      "details": [
+        {
+          "heading": "已確認的重點",
+          "points": [
+            "Fed 理事 Michael Barr 11 月 16 日演說指出，AI 基礎建設融資須關注債務增長、循環融資及複雜金融承諾。大企業投資小公司、小公司再向投資方購買算力，可能使資金與需求關係更難判讀。",
+            "長期租賃、能源供應及抵押品價值保證等表外義務，也可能在投資預期逆轉時放大壓力；不同義務不能直接加成已實現損失。"
+          ]
+        },
+        {
+          "heading": "理解與限制",
+          "points": [
+            "他同時指出大型銀行資本可提供緩衝，但市場波動時交易對手曝險仍可能上升。這不是 FOMC 決策，也不能據此斷言 AI 投資必然崩盤或解釋某日全部股價變化。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Federal Reserve 原始演說",
+          "url": "https://www.federalreserve.gov/newsevents/speech/barr20261116a.htm",
+          "published": "2026-11-16",
+          "checked_at": "2026-11-17T21:32:07+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "融資與長期承諾增加",
+          "預期逆轉可能傳遞壓力",
+          "持續監測槓桿與交易對手"
+        ],
+        "caption": "Daily Brief 原創重點圖解；依本文所列來源整理，狀態以來源更新時間為準。"
+      }
+    },
+    {
+      "id": "haas-las-vegas-camara",
+      "category": "f1",
+      "title": "Haas 確認 Camara 出戰拉斯維加斯，平川亮只參加 FP1",
+      "teaser": "Camara 將與 Bearman 搭檔參賽；平川亮在第一節自由練習接替 Bearman，正賽與練習席位需分開看。",
+      "summary": "Formula 1 於 11 月 16 日公布 Haas 安排：Rafael Camara 繼聖保羅首秀後，再於拉斯維加斯駕駛 VF-26，正賽搭檔 Ollie Bearman。",
+      "why": "車手安排是正式人事與賽事資訊，清楚區分正賽及練習可避免混淆。",
+      "limit": "只適用官方確認的拉斯維加斯安排，不延伸推測其他分站。",
+      "details": [
+        {
+          "heading": "已確認的重點",
+          "points": [
+            "Formula 1 於 11 月 16 日公布 Haas 安排：Rafael Camara 繼聖保羅首秀後，再於拉斯維加斯駕駛 VF-26，正賽搭檔 Ollie Bearman。",
+            "Ryo Hirakawa（平川亮）將在 FP1 接替 Bearman，這是其本季第四次 FP1 出場，不能寫成接替 Camara 參加正賽。"
+          ]
+        },
+        {
+          "heading": "理解與限制",
+          "points": [
+            "Camara 的 2027 年全職席位已於 10 月宣布，本次新消息是拉斯維加斯週末安排；不是再次宣布全年新合約，也不代表未來每站均有相同配置。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Formula 1 官方公告",
+          "url": "https://www.formula1.com/en/latest/article/haas-confirm-camara-to-race-for-the-team-in-las-vegas-as-hirakawa-returns-for-fp1-appearance.2as7TuSF4UHgXczZlu4245",
+          "published": "2026-11-16",
+          "checked_at": "2026-11-17T21:32:07+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "正賽：Camara ＋ Bearman",
+          "FP1：平川亮接替 Bearman",
+          "2027 席位：屬先前公告"
+        ],
+        "caption": "Daily Brief 原創重點圖解；依本文所列來源整理，狀態以來源更新時間為準。"
+      }
+    }
+  ],
+  "source_checks": [
+    {
+      "name": "Optimizely 官方事故狀態",
+      "url": "https://status.optimizely.com/",
+      "status": "checked",
+      "note": "本次實讀原文；未確認資料外洩範圍與完整影響名單；不提供攻擊操作。",
+      "checked_at": "2026-11-17T21:32:07+08:00"
+    },
+    {
+      "name": "The Edge 恢復報導",
+      "url": "https://theedgemalaysia.com/node/826050",
+      "status": "checked",
+      "note": "本次實讀原文；未取得完整事後報告；恢復時間僅報來源提供的紐約週一晚間，不捏造精確分鐘。",
+      "checked_at": "2026-11-17T21:32:07+08:00"
+    },
+    {
+      "name": "NVIDIA 官方公告",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-board-of-directors-establishes-national-security-and-export-control-oversight-committee",
+      "status": "checked",
+      "note": "本次實讀原文；公司公告說明組織與職責，不是獨立調查結論或出口規則修訂。",
+      "checked_at": "2026-11-17T21:32:07+08:00"
+    },
+    {
+      "name": "Federal Reserve 原始演說",
+      "url": "https://www.federalreserve.gov/newsevents/speech/barr20261116a.htm",
+      "status": "checked",
+      "note": "本次實讀原文；為官員風險分析，並非個人投資建議、政策變更或損失預測。",
+      "checked_at": "2026-11-17T21:32:07+08:00"
+    },
+    {
+      "name": "Formula 1 官方公告",
+      "url": "https://www.formula1.com/en/latest/article/haas-confirm-camara-to-race-for-the-team-in-las-vegas-as-hirakawa-returns-for-fp1-appearance.2as7TuSF4UHgXczZlu4245",
+      "status": "checked",
+      "note": "本次實讀原文；只適用官方確認的拉斯維加斯安排，不延伸推測其他分站。",
+      "checked_at": "2026-11-17T21:32:07+08:00"
+    },
+    {
+      "name": "CISA KEV",
+      "url": "https://raw.githubusercontent.com/cisagov/kev-data/main/known_exploited_vulnerabilities.json",
+      "status": "checked",
+      "note": "實讀 2026.11.13 版本，1781 筆；不重刊前期漏洞，資安另選本日 Optimizely 官方新事故。",
+      "checked_at": "2026-11-17T21:32:07+08:00"
+    },
+    {
+      "name": "AWS 官方歷史頁",
+      "url": "https://health.aws.amazon.com/health/status",
+      "status": "failed",
+      "note": "動態頁未讀到事件原文；官方公開資料與 RSS 未找到該事件，保留待查而非宣稱無事故，不阻擋其他已核實內容。",
+      "checked_at": "2026-11-17T21:32:07+08:00"
+    }
+  ],
+  "visual_review": [
+    {
+      "story_id": "optimizely-malicious-javascript",
+      "decision": "diagram",
+      "reason": "以角色、狀態或風險傳遞流程呈現本文關係，避免把不同範圍與階段混為一談。",
+      "implementation": "visual.type=flow"
+    },
+    {
+      "story_id": "jpmorgan-transactions-restored",
+      "decision": "diagram",
+      "reason": "以角色、狀態或風險傳遞流程呈現本文關係，避免把不同範圍與階段混為一談。",
+      "implementation": "visual.type=flow"
+    },
+    {
+      "story_id": "nvidia-security-oversight",
+      "decision": "diagram",
+      "reason": "以角色、狀態或風險傳遞流程呈現本文關係，避免把不同範圍與階段混為一談。",
+      "implementation": "visual.type=flow"
+    },
+    {
+      "story_id": "fed-ai-financing-risks",
+      "decision": "diagram",
+      "reason": "以角色、狀態或風險傳遞流程呈現本文關係，避免把不同範圍與階段混為一談。",
+      "implementation": "visual.type=flow"
+    },
+    {
+      "story_id": "haas-las-vegas-camara",
+      "decision": "diagram",
+      "reason": "以角色、狀態或風險傳遞流程呈現本文關係，避免把不同範圍與階段混為一談。",
+      "implementation": "visual.type=flow"
+    }
+  ],
+  "discovery_review": {
+    "searches": [
+      {
+        "topic": "November 17 2026 major news technology markets security F1",
+        "checked_at": "2026-11-17T21:32:07+08:00"
+      },
+      {
+        "topic": "November 17 2026 JPMorgan transactions software bug restored",
+        "checked_at": "2026-11-17T21:32:07+08:00"
+      },
+      {
+        "topic": "November 17 2026 major cybersecurity vulnerability exploited news",
+        "checked_at": "2026-11-17T21:32:07+08:00"
+      },
+      {
+        "topic": "November 17 2026 cloud outage AWS major news",
+        "checked_at": "2026-11-17T21:32:07+08:00"
+      },
+      {
+        "topic": "November 17 2026 global markets major news Reuters",
+        "checked_at": "2026-11-17T21:32:07+08:00"
+      },
+      {
+        "topic": "site.nvidianews.nvidia.com November 17 2026 national security committee",
+        "checked_at": "2026-11-17T21:32:07+08:00"
+      }
+    ],
+    "candidates": [
+      {
+        "event": "Optimizely 確認惡意 JavaScript 注入，修復後仍在監測",
+        "url": "https://status.optimizely.com/",
+        "decision": "included",
+        "reason": "已實讀原文，有重大事故、治理、風險或正式賽事安排的新資訊。"
+      },
+      {
+        "event": "JPMorgan 交易處理恢復，不能把延遲解讀成銀行全面停擺",
+        "url": "https://theedgemalaysia.com/node/826050",
+        "decision": "included",
+        "reason": "已實讀原文，有重大事故、治理、風險或正式賽事安排的新資訊。"
+      },
+      {
+        "event": "NVIDIA 成立國安與出口管制委員會，強化董事會監督",
+        "url": "https://nvidianews.nvidia.com/news/nvidia-board-of-directors-establishes-national-security-and-export-control-oversight-committee",
+        "decision": "included",
+        "reason": "已實讀原文，有重大事故、治理、風險或正式賽事安排的新資訊。"
+      },
+      {
+        "event": "Fed Barr 提醒 AI 融資風險：不只看帳面債務",
+        "url": "https://www.federalreserve.gov/newsevents/speech/barr20261116a.htm",
+        "decision": "included",
+        "reason": "已實讀原文，有重大事故、治理、風險或正式賽事安排的新資訊。"
+      },
+      {
+        "event": "Haas 確認 Camara 出戰拉斯維加斯，平川亮只參加 FP1",
+        "url": "https://www.formula1.com/en/latest/article/haas-confirm-camara-to-race-for-the-team-in-las-vegas-as-hirakawa-returns-for-fp1-appearance.2as7TuSF4UHgXczZlu4245",
+        "decision": "included",
+        "reason": "已實讀原文，有重大事故、治理、風險或正式賽事安排的新資訊。"
+      },
+      {
+        "event": "AWS US-EAST-1 事故",
+        "url": "https://health.aws.amazon.com/health/status",
+        "decision": "pending",
+        "reason": "官方動態原文讀取受限，不用搜尋摘要刊登；不阻擋其他已查核文章。"
+      }
+    ],
+    "final_check": {
+      "checked_at": "2026-11-17T21:32:07+08:00",
+      "result": "跨來源重新比對，加入 Optimizely 新事故、NVIDIA 新治理與 Haas 正式安排；保留 AWS 待查，不以固定兩則作為上限。"
+    }
+  }
+}
