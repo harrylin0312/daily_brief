@@ -1,0 +1,354 @@
+{
+  "date": "2026-11-19",
+  "title": "修補要看條件，財報與罰退也要分清基準。",
+  "intro": "Java4Shell 與已遭利用的 Puppet 漏洞優先防護；NVIDIA 正式財報與長期產能分開看，F1 留意 Piastri 賽前罰退。",
+  "generated_at": "2026-11-19T05:04:36+08:00",
+  "coverage": {
+    "from": "2026-11-03",
+    "to": "2026-11-18"
+  },
+  "editor_note": "Puppet 原始修補公告為 11 月 3 日，本期新進展為 17 日列入 KEV，保留原日期；NVIDIA 為前期待查財報的正式原文。四類均查核，沒有每日兩則上限。兩則漏洞提供防護重點，不以可能風險冒充全面利用。",
+  "hero": null,
+  "stories": [
+    {
+      "id": "java4shell-patching",
+      "category": "security",
+      "title": "Java4Shell 需優先修補，但不是所有 Java 環境都同樣暴露",
+      "teaser": "CISA 與 CERT-EU 要求優先處理連網 Java 系統；漏洞涉及特定 x86-64 CPU、啟用的 Base64 加速路徑及可控輸入。更新後仍須重啟 JVM。",
+      "summary": "CVE-2026-114938 影響 HotSpot JVM 的 Base64 解碼。CERT-EU 說明需同時具備指定 AVX-512／BMI2 等 x86-64 CPU 功能、啟用對應 intrinsic，並有攻擊者可控資料進入解碼器；ARM64 不受此問題影響。",
+      "why": "Java 常內嵌於企業應用與容器，僅更新作業系統上看得到的單一安裝可能漏掉風險。",
+      "limit": "依官方條件判斷適用範圍；無已核實實際利用結論，各供應商版本不同。",
+      "details": [
+        {
+          "heading": "已確認的重點",
+          "points": [
+            "CVE-2026-114938 影響 HotSpot JVM 的 Base64 解碼。CERT-EU 說明需同時具備指定 AVX-512／BMI2 等 x86-64 CPU 功能、啟用對應 intrinsic，並有攻擊者可控資料進入解碼器；ARM64 不受此問題影響。",
+            "CERT-EU 列出的修復版包括 Java 17.0.21.1、21.0.13.1、25.0.5.1、27.0.1.1；8u511-perf 對應 8u513。其他 OpenJDK 發行版與內嵌 Java 的產品，仍須核對各供應商更新。"
+          ]
+        },
+        {
+          "heading": "影響與限制",
+          "points": [
+            "優先盤點網際網路可達應用、容器及產品內附 runtime，完成更新並重啟所有 JVM。暫時緩解也需重啟，且可能影響效能；本期不刊攻擊操作。",
+            "CISA 要求立即修補不等於已確認實際利用；本次 KEV 未列此 CVE，不能把可能遠端執行寫成所有 Java 系統已遭攻陷。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "CERT-EU 安全公告",
+          "url": "https://cert.europa.eu/publications/security-advisories/2026-021/pdf",
+          "published": "2026-11-18",
+          "checked_at": "2026-11-19T05:04:36+08:00"
+        },
+        {
+          "name": "CISA 官方修補通知",
+          "url": "https://content.govdelivery.com/accounts/USDHSCISA/bulletins/4332a87",
+          "published": "2026-11-17",
+          "checked_at": "2026-11-19T05:04:36+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "盤點 CPU、runtime 與輸入路徑",
+          "套用對應供應商修復",
+          "重啟 JVM 並驗證生效"
+        ],
+        "caption": "原創防護流程；漏洞有條件限制，更新檔案後仍須重啟，不能由產品名稱直接判定暴露。"
+      }
+    },
+    {
+      "id": "puppet-kev-report-deserialization",
+      "category": "security",
+      "title": "Puppet Enterprise 漏洞新列 KEV，持有代理憑證的風險須優先處理",
+      "teaser": "CISA 11 月 17 日收錄 CVE-2026-115731；Perforce 提供的 CVE 紀錄列出受影響分支與修復版本，不應把它簡化成任何匿名連線都可直接利用。",
+      "summary": "CISA KEV 2026.11.17 版本新增 CVE-2026-115731。Perforce 的 CVE 紀錄說明，持有 CA 簽發代理憑證的客戶端，可能利用報告處理的反序列化問題，以 Puppet Server 服務使用者權限執行程式。",
+      "why": "組態管理伺服器連結多台主機，代理憑證與報告處理的缺口可能擴大管理風險。",
+      "limit": "供應商入口頁讀取失敗，改讀 Perforce 作為 CNA 提交的官方 CVE 原始資料與 CISA，不捏造入口頁查核。",
+      "details": [
+        {
+          "heading": "已確認的重點",
+          "points": [
+            "CISA KEV 2026.11.17 版本新增 CVE-2026-115731。Perforce 的 CVE 紀錄說明，持有 CA 簽發代理憑證的客戶端，可能利用報告處理的反序列化問題，以 Puppet Server 服務使用者權限執行程式。",
+            "受影響 Puppet Enterprise 分支為 2023.8.0 至低於 2023.8.13、2025.0.0 至低於 2025.12.1，以及 2026.0.0 至低於 2026.0.1；分別升級至對應修復版或更新受支援版本。"
+          ]
+        },
+        {
+          "heading": "影響與限制",
+          "points": [
+            "若 CA 自動簽發缺乏嚴格核驗，未經驗證的網路攻擊者可能先取得憑證。管理者除升級也應檢查簽發政策與可疑代理活動，不把修補當作清除既有入侵。",
+            "原始公告為 11 月 3 日，本期新進展是 17 日列為已遭利用；CISA 12 月 1 日期限針對適用聯邦機關，並非全球統一期限。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Perforce CNA 原始 CVE 紀錄",
+          "url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/115xxx/CVE-2026-115731.json",
+          "published": "2026-11-03",
+          "checked_at": "2026-11-19T05:04:36+08:00"
+        },
+        {
+          "name": "CISA 已利用目錄",
+          "url": "https://raw.githubusercontent.com/cisagov/kev-data/main/known_exploited_vulnerabilities.json",
+          "published": "2026-11-17",
+          "checked_at": "2026-11-19T05:04:36+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "核對伺服器版本與代理憑證",
+          "升級相符受支援修復版",
+          "檢查簽發政策與入侵跡象"
+        ],
+        "caption": "原創防護流程；服務使用者權限不是自動等同 root，修補不能代替事後調查。"
+      }
+    },
+    {
+      "id": "nvidia-fy27-q3-results",
+      "category": "markets",
+      "title": "NVIDIA 財季營收年增 103%，財報與未來產能承諾分開看",
+      "teaser": "截至 10 月 25 日的財季營收為 1,158 億美元；下一季 1,300 億美元是公司展望。供應鏈擴產則涉及 2027–2028 年，不是已完成的當季產能。",
+      "summary": "NVIDIA 11 月 17 日公布 FY2027 第三季（截至 10 月 25 日）營收 1,158 億美元，較前季增 20%、年增 103%；資料中心營收 1,076 億美元，年增 110%。GAAP 稀釋每股盈餘為 2.70 美元。",
+      "why": "財報提供需求與獲利實績，產能承諾則涉及未來交付時程及供應鏈風險，兩者不能混算。",
+      "limit": "公司展望與投產時間均有不確定性；不是個人買賣建議。",
+      "details": [
+        {
+          "heading": "已確認的重點",
+          "points": [
+            "NVIDIA 11 月 17 日公布 FY2027 第三季（截至 10 月 25 日）營收 1,158 億美元，較前季增 20%、年增 103%；資料中心營收 1,076 億美元，年增 110%。GAAP 稀釋每股盈餘為 2.70 美元。",
+            "公司預估下一季營收 1,300 億美元、上下 3%，且該季多一週，未假設中國資料中心運算營收。展望不是已實現收入，也不能直接等同相同週數的成長比較。"
+          ]
+        },
+        {
+          "heading": "影響與限制",
+          "points": [
+            "同日供應鏈公告提到欣興供 NVIDIA 的 ABF 載板產能計畫增至現有水準 3.5 倍以上，預計 2027 下半年投產、2028 第三季達新增產能目標。這是計畫與承諾，不是本季新增營收。",
+            "本期採公司原始數據，不稱超越未獨立核對的市場預期，也不把公布後盤中漲跌當成財報品質或投資報酬保證。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "NVIDIA FY2027 Q3 財報",
+          "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027",
+          "published": "2026-11-17",
+          "checked_at": "2026-11-19T05:04:36+08:00"
+        },
+        {
+          "name": "NVIDIA 供應鏈承諾公告",
+          "url": "https://nvidianews.nvidia.com/news/nvidia-expands-commitments-with-supply-chain-partners-to-support-ai-infrastructure-buildout",
+          "published": "2026-11-17",
+          "checked_at": "2026-11-19T05:04:36+08:00"
+        }
+      ],
+      "image": {
+        "image": "assets/nvidia-revenue-2026-11-19.svg",
+        "alt": "同季營收以零為共同基準：FY2026 Q3 570 億、FY2027 Q3 1158 億美元；下一季 1300 億上下3%另列為展望。",
+        "kind": "original",
+        "credit": "Daily Brief 原創圖表；資料來自 NVIDIA FY2027 Q3 官方財報。"
+      }
+    },
+    {
+      "id": "piastri-vegas-ice-penalty",
+      "category": "f1",
+      "title": "Piastri 拉斯維加斯預計罰退十位，原因是新 ICE 超額",
+      "teaser": "McLaren 確認因可靠性問題更換內燃機，首度超出本季額度；兩位車手另換升級渦輪，但渦輪仍在額度內，不因此受罰。",
+      "summary": "Formula 1 11 月 18 日報導，Oscar Piastri 因可靠性問題需換新 ICE，首次超出本季四具額度，因此預計承受十位起跑罰退。這是元件額度相關處置，不是已完成的最終起跑順序。",
+      "why": "罰退會改變排位成果轉換為起跑位置的方式，影響車隊週末策略。",
+      "limit": "為官方賽前公告的預期罰退，尚非 FIA 最終起跑表；不由此預測完賽結果。",
+      "details": [
+        {
+          "heading": "已確認的重點",
+          "points": [
+            "Formula 1 11 月 18 日報導，Oscar Piastri 因可靠性問題需換新 ICE，首次超出本季四具額度，因此預計承受十位起跑罰退。這是元件額度相關處置，不是已完成的最終起跑順序。",
+            "Piastri 與 Norris 也會換上 Mercedes 升級渦輪，兩人該元件均仍在額度內，不因此受罰；車隊形容預期性能收益相對小，不能將升級與 ICE 罰退混為同一原因。"
+          ]
+        },
+        {
+          "heading": "影響與限制",
+          "points": [
+            "McLaren 同時準備新底板等空力套件，部分減阻方案仍待練習後決定是否用於排位及正賽。賽前計畫不等於最終技術配置或已驗證圈速提升。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Formula 1 官方賽前消息",
+          "url": "https://www.formula1.com/en/latest/article/piastri-set-for-10-place-grid-penalty-at-las-vegas-grand-prix.5eT1wWFQzCfOS6W2tvTtLk",
+          "published": "2026-11-18",
+          "checked_at": "2026-11-19T05:04:36+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "ICE：超額 → 預計罰退十位",
+          "渦輪：額度內 → 不另罰",
+          "最終起跑位置：待官方起跑表"
+        ],
+        "caption": "原創元件與處置對照；十位罰退不等於已知最終第幾位起跑。"
+      }
+    }
+  ],
+  "source_checks": [
+    {
+      "name": "CERT-EU 安全公告",
+      "url": "https://cert.europa.eu/publications/security-advisories/2026-021/pdf",
+      "status": "checked",
+      "note": "實讀原始來源；依官方條件判斷適用範圍；無已核實實際利用結論，各供應商版本不同。",
+      "checked_at": "2026-11-19T05:04:36+08:00"
+    },
+    {
+      "name": "Perforce CNA 原始 CVE 紀錄",
+      "url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/115xxx/CVE-2026-115731.json",
+      "status": "checked",
+      "note": "實讀原始來源；供應商入口頁讀取失敗，改讀 Perforce 作為 CNA 提交的官方 CVE 原始資料與 CISA，不捏造入口頁查核。",
+      "checked_at": "2026-11-19T05:04:36+08:00"
+    },
+    {
+      "name": "NVIDIA FY2027 Q3 財報",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027",
+      "status": "checked",
+      "note": "實讀原始來源；公司展望與投產時間均有不確定性；不是個人買賣建議。",
+      "checked_at": "2026-11-19T05:04:36+08:00"
+    },
+    {
+      "name": "Formula 1 官方賽前消息",
+      "url": "https://www.formula1.com/en/latest/article/piastri-set-for-10-place-grid-penalty-at-las-vegas-grand-prix.5eT1wWFQzCfOS6W2tvTtLk",
+      "status": "checked",
+      "note": "實讀原始來源；為官方賽前公告的預期罰退，尚非 FIA 最終起跑表；不由此預測完賽結果。",
+      "checked_at": "2026-11-19T05:04:36+08:00"
+    },
+    {
+      "name": "CISA KEV",
+      "url": "https://raw.githubusercontent.com/cisagov/kev-data/main/known_exploited_vulnerabilities.json",
+      "status": "checked",
+      "note": "實讀 2026.11.17、1782 筆，新增 Puppet；Java4Shell 未列 KEV，沒有用收錄與否代表所有風險。",
+      "checked_at": "2026-11-19T05:04:36+08:00"
+    },
+    {
+      "name": "Federal Reserve",
+      "url": "https://www.federalreserve.gov/newsevents.htm",
+      "status": "checked",
+      "note": "檢視央行官方列表，不重刊前期 Barr 演說；市場另選重要企業實際財報。",
+      "checked_at": "2026-11-19T05:04:36+08:00"
+    },
+    {
+      "name": "FAA",
+      "url": "https://www.faa.gov/newsroom",
+      "status": "checked",
+      "note": "閱讀官方新聞列表，未把媒體的最新故障歸因說法直接當作完整調查結論；事故未見可實讀重大官方新進展。",
+      "checked_at": "2026-11-19T05:04:36+08:00"
+    },
+    {
+      "name": "Perforce 入口頁",
+      "url": "https://portal.perforce.com/s/cve/a91Qi000003IaHpIAK/report-deserialization-code-execution",
+      "status": "failed",
+      "note": "僅讀到 Loading／CSS Error；已改讀 Perforce CNA 公開 CVE 原始資料核對版本。",
+      "checked_at": "2026-11-19T05:04:36+08:00"
+    }
+  ],
+  "visual_review": [
+    {
+      "story_id": "java4shell-patching",
+      "decision": "diagram",
+      "reason": "適用條件、供應商更新及重啟不可混淆，流程呈現防護順序。",
+      "implementation": "visual.type=flow"
+    },
+    {
+      "story_id": "puppet-kev-report-deserialization",
+      "decision": "diagram",
+      "reason": "版本與憑證管理是不同防線，須同時說清修補及入侵清查。",
+      "implementation": "visual.type=flow"
+    },
+    {
+      "story_id": "nvidia-fy27-q3-results",
+      "decision": "image",
+      "reason": "同季實績以零基準比較，未來展望另列避免混算。",
+      "implementation": "assets/nvidia-revenue-2026-11-19.svg"
+    },
+    {
+      "story_id": "piastri-vegas-ice-penalty",
+      "decision": "diagram",
+      "reason": "同時更換兩種元件卻只有一種超額，以元件處置對照避免誤讀。",
+      "implementation": "visual.type=flow"
+    }
+  ],
+  "discovery_review": {
+    "searches": [
+      {
+        "topic": "November 18 2026 major technology cloud outage news",
+        "checked_at": "2026-11-19T05:04:36+08:00"
+      },
+      {
+        "topic": "November 18 2026 markets stocks bonds earnings Reuters",
+        "checked_at": "2026-11-19T05:04:36+08:00"
+      },
+      {
+        "topic": "November 18 2026 cybersecurity exploited vulnerability news",
+        "checked_at": "2026-11-19T05:04:36+08:00"
+      },
+      {
+        "topic": "November 18 2026 Formula 1 news",
+        "checked_at": "2026-11-19T05:04:36+08:00"
+      },
+      {
+        "topic": "site.perforce.com CVE-2026-115731",
+        "checked_at": "2026-11-19T05:04:36+08:00"
+      },
+      {
+        "topic": "site.cisa.gov November 18 2026 Java4Shell",
+        "checked_at": "2026-11-19T05:04:36+08:00"
+      },
+      {
+        "topic": "November 18 2026 latest major global technology market news Nvidia Puppet Java4Shell F1",
+        "checked_at": "2026-11-19T05:04:36+08:00"
+      }
+    ],
+    "candidates": [
+      {
+        "event": "Java4Shell 需優先修補，但不是所有 Java 環境都同樣暴露",
+        "url": "https://cert.europa.eu/publications/security-advisories/2026-021/pdf",
+        "decision": "included",
+        "reason": "已實讀官方／原始資料，具新安全行動、財報或正式賽事進展。"
+      },
+      {
+        "event": "Puppet Enterprise 漏洞新列 KEV，持有代理憑證的風險須優先處理",
+        "url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/115xxx/CVE-2026-115731.json",
+        "decision": "included",
+        "reason": "已實讀官方／原始資料，具新安全行動、財報或正式賽事進展。"
+      },
+      {
+        "event": "NVIDIA 財季營收年增 103%，財報與未來產能承諾分開看",
+        "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027",
+        "decision": "included",
+        "reason": "已實讀官方／原始資料，具新安全行動、財報或正式賽事進展。"
+      },
+      {
+        "event": "Piastri 拉斯維加斯預計罰退十位，原因是新 ICE 超額",
+        "url": "https://www.formula1.com/en/latest/article/piastri-set-for-10-place-grid-penalty-at-las-vegas-grand-prix.5eT1wWFQzCfOS6W2tvTtLk",
+        "decision": "included",
+        "reason": "已實讀官方／原始資料，具新安全行動、財報或正式賽事進展。"
+      },
+      {
+        "event": "FAA 最新事故根因說法",
+        "url": "https://www.faa.gov/newsroom",
+        "decision": "pending",
+        "reason": "官方列表未提供已實讀完整新調查資料，不以摘要宣稱最終原因。"
+      },
+      {
+        "event": "Optimizely 與其他故障回顧",
+        "url": "https://status.optimizely.com/",
+        "decision": "omitted",
+        "reason": "前期已報已確認事故，不以媒體回顧重刊同一狀態。"
+      }
+    ],
+    "final_check": {
+      "checked_at": "2026-11-19T05:04:36+08:00",
+      "result": "跨來源再核對主要頭條，選入兩項重大漏洞、正式財報與 F1 罰退；未把事故猜測或盤中市場走勢寫成查核事實。"
+    }
+  }
+}
