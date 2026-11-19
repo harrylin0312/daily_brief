@@ -1,0 +1,386 @@
+{
+  "date": "2026-11-20",
+  "title": "新確認的網攻、融資與席位，都要分清階段。",
+  "intro": "歐盟執委會確認網攻、LiteLLM 漏洞新列 KEV；另看 Anthropic 正式 IPO 定價、Palo Alto 收購協議及 Cadillac 明年陣容。",
+  "generated_at": "2026-11-20T05:21:19+08:00",
+  "coverage": {
+    "from": "2026-05-07",
+    "to": "2026-11-19"
+  },
+  "editor_note": "四類先廣泛掃描再查官方。LiteLLM 舊公告因 11 月 18 日新列 KEV 再報，原始日期及修補版本欄位差異均保留；IPO 僅報官方定價條件，不宣稱已核實首日成交。每則均有原創圖解。",
+  "hero": null,
+  "stories": [
+    {
+      "id": "eu-commission-cyber-campaign",
+      "category": "security",
+      "title": "歐盟執委會確認網攻，多數暫停應用已恢復、調查仍持續",
+      "teaser": "官方記者會確認 10 月已偵測的網攻及 AI 工具遭濫用；多數應用恢復不等於全案結束，目前也不能推論全體員工資料遭外洩。",
+      "summary": "歐盟執委會 11 月 19 日記者會表示，事件於 10 月 22 日偵測、26 日經初步調查確認，隨後暫停數項應用作為防護，多數其後已恢復。這是今日公開的新確認，不是網攻今日才開始。",
+      "why": "大型公共機構的應用依賴與資料風險需要分別追蹤，官方確認範圍比傳聞更重要。",
+      "limit": "依記者會逐字稿限定表述，不將記者問題中的規模、攻擊者國籍或資料猜測當成答案。",
+      "details": [
+        {
+          "heading": "已確認的進展",
+          "points": [
+            "歐盟執委會 11 月 19 日記者會表示，事件於 10 月 22 日偵測、26 日經初步調查確認，隨後暫停數項應用作為防護，多數其後已恢復。這是今日公開的新確認，不是網攻今日才開始。",
+            "發言人確認屬 AI 工具遭濫用的網攻活動，並與 CERT-EU 及歐洲資料保護監督機關聯繫；但未公開攻擊者歸屬或具體防禦工具。"
+          ]
+        },
+        {
+          "heading": "影響與限制",
+          "points": [
+            "官方表示尚未發現影響執委會員工整體的資料外洩證據。這不等於已排除所有個別資料風險；調查仍進行，不能將多數服務恢復寫成全面結案。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "歐盟執委會官方記者會逐字稿",
+          "url": "https://audiovisual.ec.europa.eu/en/media/video/I-298222",
+          "published": "2026-11-19",
+          "checked_at": "2026-11-20T05:21:19+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "10/22 偵測、10/26 確認",
+          "防護暫停部分應用",
+          "多數恢復，調查仍持續"
+        ],
+        "caption": "原創事故時間線；事件發生日期與 11 月 19 日官方公開確認日期不同。"
+      }
+    },
+    {
+      "id": "litellm-guardrail-kev",
+      "category": "security",
+      "title": "LiteLLM 自訂程式碼沙箱漏洞列入 KEV，管理員權限條件別漏看",
+      "teaser": "CISA 新收 CVE-2026-40217。官方公告說明預設需 proxy-admin 憑證；修補欄位與正文版本不一致，正文建議至少升至 1.83.11。",
+      "summary": "CISA 11 月 18 日將 CVE-2026-40217 列為已遭利用漏洞。廠商 5 月 7 日公告說明，自訂程式碼 guardrail 的沙箱可能被逃逸，於代理程序中執行任意程式碼；預設配置需 proxy-admin 憑證才能抵達相關功能。",
+      "why": "具高權限條件的漏洞仍可能造成重大影響，已遭利用收錄讓修補更急迫。",
+      "limit": "原始公告為 5 月，本期新進展為 KEV 收錄；版本欄位不一致已揭露，不提供沙箱逃逸教學。",
+      "details": [
+        {
+          "heading": "已確認的進展",
+          "points": [
+            "CISA 11 月 18 日將 CVE-2026-40217 列為已遭利用漏洞。廠商 5 月 7 日公告說明，自訂程式碼 guardrail 的沙箱可能被逃逸，於代理程序中執行任意程式碼；預設配置需 proxy-admin 憑證才能抵達相關功能。",
+            "公告受影響欄列 >=1.81.8、<1.83.10，修補欄列 >=1.83.10，但正文要求升至 1.83.11 或更新版本。本期採較新的正文建議，並揭露欄位差異，不把所有低權限使用者都說成可直接利用。"
+          ]
+        },
+        {
+          "heading": "影響與限制",
+          "points": [
+            "無法立即升級時依公告限制該測試功能的存取；仍須檢查管理憑證與異常操作。預設 Docker 代理程序以 root 執行會增加後果，但不代表每種部署皆同權限。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "LiteLLM 官方安全公告",
+          "url": "https://github.com/BerriAI/litellm/security/advisories/GHSA-wxxx-gvqv-xp7p",
+          "published": "2026-05-07",
+          "checked_at": "2026-11-20T05:21:19+08:00"
+        },
+        {
+          "name": "CISA KEV 新增紀錄",
+          "url": "https://raw.githubusercontent.com/cisagov/kev-data/main/known_exploited_vulnerabilities.json",
+          "published": "2026-11-18",
+          "checked_at": "2026-11-20T05:21:19+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "核對版本與管理端暴露",
+          "按正文建議升至 ≥1.83.11",
+          "檢查管理憑證及異常活動"
+        ],
+        "caption": "原創防護流程；公告修補欄與正文版本不同，採正文較新版本建議並保留差異。"
+      }
+    },
+    {
+      "id": "anthropic-ipo-priced",
+      "category": "markets",
+      "title": "Anthropic IPO 定價 83 美元，發行規模與首日股價分開看",
+      "teaser": "正式公告定價每股 83 美元、發行 9.8 億股；公司出售與股東出售是不同資金去向，不能把全部發行額都當成公司募得現金。",
+      "summary": "Anthropic 11 月 18 日正式定價每股 83 美元，發行 980,000,000 股；其中公司出售 956,351,354 股、既有股東出售 23,648,646 股，公司不取得後者出售所得。",
+      "why": "大型 AI 企業進入公開市場是重大融資事件，發行條件、資金去向及後續市場交易須分清。",
+      "limit": "未以估算總發行額冒充扣費後公司淨募資；未確認交割完成或首日績效。",
+      "details": [
+        {
+          "heading": "已確認的進展",
+          "points": [
+            "Anthropic 11 月 18 日正式定價每股 83 美元，發行 980,000,000 股；其中公司出售 956,351,354 股、既有股東出售 23,648,646 股，公司不取得後者出售所得。",
+            "官方宣布註冊文件於 18 日生效，原訂 19 日於 Nasdaq 以 ANT 交易，預計 20 日完成交割，仍有慣常條件；承銷商另有 30 天、最多 147,000,000 股選擇權。"
+          ]
+        },
+        {
+          "heading": "影響與限制",
+          "points": [
+            "較 11 月 10 日路演已進展至正式定價與文件生效；本則只報發行條件，未核實首日成交及收盤，不將 83 美元當成即時市場報價，也不提供買賣建議。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Anthropic 官方 IPO 定價公告",
+          "url": "https://www.anthropic.com/news/anthropic-prices-initial-public-offering",
+          "published": "2026-11-18",
+          "checked_at": "2026-11-20T05:21:19+08:00"
+        }
+      ],
+      "update_of": "2026-11-12",
+      "update_note": "前期為路演與預估價格範圍；本次為正式 83 美元定價、980,000,000 股規模與註冊文件生效。",
+      "image": {
+        "image": "assets/anthropic-offer-2026-11-20.svg",
+        "alt": "Anthropic 每股83美元定價，公司出售956351354股，股東出售23648646股；公司不取得股東出售所得。",
+        "kind": "original",
+        "credit": "Daily Brief 原創發行結構卡；依 Anthropic 11 月 18 日定價公告。"
+      }
+    },
+    {
+      "id": "palo-alto-applied-compute-deal",
+      "category": "tech",
+      "title": "Palo Alto Networks 擬以 45 億美元全股票收購 Applied Compute",
+      "teaser": "雙方已簽確定協議，但交易仍待監管等條件；開放權重模型訓練與推論平台整合，是公司規劃，不是已完成交割或驗證成效。",
+      "summary": "Palo Alto Networks 11 月 18 日宣布收購 Applied Compute 的確定協議，交易估值 45 億美元、全股票支付，金額仍可調整。預計於其 FY2027 第三季完成，並須滿足監管及其他慣常條件。",
+      "why": "重大資安業者向模型平台延伸，可能改變企業 AI 部署與安全產品的整合方式。",
+      "limit": "只依原始公告報已簽協議；未宣稱完成收購、現金支付或產品已整合。",
+      "details": [
+        {
+          "heading": "已確認的進展",
+          "points": [
+            "Palo Alto Networks 11 月 18 日宣布收購 Applied Compute 的確定協議，交易估值 45 億美元、全股票支付，金額仍可調整。預計於其 FY2027 第三季完成，並須滿足監管及其他慣常條件。",
+            "公司規劃結合 Applied Compute 的後訓練、推論平台及研究團隊，支援公開雲與主權環境的開放權重 AI；共同創辦人 Yash Patil 預計交割後出任共同 AI 長。"
+          ]
+        },
+        {
+          "heading": "影響與限制",
+          "points": [
+            "簽約、監管批准與完成交割是不同階段。公司所稱安全整合及產品效益仍屬未來規劃，不能直接當作獨立驗證的安全性或效能結論。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Palo Alto Networks 官方收購公告",
+          "url": "https://investors.paloaltonetworks.com/news-releases/news-release-details/palo-alto-networks-acquire-applied-compute-bringing-secure-open",
+          "published": "2026-11-18",
+          "checked_at": "2026-11-20T05:21:19+08:00",
+          "verification_method": "web",
+          "verification_note": "本次網頁工具實讀 Palo Alto Networks 11 月 18 日官方公告全文：45 億美元可調整全股票協議、監管及慣常交割條件、預計 FY2027 Q3 完成、Yash Patil 交割後職務。直接 HTTP 403，並非以摘要代替原文。"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "簽署確定收購協議",
+          "監管及其他交割條件",
+          "預計 FY2027 Q3 完成"
+        ],
+        "caption": "原創交易階段圖；45 億美元為可調整全股票交易估值，不是已支付現金。"
+      }
+    },
+    {
+      "id": "cadillac-bottas-2027-confirmed",
+      "category": "f1",
+      "title": "Cadillac 確認 Bottas 留任 2027，續與 Perez 搭檔",
+      "teaser": "Bottas 未來席位獲正式確認，Perez 的留任此前已公布。Herta 取得超級駕照相關安排不能直接推論成將取代其中一人的正賽席位。",
+      "summary": "Formula 1 11 月 19 日報導 Bottas 的 Cadillac 2027 席位已確認，結束近日留任猜測；Perez 的未來已於上月墨西哥站前確認，因此車隊延續兩名正賽車手組合。",
+      "why": "明年正賽陣容確定，可停止將測試及駕照資格與正式替換席位混為一談。",
+      "limit": "只限已公布的 2027 留任，不推測未公開合約條款。",
+      "details": [
+        {
+          "heading": "已確認的進展",
+          "points": [
+            "Formula 1 11 月 19 日報導 Bottas 的 Cadillac 2027 席位已確認，結束近日留任猜測；Perez 的未來已於上月墨西哥站前確認，因此車隊延續兩名正賽車手組合。",
+            "Bottas 表示 Herta 今年參與 FP1 及 F2、累積超級駕照積分有其原定安排，具備資格不代表車隊必須立即讓他取得正賽席位。"
+          ]
+        },
+        {
+          "heading": "影響與限制",
+          "points": [
+            "本次選入的是正式人事確認，不是把車手對前景的評論當成合約。亦不推論未公告的 2028 年安排、車手表現或最終賽事結果。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Formula 1 官方留任報導",
+          "url": "https://www.formula1.com/en/latest/article/we-can-get-rid-of-the-noise-bottas-relieved-to-have-cadillac-future-confirmed-for-2027.5LE0fIkWvK7hk8syPThmkE",
+          "published": "2026-11-19",
+          "checked_at": "2026-11-20T05:21:19+08:00"
+        }
+      ],
+      "image": {
+        "image": "assets/cadillac-lineup-2026-11-20.svg",
+        "alt": "Cadillac 2027 正賽席位：本次確認Bottas留任，此前確認Perez；不把Herta駕照資格當成正賽席位。",
+        "kind": "original",
+        "credit": "Daily Brief 原創陣容對照；依 Formula 1 11 月 19 日報導。"
+      }
+    }
+  ],
+  "source_checks": [
+    {
+      "name": "歐盟執委會官方記者會逐字稿",
+      "url": "https://audiovisual.ec.europa.eu/en/media/video/I-298222",
+      "status": "checked",
+      "note": "實讀官方原文；依記者會逐字稿限定表述，不將記者問題中的規模、攻擊者國籍或資料猜測當成答案。",
+      "checked_at": "2026-11-20T05:21:19+08:00"
+    },
+    {
+      "name": "LiteLLM 官方安全公告",
+      "url": "https://github.com/BerriAI/litellm/security/advisories/GHSA-wxxx-gvqv-xp7p",
+      "status": "checked",
+      "note": "實讀官方原文；原始公告為 5 月，本期新進展為 KEV 收錄；版本欄位不一致已揭露，不提供沙箱逃逸教學。",
+      "checked_at": "2026-11-20T05:21:19+08:00"
+    },
+    {
+      "name": "Anthropic 官方 IPO 定價公告",
+      "url": "https://www.anthropic.com/news/anthropic-prices-initial-public-offering",
+      "status": "checked",
+      "note": "實讀官方原文；未以估算總發行額冒充扣費後公司淨募資；未確認交割完成或首日績效。",
+      "checked_at": "2026-11-20T05:21:19+08:00"
+    },
+    {
+      "name": "Palo Alto Networks 官方收購公告",
+      "url": "https://investors.paloaltonetworks.com/news-releases/news-release-details/palo-alto-networks-acquire-applied-compute-bringing-secure-open",
+      "status": "checked",
+      "note": "實讀官方原文；只依原始公告報已簽協議；未宣稱完成收購、現金支付或產品已整合。",
+      "checked_at": "2026-11-20T05:21:19+08:00"
+    },
+    {
+      "name": "Formula 1 官方留任報導",
+      "url": "https://www.formula1.com/en/latest/article/we-can-get-rid-of-the-noise-bottas-relieved-to-have-cadillac-future-confirmed-for-2027.5LE0fIkWvK7hk8syPThmkE",
+      "status": "checked",
+      "note": "實讀官方原文；只限已公布的 2027 留任，不推測未公開合約條款。",
+      "checked_at": "2026-11-20T05:21:19+08:00"
+    },
+    {
+      "name": "CISA KEV",
+      "url": "https://raw.githubusercontent.com/cisagov/kev-data/main/known_exploited_vulnerabilities.json",
+      "status": "checked",
+      "note": "實讀 2026.11.18、1786 筆，新收 Synology、LiteLLM、Apache Axis、REDCap；選入已查核版本與前提的 LiteLLM，其他非默認無風險。",
+      "checked_at": "2026-11-20T05:21:19+08:00"
+    },
+    {
+      "name": "Federal Reserve",
+      "url": "https://www.federalreserve.gov/newsevents.htm",
+      "status": "checked",
+      "note": "檢視央行官方近期列表，未重刊前期演說；市場本期選正式 IPO 定價，不以未核實盤中價格替代收盤。",
+      "checked_at": "2026-11-20T05:21:19+08:00"
+    }
+  ],
+  "visual_review": [
+    {
+      "story_id": "eu-commission-cyber-campaign",
+      "decision": "diagram",
+      "reason": "偵測、確認、停用與恢復分階段，用時間線防止把公開日當發生日。",
+      "implementation": "visual.type=flow"
+    },
+    {
+      "story_id": "litellm-guardrail-kev",
+      "decision": "diagram",
+      "reason": "管理權限與升級後調查是不同防線，流程有助理解行動。",
+      "implementation": "visual.type=flow"
+    },
+    {
+      "story_id": "anthropic-ipo-priced",
+      "decision": "image",
+      "reason": "公司與股東出售的資金去向不同，製作數據卡，不以股價走勢裝飾。",
+      "implementation": "assets/anthropic-offer-2026-11-20.svg"
+    },
+    {
+      "story_id": "palo-alto-applied-compute-deal",
+      "decision": "diagram",
+      "reason": "簽約非交割，交易階段圖可避免誤讀。",
+      "implementation": "visual.type=flow"
+    },
+    {
+      "story_id": "cadillac-bottas-2027-confirmed",
+      "decision": "image",
+      "reason": "本次與此前確認的人選並列，區分正賽席位與駕照資格。",
+      "implementation": "assets/cadillac-lineup-2026-11-20.svg"
+    }
+  ],
+  "discovery_review": {
+    "searches": [
+      {
+        "topic": "November 19 2026 major technology cloud outage news",
+        "checked_at": "2026-11-20T05:21:19+08:00"
+      },
+      {
+        "topic": "November 19 2026 markets stocks bonds crypto Reuters",
+        "checked_at": "2026-11-20T05:21:19+08:00"
+      },
+      {
+        "topic": "November 19 2026 cybersecurity exploited vulnerabilities",
+        "checked_at": "2026-11-20T05:21:19+08:00"
+      },
+      {
+        "topic": "November 19 2026 Formula 1 major news",
+        "checked_at": "2026-11-20T05:21:19+08:00"
+      },
+      {
+        "topic": "November 19 2026 European Commission cyberattack official statement",
+        "checked_at": "2026-11-20T05:21:19+08:00"
+      },
+      {
+        "topic": "site.anthropic.com initial public offering November 2026",
+        "checked_at": "2026-11-20T05:21:19+08:00"
+      },
+      {
+        "topic": "November 19 2026 major breaking news cloud security markets F1 Anthropic",
+        "checked_at": "2026-11-20T05:21:19+08:00"
+      }
+    ],
+    "candidates": [
+      {
+        "event": "歐盟執委會確認網攻，多數暫停應用已恢復、調查仍持續",
+        "url": "https://audiovisual.ec.europa.eu/en/media/video/I-298222",
+        "decision": "included",
+        "reason": "重大事件且已取得官方原文；區分確認範圍與尚未完成階段。"
+      },
+      {
+        "event": "LiteLLM 自訂程式碼沙箱漏洞列入 KEV，管理員權限條件別漏看",
+        "url": "https://github.com/BerriAI/litellm/security/advisories/GHSA-wxxx-gvqv-xp7p",
+        "decision": "included",
+        "reason": "重大事件且已取得官方原文；區分確認範圍與尚未完成階段。"
+      },
+      {
+        "event": "Anthropic IPO 定價 83 美元，發行規模與首日股價分開看",
+        "url": "https://www.anthropic.com/news/anthropic-prices-initial-public-offering",
+        "decision": "included",
+        "reason": "重大事件且已取得官方原文；區分確認範圍與尚未完成階段。"
+      },
+      {
+        "event": "Palo Alto Networks 擬以 45 億美元全股票收購 Applied Compute",
+        "url": "https://investors.paloaltonetworks.com/news-releases/news-release-details/palo-alto-networks-acquire-applied-compute-bringing-secure-open",
+        "decision": "included",
+        "reason": "重大事件且已取得官方原文；區分確認範圍與尚未完成階段。"
+      },
+      {
+        "event": "Cadillac 確認 Bottas 留任 2027，續與 Perez 搭檔",
+        "url": "https://www.formula1.com/en/latest/article/we-can-get-rid-of-the-noise-bottas-relieved-to-have-cadillac-future-confirmed-for-2027.5LE0fIkWvK7hk8syPThmkE",
+        "decision": "included",
+        "reason": "重大事件且已取得官方原文；區分確認範圍與尚未完成階段。"
+      },
+      {
+        "event": "市場大幅波動及 Anthropic 首日股價",
+        "url": "https://apnews.com/article/206c84045137824feabe052a29ff6140",
+        "decision": "pending",
+        "reason": "未完成正式收盤及一致比較基準的原文查核，不將搜尋摘要或盤中更新當成已確認收盤。"
+      },
+      {
+        "event": "其他 KEV 新增項目",
+        "url": "https://raw.githubusercontent.com/cisagov/kev-data/main/known_exploited_vulnerabilities.json",
+        "decision": "pending",
+        "reason": "已確認收錄，但本期未完整核對各產品版本；不憑目錄猜測修補措施。"
+      }
+    ],
+    "final_check": {
+      "checked_at": "2026-11-20T05:21:19+08:00",
+      "result": "重新比對重大頭條，優先歐盟新確認事故、已利用漏洞與重要融資交易，F1 選正式人事；市場收盤及其他漏洞版本未充分查核者明列待查，不影響其餘刊登。"
+    }
+  }
+}
