@@ -1,0 +1,378 @@
+{
+  "date": "2026-11-21",
+  "title": "管理面漏洞、重大賣壓與安裝規則，先看確定的事。",
+  "intro": "vCenter 漏洞已遭利用、台股出現重大跌幅；Android 驗證明年擴大，Las Vegas 多車退位。",
+  "generated_at": "2026-11-21T05:08:17+08:00",
+  "coverage": {
+    "from": "2026-11-19",
+    "to": "2026-11-20"
+  },
+  "editor_note": "市場資料分清時點與比較基準：台股採證交所官方收盤，全球賣壓背景採 Schwab 早間評論；20 日美股較晚盤中與收盤原文受阻，仍待查核。vCenter 依不同產品分支修補，F1 處罰不等同最終起跑格。四則各有原創圖解。",
+  "hero": null,
+  "stories": [
+    {
+      "id": "vcenter-auth-bypass-exploited",
+      "category": "security",
+      "title": "vCenter 身分驗證繞過漏洞已遭利用，Broadcom 發布修補",
+      "teaser": "CVE-2026-123890 可讓能連到管理系統的攻擊者繞過驗證；Mandiant 確認 9 月已有利用，應同步修補與排查入侵。",
+      "summary": "Broadcom 11 月 19 日發布、20 日更新 VMSA-2026-0009.1，vCenter Directory Service 的 CVE-2026-123890 評分 9.8；具網路存取能力的攻擊者可能繞過驗證。Mandiant 的鑑識證據顯示，ARMORY CASTLE 在 9 月初已利用此漏洞。",
+      "why": "虛擬化管理面失陷會波及受管主機與資料，修補應列為急件，並檢查異常管理帳號及活動。",
+      "limit": "升級不代表既有入侵已清除；限制管理網路屬額外防護，不能冒充官方 workaround。不提供攻擊操作。",
+      "details": [
+        {
+          "heading": "已確認的進展",
+          "points": [
+            "Broadcom 11 月 19 日發布、20 日更新 VMSA-2026-0009.1，vCenter Directory Service 的 CVE-2026-123890 評分 9.8；具網路存取能力的攻擊者可能繞過驗證。Mandiant 的鑑識證據顯示，ARMORY CASTLE 在 9 月初已利用此漏洞。",
+            "修補版本依分支為 9.1.1.0200、9.0.2.0200、8.0 U3m；VCF 5.x 對應 5.2.5。vCenter 7.0 延長支援客戶需聯絡 Broadcom，Telco 整合產品另依官方矩陣。官方沒有替代修補方案。"
+          ]
+        },
+        {
+          "heading": "影響與限制",
+          "points": [
+            "虛擬化管理面失陷會波及受管主機與資料，修補應列為急件，並檢查異常管理帳號及活動。 升級不代表既有入侵已清除；限制管理網路屬額外防護，不能冒充官方 workaround。不提供攻擊操作。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Broadcom 安全公告",
+          "url": "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/39495",
+          "published": "2026-11-19",
+          "checked_at": "2026-11-21T05:08:17+08:00",
+          "verification_method": "web",
+          "verification_note": "本次網頁工具實讀 VMSA-2026-0009.1 原文及 3a 回應矩陣：11/19 首發、11/20 更新、CVE-2026-123890 CVSS 9.8、無 workaround，以及 9.1.1.0200、9.0.2.0200、8.0 U3m、VCF 5.2.5 和 7.0 延長支援條件。直接 HTTP 403。"
+        },
+        {
+          "name": "Google GTIG／Mandiant 原始鑑識報告",
+          "url": "https://cloud.google.com/blog/topics/threat-intelligence/armory-castle-exploits-vsphere",
+          "published": "2026-11-19",
+          "checked_at": "2026-11-21T05:08:17+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "盤點 vCenter 與整合產品分支",
+          "依官方矩陣立即修補",
+          "排查異常帳號與既有入侵"
+        ],
+        "caption": "原創防護流程：修補與入侵排查需並行，未將管理網路限制當成已修復。"
+      }
+    },
+    {
+      "id": "global-equity-selloff-twse",
+      "category": "markets",
+      "title": "台股單日跌 6.23%、一週跌 17.50%，全球科技股賣壓擴散",
+      "teaser": "證交所資料確認 11 月 20 日加權指數收 36,033.29 點。美股仍有後續跌勢報導，但本期未完成當日美股收盤查核，分開標示資料時間。",
+      "summary": "證交所官方資料：11 月 20 日臺灣交易日收盤 36,033.29 點，較 19 日 38,426.89 點跌 2,393.60 點，計算跌幅 6.23%；相較上週五 13 日 43,675.12 點，一週跌幅 17.50%。兩者比較基準不同。",
+      "why": "單日與單週均出現顯著跌幅，顯示集中持股與市場波動可能同時放大損失。",
+      "limit": "較晚美股盤中／收盤數據的 AP、Reuters 原文管道受阻，尚待核實；未將早間評論冒充 20 日美股收盤，也不宣稱跌勢已結束。不提供買賣指令。",
+      "details": [
+        {
+          "heading": "已確認的進展",
+          "points": [
+            "證交所官方資料：11 月 20 日臺灣交易日收盤 36,033.29 點，較 19 日 38,426.89 點跌 2,393.60 點，計算跌幅 6.23%；相較上週五 13 日 43,675.12 點，一週跌幅 17.50%。兩者比較基準不同。",
+            "Schwab 20 日美東 09:16（臺灣 22:16）評論指出科技股賣壓延續，將 AI 融資／監管疑慮與利率預期列為壓力。這是分析者歸因，不能證明台股每筆賣單的原因。"
+          ]
+        },
+        {
+          "heading": "影響與限制",
+          "points": [
+            "單日與單週均出現顯著跌幅，顯示集中持股與市場波動可能同時放大損失。 較晚美股盤中／收盤數據的 AP、Reuters 原文管道受阻，尚待核實；未將早間評論冒充 20 日美股收盤，也不宣稱跌勢已結束。不提供買賣指令。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "臺灣證交所官方加權指數歷史資料",
+          "url": "https://www.twse.com.tw/rwd/zh/TAIEX/MI_5MINS_HIST?date=20261120&response=json",
+          "published": "2026-11-20",
+          "checked_at": "2026-11-21T05:08:17+08:00"
+        },
+        {
+          "name": "Charles Schwab 原始市場評論",
+          "url": "https://www.schwab.com/learn/story/stock-market-update-open",
+          "published": "2026-11-20",
+          "checked_at": "2026-11-21T05:08:17+08:00"
+        }
+      ],
+      "image": {
+        "image": "assets/taiex-week-2026-11-21.svg",
+        "alt": "臺灣加權指數11月13日43675.12點、19日38426.89點、20日36033.29點；單日跌6.23%，一週跌17.50%。",
+        "kind": "original",
+        "credit": "Daily Brief 原創數據圖；證交所 2026 年 11 月官方收盤資料。日、週跌幅依收盤值計算。"
+      }
+    },
+    {
+      "id": "android-verification-global-2027",
+      "category": "tech",
+      "title": "Android 開發者驗證明年 1 月起全球擴大，側載仍有進階途徑",
+      "teaser": "Google 確認 2027 年 1 月開始擴大至全球，先與七家應用程式通路合作；這是分階段上線，不是同一天封鎖所有非 Play 安裝。",
+      "summary": "Google 11 月 19 日公告，開發者驗證於 2027 年 1 月開始全球擴大，先涵蓋 Google Play、Galaxy Store、Honor、Oppo、Xiaomi、Transsion、Vivo；其後數月逐步延伸至各國、認證 Android 裝置的所有安裝來源。",
+      "why": "變更影響第三方發行與使用者安裝流程，值得在全面展開前準備。",
+      "limit": "公告未指定一月哪一天或各國順序；身分註冊不是應用內容的安全保證，不能把未註冊直接等同惡意軟體。",
+      "details": [
+        {
+          "heading": "已確認的進展",
+          "points": [
+            "Google 11 月 19 日公告，開發者驗證於 2027 年 1 月開始全球擴大，先涵蓋 Google Play、Galaxy Store、Honor、Oppo、Xiaomi、Transsion、Vivo；其後數月逐步延伸至各國、認證 Android 裝置的所有安裝來源。",
+            "開發者應核對身分驗證與應用程式註冊狀態，包括 Play 以外的發行版本。學生與愛好者的免費有限發行帳戶上限已由 20 增至 50 部授權裝置；進階使用者仍可選擇接受風險，透過 advanced flow 安裝未註冊應用。"
+          ]
+        },
+        {
+          "heading": "影響與限制",
+          "points": [
+            "變更影響第三方發行與使用者安裝流程，值得在全面展開前準備。 公告未指定一月哪一天或各國順序；身分註冊不是應用內容的安全保證，不能把未註冊直接等同惡意軟體。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Android Developers 官方擴大公告",
+          "url": "https://developer.android.com/blog/posts/android-developer-verification-2027",
+          "published": "2026-11-19",
+          "checked_at": "2026-11-21T05:08:17+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "開發者驗證身分與註冊應用",
+          "2027/1 起七家通路全球擴大",
+          "其後數月擴及所有安裝來源"
+        ],
+        "caption": "原創上線階段圖；僅指認證 Android 裝置。未註冊應用另有進階安裝流程，並非全面禁止側載。"
+      }
+    },
+    {
+      "id": "las-vegas-grid-penalties-five",
+      "category": "f1",
+      "title": "Las Vegas 五名車手面臨退位，Bearman 將從隊尾起跑",
+      "teaser": "新增 Antonelli 退 5 位、Stroll 退 10 位與 Bearman 隊尾處罰；Piastri、Sainz 各退 10 位。處罰不能直接換算成最終起跑格。",
+      "summary": "Formula 1 11 月 20 日確認：Antonelli 第六具內燃機超額，退 5 位；Stroll 的儲能與控制電子組件超額，合計退 10 位；Bearman 多項動力單元超額，將從隊尾起跑。",
+      "why": "多車處罰將改變排位後的正賽起跑順序，影響比單純練習賽快慢更直接。",
+      "limit": "排位尚未完成，本期報處罰而非最終格位；仍須等待 FIA 正式起跑名單及任何後續決定。",
+      "details": [
+        {
+          "heading": "已確認的進展",
+          "points": [
+            "Formula 1 11 月 20 日確認：Antonelli 第六具內燃機超額，退 5 位；Stroll 的儲能與控制電子組件超額，合計退 10 位；Bearman 多項動力單元超額，將從隊尾起跑。",
+            "先前已確認 Piastri、Sainz 各退 10 位。Antonelli 同時換上的渦輪及排氣組件仍在配額內，不能把每項換件都算成額外處罰；單站累計超過 15 位者適用隊尾規則。"
+          ]
+        },
+        {
+          "heading": "影響與限制",
+          "points": [
+            "多車處罰將改變排位後的正賽起跑順序，影響比單純練習賽快慢更直接。 排位尚未完成，本期報處罰而非最終格位；仍須等待 FIA 正式起跑名單及任何後續決定。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Formula 1 官方動力單元處罰整理",
+          "url": "https://www.formula1.com/en/latest/article/antonelli-bearman-and-stroll-set-for-grid-penalties-at-las-vegas-grand-prix.37Vixk6Mt1gvZlVXDsO8S",
+          "published": "2026-11-20",
+          "checked_at": "2026-11-21T05:08:17+08:00"
+        }
+      ],
+      "update_of": "2026-11-19",
+      "update_note": "前期僅報 Piastri 內燃機退 10 位；新增 Antonelli、Stroll、Bearman，並整合 Sainz 已確認處罰。",
+      "image": {
+        "image": "assets/vegas-penalties-2026-11-21.svg",
+        "alt": "Las Vegas：Antonelli退5位，Stroll、Piastri、Sainz各退10位，Bearman隊尾；最終起跑格待排位與FIA名單。",
+        "kind": "original",
+        "credit": "Daily Brief 原創處罰對照；依 Formula 1 11 月 20 日公告，非最終起跑名單。"
+      }
+    }
+  ],
+  "source_checks": [
+    {
+      "name": "Broadcom 安全公告",
+      "url": "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/39495",
+      "status": "checked",
+      "checked_at": "2026-11-21T05:08:17+08:00",
+      "note": "一般 HTTP 403，本次網頁工具已實讀官方原文與版本矩陣。"
+    },
+    {
+      "name": "Google GTIG／Mandiant 原始鑑識報告",
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/armory-castle-exploits-vsphere",
+      "status": "checked",
+      "checked_at": "2026-11-21T05:08:17+08:00",
+      "note": "本次實讀原文；升級不代表既有入侵已清除；限制管理網路屬額外防護，不能冒充官方 workaround。不提供攻擊操作。"
+    },
+    {
+      "name": "臺灣證交所官方加權指數歷史資料",
+      "url": "https://www.twse.com.tw/rwd/zh/TAIEX/MI_5MINS_HIST?date=20261120&response=json",
+      "status": "checked",
+      "checked_at": "2026-11-21T05:08:17+08:00",
+      "note": "本次實讀原文；證交所 JSON 以一般 HTTP 成功讀取並核對三個交易日收盤；網頁工具未能載入該 JSON。"
+    },
+    {
+      "name": "Charles Schwab 原始市場評論",
+      "url": "https://www.schwab.com/learn/story/stock-market-update-open",
+      "status": "checked",
+      "checked_at": "2026-11-21T05:08:17+08:00",
+      "note": "本次實讀原文；較晚美股盤中／收盤數據的 AP、Reuters 原文管道受阻，尚待核實；未將早間評論冒充 20 日美股收盤，也不宣稱跌勢已結束。不提供買賣指令。"
+    },
+    {
+      "name": "Android Developers 官方擴大公告",
+      "url": "https://developer.android.com/blog/posts/android-developer-verification-2027",
+      "status": "checked",
+      "checked_at": "2026-11-21T05:08:17+08:00",
+      "note": "本次實讀原文；公告未指定一月哪一天或各國順序；身分註冊不是應用內容的安全保證，不能把未註冊直接等同惡意軟體。"
+    },
+    {
+      "name": "Formula 1 官方動力單元處罰整理",
+      "url": "https://www.formula1.com/en/latest/article/antonelli-bearman-and-stroll-set-for-grid-penalties-at-las-vegas-grand-prix.37Vixk6Mt1gvZlVXDsO8S",
+      "status": "checked",
+      "checked_at": "2026-11-21T05:08:17+08:00",
+      "note": "本次實讀原文；排位尚未完成，本期報處罰而非最終格位；仍須等待 FIA 正式起跑名單及任何後續決定。"
+    },
+    {
+      "name": "Cloudflare 官方狀態",
+      "url": "https://www.cloudflarestatus.com/",
+      "status": "checked",
+      "checked_at": "2026-11-21T05:08:17+08:00",
+      "note": "實讀公開頁：未列進行中事故，另列區域維護；不據此宣稱全球所有服務正常。"
+    },
+    {
+      "name": "Google Cloud 官方狀態",
+      "url": "https://status.cloud.google.com/",
+      "status": "checked",
+      "checked_at": "2026-11-21T05:08:17+08:00",
+      "note": "檢視公開狀態頁與跨來源事故候選；頁面矩陣不能證明所有客戶沒有問題。"
+    },
+    {
+      "name": "Federal Reserve 官方近期公告",
+      "url": "https://www.federalreserve.gov/newsevents.htm",
+      "status": "checked",
+      "checked_at": "2026-11-21T05:08:17+08:00",
+      "note": "檢視 11/20 官方公告與 Cook 演說，未以個別演說當成新利率決議。"
+    },
+    {
+      "name": "較晚美股 AP／Reuters 原文",
+      "url": "https://apnews.com/article/c4c3f4878b12989347f8a930ed813dad",
+      "status": "failed",
+      "checked_at": "2026-11-21T05:08:17+08:00",
+      "note": "AP 與多個 Reuters 授權轉載原文讀取失敗，直接轉載 HTTP 403；搜尋摘要僅作重大事件線索。已刊可核實台股與 Schwab 早間資訊，20 日美股較晚行情待查，並非沒有跌勢。"
+    }
+  ],
+  "visual_review": [
+    {
+      "story_id": "vcenter-auth-bypass-exploited",
+      "decision": "diagram",
+      "reason": "修補與入侵排查需並行，以防護流程避免誤認升級就已清除入侵。",
+      "implementation": "visual.type=flow"
+    },
+    {
+      "story_id": "global-equity-selloff-twse",
+      "decision": "image",
+      "reason": "相同指數不同日期的收盤值用共同零起點呈現，並分開單日與週跌幅。",
+      "implementation": "assets/taiex-week-2026-11-21.svg"
+    },
+    {
+      "story_id": "android-verification-global-2027",
+      "decision": "diagram",
+      "reason": "全球擴大與所有安裝來源分階段，流程可避免誤解一月同日全面實施。",
+      "implementation": "visual.type=flow"
+    },
+    {
+      "story_id": "las-vegas-grid-penalties-five",
+      "decision": "image",
+      "reason": "五車不同退位類型需對照，隊尾與固定退位並不等同最終格位。",
+      "implementation": "assets/vegas-penalties-2026-11-21.svg"
+    }
+  ],
+  "discovery_review": {
+    "searches": [
+      {
+        "topic": "November 20 2026 technology major outage cloud Microsoft AWS Cloudflare news",
+        "checked_at": "2026-11-21T05:08:17+08:00"
+      },
+      {
+        "topic": "November 20 2026 stocks bonds dollar markets Reuters",
+        "checked_at": "2026-11-21T05:08:17+08:00"
+      },
+      {
+        "topic": "November 20 2026 cybersecurity exploited vulnerability breach",
+        "checked_at": "2026-11-21T05:08:17+08:00"
+      },
+      {
+        "topic": "November 20 2026 Formula 1 Las Vegas practice news",
+        "checked_at": "2026-11-21T05:08:17+08:00"
+      },
+      {
+        "topic": "CVE-2026-123890 Broadcom advisory November 19 2026",
+        "checked_at": "2026-11-21T05:08:17+08:00"
+      },
+      {
+        "topic": "November 20 2026 tech news Google Microsoft outage major announcement",
+        "checked_at": "2026-11-21T05:08:17+08:00"
+      },
+      {
+        "topic": "Android verification November 19 2026",
+        "checked_at": "2026-11-21T05:08:17+08:00"
+      },
+      {
+        "topic": "site:twse.com.tw 115年11月20日 發行量加權",
+        "checked_at": "2026-11-21T05:08:17+08:00"
+      },
+      {
+        "topic": "November 20 2026 F1 penalty disqualified investigation",
+        "checked_at": "2026-11-21T05:08:17+08:00"
+      },
+      {
+        "topic": "November 20 2026 breaking major technology outage security market news latest",
+        "checked_at": "2026-11-21T05:08:17+08:00"
+      }
+    ],
+    "candidates": [
+      {
+        "event": "vCenter 身分驗證繞過漏洞已遭利用，Broadcom 發布修補",
+        "url": "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/39495",
+        "decision": "included",
+        "reason": "實際影響重大且原文可查核；同事件合併並區分時點、限制與後續階段。"
+      },
+      {
+        "event": "台股單日跌 6.23%、一週跌 17.50%，全球科技股賣壓擴散",
+        "url": "https://www.twse.com.tw/rwd/zh/TAIEX/MI_5MINS_HIST?date=20261120&response=json",
+        "decision": "included",
+        "reason": "實際影響重大且原文可查核；同事件合併並區分時點、限制與後續階段。"
+      },
+      {
+        "event": "Android 開發者驗證明年 1 月起全球擴大，側載仍有進階途徑",
+        "url": "https://developer.android.com/blog/posts/android-developer-verification-2027",
+        "decision": "included",
+        "reason": "實際影響重大且原文可查核；同事件合併並區分時點、限制與後續階段。"
+      },
+      {
+        "event": "Las Vegas 五名車手面臨退位，Bearman 將從隊尾起跑",
+        "url": "https://www.formula1.com/en/latest/article/antonelli-bearman-and-stroll-set-for-grid-penalties-at-las-vegas-grand-prix.37Vixk6Mt1gvZlVXDsO8S",
+        "decision": "included",
+        "reason": "實際影響重大且原文可查核；同事件合併並區分時點、限制與後續階段。"
+      },
+      {
+        "event": "美股 20 日較晚盤中跌至修正區域及最終收盤",
+        "url": "https://apnews.com/article/c4c3f4878b12989347f8a930ed813dad",
+        "decision": "pending",
+        "reason": "重大線索不可忽略，已試 AP、Reuters 多個授權轉載及一般 HTTP；原文受阻，未把摘要當收盤。當期公開列待查，其他核實新聞照常刊登。"
+      },
+      {
+        "event": "Las Vegas 雨中練習賽",
+        "url": "https://www.formula1.com/en/results/2026/races/1300/las-vegas/practice/2",
+        "decision": "omitted",
+        "reason": "檢視官方結果，屬練習而非排位或正賽結果，優先收錄多車動力單元處罰。"
+      },
+      {
+        "event": "本週服務中斷與 AI 攻擊的關聯猜測",
+        "url": "https://www.axios.com/2026/11/19/twenty-future-of-defense-axios-cyber-threats-joe-lin",
+        "decision": "omitted",
+        "reason": "跨來源掃描發現評論，未有逐事故已確認共同原因的新官方證據，不把推測串成同一波攻擊；不重複前期已報事故。"
+      }
+    ],
+    "final_check": {
+      "checked_at": "2026-11-21T05:08:17+08:00",
+      "result": "重新掃描重大頭條及官方狀態，優先已利用 vCenter、重大台股跌幅與全球賣壓線索；Android 收錄具全球安裝影響的政策，F1 以多車處罰優先於練習結果。美股較晚原文受阻已公開待查，未默認無新聞。"
+    }
+  }
+}
