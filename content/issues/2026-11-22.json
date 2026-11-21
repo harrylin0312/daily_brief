@@ -1,0 +1,466 @@
+{
+  "date": "2026-11-22",
+  "title": "服務尚未復原，市場與起跑格已有新答案。",
+  "intro": "N-able 郵件管理事故持續、美股正式收盤補齊；另看 Cisco 已利用漏洞、Las Vegas 起跑安排及 2030 V8 框架。",
+  "generated_at": "2026-11-22T05:09:18+08:00",
+  "coverage": {
+    "from": "2026-10-21",
+    "to": "2026-11-21"
+  },
+  "editor_note": "市場補齊前期待查的美股正式收盤；Cisco 舊公告因 11/20 新列已遭利用而收錄。N-able 依最新官方更新區分郵件過濾正常與管理功能停用。FBI NCIC 疑似入侵仍待核實事件通報與影響範圍，Bell Canada 外洩線索亦待原始來源；不把待查寫成沒有新聞。五則各有原創圖解。",
+  "hero": null,
+  "stories": [
+    {
+      "id": "nable-mail-management-incident",
+      "category": "tech",
+      "title": "N-able 郵件安全平台事故持續：收信過濾正常，管理與隔離區仍停用",
+      "teaser": "官方 11 月 21 日最新更新仍列重大事故，影響美洲、亞太與歐洲。信件傳送未中斷，不代表管理入口、API 與隔離信件功能已恢復。",
+      "summary": "N-able 官方事故 202672 最新更新為 11 月 21 日 17:15:45 UTC（臺灣 22 日 01:15:45）：Mail Assure、SpamExperts Hosted Cloud 各區仍在修復與安全驗證，管理入口及 API 未開放，隔離區、紀錄等支援功能受影響；郵件傳送及過濾持續正常。",
+      "why": "使用者可能無法釋放隔離信件、查紀錄或改設定，應依廠商寄出的環境專屬通知處理。",
+      "limit": "最新官方狀態並非全面復原；「尚無客戶資料或信箱遭存取證據」是調查中的判斷，不等於已排除憑證暴露。廠商稱與 N-central 事故無關。",
+      "details": [
+        {
+          "heading": "發生什麼事",
+          "points": [
+            "N-able 官方事故 202672 最新更新為 11 月 21 日 17:15:45 UTC（臺灣 22 日 01:15:45）：Mail Assure、SpamExperts Hosted Cloud 各區仍在修復與安全驗證，管理入口及 API 未開放，隔離區、紀錄等支援功能受影響；郵件傳送及過濾持續正常。",
+            "廠商 18 日已將原先視為設定／相依性問題的事件改判為安全事故，確認一台伺服器遭未授權存取。向 SecurityWeek 表示已輪替平台憑證、撤銷 API／OAuth token 並重設本機使用者密碼。"
+          ]
+        },
+        {
+          "heading": "影響與限制",
+          "points": [
+            "使用者可能無法釋放隔離信件、查紀錄或改設定，應依廠商寄出的環境專屬通知處理。 最新官方狀態並非全面復原；「尚無客戶資料或信箱遭存取證據」是調查中的判斷，不等於已排除憑證暴露。廠商稱與 N-central 事故無關。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "N-able 官方事故與最新時間線",
+          "url": "https://uptime.n-able.com/event/202672/",
+          "published": "2026-11-18",
+          "checked_at": "2026-11-22T05:09:18+08:00",
+          "verification_method": "web",
+          "verification_note": "本次用瀏覽器實讀事件 202672 完整官方時間線，最新 2026-11-21 17:15:45 UTC：mail flow/filtering 正常，portal/API 仍 disabled；all regions、Active Incident、Identified、Major Outage。亦讀 11/18 安全事故確認及無信箱入侵證據聲明。網頁擷取工具 403、一般 HTTP 僅空殼，不以空殼當原文。"
+        },
+        {
+          "name": "SecurityWeek 直接採訪廠商聲明",
+          "url": "https://www.securityweek.com/n-able-blames-service-disruption-on-cyberattack/",
+          "published": "2026-11-20",
+          "checked_at": "2026-11-22T05:09:18+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "信件傳送／垃圾郵件過濾：正常",
+          "管理／API／隔離區：仍停用",
+          "按環境通知處理，等待安全驗證"
+        ],
+        "caption": "原創服務狀態對照；截至官方 11/21 17:15:45 UTC 更新，不能將郵件可送達等同所有功能恢復。"
+      }
+    },
+    {
+      "id": "us-equities-correction-close",
+      "category": "markets",
+      "title": "美股正式收盤確認：S&P 500 跌 3.7%，Nasdaq 一週跌 10%",
+      "teaser": "補齊前期尚待核實的 11 月 20 日美股收盤。S&P 500 進入距高點逾 10% 的修正區間，Nasdaq 綜合指數轉為全年下跌。",
+      "summary": "AP 收盤報告確認，美東 11 月 20 日交易日：S&P 500 收 6,910.39 點、較前日跌 3.7%；Nasdaq 綜合收 22,617.73、跌 5.3%；道瓊收 48,147.33、跌 1.9%。這是已結束的週五交易，不是週末新交易。",
+      "why": "跌勢已從盤中警訊成為正式收盤及跨週損失，集中投資的波動風險更明顯。",
+      "limit": "AI 類股賣壓是報導歸因，非已證明的唯一因果；不預測反彈或底部，不提供買賣指令。",
+      "details": [
+        {
+          "heading": "發生什麼事",
+          "points": [
+            "AP 收盤報告確認，美東 11 月 20 日交易日：S&P 500 收 6,910.39 點、較前日跌 3.7%；Nasdaq 綜合收 22,617.73、跌 5.3%；道瓊收 48,147.33、跌 1.9%。這是已結束的週五交易，不是週末新交易。",
+            "以 11 月 13 日收盤為週比較基準，S&P 500 跌 8.6%、Nasdaq 跌 10%、道瓊跌 8%。AP 將賣壓聚焦 AI 類股；S&P 500 較 10 月 6 日高點已跌逾 10%，Nasdaq 全年變為跌 2.7%。"
+          ]
+        },
+        {
+          "heading": "影響與限制",
+          "points": [
+            "跌勢已從盤中警訊成為正式收盤及跨週損失，集中投資的波動風險更明顯。 AI 類股賣壓是報導歸因，非已證明的唯一因果；不預測反彈或底部，不提供買賣指令。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Associated Press 收盤原稿／WTOP 授權轉載",
+          "url": "https://wtop.com/business-finance/2026/11/how-major-us-stock-indexes-fared-friday-11-20-2026/",
+          "published": "2026-11-20",
+          "checked_at": "2026-11-22T05:09:18+08:00"
+        }
+      ],
+      "update_of": "2026-11-21",
+      "update_note": "前期尚未核實美股較晚行情；本次補足 11 月 20 日正式收盤、單週損失與全年比較，確認 S&P 500 進入修正區間。",
+      "image": {
+        "image": "assets/us-selloff-2026-11-22.svg",
+        "alt": "S&P500、Nasdaq綜合與道瓊：11月20日單日分別跌3.7%、5.3%、1.9%；較11月13日的一週分別跌8.6%、10%、8%。",
+        "kind": "original",
+        "credit": "Daily Brief 原創數據圖；依 AP／WTOP 11 月 20 日收盤稿，分開單日及一週比較基準。"
+      }
+    },
+    {
+      "id": "cisco-expressway-kev",
+      "category": "security",
+      "title": "Cisco Expressway 叢集漏洞新列 KEV，需核對 X15.5.20 修補",
+      "teaser": "CVE-2026-76466 可造成 root 權限命令執行，但有叢集與特定存取前提。CISA 11 月 20 日新列已遭利用，舊公告的「未知利用」不能取代新進展。",
+      "summary": "CISA 11 月 20 日將 CVE-2026-76466 列入已遭利用目錄。Cisco 10 月 21 日原始公告指出，Expressway-C／E 的虛擬與硬體版本在使用受影響版本且啟用叢集時受影響；可連到資料庫服務且持有相關 cookie 的未驗證攻擊者可能執行 root 命令。",
+      "why": "通訊邊界設備失陷可能成為進入內網的跳板，已利用紀錄提高修補急迫性。",
+      "limit": "Cisco 舊公告仍寫未得知惡意利用；本期新事實採 CISA 11/20 收錄並揭露時間差，不宣稱所有未叢集部署皆受影響，不刊登攻擊指令。",
+      "details": [
+        {
+          "heading": "發生什麼事",
+          "points": [
+            "CISA 11 月 20 日將 CVE-2026-76466 列入已遭利用目錄。Cisco 10 月 21 日原始公告指出，Expressway-C／E 的虛擬與硬體版本在使用受影響版本且啟用叢集時受影響；可連到資料庫服務且持有相關 cookie 的未驗證攻擊者可能執行 root 命令。",
+            "Cisco 表列 X15.5.3 及以前的首個修補版為 X15.5.20，X14 及更舊須遷移至已修補版本；沒有官方 workaround。管理者應依官方矩陣及支援條件升級，另保留紀錄、檢查可疑管理活動。"
+          ]
+        },
+        {
+          "heading": "影響與限制",
+          "points": [
+            "通訊邊界設備失陷可能成為進入內網的跳板，已利用紀錄提高修補急迫性。 Cisco 舊公告仍寫未得知惡意利用；本期新事實採 CISA 11/20 收錄並揭露時間差，不宣稱所有未叢集部署皆受影響，不刊登攻擊指令。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Cisco 原始受影響與修補矩陣",
+          "url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-vcs-static-cred-hr7EWZ8t",
+          "published": "2026-10-21",
+          "checked_at": "2026-11-22T05:09:18+08:00"
+        },
+        {
+          "name": "CISA KEV 11月20日新增紀錄",
+          "url": "https://raw.githubusercontent.com/cisagov/kev-data/main/known_exploited_vulnerabilities.json",
+          "published": "2026-11-20",
+          "checked_at": "2026-11-22T05:09:18+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "確認 Expressway-C／E 版本與叢集",
+          "依矩陣升級 X15.5.20／遷移",
+          "檢查異常活動；限制管理存取"
+        ],
+        "caption": "原創防護流程；網路限制屬額外防線，不冒充廠商沒有提供的 workaround。"
+      }
+    },
+    {
+      "id": "las-vegas-qualifying-grid",
+      "category": "f1",
+      "title": "Antonelli 排位最快卻退至第六，Verstappen 從 Las Vegas 桿位起跑",
+      "teaser": "官方排位成績與起跑名單已出：首排為 Verstappen、Russell，Norris 第三；前期的退位處罰現在已有具體格位。",
+      "summary": "Las Vegas 當地 11 月 20 日排位，Antonelli 以 1:33.893 最快，領先 Verstappen 0.258 秒；但動力單元退五位處罰，使他在官方起跑表列第六。Verstappen 升至第一，Russell 第二，Norris 第三。",
+      "why": "排位最快與正賽從第一格出發是不同資訊，五車處罰已改變對戰位置。",
+      "limit": "本期查核時正賽尚未開始；其後若有新裁決仍可能變動，應以臨賽官方名單為準。",
+      "details": [
+        {
+          "heading": "發生什麼事",
+          "points": [
+            "Las Vegas 當地 11 月 20 日排位，Antonelli 以 1:33.893 最快，領先 Verstappen 0.258 秒；但動力單元退五位處罰，使他在官方起跑表列第六。Verstappen 升至第一，Russell 第二，Norris 第三。",
+            "官方起跑表另列 Piastri 第 17、Sainz 第 20、Stroll 第 21、Bearman 第 22；Bearman 雖未達排位 107% 時間要求，已獲准起跑。這是套用處罰後的起跑安排，不是正賽結果。"
+          ]
+        },
+        {
+          "heading": "影響與限制",
+          "points": [
+            "排位最快與正賽從第一格出發是不同資訊，五車處罰已改變對戰位置。 本期查核時正賽尚未開始；其後若有新裁決仍可能變動，應以臨賽官方名單為準。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Formula 1 官方排位成績",
+          "url": "https://www.formula1.com/en/results/2026/races/1300/las-vegas/qualifying",
+          "published": "2026-11-21",
+          "checked_at": "2026-11-22T05:09:18+08:00"
+        },
+        {
+          "name": "Formula 1 官方起跑名單",
+          "url": "https://www.formula1.com/en/results/2026/races/1300/las-vegas/starting-grid",
+          "published": "2026-11-21",
+          "checked_at": "2026-11-22T05:09:18+08:00"
+        }
+      ],
+      "update_of": "2026-11-21",
+      "update_note": "前期僅報五車退位且排位未完成；本次新增排位成績及官方套用處罰後起跑名單。",
+      "image": {
+        "image": "assets/vegas-grid-2026-11-22.svg",
+        "alt": "Antonelli排位第1至起跑第6；Verstappen第2至第1，Russell第3至第2，Norris第4至第3；不是正賽結果。",
+        "kind": "original",
+        "credit": "Daily Brief 原創排位／起跑對照；依 Formula 1 官方兩張成績表。"
+      }
+    },
+    {
+      "id": "fia-2030-v8-framework",
+      "category": "f1",
+      "title": "FIA 獲一致支持推進 2030 V8 架構，規則仍待 WMSC 批准",
+      "teaser": "擬採 2.1 公升渦輪 V8、先進永續燃料與有限混合動力。這是各方同意的技術框架，尚非已生效的完整規則。",
+      "summary": "FIA 11 月 20 日宣布，FIA、FOM、車隊與動力單元製造商一致同意 2030 年技術框架，以 2.1 公升渦輪 V8 為核心，使用先進永續燃料，搭配有限混合動力。",
+      "why": "長期動力架構會牽動車廠投入、研發與車隊規劃，是重要規則方向。",
+      "limit": "重量、成本及競賽改善是設計目標，尚非實測成果；不能把一致支持寫成規則已通過或目前引擎立即更換。",
+      "details": [
+        {
+          "heading": "發生什麼事",
+          "points": [
+            "FIA 11 月 20 日宣布，FIA、FOM、車隊與動力單元製造商一致同意 2030 年技術框架，以 2.1 公升渦輪 V8 為核心，使用先進永續燃料，搭配有限混合動力。",
+            "規劃同時追求較輕、較簡單且成本較低的動力單元與車體，目標改善近距離競賽。下一步是向下月上海世界汽車運動理事會（WMSC）會議提出確定框架；所有規則變更仍須理事會批准。"
+          ]
+        },
+        {
+          "heading": "影響與限制",
+          "points": [
+            "長期動力架構會牽動車廠投入、研發與車隊規劃，是重要規則方向。 重量、成本及競賽改善是設計目標，尚非實測成果；不能把一致支持寫成規則已通過或目前引擎立即更換。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "FIA 2030 動力單元框架官方公告",
+          "url": "https://api.fia.com/news/v8-future-unanimous-agreement-reached-fias-2030-formula-1-power-unit-framework",
+          "published": "2026-11-20",
+          "checked_at": "2026-11-22T05:09:18+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "FIA／FOM／車隊／車廠一致支持",
+          "下月向 WMSC 提出確定框架",
+          "仍須批准；目標 2030 引入"
+        ],
+        "caption": "原創規則流程圖：同意方向、正式批准與實施年份為不同階段。"
+      }
+    }
+  ],
+  "source_checks": [
+    {
+      "name": "N-able 官方事故與最新時間線",
+      "url": "https://uptime.n-able.com/event/202672/",
+      "status": "checked",
+      "checked_at": "2026-11-22T05:09:18+08:00",
+      "note": "以瀏覽器實讀官方 11/21 17:15:45 UTC 更新；擷取工具403、HTTP空殼未當作原文。"
+    },
+    {
+      "name": "SecurityWeek 直接採訪廠商聲明",
+      "url": "https://www.securityweek.com/n-able-blames-service-disruption-on-cyberattack/",
+      "status": "checked",
+      "checked_at": "2026-11-22T05:09:18+08:00",
+      "note": "實讀原文；最新官方狀態並非全面復原；「尚無客戶資料或信箱遭存取證據」是調查中的判斷，不等於已排除憑證暴露。廠商稱與 N-central 事故無關。"
+    },
+    {
+      "name": "Associated Press 收盤原稿／WTOP 授權轉載",
+      "url": "https://wtop.com/business-finance/2026/11/how-major-us-stock-indexes-fared-friday-11-20-2026/",
+      "status": "checked",
+      "checked_at": "2026-11-22T05:09:18+08:00",
+      "note": "實讀原文；網頁工具無法載入，已用一般 HTTP 成功閱讀 WTOP 授權 AP 完整收盤稿。"
+    },
+    {
+      "name": "Cisco 原始受影響與修補矩陣",
+      "url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-vcs-static-cred-hr7EWZ8t",
+      "status": "checked",
+      "checked_at": "2026-11-22T05:09:18+08:00",
+      "note": "實讀原文；Cisco 舊公告仍寫未得知惡意利用；本期新事實採 CISA 11/20 收錄並揭露時間差，不宣稱所有未叢集部署皆受影響，不刊登攻擊指令。"
+    },
+    {
+      "name": "CISA KEV 11月20日新增紀錄",
+      "url": "https://raw.githubusercontent.com/cisagov/kev-data/main/known_exploited_vulnerabilities.json",
+      "status": "checked",
+      "checked_at": "2026-11-22T05:09:18+08:00",
+      "note": "實讀原文；Cisco 舊公告仍寫未得知惡意利用；本期新事實採 CISA 11/20 收錄並揭露時間差，不宣稱所有未叢集部署皆受影響，不刊登攻擊指令。"
+    },
+    {
+      "name": "Formula 1 官方排位成績",
+      "url": "https://www.formula1.com/en/results/2026/races/1300/las-vegas/qualifying",
+      "status": "checked",
+      "checked_at": "2026-11-22T05:09:18+08:00",
+      "note": "實讀原文；本期查核時正賽尚未開始；其後若有新裁決仍可能變動，應以臨賽官方名單為準。"
+    },
+    {
+      "name": "Formula 1 官方起跑名單",
+      "url": "https://www.formula1.com/en/results/2026/races/1300/las-vegas/starting-grid",
+      "status": "checked",
+      "checked_at": "2026-11-22T05:09:18+08:00",
+      "note": "實讀原文；本期查核時正賽尚未開始；其後若有新裁決仍可能變動，應以臨賽官方名單為準。"
+    },
+    {
+      "name": "FIA 2030 動力單元框架官方公告",
+      "url": "https://api.fia.com/news/v8-future-unanimous-agreement-reached-fias-2030-formula-1-power-unit-framework",
+      "status": "checked",
+      "checked_at": "2026-11-22T05:09:18+08:00",
+      "note": "實讀原文；重量、成本及競賽改善是設計目標，尚非實測成果；不能把一致支持寫成規則已通過或目前引擎立即更換。"
+    },
+    {
+      "name": "Google Cloud 官方狀態",
+      "url": "https://status.cloud.google.com/",
+      "status": "checked",
+      "checked_at": "2026-11-22T05:09:18+08:00",
+      "note": "公開頁寫 No broad severe incidents，更新至11/21 12:44 PST；不能代表所有客戶沒有個別問題。"
+    },
+    {
+      "name": "Cloudflare 官方狀態",
+      "url": "https://www.cloudflarestatus.com/",
+      "status": "checked",
+      "checked_at": "2026-11-22T05:09:18+08:00",
+      "note": "實讀公開頁未列活動事故，另列 Dallas 維護；未將維護誤報全球中斷。"
+    },
+    {
+      "name": "Intel／Microsoft 官方合作公告",
+      "url": "https://www.intel.com/content/www/us/en/newsroom/news/corporate/microsoft-azure-infrastructure-collaboration.html",
+      "status": "checked",
+      "checked_at": "2026-11-22T05:09:18+08:00",
+      "note": "實讀11/18 EMIB、Xeon供應、CXL合作公告；已超預設48小時且本次無實質新進展，不為品牌補報舊事。"
+    },
+    {
+      "name": "Federal Reserve 官方近期公告",
+      "url": "https://www.federalreserve.gov/newsevents.htm",
+      "status": "checked",
+      "checked_at": "2026-11-22T05:09:18+08:00",
+      "note": "實讀近期官方列表及11/20 Cook演說；不把演說當利率決議。"
+    },
+    {
+      "name": "FBI NCIC 事故確認範圍",
+      "url": "https://apnews.com/article/d066cff87a64a564db0a00172c124972",
+      "status": "failed",
+      "checked_at": "2026-11-22T05:09:18+08:00",
+      "note": "廣泛掃描發現AP／CNN等報導。已讀WTOP頁上CNN轉載內容，但本次未取得FBI事件原始通報或完整獨立鑑識，外洩範圍與紀錄完整性仍待查，不能當作無事件。"
+    }
+  ],
+  "visual_review": [
+    {
+      "story_id": "nable-mail-management-incident",
+      "decision": "diagram",
+      "reason": "正常與停用服務需明確對照，避免讀者誤認全面停信或全面恢復。",
+      "implementation": "visual.type=flow"
+    },
+    {
+      "story_id": "us-equities-correction-close",
+      "decision": "image",
+      "reason": "單日與週跌幅分組，用共同尺度呈現損失幅度，不混用比較基準。",
+      "implementation": "assets/us-selloff-2026-11-22.svg"
+    },
+    {
+      "story_id": "cisco-expressway-kev",
+      "decision": "diagram",
+      "reason": "叢集前提、修補與排查是不同步驟，流程可降低處理遺漏。",
+      "implementation": "visual.type=flow"
+    },
+    {
+      "story_id": "las-vegas-qualifying-grid",
+      "decision": "image",
+      "reason": "排位名次與處罰後格位不同，用對照表說明變化。",
+      "implementation": "assets/vegas-grid-2026-11-22.svg"
+    },
+    {
+      "story_id": "fia-2030-v8-framework",
+      "decision": "diagram",
+      "reason": "同意框架不等於批准，流程圖呈現正式生效前的必要階段。",
+      "implementation": "visual.type=flow"
+    }
+  ],
+  "discovery_review": {
+    "searches": [
+      {
+        "topic": "November 21 2026 major technology outage cloud news",
+        "checked_at": "2026-11-22T05:09:18+08:00"
+      },
+      {
+        "topic": "November 21 2026 markets stocks bonds crypto selloff",
+        "checked_at": "2026-11-22T05:09:18+08:00"
+      },
+      {
+        "topic": "November 21 2026 cybersecurity exploited breach vulnerability news",
+        "checked_at": "2026-11-22T05:09:18+08:00"
+      },
+      {
+        "topic": "November 21 2026 Formula 1 Las Vegas qualifying results penalties",
+        "checked_at": "2026-11-22T05:09:18+08:00"
+      },
+      {
+        "topic": "November 21 2026 technology major outages cyberattack JPMorgan Visa Mastercard third party",
+        "checked_at": "2026-11-22T05:09:18+08:00"
+      },
+      {
+        "topic": "November 20 2026 stocks closed S&P Nasdaq AP",
+        "checked_at": "2026-11-22T05:09:18+08:00"
+      },
+      {
+        "topic": "November 21 2026 site:fia.com V8 2030",
+        "checked_at": "2026-11-22T05:09:18+08:00"
+      },
+      {
+        "topic": "N-able Mail Assure SpamExperts November 21 2026 outage security incident official",
+        "checked_at": "2026-11-22T05:09:18+08:00"
+      },
+      {
+        "topic": "November 21 2026 FBI NCIC database breach official statement",
+        "checked_at": "2026-11-22T05:09:18+08:00"
+      },
+      {
+        "topic": "November 21 2026 latest major headlines technology outage security F1 markets",
+        "checked_at": "2026-11-22T05:09:18+08:00"
+      }
+    ],
+    "candidates": [
+      {
+        "event": "N-able 郵件安全平台事故持續：收信過濾正常，管理與隔離區仍停用",
+        "url": "https://uptime.n-able.com/event/202672/",
+        "decision": "included",
+        "reason": "具重大影響與可核對原文；同事件合併，保留不同日期、階段與限制。"
+      },
+      {
+        "event": "美股正式收盤確認：S&P 500 跌 3.7%，Nasdaq 一週跌 10%",
+        "url": "https://wtop.com/business-finance/2026/11/how-major-us-stock-indexes-fared-friday-11-20-2026/",
+        "decision": "included",
+        "reason": "具重大影響與可核對原文；同事件合併，保留不同日期、階段與限制。"
+      },
+      {
+        "event": "Cisco Expressway 叢集漏洞新列 KEV，需核對 X15.5.20 修補",
+        "url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-vcs-static-cred-hr7EWZ8t",
+        "decision": "included",
+        "reason": "具重大影響與可核對原文；同事件合併，保留不同日期、階段與限制。"
+      },
+      {
+        "event": "Antonelli 排位最快卻退至第六，Verstappen 從 Las Vegas 桿位起跑",
+        "url": "https://www.formula1.com/en/results/2026/races/1300/las-vegas/qualifying",
+        "decision": "included",
+        "reason": "具重大影響與可核對原文；同事件合併，保留不同日期、階段與限制。"
+      },
+      {
+        "event": "FIA 獲一致支持推進 2030 V8 架構，規則仍待 WMSC 批准",
+        "url": "https://api.fia.com/news/v8-future-unanimous-agreement-reached-fias-2030-formula-1-power-unit-framework",
+        "decision": "included",
+        "reason": "具重大影響與可核對原文；同事件合併，保留不同日期、階段與限制。"
+      },
+      {
+        "event": "FBI NCIC疑似入侵與調查",
+        "url": "https://apnews.com/article/d066cff87a64a564db0a00172c124972",
+        "decision": "pending",
+        "reason": "重大線索已發現，讀到CNN轉載的調查報導；FBI未取得事件原始通報，資料外洩及紀錄完整性範圍未能核實，公開列待查，不把它當無新聞。"
+      },
+      {
+        "event": "JPMorgan／Visa／Mastercard第三方資料事件",
+        "url": "https://abc7chicago.com/story/jpmorganchase-reports-cyberattack-third-party-service-providers/20055320/",
+        "decision": "omitted",
+        "reason": "已實讀ABC原文與銀行聲明，11/19消息超過預設48小時，本次未取得更新範圍或處置的實質新進展；不能與11/16銀行故障合併成同一網攻。"
+      },
+      {
+        "event": "Bell Canada客戶資料事件",
+        "url": "https://www.cyware.com/resources/threat-briefings/daily-threat-briefing/cyware-daily-threat-intelligence-november-21-2026",
+        "decision": "pending",
+        "reason": "僅取得彙整線索，未取得當事方或原始調查文件；不照抄agentic攻擊與外洩規模。"
+      },
+      {
+        "event": "Intel／Microsoft Azure合作",
+        "url": "https://www.intel.com/content/www/us/en/newsroom/news/corporate/microsoft-azure-infrastructure-collaboration.html",
+        "decision": "omitted",
+        "reason": "已讀官方，原始11/18超過48小時且本次無新進展，不冒充今天消息。"
+      }
+    ],
+    "final_check": {
+      "checked_at": "2026-11-22T05:09:18+08:00",
+      "result": "跨來源重大頭條再比對，優先服務事故與正式市場收盤，漏洞採原始版本矩陣；F1查官方兩張成績表，未以排位報正賽結果。FBI／Bell線索不足明列待查，未讓單則不足阻止其餘核實新聞發布。"
+    }
+  }
+}
