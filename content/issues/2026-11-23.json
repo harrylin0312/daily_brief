@@ -1,0 +1,387 @@
+{
+  "date": "2026-11-23",
+  "title": "航班改走人工，資料保護不能只看標籤。",
+  "intro": "Delta 系統故障造成航班延誤；微軟租戶資料事件與推論供應商處置需要分清範圍，Las Vegas 正賽結果與賽後判罰也已出爐。",
+  "generated_at": "2026-11-23T05:01:28+08:00",
+  "coverage": {
+    "from": "2026-11-21",
+    "to": "2026-11-22"
+  },
+  "editor_note": "優先收錄新發生的航班系統事故及已確認資料事件。Delta 全面恢復時間未核實，OpenRouter 原文經瀏覽器確認；微軟採直接採訪確認並區分客戶通知。市場週末變動缺乏一致原始比較基準，FBI NCIC 範圍亦待查，不以待查冒稱沒有消息。四則各有原創圖解。",
+  "hero": null,
+  "stories": [
+    {
+      "id": "delta-weight-balance-outage",
+      "category": "tech",
+      "title": "Delta 重量平衡系統故障，亞特蘭大及全美航班受延誤",
+      "teaser": "Delta 改用人工程序讓航班安全出發；FAA 表示與其航管系統無關。人工替代能維持運作，不代表航空公司的自動化已全面修復。",
+      "summary": "11 月 22 日 Delta 一套起飛重量與平衡自動化系統故障，影響亞特蘭大樞紐及其他往返航班。ABC 美東 14:04（臺灣 23 日 03:04）報導逾 1,300 班延誤；這是該報導時點的累計數，不是即時數字。",
+      "why": "感恩節出遊前的樞紐故障會向轉機及其他機場傳遞，旅客應以航空公司當下航班狀態為準。",
+      "limit": "截至本次取得的原文，未核實自動化全面復原時間或底層根因；不把人工運作或解除流量管制當成系統已修好，也未證實是網攻。",
+      "details": [
+        {
+          "heading": "已確認的進展",
+          "points": [
+            "11 月 22 日 Delta 一套起飛重量與平衡自動化系統故障，影響亞特蘭大樞紐及其他往返航班。ABC 美東 14:04（臺灣 23 日 03:04）報導逾 1,300 班延誤；這是該報導時點的累計數，不是即時數字。",
+            "Delta 直接聲明稱，團隊以人工替代程序安全安排起飛，仍在恢復自動化。FAA 對外表示，這些延誤與 FAA 航空交通系統無關；不能將本次故障混同 11 月 13 日全國停飛事件。"
+          ]
+        },
+        {
+          "heading": "影響與限制",
+          "points": [
+            "感恩節出遊前的樞紐故障會向轉機及其他機場傳遞，旅客應以航空公司當下航班狀態為準。 截至本次取得的原文，未核實自動化全面復原時間或底層根因；不把人工運作或解除流量管制當成系統已修好，也未證實是網攻。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "ABC News 原始採訪／Delta與FAA聲明",
+          "url": "https://abcnews.com/US/equipment-outage-atlanta-causes-1300-delta-flight-delays/story?id=138360900",
+          "published": "2026-11-22",
+          "checked_at": "2026-11-23T05:01:28+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "重量／平衡自動化發生問題",
+          "Delta 採人工替代安排起飛",
+          "自動化全面恢復時間未核實"
+        ],
+        "caption": "原創事故處置圖；FAA 航管系統不屬本次已確認故障範圍。"
+      }
+    },
+    {
+      "id": "entra-connect-health-metadata",
+      "category": "security",
+      "title": "微軟確認 Entra Connect Health 資料遭讀取，管理員聯絡資訊外洩",
+      "teaser": "微軟已於 11 月 19 日部署服務端修補，並通知受影響租戶。外洩以租戶中繼資料及管理員信箱為主，不能擴大成密碼或權杖失竊。",
+      "summary": "BleepingComputer 11 月 21 日實際取得微軟發言人確認：Entra Connect Health 安全問題涉及租戶聯絡與設定中繼資料，19 日已修補，受影響客戶透過 Azure Service Health 收到通知。其檢視的通知說，20 日調查確認未授權唯讀存取，未發現設定遭改動。",
+      "why": "真實管理員信箱與租戶資訊可能提高定向釣魚可信度，應查看租戶通知、檢視登入紀錄並保護高權限帳號。",
+      "limit": "公開未有受影響租戶總數或攻擊開始時間；通知原文不是公開公告，本則將通知內容與微軟直接確認分開歸屬，不將過期憑證當有效金鑰。",
+      "details": [
+        {
+          "heading": "已確認的進展",
+          "points": [
+            "BleepingComputer 11 月 21 日實際取得微軟發言人確認：Entra Connect Health 安全問題涉及租戶聯絡與設定中繼資料，19 日已修補，受影響客戶透過 Azure Service Health 收到通知。其檢視的通知說，20 日調查確認未授權唯讀存取，未發現設定遭改動。",
+            "資料包括管理員／技術聯絡信箱、租戶識別與部分同步設定，以及不再使用的過期憑證。微軟表示未暴露密碼、密碼雜湊、驗證權杖或有效金鑰；本項漏洞不需客戶安裝軟體修補。"
+          ]
+        },
+        {
+          "heading": "影響與限制",
+          "points": [
+            "真實管理員信箱與租戶資訊可能提高定向釣魚可信度，應查看租戶通知、檢視登入紀錄並保護高權限帳號。 公開未有受影響租戶總數或攻擊開始時間；通知原文不是公開公告，本則將通知內容與微軟直接確認分開歸屬，不將過期憑證當有效金鑰。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "BleepingComputer 原始採訪／微軟直接確認",
+          "url": "https://www.bleepingcomputer.com/news/security/microsoft-entra-connect-health-flaw-exploited-to-steal-tenant-data/",
+          "published": "2026-11-21",
+          "checked_at": "2026-11-23T05:01:28+08:00",
+          "verification_method": "web",
+          "verification_note": "本次網頁工具實讀 BleepingComputer 11/21 原始報導全文，含微軟發言人直接確認11/19已修補與Azure Service Health通知；通知段落列11/20唯讀存取、未發現設定變更，暴露管理信箱及中繼資料、未暴露密碼與權杖。一般HTTP403，非僅搜尋摘要。"
+        }
+      ],
+      "image": {
+        "image": "assets/entra-metadata-2026-11-23.svg",
+        "alt": "Entra Connect Health：遭讀取的是管理員信箱、租戶與部分同步設定；微軟表示未暴露密碼、驗證權杖或有效金鑰。",
+        "kind": "original",
+        "credit": "Daily Brief 原創範圍對照；依 BleepingComputer 11 月 21 日微軟確認及客戶通知報導。"
+      }
+    },
+    {
+      "id": "openrouter-provider-data-incidents",
+      "category": "tech",
+      "title": "OpenRouter 移除三家供應商，125 個端點失去零保留資格",
+      "teaser": "研究揭露供應商的資料處置問題；OpenRouter 表示未發現自身遭入侵。撤除零資料保留資格含預防性處置，不能等同 125 個端點全部已外洩。",
+      "summary": "OpenRouter 11 月 22 日公告，調查後移除三家推論供應商，並撤除 125 個端點的零資料保留（ZDR）資格、通知可能受影響客戶。移除名單同時包括研究指認及預防性處置；公告未證明 OpenRouter 本身遭入侵。",
+      "why": "模型名稱相同仍可能經不同供應商處理；處理敏感資料的團隊應核對實際路由、保留設定及客戶事件通知。",
+      "limit": "各供應商原因與期間不同，完整外洩範圍仍未公開；ZDR 資格恢復前須保證與驗證，不把平台承諾當成所有端點已安全。",
+      "details": [
+        {
+          "heading": "已確認的進展",
+          "points": [
+            "OpenRouter 11 月 22 日公告，調查後移除三家推論供應商，並撤除 125 個端點的零資料保留（ZDR）資格、通知可能受影響客戶。移除名單同時包括研究指認及預防性處置；公告未證明 OpenRouter 本身遭入侵。",
+            "Together AI 21 日另披露：開發用私有儲存庫憑證被 AI 編碼代理提交到公開程式庫，遭人用來下載 6、7 月儲存的提示樣本。這是其中一份獨立供應商事件說明，不能推論公告連結的公司全都在被移除三家之列。"
+          ]
+        },
+        {
+          "heading": "影響與限制",
+          "points": [
+            "模型名稱相同仍可能經不同供應商處理；處理敏感資料的團隊應核對實際路由、保留設定及客戶事件通知。 各供應商原因與期間不同，完整外洩範圍仍未公開；ZDR 資格恢復前須保證與驗證，不把平台承諾當成所有端點已安全。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "OpenRouter 官方事件與處置公告",
+          "url": "https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers/",
+          "published": "2026-11-22",
+          "checked_at": "2026-11-23T05:01:28+08:00",
+          "verification_method": "web",
+          "verification_note": "一般 HTTP 403、網頁擷取失敗；本次用瀏覽器完整實讀11/22官方公告：off-boarded 3 providers、removed125 endpoints from ZDR eligibility含precautionary、通知客戶、未顯示OpenRouter自身遭入侵、恢復資格前要求assurances and validation。不是搜尋摘要。"
+        },
+        {
+          "name": "Together AI 官方事件說明",
+          "url": "https://www.together.ai/blog/security-event-prompt-leakage-for-requests-in-june-and-july-of-2026",
+          "published": "2026-11-21",
+          "checked_at": "2026-11-23T05:01:28+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "研究發現供應商資料處置問題",
+          "移除 3 家／撤除 125 端點 ZDR 資格",
+          "核對通知與路由；恢復資格前須驗證"
+        ],
+        "caption": "原創處置流程；供應商家數與端點數為不同單位，撤除資格不等於全部確認外洩。"
+      }
+    },
+    {
+      "id": "las-vegas-race-result",
+      "category": "f1",
+      "title": "Verstappen 贏 Las Vegas，Norris、Piastri 雙登頒獎台",
+      "teaser": "官方正賽表列 Norris 落後 0.639 秒、Piastri 落後 1.529 秒；Perez 碰撞後另被判下場退五位。正賽成績與下一站處罰分開看。",
+      "summary": "Las Vegas 當地 11 月 21 日正賽完成 50 圈，官方結果由 Verstappen 以 1:27:39.624 奪冠，Norris 第二（+0.639 秒）、Piastri 第三（+1.529 秒），Antonelli 第四。前期起跑安排已進展為正式正賽成績。",
+      "why": "McLaren 取得雙頒獎台；賽後判罰影響本場名次及下一站競爭位置。",
+      "limit": "本則採查核時官方成績與公開裁決，不把先前排位／起跑格當正賽結果，也不預測下一站格位或宣稱未公布的後續裁決。",
+      "details": [
+        {
+          "heading": "已確認的進展",
+          "points": [
+            "Las Vegas 當地 11 月 21 日正賽完成 50 圈，官方結果由 Verstappen 以 1:27:39.624 奪冠，Norris 第二（+0.639 秒）、Piastri 第三（+1.529 秒），Antonelli 第四。前期起跑安排已進展為正式正賽成績。",
+            "官方表已註明 Leclerc、Hadjar 各加罰 10 秒。F1 22 日另說明，Perez 與 Camara 碰撞被判全責；因 Perez 退賽無法服 10 秒處罰，改為下一場 Qatar 起跑退五位，不能算成他在 Vegas 成績單再退五名。"
+          ]
+        },
+        {
+          "heading": "影響與限制",
+          "points": [
+            "McLaren 取得雙頒獎台；賽後判罰影響本場名次及下一站競爭位置。 本則採查核時官方成績與公開裁決，不把先前排位／起跑格當正賽結果，也不預測下一站格位或宣稱未公布的後續裁決。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Formula 1 官方正賽結果及處罰註記",
+          "url": "https://www.formula1.com/en/results/2026/races/1300/las-vegas/race-result",
+          "published": "2026-11-22",
+          "checked_at": "2026-11-23T05:01:28+08:00"
+        },
+        {
+          "name": "Formula 1 官方 Perez 下場退位說明",
+          "url": "https://www.formula1.com/en/latest/article/perez-hit-with-five-place-penalty-in-qatar-after-camara-clash-during-las-vegas-grand-prix.30GG7oJuJ1As0MrkavmStN",
+          "published": "2026-11-22",
+          "checked_at": "2026-11-23T05:01:28+08:00"
+        }
+      ],
+      "update_of": "2026-11-22",
+      "update_note": "前期為排位及處罰後起跑格；本次新增已完成正賽的官方結果與賽後裁決。",
+      "image": {
+        "image": "assets/vegas-podium-2026-11-23.svg",
+        "alt": "Las Vegas正賽：Verstappen第一，Norris第二落後0.639秒，Piastri第三落後1.529秒；均完成50圈。",
+        "kind": "original",
+        "credit": "Daily Brief 原創頒獎台數據卡；依 Formula 1 官方正賽結果，非現場照片。"
+      }
+    }
+  ],
+  "source_checks": [
+    {
+      "name": "ABC News 原始採訪／Delta與FAA聲明",
+      "url": "https://abcnews.com/US/equipment-outage-atlanta-causes-1300-delta-flight-delays/story?id=138360900",
+      "status": "checked",
+      "checked_at": "2026-11-23T05:01:28+08:00",
+      "note": "實讀原文；一般HTTP成功閱讀直接聲明原文；供應商及FAA獨立頁未提供本次完整事故內容，未宣稱直接讀到。"
+    },
+    {
+      "name": "BleepingComputer 原始採訪／微軟直接確認",
+      "url": "https://www.bleepingcomputer.com/news/security/microsoft-entra-connect-health-flaw-exploited-to-steal-tenant-data/",
+      "status": "checked",
+      "checked_at": "2026-11-23T05:01:28+08:00",
+      "note": "實讀原文；公開未有受影響租戶總數或攻擊開始時間；通知原文不是公開公告，本則將通知內容與微軟直接確認分開歸屬，不將過期憑證當有效金鑰。"
+    },
+    {
+      "name": "OpenRouter 官方事件與處置公告",
+      "url": "https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers/",
+      "status": "checked",
+      "checked_at": "2026-11-23T05:01:28+08:00",
+      "note": "原始公告以瀏覽器實讀，一般HTTP403；有具體替代查核證據。"
+    },
+    {
+      "name": "Together AI 官方事件說明",
+      "url": "https://www.together.ai/blog/security-event-prompt-leakage-for-requests-in-june-and-july-of-2026",
+      "status": "checked",
+      "checked_at": "2026-11-23T05:01:28+08:00",
+      "note": "實讀原文；各供應商原因與期間不同，完整外洩範圍仍未公開；ZDR 資格恢復前須保證與驗證，不把平台承諾當成所有端點已安全。"
+    },
+    {
+      "name": "Formula 1 官方正賽結果及處罰註記",
+      "url": "https://www.formula1.com/en/results/2026/races/1300/las-vegas/race-result",
+      "status": "checked",
+      "checked_at": "2026-11-23T05:01:28+08:00",
+      "note": "實讀原文；本則採查核時官方成績與公開裁決，不把先前排位／起跑格當正賽結果，也不預測下一站格位或宣稱未公布的後續裁決。"
+    },
+    {
+      "name": "Formula 1 官方 Perez 下場退位說明",
+      "url": "https://www.formula1.com/en/latest/article/perez-hit-with-five-place-penalty-in-qatar-after-camara-clash-during-las-vegas-grand-prix.30GG7oJuJ1As0MrkavmStN",
+      "status": "checked",
+      "checked_at": "2026-11-23T05:01:28+08:00",
+      "note": "實讀原文；本則採查核時官方成績與公開裁決，不把先前排位／起跑格當正賽結果，也不預測下一站格位或宣稱未公布的後續裁決。"
+    },
+    {
+      "name": "Federal Reserve 官方近期公告",
+      "url": "https://www.federalreserve.gov/newsevents.htm",
+      "status": "checked",
+      "checked_at": "2026-11-23T05:01:28+08:00",
+      "note": "實讀官方近期列表，未有本次新利率決議；未重刊11/20已報背景。"
+    },
+    {
+      "name": "Google Cloud 官方狀態",
+      "url": "https://status.cloud.google.com/",
+      "status": "checked",
+      "checked_at": "2026-11-23T05:01:28+08:00",
+      "note": "實讀公開狀態與事故線索，不將未列廣泛事故推論為所有客戶正常。"
+    },
+    {
+      "name": "Cloudflare 官方狀態",
+      "url": "https://www.cloudflarestatus.com/",
+      "status": "checked",
+      "checked_at": "2026-11-23T05:01:28+08:00",
+      "note": "實讀公開頁未列活動事故，另列Dallas維護；不把維護報成全面中斷。"
+    },
+    {
+      "name": "CISA 官方 KEV",
+      "url": "https://raw.githubusercontent.com/cisagov/kev-data/main/known_exploited_vulnerabilities.json",
+      "status": "checked",
+      "checked_at": "2026-11-23T05:01:28+08:00",
+      "note": "實讀版本2026.11.20、1790筆；不重複前期已報vCenter、Cisco。"
+    },
+    {
+      "name": "Delta 官方旅遊公告",
+      "url": "https://www.delta.com/us/en/advisories/current-advisories",
+      "status": "checked",
+      "checked_at": "2026-11-23T05:01:28+08:00",
+      "note": "檢視官方公告頁，未取得本次重量平衡系統完整事故說明；另查FAA新聞室與NAS狀態，採ABC原始採訪及兩方直接聲明，揭露恢復範圍限制。"
+    }
+  ],
+  "visual_review": [
+    {
+      "story_id": "delta-weight-balance-outage",
+      "decision": "diagram",
+      "reason": "人工替代與系統恢復不同階段，用流程防止誤認恢復。",
+      "implementation": "visual.type=flow"
+    },
+    {
+      "story_id": "entra-connect-health-metadata",
+      "decision": "image",
+      "reason": "中繼資料與密碼等憑證不同，範圍對照降低誇大風險。",
+      "implementation": "assets/entra-metadata-2026-11-23.svg"
+    },
+    {
+      "story_id": "openrouter-provider-data-incidents",
+      "decision": "diagram",
+      "reason": "3家與125端點不同單位，用處置流程而非不當比例圖。",
+      "implementation": "visual.type=flow"
+    },
+    {
+      "story_id": "las-vegas-race-result",
+      "decision": "image",
+      "reason": "前三名完賽差距很小，數據卡比無關賽車照片更能說明結果。",
+      "implementation": "assets/vegas-podium-2026-11-23.svg"
+    }
+  ],
+  "discovery_review": {
+    "searches": [
+      {
+        "topic": "November 22 2026 major technology cloud outage news",
+        "checked_at": "2026-11-23T05:01:28+08:00"
+      },
+      {
+        "topic": "November 22 2026 markets stocks crypto bitcoin news",
+        "checked_at": "2026-11-23T05:01:28+08:00"
+      },
+      {
+        "topic": "November 22 2026 cybersecurity exploited breach news",
+        "checked_at": "2026-11-23T05:01:28+08:00"
+      },
+      {
+        "topic": "November 22 2026 F1 Las Vegas results penalties",
+        "checked_at": "2026-11-23T05:01:28+08:00"
+      },
+      {
+        "topic": "Delta Atlanta November 22 2026 technology outage statement FAA",
+        "checked_at": "2026-11-23T05:01:28+08:00"
+      },
+      {
+        "topic": "Entra Connect Health November 2026 exploited",
+        "checked_at": "2026-11-23T05:01:28+08:00"
+      },
+      {
+        "topic": "OpenRouter prompt November 22 2026",
+        "checked_at": "2026-11-23T05:01:28+08:00"
+      },
+      {
+        "topic": "OpenRouter Data Processing Incidents inference providers",
+        "checked_at": "2026-11-23T05:01:28+08:00"
+      },
+      {
+        "topic": "November 22 2026 latest major breaking technology outage markets security F1",
+        "checked_at": "2026-11-23T05:01:28+08:00"
+      },
+      {
+        "topic": "Delta November 22 2026 automation restored latest statement",
+        "checked_at": "2026-11-23T05:01:28+08:00"
+      }
+    ],
+    "candidates": [
+      {
+        "event": "Delta 重量平衡系統故障，亞特蘭大及全美航班受延誤",
+        "url": "https://abcnews.com/US/equipment-outage-atlanta-causes-1300-delta-flight-delays/story?id=138360900",
+        "decision": "included",
+        "reason": "具重要實際影響，已取得官方原文或當事方直接聲明的原始採訪；同事件合併並揭露查核邊界。"
+      },
+      {
+        "event": "微軟確認 Entra Connect Health 資料遭讀取，管理員聯絡資訊外洩",
+        "url": "https://www.bleepingcomputer.com/news/security/microsoft-entra-connect-health-flaw-exploited-to-steal-tenant-data/",
+        "decision": "included",
+        "reason": "具重要實際影響，已取得官方原文或當事方直接聲明的原始採訪；同事件合併並揭露查核邊界。"
+      },
+      {
+        "event": "OpenRouter 移除三家供應商，125 個端點失去零保留資格",
+        "url": "https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers/",
+        "decision": "included",
+        "reason": "具重要實際影響，已取得官方原文或當事方直接聲明的原始採訪；同事件合併並揭露查核邊界。"
+      },
+      {
+        "event": "Verstappen 贏 Las Vegas，Norris、Piastri 雙登頒獎台",
+        "url": "https://www.formula1.com/en/results/2026/races/1300/las-vegas/race-result",
+        "decision": "included",
+        "reason": "具重要實際影響，已取得官方原文或當事方直接聲明的原始採訪；同事件合併並揭露查核邊界。"
+      },
+      {
+        "event": "Bitcoin週末反彈及跨資產變化",
+        "url": "https://www.coindaro.com/crypto-week-ahead-bitcoin-this-week-23-29-november-2026/",
+        "decision": "pending",
+        "reason": "已廣泛掃描重大市場線索，但未完成同一交易所、同時點價格與原因的原始資料核對，不複製週五已刊收盤當新行情，也不把價格線索當無市場消息。"
+      },
+      {
+        "event": "FBI NCIC疑似入侵",
+        "url": "https://www.axios.com/2026/11/21/fbi-hack-personal-records-ncic",
+        "decision": "pending",
+        "reason": "跨來源仍見調查報導，本次未取得事件原始通報或實質新範圍；延續公開待查，不猜測所有紀錄已外洩。"
+      },
+      {
+        "event": "N-able先前管理服務事故",
+        "url": "https://uptime.n-able.com/event/202672/",
+        "decision": "omitted",
+        "reason": "前期已報11/21官方進展；本期未確認實質新變化，不照抄前期狀態當新消息。"
+      }
+    ],
+    "final_check": {
+      "checked_at": "2026-11-23T05:01:28+08:00",
+      "result": "跨來源重大頭條與Delta恢復消息再比對，未漏掉航班事故而只報AI功能。正式刊可查核資料事件及F1結果；市場與FBI來源範圍不足明列待查。"
+    }
+  }
+}
