@@ -1,0 +1,433 @@
+{
+  "date": "2026-11-24",
+  "title": "領導權回轉，風險與恢復仍要分清。",
+  "intro": "黃仁勳復職帶動美股盤中急彈；微軟最終事故報告、GL.iNet設備清理、資安大併購與Haas最後兩站安排，分清已確認和仍待完成。",
+  "generated_at": "2026-11-24T05:02:56+08:00",
+  "coverage": {
+    "from": "2026-11-20",
+    "to": "2026-11-23"
+  },
+  "editor_note": "美股採美東14:45盤中快照，未確認收盤。微軟最終報告本次由The Register原始報導查核，官方公開頁未提供可讀全文；不把前次事故重寫成今日再次中斷。各則均有原創圖解，併購交割、調查結案與服務恢復分開描述。",
+  "hero": null,
+  "source_checks": [
+    {
+      "name": "NVIDIA 官方復職公告",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director",
+      "status": "checked",
+      "checked_at": "2026-11-24T05:01:26+08:00",
+      "note": "本次實讀原文。一般HTTP實讀完整原文；不是僅搜尋摘要。"
+    },
+    {
+      "name": "AP 原始市場報導",
+      "url": "https://apnews.com/article/stocks-markets-rates-technology-ai-anthropic-49ba1beba78fa4ed2bd5898029f79c91",
+      "status": "checked",
+      "checked_at": "2026-11-24T05:02:19+08:00",
+      "note": "瀏覽器實讀AP原文；一般HTTP403。Yahoo轉載429未當成功，改查原始來源；盤中非收盤。"
+    },
+    {
+      "name": "The Register 最終報告原始報導",
+      "url": "https://www.theregister.com/saas/2026/11/23/microsoft-mega-outage-report-reveals-testing-gaps-and-emails-that-never-arrived/5311656",
+      "status": "checked",
+      "checked_at": "2026-11-24T05:01:26+08:00",
+      "note": "本次實讀原文。一般HTTP實讀完整原文；不是僅搜尋摘要。"
+    },
+    {
+      "name": "GL.iNet 官方安全公告（11/20發布、11/23更新）",
+      "url": "https://forum.gl-inet.com/t/2026-11-20-gl-inet-security-notice-goodcloud-kvm-routers/73056",
+      "status": "checked",
+      "checked_at": "2026-11-24T05:01:26+08:00",
+      "note": "本次實讀原文。一般HTTP實讀完整原文；不是僅搜尋摘要。"
+    },
+    {
+      "name": "CrowdStrike 官方併購公告",
+      "url": "https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-acquire-zscaler-bringing-network-security-and-zero",
+      "status": "checked",
+      "checked_at": "2026-11-24T05:02:56+08:00",
+      "note": "HTTP初次原文成功、連結檢查403；已實際用瀏覽器再讀官方完整公告，記具體替代證據。"
+    },
+    {
+      "name": "Formula 1 官方車手安排",
+      "url": "https://www.formula1.com/en/latest/article/haas-confirm-camara-will-drive-for-the-team-in-final-races-of-2026.2wYY9ymhyqr7rXcuK6S7bj",
+      "status": "checked",
+      "checked_at": "2026-11-24T05:01:26+08:00",
+      "note": "本次實讀原文。一般HTTP實讀完整原文；不是僅搜尋摘要。"
+    },
+    {
+      "name": "Fed官方近期公告",
+      "url": "https://www.federalreserve.gov/newsevents.htm",
+      "status": "checked",
+      "checked_at": "2026-11-24T05:01:26+08:00",
+      "note": "實讀官方市場政策公告列表，未把交易者預期當正式利率決議。"
+    },
+    {
+      "name": "Google Cloud官方狀態",
+      "url": "https://status.cloud.google.com/",
+      "status": "checked",
+      "checked_at": "2026-11-24T05:01:26+08:00",
+      "note": "實讀頁面未列廣泛嚴重事故，不推論所有個別服務無故障。"
+    },
+    {
+      "name": "Cloudflare官方狀態",
+      "url": "https://www.cloudflarestatus.com/",
+      "status": "checked",
+      "checked_at": "2026-11-24T05:01:26+08:00",
+      "note": "實讀公開狀態頁未列活動事故。"
+    },
+    {
+      "name": "Claude官方狀態",
+      "url": "https://status.claude.com/",
+      "status": "checked",
+      "checked_at": "2026-11-24T05:01:26+08:00",
+      "note": "實讀11/23多模型錯誤09:39–09:56 UTC已解決；持續17分鐘，低於本期優先事件重要性，未當仍持續。"
+    },
+    {
+      "name": "Microsoft公開狀態頁",
+      "url": "https://status.cloud.microsoft/",
+      "status": "failed",
+      "checked_at": "2026-11-24T05:01:26+08:00",
+      "note": "網頁工具只取得JavaScript提示；未直接讀到最終報告，採The Register原始報導並明確歸屬。"
+    }
+  ],
+  "stories": [
+    {
+      "id": "huang-return-market-rebound",
+      "category": "markets",
+      "title": "黃仁勳回任 NVIDIA 執行長，美股盤中急彈",
+      "teaser": "NVIDIA 董事會宣布即刻復職，獨立調查仍繼續。美股 11 月 23 日盤中大幅反彈；此處是美東 14:45 快照，並非收盤成績。",
+      "summary": "NVIDIA 23 日宣布黃仁勳即刻恢復總裁、執行長與董事職務；Harvey Jones 留任董事長，Colette Kress 繼續任財務長。董事會表示獲美國政府高層意見後，認為復職不構成國安風險。",
+      "why": "領導權變動牽動 AI 產業及大盤風險情緒；NVIDIA 的獨立董事調查與政府調查仍繼續。",
+      "limit": "本期未核實美股最終收盤；盤中漲幅不可當全天結果，復職也不等於調查結案。",
+      "details": [
+        {
+          "heading": "發生什麼事",
+          "points": [
+            "NVIDIA 23 日宣布黃仁勳即刻恢復總裁、執行長與董事職務；Harvey Jones 留任董事長，Colette Kress 繼續任財務長。董事會表示獲美國政府高層意見後，認為復職不構成國安風險。",
+            "AP 美東 23 日 14:45（臺灣 24 日 03:45）報導：相對前一交易日收盤，S&P 500 漲 4.6%、Nasdaq Composite 漲 6.3%、道瓊漲約 3%。報導將加速反彈與復職消息連結，這是新聞歸因，不是單一因果證明。"
+          ]
+        },
+        {
+          "heading": "影響與限制",
+          "points": [
+            "領導權變動牽動 AI 產業及大盤風險情緒；NVIDIA 的獨立董事調查與政府調查仍繼續。 本期未核實美股最終收盤；盤中漲幅不可當全天結果，復職也不等於調查結案。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "NVIDIA 官方復職公告",
+          "url": "https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director",
+          "published": "2026-11-23",
+          "checked_at": "2026-11-24T05:01:26+08:00"
+        },
+        {
+          "name": "AP 原始市場報導",
+          "url": "https://apnews.com/article/stocks-markets-rates-technology-ai-anthropic-49ba1beba78fa4ed2bd5898029f79c91",
+          "published": "2026-11-23",
+          "checked_at": "2026-11-24T05:02:19+08:00",
+          "verification_method": "web",
+          "verification_note": "本次瀏覽器實讀AP原始頁面全文，Stan Choe署名、臺灣11/24 04:04更新，正文美東14:45明列S&P4.6%、Nasdaq6.3%、Dow1450點約3%；非僅搜尋摘要。一般HTTP403，Yahoo轉載429故改以實讀原始AP來源。"
+        }
+      ],
+      "image": {
+        "image": "assets/us-rebound-2026-11-24.svg",
+        "alt": "美東11月23日14:45盤中相對前收：S&P500加4.6%、Nasdaq綜合加6.3%、道瓊約加3%，非收盤。",
+        "kind": "original",
+        "credit": "Daily Brief 原創數據卡；資料為 AP 美東 11/23 14:45 盤中快照。"
+      }
+    },
+    {
+      "id": "microsoft-final-outage-review",
+      "category": "tech",
+      "title": "微軟事故最終報告：部分消費者郵件逾期未送達",
+      "teaser": "後續報導指出，企業佇列郵件最終送達，但部分長期未使用的消費者信箱郵件逾期。這是先前事故的新調查結果，不是今日再次全球斷線。",
+      "summary": "The Register 23 日閱讀微軟最終事故報告後報導：11 月 12–14 日中斷期間，雖然投遞重試延長到 48 小時，部分寄往超過 30 天未使用的消費者信箱郵件仍逾期並產生退信；企業佇列郵件則全部送達，未發現永久遺失。",
+      "why": "組織應核對重要郵件回條與退信，分清服務恢復與個別信件送達。",
+      "limit": "本次官方公開狀態頁只回傳 JavaScript 提示，未直接取得需登入的最終報告；上述細節明確歸屬原始採訪報導，不宣稱獨立讀過報告。",
+      "details": [
+        {
+          "heading": "發生什麼事",
+          "points": [
+            "The Register 23 日閱讀微軟最終事故報告後報導：11 月 12–14 日中斷期間，雖然投遞重試延長到 48 小時，部分寄往超過 30 天未使用的消費者信箱郵件仍逾期並產生退信；企業佇列郵件則全部送達，未發現永久遺失。",
+            "報告指向網關伺服器設定的 Windows 缺陷，並非一般 Windows 電腦皆受影響。舊型低核心數硬體的負載測試較難暴露在新機器惡化的缺陷；改善項目包括真實尖峰負載、故障切換測試、隔離及備援容量。"
+          ]
+        },
+        {
+          "heading": "影響與限制",
+          "points": [
+            "組織應核對重要郵件回條與退信，分清服務恢復與個別信件送達。 本次官方公開狀態頁只回傳 JavaScript 提示，未直接取得需登入的最終報告；上述細節明確歸屬原始採訪報導，不宣稱獨立讀過報告。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "The Register 最終報告原始報導",
+          "url": "https://www.theregister.com/saas/2026/11/23/microsoft-mega-outage-report-reveals-testing-gaps-and-emails-that-never-arrived/5311656",
+          "published": "2026-11-23",
+          "checked_at": "2026-11-24T05:01:26+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "11/12–14 服務中斷",
+          "企業佇列送達；部分消費者郵件逾期",
+          "核對退信與重要郵件；改善測試及隔離"
+        ],
+        "caption": "原創範圍圖：不同類型信箱的投遞結果不可混為全部遺失。"
+      }
+    },
+    {
+      "id": "goodcloud-device-cleanup",
+      "category": "security",
+      "title": "GL.iNet 雲端漏洞已遭利用，修雲端還要更新設備",
+      "teaser": "攻擊者透過雲端管理服務在路由器與 KVM 安裝惡意程式。官方已封鎖攻擊路徑，但既有感染須安裝對應型號的安全韌體清除。",
+      "summary": "GL.iNet 20 日發現雲端遠端管理漏洞遭利用；23 日更新公告確認攻擊路徑已封鎖，但雲端修補不會清除既有設備惡意程式。官方現提供穩定安全韌體，並表示可保留設定、無須以恢復原廠作為更新前提。",
+      "why": "即使快速檢查沒有發現感染，官方仍建議更新；感染的 KVM 還應檢查所連電腦。",
+      "limit": "受影響數量及連接電腦是否遭入侵仍在調查；官方提醒快速檢查不能保證無感染。本則不轉載未經驗證的社群修復工具。",
+      "details": [
+        {
+          "heading": "發生什麼事",
+          "points": [
+            "GL.iNet 20 日發現雲端遠端管理漏洞遭利用；23 日更新公告確認攻擊路徑已封鎖，但雲端修補不會清除既有設備惡意程式。官方現提供穩定安全韌體，並表示可保留設定、無須以恢復原廠作為更新前提。",
+            "例如 GL-MT3000／MT6000 需 4.11.1 或更新；RM1、RM1V2、RM10 等 KVM 為 1.10.3 或更新，RMQ1 為 1.8.7 或更新。其他型號門檻不同，須逐一對照官方表，不能交叉刷入或把未列型號視為安全。"
+          ]
+        },
+        {
+          "heading": "影響與限制",
+          "points": [
+            "即使快速檢查沒有發現感染，官方仍建議更新；感染的 KVM 還應檢查所連電腦。 受影響數量及連接電腦是否遭入侵仍在調查；官方提醒快速檢查不能保證無感染。本則不轉載未經驗證的社群修復工具。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "GL.iNet 官方安全公告（11/20發布、11/23更新）",
+          "url": "https://forum.gl-inet.com/t/2026-11-20-gl-inet-security-notice-goodcloud-kvm-routers/73056",
+          "published": "2026-11-20",
+          "checked_at": "2026-11-24T05:01:26+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "雲端入口已封鎖",
+          "對照型號安裝安全韌體",
+          "檢查設備及 KVM 所連電腦"
+        ],
+        "caption": "原創防護流程；服務端修補和設備清理是兩個步驟。"
+      }
+    },
+    {
+      "id": "crowdstrike-zscaler-agreement",
+      "category": "tech",
+      "title": "CrowdStrike 擬以約 439 億美元全股票收購 Zscaler",
+      "teaser": "雙方簽署正式協議，每股 Zscaler 換 1.135 股 CrowdStrike。預計 CrowdStrike 2028 會計年度下半年完成，仍待股東、監管及其他條件。",
+      "summary": "CrowdStrike 與 Zscaler 23 日宣布全股票併購協議，企業價值約 439 億美元；每股 Zscaler 換 1.135 股 CrowdStrike。依 11 月 20 日 CrowdStrike 收盤價估算，每股對價約 260.41 美元、較 Zscaler 同日收盤溢價約 34%。",
+      "why": "這將整合端點防護與零信任網路存取，企業採購與供應商集中度值得關注。",
+      "limit": "宣布協議不等於已完成收購；股票對價價值會隨股價變動，整合效益與營收綜效都是公司預期。",
+      "details": [
+        {
+          "heading": "發生什麼事",
+          "points": [
+            "CrowdStrike 與 Zscaler 23 日宣布全股票併購協議，企業價值約 439 億美元；每股 Zscaler 換 1.135 股 CrowdStrike。依 11 月 20 日 CrowdStrike 收盤價估算，每股對價約 260.41 美元、較 Zscaler 同日收盤溢價約 34%。",
+            "交易預計在 CrowdStrike 2028 會計年度下半年完成，須 Zscaler 股東及監管核准。交割前兩家公司獨立營運；交割後 Jay Chaudhry 將繼續領導 Zscaler 業務並加入 CrowdStrike 董事會。"
+          ]
+        },
+        {
+          "heading": "影響與限制",
+          "points": [
+            "這將整合端點防護與零信任網路存取，企業採購與供應商集中度值得關注。 宣布協議不等於已完成收購；股票對價價值會隨股價變動，整合效益與營收綜效都是公司預期。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "CrowdStrike 官方併購公告",
+          "url": "https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-acquire-zscaler-bringing-network-security-and-zero",
+          "published": "2026-11-23",
+          "checked_at": "2026-11-24T05:02:56+08:00",
+          "verification_method": "web",
+          "verification_note": "本次瀏覽器實讀CrowdStrike官方11/23併購原文Transaction Details全文，439億美元、每股1.135股、11/20股價基準、FY2028下半年與股東監管條件，Jay續領Zscaler並入董事會；非搜尋摘要。一般HTTP檢查403。"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "簽署協議：每股換 1.135 股",
+          "待股東／監管與交割條件",
+          "預計 FY2028 下半年完成"
+        ],
+        "caption": "原創交易階段圖；時間為 CrowdStrike 會計年度，並非保證交割日。"
+      }
+    },
+    {
+      "id": "haas-camara-final-races",
+      "category": "f1",
+      "title": "Haas 確認 Camara 跑完最後兩站，銜接 2027 正式席位",
+      "teaser": "Camara 將出賽 Qatar 與 Abu Dhabi；此前僅確認 Las Vegas。這是正式車手安排的新進展，不重複刊登昨日賽果。",
+      "summary": "F1 22 日 18:03 UTC 公告，Haas 確認 Rafael Camara 繼續出賽 2026 最後兩站 Qatar、Abu Dhabi，接續已完成的巴西及 Las Vegas 出賽。他的 2027 全季席位此前已宣布，這次確定的是本季剩餘安排。",
+      "why": "對 Haas 而言，固定最後兩站車手可減少輪替並延續測試回饋。",
+      "limit": "本則只確認 F1 出賽安排，不推定 F2 替補人選或未公布的合約內容，也不預測下一站成績。",
+      "details": [
+        {
+          "heading": "發生什麼事",
+          "points": [
+            "F1 22 日 18:03 UTC 公告，Haas 確認 Rafael Camara 繼續出賽 2026 最後兩站 Qatar、Abu Dhabi，接續已完成的巴西及 Las Vegas 出賽。他的 2027 全季席位此前已宣布，這次確定的是本季剩餘安排。",
+            "Camara 原本領先 F2 積分；是否為完成 F2 賽季而缺席最後兩場 F1，一度未定。車隊領隊小松禮雄表示，持續參賽有利累積經驗與準備 2027；不是新宣布另一張 2027 合約。"
+          ]
+        },
+        {
+          "heading": "影響與限制",
+          "points": [
+            "對 Haas 而言，固定最後兩站車手可減少輪替並延續測試回饋。 本則只確認 F1 出賽安排，不推定 F2 替補人選或未公布的合約內容，也不預測下一站成績。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Formula 1 官方車手安排",
+          "url": "https://www.formula1.com/en/latest/article/haas-confirm-camara-will-drive-for-the-team-in-final-races-of-2026.2wYY9ymhyqr7rXcuK6S7bj",
+          "published": "2026-11-22",
+          "checked_at": "2026-11-24T05:01:26+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "已完成：巴西／Las Vegas",
+          "已確認：Qatar／Abu Dhabi",
+          "2027：此前已宣布全季席位"
+        ],
+        "caption": "原創參賽階段圖，區分本次新增確認與既有2027安排。"
+      },
+      "update_of": "2026-11-17",
+      "update_note": "前期只確認Las Vegas及Hirakawa的FP1安排；本次新增確認Camara出賽本季最後兩站。"
+    }
+  ],
+  "visual_review": [
+    {
+      "story_id": "huang-return-market-rebound",
+      "decision": "image",
+      "reason": "用同時間盤中比較圖避免不同時間行情混用。",
+      "implementation": "assets/us-rebound-2026-11-24.svg"
+    },
+    {
+      "story_id": "microsoft-final-outage-review",
+      "decision": "diagram",
+      "reason": "用投遞結果流程區分消費者逾期與企業郵件送達。",
+      "implementation": "visual.type=flow"
+    },
+    {
+      "story_id": "goodcloud-device-cleanup",
+      "decision": "diagram",
+      "reason": "分開雲端修補與設備清理，讓防護行動清楚。",
+      "implementation": "visual.type=flow"
+    },
+    {
+      "story_id": "crowdstrike-zscaler-agreement",
+      "decision": "diagram",
+      "reason": "顯示協議至交割條件，避免把收購宣布當完成。",
+      "implementation": "visual.type=flow"
+    },
+    {
+      "story_id": "haas-camara-final-races",
+      "decision": "diagram",
+      "reason": "以參賽階段對照區分最後兩站新安排與既有2027席位。",
+      "implementation": "visual.type=flow"
+    }
+  ],
+  "discovery_review": {
+    "searches": [
+      {
+        "topic": "technology major outage news November 23 2026 Microsoft cloud Reuters",
+        "checked_at": "2026-11-24T05:01:26+08:00"
+      },
+      {
+        "topic": "global markets stocks bonds currencies November 23 2026 Reuters",
+        "checked_at": "2026-11-24T05:01:26+08:00"
+      },
+      {
+        "topic": "cybersecurity exploited vulnerability November 23 2026",
+        "checked_at": "2026-11-24T05:01:26+08:00"
+      },
+      {
+        "topic": "F1 November 23 2026 news Las Vegas penalties",
+        "checked_at": "2026-11-24T05:01:26+08:00"
+      },
+      {
+        "topic": "GL iNet GoodCloud security incident November 2026 advisory",
+        "checked_at": "2026-11-24T05:01:26+08:00"
+      },
+      {
+        "topic": "ScreenConnect CVE-2026-84869 advisory November 23 2026",
+        "checked_at": "2026-11-24T05:01:26+08:00"
+      },
+      {
+        "topic": "November 23 2026 latest breaking tech cloud outage security F1 NVIDIA Huang GoodCloud",
+        "checked_at": "2026-11-24T05:01:26+08:00"
+      },
+      {
+        "topic": "CrowdStrike Zscaler acquisition November 23 2026 site:ir.crowdstrike.com",
+        "checked_at": "2026-11-24T05:01:26+08:00"
+      },
+      {
+        "topic": "Microsoft November 23 2026 outage post incident review official",
+        "checked_at": "2026-11-24T05:01:26+08:00"
+      }
+    ],
+    "candidates": [
+      {
+        "event": "黃仁勳回任 NVIDIA 執行長，美股盤中急彈",
+        "url": "https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director",
+        "decision": "included",
+        "reason": "實讀原始資料並確認實質新進展，與前期去重；以讀者影響及行動需求選入。"
+      },
+      {
+        "event": "微軟事故最終報告：部分消費者郵件逾期未送達",
+        "url": "https://www.theregister.com/saas/2026/11/23/microsoft-mega-outage-report-reveals-testing-gaps-and-emails-that-never-arrived/5311656",
+        "decision": "included",
+        "reason": "實讀原始資料並確認實質新進展，與前期去重；以讀者影響及行動需求選入。"
+      },
+      {
+        "event": "GL.iNet 雲端漏洞已遭利用，修雲端還要更新設備",
+        "url": "https://forum.gl-inet.com/t/2026-11-20-gl-inet-security-notice-goodcloud-kvm-routers/73056",
+        "decision": "included",
+        "reason": "實讀原始資料並確認實質新進展，與前期去重；以讀者影響及行動需求選入。"
+      },
+      {
+        "event": "CrowdStrike 擬以約 439 億美元全股票收購 Zscaler",
+        "url": "https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-acquire-zscaler-bringing-network-security-and-zero",
+        "decision": "included",
+        "reason": "實讀原始資料並確認實質新進展，與前期去重；以讀者影響及行動需求選入。"
+      },
+      {
+        "event": "Haas 確認 Camara 跑完最後兩站，銜接 2027 正式席位",
+        "url": "https://www.formula1.com/en/latest/article/haas-confirm-camara-will-drive-for-the-team-in-final-races-of-2026.2wYY9ymhyqr7rXcuK6S7bj",
+        "decision": "included",
+        "reason": "實讀原始資料並確認實質新進展，與前期去重；以讀者影響及行動需求選入。"
+      },
+      {
+        "event": "Claude 17分鐘多模型錯誤",
+        "url": "https://status.claude.com/",
+        "decision": "omitted",
+        "reason": "官方明列09:39–09:56 UTC已解決，短暫事件低於本期廣泛影響事件優先度。"
+      },
+      {
+        "event": "Delta系統恢復後續",
+        "url": "https://apnews.com/article/d4bdb732da930205ec3453d35c28daa2",
+        "decision": "pending",
+        "reason": "發現恢復線索但本次未取得官方完整恢復原文，不照抄昨日待恢復狀態或稱今日仍停擺。"
+      },
+      {
+        "event": "ScreenConnect84869",
+        "url": "https://www.cyber.gc.ca/en/alerts-advisories/connectwise-security-advisory-av26-903",
+        "decision": "omitted",
+        "reason": "廣泛掃描列出但原始公告為9月，不能因今日彙整重報當全新漏洞。"
+      }
+    ],
+    "final_check": {
+      "checked_at": "2026-11-24T05:01:26+08:00",
+      "result": "再次跨來源頭條比對後補查並選入439億美元併購與微軟最終事故報告；未只報AI小功能。美股用實讀快照，官方未讀到的報告明示來源限制。"
+    }
+  }
+}
