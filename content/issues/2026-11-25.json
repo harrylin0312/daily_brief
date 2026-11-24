@@ -1,0 +1,622 @@
+{
+  "date": "2026-11-25",
+  "title": "修補入口之後，憑證與舊系統還要處理。",
+  "intro": "Cloudflare 多產品事件須分清狀態；Azure 與 Mail Assure 的修補、網站漏洞處置，都不能只看服務是否能用。另補齊美股週一重大反彈的正式收盤。",
+  "generated_at": "2026-11-25T05:05:43+08:00",
+  "coverage": {
+    "from": "2026-11-18",
+    "to": "2026-11-24"
+  },
+  "hero": null,
+  "editor_note": "本期重點是新確認的利用、事故處置及出口管制，不把舊公告發布日改成今日。Cloudflare三案狀態分開列；APIM私人通知採微軟直接確認報導及NSM官方原文。美股僅補11/23正式收盤；11/24行情未核實不當今日漲幅，F1已查官方不硬湊。",
+  "source_checks": [
+    {
+      "name": "Cloudflare Magic Transit 官方事故",
+      "url": "https://www.cloudflarestatus.com/incidents/no721jcnlrbh",
+      "status": "checked",
+      "checked_at": "2026-11-25T05:04:28+08:00",
+      "note": "本次實讀完整原文；來源日期為原始發布日期，正文另列更新或新增KEV時間。"
+    },
+    {
+      "name": "Cloudflare Workers 官方事故",
+      "url": "https://www.cloudflarestatus.com/incidents/00dp7cliyqqt",
+      "status": "checked",
+      "checked_at": "2026-11-25T05:04:28+08:00",
+      "note": "本次實讀完整原文；來源日期為原始發布日期，正文另列更新或新增KEV時間。"
+    },
+    {
+      "name": "Cloudflare 法國 Email Routing 官方事故",
+      "url": "https://www.cloudflarestatus.com/incidents/x5ma22sji8wi",
+      "status": "checked",
+      "checked_at": "2026-11-25T05:04:28+08:00",
+      "note": "本次實讀完整原文；來源日期為原始發布日期，正文另列更新或新增KEV時間。"
+    },
+    {
+      "name": "NSM 官方警報（11/20發布、11/23更新）",
+      "url": "https://nsm.no/aktuelt/nsm-deler-tiltak-mot-sarbarhet-i-azure-api-management",
+      "status": "checked",
+      "checked_at": "2026-11-25T05:04:28+08:00",
+      "note": "網頁工具實讀完整官方原文，HTTP403已記具體替代查核。"
+    },
+    {
+      "name": "BleepingComputer 微軟直接確認",
+      "url": "https://www.bleepingcomputer.com/news/security/microsoft-azure-flaw-exploited-to-steal-customers-api-credentials/",
+      "status": "checked",
+      "checked_at": "2026-11-25T05:04:28+08:00",
+      "note": "本次實讀完整原文；來源日期為原始發布日期，正文另列更新或新增KEV時間。"
+    },
+    {
+      "name": "N-able 官方 Mail Assure 更新",
+      "url": "https://www.n-able.com/blog/mail-assure-incident-update",
+      "status": "checked",
+      "checked_at": "2026-11-25T05:04:28+08:00",
+      "note": "本次實讀完整原文；來源日期為原始發布日期，正文另列更新或新增KEV時間。"
+    },
+    {
+      "name": "N-able CNA 原始 CVE 紀錄",
+      "url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/134xxx/CVE-2026-134624.json",
+      "status": "checked",
+      "checked_at": "2026-11-25T05:04:28+08:00",
+      "note": "本次實讀完整原文；來源日期為原始發布日期，正文另列更新或新增KEV時間。"
+    },
+    {
+      "name": "CISA 官方 KEV 11/24版",
+      "url": "https://raw.githubusercontent.com/cisagov/kev-data/main/known_exploited_vulnerabilities.json",
+      "status": "checked",
+      "checked_at": "2026-11-25T05:04:28+08:00",
+      "note": "本次實讀完整原文；來源日期為原始發布日期，正文另列更新或新增KEV時間。"
+    },
+    {
+      "name": "Drupal 官方 SA-CORE-2026-017",
+      "url": "https://www.drupal.org/sa-core-2026-017",
+      "status": "checked",
+      "checked_at": "2026-11-25T05:04:28+08:00",
+      "note": "本次實讀完整原文；來源日期為原始發布日期，正文另列更新或新增KEV時間。"
+    },
+    {
+      "name": "Mandiant 原始漏洞與防護公告",
+      "url": "https://github.com/mandiant/Vulnerability-Disclosures/blob/master/2026/MNDT-2026-0048.md",
+      "status": "checked",
+      "checked_at": "2026-11-25T05:04:28+08:00",
+      "note": "本次實讀完整原文；來源日期為原始發布日期，正文另列更新或新增KEV時間。"
+    },
+    {
+      "name": "AP 正式收盤報導／LA NACION轉載",
+      "url": "https://www.lanacion.com.ar/usa/how-major-us-stock-indexes-fared-monday-11232026-nid23112026/",
+      "status": "checked",
+      "checked_at": "2026-11-25T05:04:28+08:00",
+      "note": "本次實讀完整原文；來源日期為原始發布日期，正文另列更新或新增KEV時間。"
+    },
+    {
+      "name": "Federal Reserve官方近期公告",
+      "url": "https://www.federalreserve.gov/newsevents.htm",
+      "status": "checked",
+      "checked_at": "2026-11-25T05:04:28+08:00",
+      "note": "實讀11/24公告列表，貼現率會議紀錄非今日新FOMC決議。"
+    },
+    {
+      "name": "Formula 1官方新聞",
+      "url": "https://www.formula1.com/en/latest",
+      "status": "checked",
+      "checked_at": "2026-11-25T05:04:28+08:00",
+      "note": "實讀官方列表及Slater接Camara F2席位原文；前期已報Camara續跑F1，F2後續非本期重大F1新決定，不為配額收錄。"
+    },
+    {
+      "name": "Cloudflare官方歷史",
+      "url": "https://www.cloudflarestatus.com/history?service=Workers",
+      "status": "checked",
+      "checked_at": "2026-11-25T05:04:28+08:00",
+      "note": "首頁簡略未列事故，深入官方歷史及三份事故全文查明狀態；不採首頁空列表推論正常。"
+    },
+    {
+      "name": "N-ableMe安全公告頁",
+      "url": "https://me.n-able.com/s/security-advisory/aArVy0000002mrlKAA",
+      "status": "failed",
+      "checked_at": "2026-11-25T05:04:28+08:00",
+      "note": "頁面僅回傳CSS Error；改讀N-able官方事件公告及其CNA原始CVE，未假稱讀到安全公告全文。"
+    },
+    {
+      "name": "BIS／Federal Register 官方最終規則公開檢視稿",
+      "url": "https://public-inspection.federalregister.gov/2026-23999.pdf",
+      "status": "checked",
+      "checked_at": "2026-11-25T05:05:43+08:00",
+      "note": "實讀8頁官方公開檢視PDF，核對7家公司、推定拒絕與公開檢視生效條款；非引用彙整新聞。"
+    }
+  ],
+  "stories": [
+    {
+      "id": "cloudflare-service-scope",
+      "category": "tech",
+      "title": "Cloudflare 三起服務事件：Magic Transit 仍待修復，Workers 進入監控",
+      "teaser": "Magic Transit 部分客戶可能掉封包；Workers 管理資訊不一致已部署修正，既有執行中的 Workers 不受該事件影響。法國郵件轉寄另有獨立問題。",
+      "summary": "Cloudflare 官方列三個不同範圍的事件。Magic Transit 於 24 日 11:29 UTC 起影響部分啟用清除 DF 旗標設定的客戶，該設定未生效，超過隧道 MTU 的封包可能被丟棄；12:58 更新為已識別、實施修正，未宣布完成。",
+      "why": "Magic Transit 官方建議依網路環境設定出口 MSS clamp；使用者應分產品核對，管理頁舊資訊不等於執行中服務停擺。",
+      "limit": "截至查核時各事件狀態不同，未有統一根因；不將三案推論為全球斷網或全部復原。",
+      "details": [
+        {
+          "heading": "已確認的事",
+          "points": [
+            "Cloudflare 官方列三個不同範圍的事件。Magic Transit 於 24 日 11:29 UTC 起影響部分啟用清除 DF 旗標設定的客戶，該設定未生效，超過隧道 MTU 的封包可能被丟棄；12:58 更新為已識別、實施修正，未宣布完成。",
+            "Workers API／控制台配置資訊延遲事件始於 23 日 13:52 UTC；24 日 19:25 已部署修正、進入監控，既有生產 Workers 不受影響。法國 Email Routing 自 24 日 13:38 UTC 部分 SPF 解析間歇失敗，僅影響轉寄，未擴及 CDN 或法國以外轉寄。"
+          ]
+        },
+        {
+          "heading": "影響與限制",
+          "points": [
+            "Magic Transit 官方建議依網路環境設定出口 MSS clamp；使用者應分產品核對，管理頁舊資訊不等於執行中服務停擺。 截至查核時各事件狀態不同，未有統一根因；不將三案推論為全球斷網或全部復原。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Cloudflare Magic Transit 官方事故",
+          "url": "https://www.cloudflarestatus.com/incidents/no721jcnlrbh",
+          "published": "2026-11-24",
+          "checked_at": "2026-11-25T05:04:28+08:00"
+        },
+        {
+          "name": "Cloudflare Workers 官方事故",
+          "url": "https://www.cloudflarestatus.com/incidents/00dp7cliyqqt",
+          "published": "2026-11-23",
+          "checked_at": "2026-11-25T05:04:28+08:00"
+        },
+        {
+          "name": "Cloudflare 法國 Email Routing 官方事故",
+          "url": "https://www.cloudflarestatus.com/incidents/x5ma22sji8wi",
+          "published": "2026-11-24",
+          "checked_at": "2026-11-25T05:04:28+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "Magic Transit：部分客戶封包可能丟棄",
+          "Workers 管理面：修正後監控，執行面未受影響",
+          "法國轉寄：SPF 間歇錯誤，仍修復中"
+        ],
+        "caption": "原創範圍對照，三列為獨立事件，不表示因果或先後。"
+      }
+    },
+    {
+      "id": "bis-seven-entity-list",
+      "category": "tech",
+      "title": "美國 BIS 新增七家實體，Apex 與 Megaspeed 在列",
+      "teaser": "官方最終規則列出新加坡、馬來西亞與泰國七家實體；受 EAR 管轄物項須許可，審查採推定拒絕。名單措施與刑事定罪是不同層次。",
+      "summary": "BIS 公開檢視的最終規則 2026-23999 新增七家實體：新加坡 Apex Enterprise Solutions、Megaspeed International、Swiftdata；馬來西亞 MSFusion、PT Megaspeed International、Speedmatrix；泰國 Megaspeed (Thailand)。",
+      "why": "規則以先進運算物項流向未獲授權用途或使用者的重大風險為理由；涉及這些實體的受 EAR 管轄物項須許可，採推定拒絕審查。",
+      "limit": "文件23日16:15美東提出公開檢視，預定25日正式刊載；生效條款連結公開檢視日期。本則只整理名單與政策，不將風險認定寫成刑事定罪，也不擴大為所有一般商業交易全面禁止。",
+      "sources": [
+        {
+          "name": "BIS／Federal Register 官方最終規則公開檢視稿",
+          "url": "https://public-inspection.federalregister.gov/2026-23999.pdf",
+          "published": "2026-11-23",
+          "checked_at": "2026-11-25T05:05:43+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "新加坡：Apex／Megaspeed／Swiftdata",
+          "馬來西亞：MSFusion／PT Megaspeed／Speedmatrix",
+          "泰國：Megaspeed (Thailand)"
+        ],
+        "caption": "原創名單地域對照，三列非交易或所有權關係；正式公司全名見正文與官方表。"
+      },
+      "details": [
+        {
+          "heading": "名單與政策",
+          "points": [
+            "BIS 公開檢視的最終規則 2026-23999 新增七家實體：新加坡 Apex Enterprise Solutions、Megaspeed International、Swiftdata；馬來西亞 MSFusion、PT Megaspeed International、Speedmatrix；泰國 Megaspeed (Thailand)。",
+            "規則以先進運算物項流向未獲授權用途或使用者的重大風險為理由；涉及這些實體的受 EAR 管轄物項須許可，採推定拒絕審查。"
+          ]
+        },
+        {
+          "heading": "程序與限制",
+          "points": [
+            "文件23日16:15美東提出公開檢視，預定25日正式刊載；生效條款連結公開檢視日期。本則只整理名單與政策，不將風險認定寫成刑事定罪，也不擴大為所有一般商業交易全面禁止。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "azure-apim-secret-exposure",
+      "category": "security",
+      "title": "Azure APIM Classic 漏洞遭利用，封堵入口後仍須輪替密鑰",
+      "teaser": "微軟確認特定 Classic 層級受影響；挪威 NSM 要求輪替可能暴露的憑證並檢查後端。雲端修補不會自動作廢已被讀取的客戶密鑰。",
+      "summary": "BleepingComputer 23 日取得微軟直接確認與客戶通知：APIM Classic 的 Developer、Basic、Standard、Premium 受影響，Consumption 與 APIM v2 不受影響；18 日發現、19 日封堵未授權管理存取路徑。",
+      "why": "先核對租戶通知、輪替相關憑證及調查可存取的後端。NSM 的修補檢查門檻為 0.52.x 尾碼至少 31936、0.53.x 至少 31938；其他版本格式不能直接套用。",
+      "limit": "NSM 仍未確定利用規模；微軟原始通知非公開，本則區分官方 NSM 與媒體取得的微軟說法，不宣稱所有 Azure 客戶都已外洩。",
+      "details": [
+        {
+          "heading": "已確認的事",
+          "points": [
+            "BleepingComputer 23 日取得微軟直接確認與客戶通知：APIM Classic 的 Developer、Basic、Standard、Premium 受影響，Consumption 與 APIM v2 不受影響；18 日發現、19 日封堵未授權管理存取路徑。",
+            "可能暴露 Named Values 機密、身分／OIDC 供應者 client secrets、subscription keys 及管理 API tokens。NSM 官方指出未知攻擊者主動尋找這些資料，要求輪替並盤點後端；其版本指引與微軟稱雲端已全面部署修正之間的差異，報導尚未釐清。"
+          ]
+        },
+        {
+          "heading": "影響與限制",
+          "points": [
+            "先核對租戶通知、輪替相關憑證及調查可存取的後端。NSM 的修補檢查門檻為 0.52.x 尾碼至少 31936、0.53.x 至少 31938；其他版本格式不能直接套用。 NSM 仍未確定利用規模；微軟原始通知非公開，本則區分官方 NSM 與媒體取得的微軟說法，不宣稱所有 Azure 客戶都已外洩。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "NSM 官方警報（11/20發布、11/23更新）",
+          "url": "https://nsm.no/aktuelt/nsm-deler-tiltak-mot-sarbarhet-i-azure-api-management",
+          "published": "2026-11-20",
+          "checked_at": "2026-11-25T05:04:28+08:00",
+          "verification_method": "web",
+          "verification_note": "本次網頁工具實讀NSM11/20官方原文及11/23更正，列輪替tokens/secrets、0.52.x31936與0.53.x31938門檻、未確定規模與受影響能源公司；一般HTTP403，並非搜尋摘要。"
+        },
+        {
+          "name": "BleepingComputer 微軟直接確認",
+          "url": "https://www.bleepingcomputer.com/news/security/microsoft-azure-flaw-exploited-to-steal-customers-api-credentials/",
+          "published": "2026-11-23",
+          "checked_at": "2026-11-25T05:04:28+08:00",
+          "verification_method": "web",
+          "verification_note": "本次網頁工具實讀11/23Lawrence Abrams原始報導全文，含微軟直接確認Classic四層級、排除Consumption及v2、11/19封堵與需輪替客戶憑證；私人通知未假稱公開原文。"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "確認受影響 Classic 層級與通知",
+          "輪替可能暴露的客戶憑證",
+          "查核後端與修補狀態；有異常聯絡供應商"
+        ],
+        "caption": "原創防護流程：入口修補不等於已外洩憑證失效。"
+      }
+    },
+    {
+      "id": "mail-assure-remediation-update",
+      "category": "security",
+      "title": "Mail Assure 管理介面已恢復，漏洞納入已遭利用清單",
+      "teaser": "N-able 公布 CVE-2026-134624 與修復進展；此前停用的控制台、API 已恢復。郵件流與垃圾信過濾持續運作，調查尚未結束。",
+      "summary": "N-able 22 日正式更新確認，Mail Assure／SpamExperts 已修補識別出的漏洞，並於 21 日 23:45 UTC（臺灣 22 日 07:45）恢復控制台與 API。公司稱當時未發現原先一台託管伺服器以外的利用證據，另聘獨立鑑識團隊。",
+      "why": "客戶應核對所用託管／本地服務的修補與管理存取狀態；不能僅因郵件可收送就認為管理面已無風險。",
+      "limit": "正式根因報告仍待公布，公司當時預計兩週內提供；未發現更多證據不是保證僅一台受影響，也不能將本案混同 N-central 事故。",
+      "details": [
+        {
+          "heading": "已確認的事",
+          "points": [
+            "N-able 22 日正式更新確認，Mail Assure／SpamExperts 已修補識別出的漏洞，並於 21 日 23:45 UTC（臺灣 22 日 07:45）恢復控制台與 API。公司稱當時未發現原先一台託管伺服器以外的利用證據，另聘獨立鑑識團隊。",
+            "CNA 原始紀錄列 CVE-2026-134624 影響早於 20261121.1943 的 MailAssure，涉及已驗證 API 使用者的 LDAP 同步連線檢查。CISA 23 日列入 KEV，證實已有利用，並非因評分高就自行認定零日攻擊。"
+          ]
+        },
+        {
+          "heading": "影響與限制",
+          "points": [
+            "客戶應核對所用託管／本地服務的修補與管理存取狀態；不能僅因郵件可收送就認為管理面已無風險。 正式根因報告仍待公布，公司當時預計兩週內提供；未發現更多證據不是保證僅一台受影響，也不能將本案混同 N-central 事故。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "N-able 官方 Mail Assure 更新",
+          "url": "https://www.n-able.com/blog/mail-assure-incident-update",
+          "published": "2026-11-22",
+          "checked_at": "2026-11-25T05:04:28+08:00",
+          "verification_method": "web",
+          "verification_note": "本次網頁工具實讀N-able官方11/22 14:30 EST事件更新全文，確認11/21 23:45 UTC恢復dashboard/API、郵件流持續、初步單一伺服器範圍、獨立DFIR及兩週內RCA；一般HTTP403，非僅搜尋摘要。"
+        },
+        {
+          "name": "N-able CNA 原始 CVE 紀錄",
+          "url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/134xxx/CVE-2026-134624.json",
+          "published": "2026-11-22",
+          "checked_at": "2026-11-25T05:04:28+08:00"
+        },
+        {
+          "name": "CISA 官方 KEV 11/24版",
+          "url": "https://raw.githubusercontent.com/cisagov/kev-data/main/known_exploited_vulnerabilities.json",
+          "published": "2026-11-24",
+          "checked_at": "2026-11-25T05:04:28+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "已修補：對照 build 20261121.1943",
+          "管理控制台／API 已恢復",
+          "鑑識與正式根因報告仍進行"
+        ],
+        "caption": "原創恢復階段圖；實際恢復時間為11/21 UTC，非今天才恢復。"
+      },
+      "update_of": "2026-11-22",
+      "update_note": "前期仍報管理介面停用；本次新增官方恢復時間、CVE及KEV利用確認，未改寫恢復日期。"
+    },
+    {
+      "id": "drupal-installer-exploitation",
+      "category": "security",
+      "title": "Drupal 安裝器漏洞已遭利用，三個受支援分支須更新",
+      "teaser": "CISA 24 日將 CVE-2026-132165 納入 KEV；Drupal 已確認真實網站遭利用。更新版本及安裝器防護需一起核對，舊版停止支援不能只等修補。",
+      "summary": "Drupal 官方公告 CVE-2026-132165：特定條件下安裝器可被濫用，導致網站遭接管或遠端執行程式碼；安全團隊收到最早於 19 日 19:00 UTC 已遭利用的回報。CISA 24 日新增 KEV，是本次重要的新確認。",
+      "why": "網站維運者應優先更新受支援分支，無法立即升級時依官方安裝器保護指引處理，並檢查是否已有異常。",
+      "limit": "Drupal Steward 保護已知攻擊向量仍不取代升級；不將一般公開網站全都視為已入侵，也不提供漏洞操作步驟。",
+      "details": [
+        {
+          "heading": "已確認的事",
+          "points": [
+            "Drupal 官方公告 CVE-2026-132165：特定條件下安裝器可被濫用，導致網站遭接管或遠端執行程式碼；安全團隊收到最早於 19 日 19:00 UTC 已遭利用的回報。CISA 24 日新增 KEV，是本次重要的新確認。",
+            "修復門檻為 Drupal 10.6.22、11.3.22、11.4.13；10.5及以下、11.2及以下不再獲該系列安全支援。除了升級，官方建議完成安裝後限制安裝器；讓伺服器無法寫入 settings.php 只能緩解部分路徑。"
+          ]
+        },
+        {
+          "heading": "影響與限制",
+          "points": [
+            "網站維運者應優先更新受支援分支，無法立即升級時依官方安裝器保護指引處理，並檢查是否已有異常。 Drupal Steward 保護已知攻擊向量仍不取代升級；不將一般公開網站全都視為已入侵，也不提供漏洞操作步驟。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Drupal 官方 SA-CORE-2026-017",
+          "url": "https://www.drupal.org/sa-core-2026-017",
+          "published": "2026-11-18",
+          "checked_at": "2026-11-25T05:04:28+08:00"
+        },
+        {
+          "name": "CISA 官方 KEV 11/24版",
+          "url": "https://raw.githubusercontent.com/cisagov/kev-data/main/known_exploited_vulnerabilities.json",
+          "published": "2026-11-24",
+          "checked_at": "2026-11-25T05:04:28+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "辨認 Drupal 分支與版本",
+          "升級至10.6.22／11.3.22／11.4.13",
+          "保護安裝器並查核入侵跡象"
+        ],
+        "caption": "原創修補流程；版本依各分支選擇，並非可任選最低數字。"
+      }
+    },
+    {
+      "id": "idunno-anticsrf-retirement",
+      "category": "security",
+      "title": "舊 ASP.NET AntiCsrf 元件已遭利用，沒有官方修補可等",
+      "teaser": "CISA 新列 CVE-2026-131914；Mandiant 指出停更的 Idunno.AntiCsrf 0.9.1 Beta 可導致遠端執行。應替換為受支援防偽機制，不能只移除防護後就上線。",
+      "summary": "Mandiant 原始公告確認 Idunno.AntiCsrf.dll 0.9.1.0／0.9.1 Beta 有不安全反序列化問題，已觀察真實利用；CISA 24 日將 CVE-2026-131914 納入 KEV。此第三方舊元件常用於 ASP.NET WebForms，並非所有 ASP.NET 本身都有同一漏洞。",
+      "why": "若有利用跡象，須調查伺服器及未授權檔案，輪替設定檔內的相關密鑰與資料庫憑證。",
+      "limit": "移除舊元件時必須同步恢復適當 CSRF 防護；本期不提供攻擊請求或利用程式，也不把等待供應商更新列為可行修復。",
+      "details": [
+        {
+          "heading": "已確認的事",
+          "points": [
+            "Mandiant 原始公告確認 Idunno.AntiCsrf.dll 0.9.1.0／0.9.1 Beta 有不安全反序列化問題，已觀察真實利用；CISA 24 日將 CVE-2026-131914 納入 KEV。此第三方舊元件常用於 ASP.NET WebForms，並非所有 ASP.NET 本身都有同一漏洞。",
+            "專案已停更，沒有官方修補。維運應盤點部署檔與應用程式設定中的 Idunno.AntiCsrf／AntiCsrfModule，包含自行重編版本，再替換為受支援的框架防偽機制並驗證網站功能與防護。"
+          ]
+        },
+        {
+          "heading": "影響與限制",
+          "points": [
+            "若有利用跡象，須調查伺服器及未授權檔案，輪替設定檔內的相關密鑰與資料庫憑證。 移除舊元件時必須同步恢復適當 CSRF 防護；本期不提供攻擊請求或利用程式，也不把等待供應商更新列為可行修復。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Mandiant 原始漏洞與防護公告",
+          "url": "https://github.com/mandiant/Vulnerability-Disclosures/blob/master/2026/MNDT-2026-0048.md",
+          "published": "2026-11-18",
+          "checked_at": "2026-11-25T05:04:28+08:00"
+        },
+        {
+          "name": "CISA 官方 KEV 11/24版",
+          "url": "https://raw.githubusercontent.com/cisagov/kev-data/main/known_exploited_vulnerabilities.json",
+          "published": "2026-11-24",
+          "checked_at": "2026-11-25T05:04:28+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "盤點舊DLL與自編版本",
+          "替換受支援防偽機制並驗證",
+          "調查跡象；必要時輪替伺服器憑證"
+        ],
+        "caption": "原創遷移流程，停更元件的處置不同於安裝一般更新。"
+      }
+    },
+    {
+      "id": "us-rebound-final-close",
+      "category": "markets",
+      "title": "美股 11/23 正式收盤：Nasdaq 漲 6.5%，補齊前期盤中數據",
+      "teaser": "前期只核實美東 14:45 快照；本次取得週一正式收盤。這是同一輪重大反彈的收盤補充，不是將昨日漲幅當成週二再漲一次。",
+      "summary": "AP 正式收盤表列美國 11 月 23 日交易日：S&P 500 收 7,237.17、漲 4.7%；Nasdaq Composite 收 24,089.56、漲 6.5%；道瓊收 49,595.31、漲 3.0%。比較基準皆為 11 月 20 日前收，收盤時間相當於臺灣 24 日清晨。",
+      "why": "正式收盤能避免混用盤中漲幅判斷反彈規模。",
+      "limit": "本則不是美國11/24收盤，不延伸成投資建議或趨勢已反轉的判斷。",
+      "details": [
+        {
+          "heading": "已確認的事",
+          "points": [
+            "AP 正式收盤表列美國 11 月 23 日交易日：S&P 500 收 7,237.17、漲 4.7%；Nasdaq Composite 收 24,089.56、漲 6.5%；道瓊收 49,595.31、漲 3.0%。比較基準皆為 11 月 20 日前收，收盤時間相當於臺灣 24 日清晨。",
+            "此資料補齊前期尚未確認的最終結果；黃仁勳復職及 AI 類股反彈為當日報導的市場歸因，並非已證明唯一原因。"
+          ]
+        },
+        {
+          "heading": "影響與限制",
+          "points": [
+            "正式收盤能避免混用盤中漲幅判斷反彈規模。 本則不是美國11/24收盤，不延伸成投資建議或趨勢已反轉的判斷。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "AP 正式收盤報導／LA NACION轉載",
+          "url": "https://www.lanacion.com.ar/usa/how-major-us-stock-indexes-fared-monday-11232026-nid23112026/",
+          "published": "2026-11-23",
+          "checked_at": "2026-11-25T05:04:28+08:00"
+        }
+      ],
+      "update_of": "2026-11-24",
+      "update_note": "由前期11/23美東14:45盤中快照，補為同一交易日已完成的正式收盤數據；非新增另一日反彈。",
+      "image": {
+        "image": "assets/us-close-2026-11-25.svg",
+        "alt": "11月23日美股正式收盤相對11月20日前收：S&P500加4.7%、Nasdaq綜合加6.5%、道瓊加3%。不是11月24日行情。",
+        "kind": "original",
+        "credit": "Daily Brief 原創收盤數據圖；資料為 AP 11/23正式收盤表。"
+      }
+    }
+  ],
+  "visual_review": [
+    {
+      "story_id": "cloudflare-service-scope",
+      "decision": "diagram",
+      "reason": "以三產品範圍對照避免把管理面、資料面及地區事件混為全面中斷。",
+      "implementation": "visual.type=flow"
+    },
+    {
+      "story_id": "azure-apim-secret-exposure",
+      "decision": "diagram",
+      "reason": "以修補、輪替、後端調查流程說明雲端封堵不會作廢舊憑證。",
+      "implementation": "visual.type=flow"
+    },
+    {
+      "story_id": "mail-assure-remediation-update",
+      "decision": "diagram",
+      "reason": "用恢復與調查階段區分已恢復管理介面與根因仍待確認。",
+      "implementation": "visual.type=flow"
+    },
+    {
+      "story_id": "drupal-installer-exploitation",
+      "decision": "diagram",
+      "reason": "以分支修補門檻與安裝器防護流程幫助維運行動。",
+      "implementation": "visual.type=flow"
+    },
+    {
+      "story_id": "idunno-anticsrf-retirement",
+      "decision": "diagram",
+      "reason": "停更元件需要替換而非等待補丁，遷移流程有實際用途。",
+      "implementation": "visual.type=flow"
+    },
+    {
+      "story_id": "us-rebound-final-close",
+      "decision": "image",
+      "reason": "將前期盤中數據改為同一交易日正式收盤，明列基準日期避免誤讀。",
+      "implementation": "assets/us-close-2026-11-25.svg"
+    },
+    {
+      "story_id": "bis-seven-entity-list",
+      "decision": "diagram",
+      "reason": "七家公司分三地，用地域對照避免把同名跨國公司或母子關係混為一談。",
+      "implementation": "visual.type=flow"
+    }
+  ],
+  "discovery_review": {
+    "searches": [
+      {
+        "topic": "November 24 2026 technology major cloud outage news",
+        "checked_at": "2026-11-25T05:04:28+08:00"
+      },
+      {
+        "topic": "November 24 2026 world markets stocks bonds currencies crypto Reuters",
+        "checked_at": "2026-11-25T05:04:28+08:00"
+      },
+      {
+        "topic": "November 24 2026 cybersecurity exploited vulnerabilities news",
+        "checked_at": "2026-11-25T05:04:28+08:00"
+      },
+      {
+        "topic": "November 24 2026 F1 news penalties Qatar",
+        "checked_at": "2026-11-25T05:04:28+08:00"
+      },
+      {
+        "topic": "November 24 2026 Azure API Management vulnerability exploited Microsoft advisory",
+        "checked_at": "2026-11-25T05:04:28+08:00"
+      },
+      {
+        "topic": "November 24 2026 N-able Mail Assure CVE-2026-134624 advisory",
+        "checked_at": "2026-11-25T05:04:28+08:00"
+      },
+      {
+        "topic": "November 24 2026 major outage Cloudflare Workers API resolved",
+        "checked_at": "2026-11-25T05:04:28+08:00"
+      },
+      {
+        "topic": "How major US stock indexes fared Monday 11/23/2026 WTOP",
+        "checked_at": "2026-11-25T05:04:28+08:00"
+      },
+      {
+        "topic": "November 24 2026 global breaking technology outage markets security F1 latest news",
+        "checked_at": "2026-11-25T05:04:28+08:00"
+      },
+      {
+        "topic": "site.bis.gov November 23 2026 Apex Enterprise Solutions Alibaba entity list / site.federalregister.gov 2026-11 Apex Enterprise",
+        "checked_at": "2026-11-25T05:05:43+08:00"
+      }
+    ],
+    "candidates": [
+      {
+        "event": "Cloudflare 三起服務事件：Magic Transit 仍待修復，Workers 進入監控",
+        "url": "https://www.cloudflarestatus.com/incidents/no721jcnlrbh",
+        "decision": "included",
+        "reason": "實讀原始官方資料或通訊社原始數據；已知利用、防護行動或重要恢復／正式數據進展符合收錄門檻。"
+      },
+      {
+        "event": "Azure APIM Classic 漏洞遭利用，封堵入口後仍須輪替密鑰",
+        "url": "https://nsm.no/aktuelt/nsm-deler-tiltak-mot-sarbarhet-i-azure-api-management",
+        "decision": "included",
+        "reason": "實讀原始官方資料或通訊社原始數據；已知利用、防護行動或重要恢復／正式數據進展符合收錄門檻。"
+      },
+      {
+        "event": "Mail Assure 管理介面已恢復，漏洞納入已遭利用清單",
+        "url": "https://www.n-able.com/blog/mail-assure-incident-update",
+        "decision": "included",
+        "reason": "實讀原始官方資料或通訊社原始數據；已知利用、防護行動或重要恢復／正式數據進展符合收錄門檻。"
+      },
+      {
+        "event": "Drupal 安裝器漏洞已遭利用，三個受支援分支須更新",
+        "url": "https://www.drupal.org/sa-core-2026-017",
+        "decision": "included",
+        "reason": "實讀原始官方資料或通訊社原始數據；已知利用、防護行動或重要恢復／正式數據進展符合收錄門檻。"
+      },
+      {
+        "event": "舊 ASP.NET AntiCsrf 元件已遭利用，沒有官方修補可等",
+        "url": "https://github.com/mandiant/Vulnerability-Disclosures/blob/master/2026/MNDT-2026-0048.md",
+        "decision": "included",
+        "reason": "實讀原始官方資料或通訊社原始數據；已知利用、防護行動或重要恢復／正式數據進展符合收錄門檻。"
+      },
+      {
+        "event": "美股 11/23 正式收盤：Nasdaq 漲 6.5%，補齊前期盤中數據",
+        "url": "https://www.lanacion.com.ar/usa/how-major-us-stock-indexes-fared-monday-11232026-nid23112026/",
+        "decision": "included",
+        "reason": "實讀原始官方資料或通訊社原始數據；已知利用、防護行動或重要恢復／正式數據進展符合收錄門檻。"
+      },
+      {
+        "event": "Audi Slater接Camara F2最後兩站",
+        "url": "https://www.formula1.com/en/latest/article/audi-backed-slater-to-take-over-camaras-f2-seat-for-final-two-rounds-in-qatar-and-abu-dhabi.3F0sq83OoErm2IjBqsncqu",
+        "decision": "omitted",
+        "reason": "實讀官方新安排，屬F2補位，前期已報Camara F1續跑；本期不因分類配額拉入次要後續。"
+      },
+      {
+        "event": "Optimizely新增KEV",
+        "url": "https://raw.githubusercontent.com/cisagov/kev-data/main/known_exploited_vulnerabilities.json",
+        "decision": "omitted",
+        "reason": "已查新KEV條目，前期已報網站供應鏈事件，本期未另取得重大新範圍，不再複製事件；持續以官方處置為準。"
+      },
+      {
+        "event": "美國11/24行情與加密波動",
+        "url": "https://bigbreakingwire.in/bbw-live-news-blog-today/?lb_update=5429",
+        "decision": "pending",
+        "reason": "廣泛掃描找到盤前下跌線索，但未取得同交易日已驗證正式收盤與一致比較資料；不把盤前推論當收盤，也不稱無市場消息。"
+      },
+      {
+        "event": "美國 BIS 新增七家實體，Apex 與 Megaspeed 在列",
+        "url": "https://public-inspection.federalregister.gov/2026-23999.pdf",
+        "decision": "included",
+        "reason": "最後查漏後補查BIS公開檢視最終規則全文，七家實體與政策已核實，改為選入。"
+      }
+    ],
+    "final_check": {
+      "checked_at": "2026-11-25T05:05:43+08:00",
+      "result": "跨來源查漏後補查BIS官方最終規則並選入七家實體政策，沒有將可查核重大產業事件留在待查。Cloudflare三案狀態分開；F1官方已查不湊數，美國11/24行情未核實未當收盤。"
+    }
+  },
+  "validation_review": {
+    "browser": "本次CUA inventory無瀏覽器，明確createBrowserTab iab亦回報不可用；沿用已驗證未修改模板，未宣稱完成當次手機桌面視覺預覽。",
+    "static": "原創SVG明確720x560 viewBox；檢查圖內文字座標與版面路徑，首頁長標題皆在70字內。"
+  }
+}
