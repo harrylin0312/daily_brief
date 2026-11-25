@@ -1,0 +1,582 @@
+{
+  "date": "2026-11-26",
+  "title": "服務、調查與規則，都有不同的完成線。",
+  "intro": "Cloudflare新延遲尚在修正，微軟事故後工程整頓進入Code Red；GeoServer與Turnitin的證據要分清。美國PCE正式公布，F1則有成本處分與Qatar輪胎限制。",
+  "generated_at": "2026-11-26T05:06:36+08:00",
+  "coverage": {
+    "from": "2026-11-23",
+    "to": "2026-11-25"
+  },
+  "hero": null,
+  "editor_note": "收錄7則，無分類配額。Turnitin保留23日客戶信日期，不假稱今天才發生。GeoServer區分利用探測與完整RCE；微軟內部計畫採Reuters原始採訪歸屬。一小時復原是目標；PCE用正式數據，不以盤中行情猜收盤。",
+  "stories": [
+    {
+      "id": "cloudflare-r2-latency",
+      "category": "tech",
+      "title": "Cloudflare R2、Stream、Pipelines 延遲升高，修復尚在進行",
+      "teaser": "新的多服務延遲事件已識別問題、實施修正；稍早亞太 R2 錯誤與前期 Magic Transit 則已宣布解決，不能混成同一次全面恢復。",
+      "summary": "Cloudflare 25 日 20:08 UTC（臺灣26日04:08）通報 R2、Stream、Pipelines 高延遲；20:45 更新為已識別、實施修正，查核時尚未宣布解決。公告未指明地區或公布根因，不推論全球所有客戶都受影響。",
+      "why": "依賴儲存、影音及資料管線的團隊應分別核對請求延遲、錯誤率與官方更新，避免盲目重送大量工作。",
+      "limit": "實施修正不等於完整復原；尚無受影響客戶總數或跨事件共同原因的官方證據。",
+      "details": [
+        {
+          "heading": "發生什麼事",
+          "points": [
+            "Cloudflare 25 日 20:08 UTC（臺灣26日04:08）通報 R2、Stream、Pipelines 高延遲；20:45 更新為已識別、實施修正，查核時尚未宣布解決。公告未指明地區或公布根因，不推論全球所有客戶都受影響。",
+            "另一起亞太 R2 bucket 錯誤始於25日16:50 UTC，20:03宣布解決；前期 Magic Transit 部分客戶掉封包則於25日08:16 UTC解決。這些是不同事件及時間線，不能用其中一案的結案替另一案背書。"
+          ]
+        },
+        {
+          "heading": "影響與限制",
+          "points": [
+            "依賴儲存、影音及資料管線的團隊應分別核對請求延遲、錯誤率與官方更新，避免盲目重送大量工作。 實施修正不等於完整復原；尚無受影響客戶總數或跨事件共同原因的官方證據。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Cloudflare 多服務延遲官方事故",
+          "url": "https://www.cloudflarestatus.com/incidents/ef6928vi0mic",
+          "published": "2026-11-25",
+          "checked_at": "2026-11-26T05:06:36+08:00"
+        },
+        {
+          "name": "Cloudflare 亞太R2錯誤官方事故",
+          "url": "https://www.cloudflarestatus.com/incidents/2quqh864hxdi",
+          "published": "2026-11-25",
+          "checked_at": "2026-11-26T05:06:36+08:00"
+        },
+        {
+          "name": "Cloudflare Magic Transit官方結案",
+          "url": "https://www.cloudflarestatus.com/incidents/no721jcnlrbh",
+          "published": "2026-11-24",
+          "checked_at": "2026-11-26T05:06:36+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "R2／Stream／Pipelines：修正中",
+          "亞太R2錯誤：20:03 UTC結案",
+          "Magic Transit：08:16 UTC結案"
+        ],
+        "caption": "原創範圍對照，三列為獨立事件與狀態。"
+      },
+      "update_of": "2026-11-25",
+      "update_note": "新增多服務延遲與亞太R2事件，並核實前期Magic Transit已結案；不再沿用昨日待修復狀態。"
+    },
+    {
+      "id": "microsoft-code-red-response",
+      "category": "tech",
+      "title": "微軟啟動 Code Red 改善事故應變，一小時復原仍是目標",
+      "teaser": "Reuters 實讀內部備忘錄揭露工程改善計畫；微軟發言人確認列為最高優先。這是先前中斷的後續整頓，不是又發生全球停機。",
+      "summary": "Reuters 24 日依內部備忘錄報導，微軟在11月12–13日重大中斷後啟動 Code Red，改善負載卸除、地理流量隔離及快速復原。發言人對Reuters表示，服務恢復後仍持續落實教訓，領導層將此列為最高優先。",
+      "why": "對企業而言，供應商改善承諾不取代自身郵件、通訊及營運備援。",
+      "limit": "本次讀到的是Reuters原始採訪及直接回應，沒有公開內部備忘錄可獨立核對；公開Microsoft狀態頁僅回傳JavaScript提示。不把目標寫成SLA或保證。",
+      "details": [
+        {
+          "heading": "發生什麼事",
+          "points": [
+            "Reuters 24 日依內部備忘錄報導，微軟在11月12–13日重大中斷後啟動 Code Red，改善負載卸除、地理流量隔離及快速復原。發言人對Reuters表示，服務恢復後仍持續落實教訓，領導層將此列為最高優先。",
+            "備忘錄指應變資訊散在多個追蹤系統，工程師於11個Teams對話交換超過11,000則訊息，難以維持共同決策圖像。計畫設定未來全球事故一小時內復原，並用AI輔助診斷，但報導明言尚未達成。"
+          ]
+        },
+        {
+          "heading": "影響與限制",
+          "points": [
+            "對企業而言，供應商改善承諾不取代自身郵件、通訊及營運備援。 本次讀到的是Reuters原始採訪及直接回應，沒有公開內部備忘錄可獨立核對；公開Microsoft狀態頁僅回傳JavaScript提示。不把目標寫成SLA或保證。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Reuters原始備忘錄採訪／Investing轉載",
+          "url": "https://www.investing.com/news/stock-market-news/exclusivemicrosoft-declares-code-red-after-historic-outage-internal-memos-show-5048702",
+          "published": "2026-11-24",
+          "checked_at": "2026-11-26T05:06:36+08:00",
+          "verification_method": "web",
+          "verification_note": "本次網頁工具實讀Reuters Jaspreet Singh 11/24原始報導正文，含內部備忘錄歸屬、11個Teams對話及11000訊息、Code Red措施、一小時未來目標與發言人回應，未假稱直接取得內部文件。"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "已發生：11月重大中斷",
+          "進行中：負載、隔離、診斷與復原改善",
+          "一小時：未來目標，尚非保證"
+        ],
+        "caption": "原創計畫階段圖，分清既有事故、改善措施與未達成目標。"
+      },
+      "update_of": "2026-11-24",
+      "update_note": "前期為最終事故報告；本次新增Reuters備忘錄採訪揭露的工程整改與復原目標。"
+    },
+    {
+      "id": "geoserver-security-update",
+      "category": "security",
+      "title": "GeoServer 兩漏洞遭攻擊探測，立即核對三個修復分支",
+      "teaser": "加拿大官方警報列出實際利用報導；研究觀察包含驗證伺服器是否脆弱的探測。不能把探測直接寫成已完成整條遠端執行攻擊鏈。",
+      "summary": "GeoServer官方23日公開安全更新，要求升級至2.27.7、2.28.6或3.0.2。CVE-2026-120705涉及未驗證檔案讀取，CVE-2026-129243涉及服務授權規則繞過；與其他缺陷組合可能形成遠端執行風險。",
+      "why": "公開地理資料不代表管理與內部檔案也應可讀；應優先更新受支援分支並檢查曝露與異常存取。",
+      "limit": "不能只補其中一個漏洞便假定整條鏈已封堵；本則不提供利用步驟，也不將尚未觀察到的完整入侵當既成事實。",
+      "details": [
+        {
+          "heading": "發生什麼事",
+          "points": [
+            "GeoServer官方23日公開安全更新，要求升級至2.27.7、2.28.6或3.0.2。CVE-2026-120705涉及未驗證檔案讀取，CVE-2026-129243涉及服務授權規則繞過；與其他缺陷組合可能形成遠端執行風險。",
+            "加拿大Cyber Centre 25日警報引用公開情報指出兩漏洞已遭利用。SecurityWeek原始報導則具體區分watchTowr觀察到的漏洞驗證探測，尚未報告成功完成遠端執行；修補早於公開細節，不是今天才釋出。"
+          ]
+        },
+        {
+          "heading": "影響與限制",
+          "points": [
+            "公開地理資料不代表管理與內部檔案也應可讀；應優先更新受支援分支並檢查曝露與異常存取。 不能只補其中一個漏洞便假定整條鏈已封堵；本則不提供利用步驟，也不將尚未觀察到的完整入侵當既成事實。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "GeoServer官方安全更新",
+          "url": "https://geoserver.org/vulnerability/2026/11/23/cve-update.html",
+          "published": "2026-11-23",
+          "checked_at": "2026-11-26T05:06:36+08:00"
+        },
+        {
+          "name": "加拿大Cyber Centre官方警報",
+          "url": "https://www.cyber.gc.ca/en/alerts-advisories/geoserver-security-advisory-av26-1207",
+          "published": "2026-11-25",
+          "checked_at": "2026-11-26T05:06:36+08:00",
+          "verification_method": "web",
+          "verification_note": "本次網頁工具實讀加拿大AV26-1207官方11/25警報正文：三分支門檻2.27.7、2.28.6、3.0.2，兩CVE公開情報顯示利用；不是僅搜尋摘要。"
+        },
+        {
+          "name": "SecurityWeek 原始研究採訪",
+          "url": "https://www.securityweek.com/two-newly-disclosed-geoserver-vulnerabilities-under-attack/",
+          "published": "2026-11-25",
+          "checked_at": "2026-11-26T05:06:36+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "核對2.27／2.28／3.0分支",
+          "升級至2.27.7／2.28.6／3.0.2",
+          "檢查曝露與異常；探測不等於完整RCE"
+        ],
+        "caption": "原創修補流程，版本依各分支對照。"
+      }
+    },
+    {
+      "id": "turnitin-unauthorized-activity",
+      "category": "security",
+      "title": "Turnitin 確認客戶系統未授權活動，影響範圍仍在調查",
+      "teaser": "公司23日客戶信稱系統可正常使用，並已找外部專家及通知執法、監管。服務正常與資料調查未結束可以同時成立。",
+      "summary": "Turnitin執行長Chris Caren於23日致客戶信確認，部分客戶端系統出現未授權活動，已啟動應變、委託外部資安專家調查，並通知執法及資安監管機關。本期首次收錄，保留23日原始公告日期。",
+      "why": "學校與使用者應透過機構正式窗口追蹤通知，分清服務可用性與資料安全調查。",
+      "limit": "目前未公布受影響人數、資料類別全貌、攻擊起始時間或證實學生論文遭竊；不把未蒐集的兩類資料擴大成所有資料都未外洩。",
+      "details": [
+        {
+          "heading": "發生什麼事",
+          "points": [
+            "Turnitin執行長Chris Caren於23日致客戶信確認，部分客戶端系統出現未授權活動，已啟動應變、委託外部資安專家調查，並通知執法及資安監管機關。本期首次收錄，保留23日原始公告日期。",
+            "公司表示系統全面運作且可安全使用，這些系統不蒐集政府身分證明憑證或機構財務資料；但仍在確認事件性質與完整範圍，並監控後續活動。官方狀態頁顯示正常，不能據此否定資安事件。"
+          ]
+        },
+        {
+          "heading": "影響與限制",
+          "points": [
+            "學校與使用者應透過機構正式窗口追蹤通知，分清服務可用性與資料安全調查。 目前未公布受影響人數、資料類別全貌、攻擊起始時間或證實學生論文遭竊；不把未蒐集的兩類資料擴大成所有資料都未外洩。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Turnitin執行長官方客戶信",
+          "url": "https://helpcenter.turnitin.com/hc/en-us/articles/50603173309197-Letter-from-Turnitin-CEO-Chris-Caren-to-customers-on-23-November-2026",
+          "published": "2026-11-23",
+          "checked_at": "2026-11-26T05:06:36+08:00",
+          "verification_method": "web",
+          "verification_note": "本次網頁工具實讀Turnitin CEO 11/23客戶信全文，確認部分客戶端系統未授權活動、外部調查及通知執法監管、公司稱全面運作、不蒐集兩類資料但範圍仍調查；一般HTTP403，非搜尋摘要。"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "已確認：部分系統未授權活動",
+          "公司稱服務正常，外部調查持續",
+          "未公布：完整範圍、資料影響與起始時間"
+        ],
+        "caption": "原創證據範圍對照，區分公司確認與尚未知事項。"
+      }
+    },
+    {
+      "id": "october-pce-inflation",
+      "category": "markets",
+      "title": "美國 10 月 PCE 年增 3.8%，核心年增 3.3%",
+      "teaser": "BEA正式公布通膨數據；兩者月增均0.3%。名目支出上升，但扣除物價後的實質PCE略降，不能把名目增長當成實際購買量增加。",
+      "summary": "美國BEA於25日08:30美東（臺灣21:30）公布10月資料：整體PCE物價指數較去年同月增3.8%，排除食品能源的核心PCE增3.3%；相對9月，兩者均增0.3%。月比與年比回答不同問題，不能放在同一比較尺度。",
+      "why": "物價與實質消費的組合關係到利率和成長判讀，投資者需分清報表期間及比較基準。",
+      "limit": "本期不以單月數據預言下一次Fed決策，也不將公告直接當作美股當日漲跌的唯一原因。",
+      "details": [
+        {
+          "heading": "發生什麼事",
+          "points": [
+            "美國BEA於25日08:30美東（臺灣21:30）公布10月資料：整體PCE物價指數較去年同月增3.8%，排除食品能源的核心PCE增3.3%；相對9月，兩者均增0.3%。月比與年比回答不同問題，不能放在同一比較尺度。",
+            "名目個人消費支出月增0.3%，實質PCE則下降不到0.1%；個人所得月增0.7%、可支配所得增0.8%，儲蓄率為可支配所得的4.1%。這是官方估計，不是市場預測值。"
+          ]
+        },
+        {
+          "heading": "影響與限制",
+          "points": [
+            "物價與實質消費的組合關係到利率和成長判讀，投資者需分清報表期間及比較基準。 本期不以單月數據預言下一次Fed決策，也不將公告直接當作美股當日漲跌的唯一原因。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "BEA官方10月所得與支出新聞稿",
+          "url": "https://bea.gov/sites/default/files/2026-11/pi1026.pdf",
+          "published": "2026-11-25",
+          "checked_at": "2026-11-26T05:06:36+08:00"
+        }
+      ],
+      "image": {
+        "image": "assets/pce-october-2026-11-26.svg",
+        "alt": "10月PCE年增3.8%、核心年增3.3%；月增均0.3%。年比圖與月比註記分開呈現。",
+        "kind": "original",
+        "credit": "Daily Brief 原創資訊圖；數據為BEA 2026/11/25正式發布，非預測。"
+      }
+    },
+    {
+      "id": "williams-cost-cap-2025",
+      "category": "f1",
+      "title": "Williams 2025 成本上限違規：罰款並減少 1.5% 空力測試",
+      "teaser": "FIA審查認定Williams非蓄意小額超支與程序違規；Alpine只有程序違規、成本仍在上限內。兩隊情況不同，不能都寫成超支。",
+      "summary": "F1官方25日報導FIA完成2025財務規則審查：Williams非蓄意超支62.7萬英鎊、約上限0.48%，另有程序違規，已達成接受違規協議。處分包括罰款及未來12個月風洞、CFD測試減少1.5%。",
+      "why": "空力測試限制會影響車隊研發資源；應將金錢處分與測試配額影響分開看。",
+      "limit": "本則依官方審查及車隊回應，不將成本爭議寫成刻意作弊；未取得罰款金額，不填入猜測數字，也不推定賽道上會損失多少圈速。",
+      "details": [
+        {
+          "heading": "發生什麼事",
+          "points": [
+            "F1官方25日報導FIA完成2025財務規則審查：Williams非蓄意超支62.7萬英鎊、約上限0.48%，另有程序違規，已達成接受違規協議。處分包括罰款及未來12個月風洞、CFD測試減少1.5%。",
+            "Alpine也達成協議並需付罰款與調查費用，但相關成本低於2025上限，屬程序違規。FIA表示未有證據顯示兩隊從所認定違規獲取或尋求優勢；Williams將原因歸於公司結構調整行政成本認列。"
+          ]
+        },
+        {
+          "heading": "影響與限制",
+          "points": [
+            "空力測試限制會影響車隊研發資源；應將金錢處分與測試配額影響分開看。 本則依官方審查及車隊回應，不將成本爭議寫成刻意作弊；未取得罰款金額，不填入猜測數字，也不推定賽道上會損失多少圈速。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Formula 1官方財務審查報導",
+          "url": "https://www.formula1.com/en/latest/article/fia-confirm-williams-minor-overspend-breach-in-2025-cost-cap-review.12rGorQ1pzc6aH0LX2WdLZ",
+          "published": "2026-11-25",
+          "checked_at": "2026-11-26T05:06:36+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "Williams：超支0.48%＋程序違規",
+          "處分：罰款＋12個月空力測試減1.5%",
+          "Alpine：程序違規，未超成本上限"
+        ],
+        "caption": "原創處分對照；超支比例與測試削減比例分母不同，不是同尺度圖表。"
+      }
+    },
+    {
+      "id": "qatar-tyre-lap-limit",
+      "category": "f1",
+      "title": "Qatar 每套胎限累計 27 圈，57 圈正賽至少兩次進站",
+      "teaser": "圈數跨所有賽段累計，安全車與虛擬安全車圈也計入。用過的胎並非進入正賽後重新獲得27圈，策略必須看剩餘里程。",
+      "summary": "F1官方25日說明Pirelli與FIA、F1共同決定，Qatar週末每套胎最多累計27圈；57圈正賽因此至少兩次進站。限制屬Lusail高能量負荷、熱壓力及磨耗下的預防措施，不代表已發生輪胎事故。",
+      "why": "車隊必須保留足夠可用胎，不能只看正賽單一stint長度；本場每人分配13套，C1硬2套、C2中4套、C3軟7套。",
+      "limit": "至少兩停是規則與賽程長度所要求的下限，不是指定每人同圈進站或保證最佳策略；安全車仍可能改變實際時機。",
+      "details": [
+        {
+          "heading": "發生什麼事",
+          "points": [
+            "F1官方25日說明Pirelli與FIA、F1共同決定，Qatar週末每套胎最多累計27圈；57圈正賽因此至少兩次進站。限制屬Lusail高能量負荷、熱壓力及磨耗下的預防措施，不代表已發生輪胎事故。",
+            "圈數跨所有場上賽段累計，SC／VSC圈也計入；偵察圈、暖胎圈與賽後圈不計。其他賽段已開始但未完成的圈算一圈，混合不同里程輪胎時以最高圈數為整套里程。"
+          ]
+        },
+        {
+          "heading": "影響與限制",
+          "points": [
+            "車隊必須保留足夠可用胎，不能只看正賽單一stint長度；本場每人分配13套，C1硬2套、C2中4套、C3軟7套。 至少兩停是規則與賽程長度所要求的下限，不是指定每人同圈進站或保證最佳策略；安全車仍可能改變實際時機。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Formula 1官方輪胎規則與Pirelli聲明",
+          "url": "https://www.formula1.com/en/latest/article/explained-why-theres-a-27-lap-limit-on-tyres-for-the-qatar-grand-prix.4oeu38BqJh1h7llxUeILBe",
+          "published": "2026-11-25",
+          "checked_at": "2026-11-26T05:06:36+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "每套胎：全週末累計最多27圈",
+          "57圈正賽：至少需要3套可用胎",
+          "至少2次進站；已用里程不歸零"
+        ],
+        "caption": "原創策略規則圖：27＋27不足57；非指定實際進站圈數。"
+      }
+    }
+  ],
+  "source_checks": [
+    {
+      "name": "Cloudflare 多服務延遲官方事故",
+      "url": "https://www.cloudflarestatus.com/incidents/ef6928vi0mic",
+      "status": "checked",
+      "checked_at": "2026-11-26T05:06:36+08:00",
+      "note": "本次網頁工具實讀原文，核對正文而非搜尋摘要；原始發布日期與事件更新時間分開保留。"
+    },
+    {
+      "name": "Cloudflare 亞太R2錯誤官方事故",
+      "url": "https://www.cloudflarestatus.com/incidents/2quqh864hxdi",
+      "status": "checked",
+      "checked_at": "2026-11-26T05:06:36+08:00",
+      "note": "本次網頁工具實讀原文，核對正文而非搜尋摘要；原始發布日期與事件更新時間分開保留。"
+    },
+    {
+      "name": "Cloudflare Magic Transit官方結案",
+      "url": "https://www.cloudflarestatus.com/incidents/no721jcnlrbh",
+      "status": "checked",
+      "checked_at": "2026-11-26T05:06:36+08:00",
+      "note": "本次網頁工具實讀原文，核對正文而非搜尋摘要；原始發布日期與事件更新時間分開保留。"
+    },
+    {
+      "name": "Reuters原始備忘錄採訪／Investing轉載",
+      "url": "https://www.investing.com/news/stock-market-news/exclusivemicrosoft-declares-code-red-after-historic-outage-internal-memos-show-5048702",
+      "status": "checked",
+      "checked_at": "2026-11-26T05:06:36+08:00",
+      "note": "本次網頁工具實讀原文，核對正文而非搜尋摘要；原始發布日期與事件更新時間分開保留。"
+    },
+    {
+      "name": "GeoServer官方安全更新",
+      "url": "https://geoserver.org/vulnerability/2026/11/23/cve-update.html",
+      "status": "checked",
+      "checked_at": "2026-11-26T05:06:36+08:00",
+      "note": "本次網頁工具實讀原文，核對正文而非搜尋摘要；原始發布日期與事件更新時間分開保留。"
+    },
+    {
+      "name": "加拿大Cyber Centre官方警報",
+      "url": "https://www.cyber.gc.ca/en/alerts-advisories/geoserver-security-advisory-av26-1207",
+      "status": "checked",
+      "checked_at": "2026-11-26T05:06:36+08:00",
+      "note": "本次網頁工具實讀原文，核對正文而非搜尋摘要；原始發布日期與事件更新時間分開保留。"
+    },
+    {
+      "name": "SecurityWeek 原始研究採訪",
+      "url": "https://www.securityweek.com/two-newly-disclosed-geoserver-vulnerabilities-under-attack/",
+      "status": "checked",
+      "checked_at": "2026-11-26T05:06:36+08:00",
+      "note": "本次網頁工具實讀原文，核對正文而非搜尋摘要；原始發布日期與事件更新時間分開保留。"
+    },
+    {
+      "name": "Turnitin執行長官方客戶信",
+      "url": "https://helpcenter.turnitin.com/hc/en-us/articles/50603173309197-Letter-from-Turnitin-CEO-Chris-Caren-to-customers-on-23-November-2026",
+      "status": "checked",
+      "checked_at": "2026-11-26T05:06:36+08:00",
+      "note": "本次網頁工具實讀原文，核對正文而非搜尋摘要；原始發布日期與事件更新時間分開保留。"
+    },
+    {
+      "name": "BEA官方10月所得與支出新聞稿",
+      "url": "https://bea.gov/sites/default/files/2026-11/pi1026.pdf",
+      "status": "checked",
+      "checked_at": "2026-11-26T05:06:36+08:00",
+      "note": "本次網頁工具實讀原文，核對正文而非搜尋摘要；原始發布日期與事件更新時間分開保留。"
+    },
+    {
+      "name": "Formula 1官方財務審查報導",
+      "url": "https://www.formula1.com/en/latest/article/fia-confirm-williams-minor-overspend-breach-in-2025-cost-cap-review.12rGorQ1pzc6aH0LX2WdLZ",
+      "status": "checked",
+      "checked_at": "2026-11-26T05:06:36+08:00",
+      "note": "本次網頁工具實讀原文，核對正文而非搜尋摘要；原始發布日期與事件更新時間分開保留。"
+    },
+    {
+      "name": "Formula 1官方輪胎規則與Pirelli聲明",
+      "url": "https://www.formula1.com/en/latest/article/explained-why-theres-a-27-lap-limit-on-tyres-for-the-qatar-grand-prix.4oeu38BqJh1h7llxUeILBe",
+      "status": "checked",
+      "checked_at": "2026-11-26T05:06:36+08:00",
+      "note": "本次網頁工具實讀原文，核對正文而非搜尋摘要；原始發布日期與事件更新時間分開保留。"
+    },
+    {
+      "name": "Microsoft公開狀態頁",
+      "url": "https://status.cloud.microsoft/",
+      "status": "failed",
+      "checked_at": "2026-11-26T05:06:36+08:00",
+      "note": "實際僅回傳JavaScript提示；另讀Reuters備忘錄原始採訪及公司直接回應，不宣稱讀到內部備忘錄。"
+    },
+    {
+      "name": "Turnitin官方狀態",
+      "url": "https://turnitin.statuspage.io/",
+      "status": "checked",
+      "checked_at": "2026-11-26T05:06:36+08:00",
+      "note": "實讀顯示全面正常；可用性狀態不等於未發生未授權活動。"
+    },
+    {
+      "name": "F1官方最新列表",
+      "url": "https://www.formula1.com/en/latest",
+      "status": "checked",
+      "checked_at": "2026-11-26T05:06:36+08:00",
+      "note": "實讀最新列表後深入成本上限與27圈輪胎限制原文，未僅找賽事傳聞。"
+    }
+  ],
+  "visual_review": [
+    {
+      "story_id": "cloudflare-r2-latency",
+      "decision": "diagram",
+      "reason": "多服務事件分開顯示狀態，防止將一案結案看成全部復原。",
+      "implementation": "visual.type=flow"
+    },
+    {
+      "story_id": "microsoft-code-red-response",
+      "decision": "diagram",
+      "reason": "將事故、整改、未來目標三階段對照，避免承諾誤讀。",
+      "implementation": "visual.type=flow"
+    },
+    {
+      "story_id": "geoserver-security-update",
+      "decision": "diagram",
+      "reason": "修補分支與探測證據需要明確防護流程。",
+      "implementation": "visual.type=flow"
+    },
+    {
+      "story_id": "turnitin-unauthorized-activity",
+      "decision": "diagram",
+      "reason": "用已確認與未知範圍對照，避免把正常服務等同無資料風險。",
+      "implementation": "visual.type=flow"
+    },
+    {
+      "story_id": "october-pce-inflation",
+      "decision": "image",
+      "reason": "用同一年度比較尺度畫年增率，月比另列，避免誤導。",
+      "implementation": "assets/pce-october-2026-11-26.svg"
+    },
+    {
+      "story_id": "williams-cost-cap-2025",
+      "decision": "diagram",
+      "reason": "用兩隊處分對照，超支與程序違規不能混同。",
+      "implementation": "visual.type=flow"
+    },
+    {
+      "story_id": "qatar-tyre-lap-limit",
+      "decision": "diagram",
+      "reason": "用27圈累積限制及57圈賽程關係說明至少兩停。",
+      "implementation": "visual.type=flow"
+    }
+  ],
+  "discovery_review": {
+    "searches": [
+      {
+        "topic": "November 25 2026 technology cloud outage major news Reuters",
+        "checked_at": "2026-11-26T05:06:36+08:00"
+      },
+      {
+        "topic": "November 25 2026 markets stocks bonds currencies crypto Reuters",
+        "checked_at": "2026-11-26T05:06:36+08:00"
+      },
+      {
+        "topic": "November 25 2026 cybersecurity actively exploited vulnerabilities news",
+        "checked_at": "2026-11-26T05:06:36+08:00"
+      },
+      {
+        "topic": "November 25 2026 F1 Qatar major news rules penalties",
+        "checked_at": "2026-11-26T05:06:36+08:00"
+      },
+      {
+        "topic": "November 25 2026 Turnitin cyberattack official status",
+        "checked_at": "2026-11-26T05:06:36+08:00"
+      },
+      {
+        "topic": "GeoServer CVE-2026-120705 129243 November 25 2026 advisory",
+        "checked_at": "2026-11-26T05:06:36+08:00"
+      },
+      {
+        "topic": "site:bea.gov November 25 2026 personal income outlays October",
+        "checked_at": "2026-11-26T05:06:36+08:00"
+      },
+      {
+        "topic": "November 25 2026 latest breaking technology major outage markets security F1 Williams cost cap",
+        "checked_at": "2026-11-26T05:06:36+08:00"
+      }
+    ],
+    "candidates": [
+      {
+        "event": "Cloudflare R2、Stream、Pipelines 延遲升高，修復尚在進行",
+        "url": "https://www.cloudflarestatus.com/incidents/ef6928vi0mic",
+        "decision": "included",
+        "reason": "跨來源發現後實讀官方原文或直接採訪，依實際影響、行動需求及實質進展選入。"
+      },
+      {
+        "event": "微軟啟動 Code Red 改善事故應變，一小時復原仍是目標",
+        "url": "https://www.investing.com/news/stock-market-news/exclusivemicrosoft-declares-code-red-after-historic-outage-internal-memos-show-5048702",
+        "decision": "included",
+        "reason": "跨來源發現後實讀官方原文或直接採訪，依實際影響、行動需求及實質進展選入。"
+      },
+      {
+        "event": "GeoServer 兩漏洞遭攻擊探測，立即核對三個修復分支",
+        "url": "https://geoserver.org/vulnerability/2026/11/23/cve-update.html",
+        "decision": "included",
+        "reason": "跨來源發現後實讀官方原文或直接採訪，依實際影響、行動需求及實質進展選入。"
+      },
+      {
+        "event": "Turnitin 確認客戶系統未授權活動，影響範圍仍在調查",
+        "url": "https://helpcenter.turnitin.com/hc/en-us/articles/50603173309197-Letter-from-Turnitin-CEO-Chris-Caren-to-customers-on-23-November-2026",
+        "decision": "included",
+        "reason": "跨來源發現後實讀官方原文或直接採訪，依實際影響、行動需求及實質進展選入。"
+      },
+      {
+        "event": "美國 10 月 PCE 年增 3.8%，核心年增 3.3%",
+        "url": "https://bea.gov/sites/default/files/2026-11/pi1026.pdf",
+        "decision": "included",
+        "reason": "跨來源發現後實讀官方原文或直接採訪，依實際影響、行動需求及實質進展選入。"
+      },
+      {
+        "event": "Williams 2025 成本上限違規：罰款並減少 1.5% 空力測試",
+        "url": "https://www.formula1.com/en/latest/article/fia-confirm-williams-minor-overspend-breach-in-2025-cost-cap-review.12rGorQ1pzc6aH0LX2WdLZ",
+        "decision": "included",
+        "reason": "跨來源發現後實讀官方原文或直接採訪，依實際影響、行動需求及實質進展選入。"
+      },
+      {
+        "event": "Qatar 每套胎限累計 27 圈，57 圈正賽至少兩次進站",
+        "url": "https://www.formula1.com/en/latest/article/explained-why-theres-a-27-lap-limit-on-tyres-for-the-qatar-grand-prix.4oeu38BqJh1h7llxUeILBe",
+        "decision": "included",
+        "reason": "跨來源發現後實讀官方原文或直接採訪，依實際影響、行動需求及實質進展選入。"
+      },
+      {
+        "event": "市場週三漲跌與新關稅線索",
+        "url": "https://apnews.com/article/10044b4fb55d3ff20fde9ba9e9acaab1",
+        "decision": "pending",
+        "reason": "搜尋發現盤中走勢與關稅報導，但本次未完整核實週三正式收盤及政策生效文件；選入可核實BEA通膨資料，不將盤中當收盤或稱市場無消息。"
+      },
+      {
+        "event": "vCenter另一個認證漏洞",
+        "url": "https://www.sechot.net/daily/2026-11-25",
+        "decision": "pending",
+        "reason": "掃描發現CVE-2026-123903線索；本期未取得供應商完整範圍，不能與前期123890零日利用混報。"
+      },
+      {
+        "event": "冷藏控制器與血庫影響線索",
+        "url": "https://www.fdd.org/overnight-brief/november-25-2026/",
+        "decision": "pending",
+        "reason": "最後掃描發現報導線索，尚無本期實讀原始供應商或受害方證據，未將傳述規模當確認事件。"
+      }
+    ],
+    "final_check": {
+      "checked_at": "2026-11-26T05:06:36+08:00",
+      "result": "再比對重大事故、政策與F1最新頭條；實讀Cloudflare新延遲並區分先前結案，補查PCE與FIA成本審查。來源仍不足候選公開待查，不用小功能取代重大事故。"
+    }
+  },
+  "validation_review": {
+    "browser": "本次CUA無可用瀏覽器且createBrowserTab iab失敗，未完成手機桌面視覺預覽。沿用未修改且既有驗證模板。",
+    "static": "已檢查標題長度、SVG720x530 viewBox與圖中文字座標、輸出連結和資產。"
+  }
+}
