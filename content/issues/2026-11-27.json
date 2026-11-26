@@ -1,0 +1,626 @@
+{
+  "date": "2026-11-27",
+  "title": "修復有完成線，政策也有條件。",
+  "intro": "FinCEN申報寬免與Juniper利用警報先看行動條件；韓國升息、ECB人事及會議紀錄分清決策階段。GitHub LFS與Cloudflare有正式復原進展，Haas確認明年陣容。",
+  "generated_at": "2026-11-27T05:10:16+08:00",
+  "coverage": {
+    "from": "2026-11-24",
+    "to": "2026-11-26"
+  },
+  "hero": null,
+  "editor_note": "本期8則，未設分類配額。FinCEN電子申報警示及Juniper原始公告無可讀全文，改以官方命令、加拿大官方與具名原始報導交叉界定。FIFA資料事件仍待原始回應核對；其他已核實新聞照常刊登。美股26日休市，不製造當日收盤行情。",
+  "stories": [
+    {
+      "id": "fincen-service-relief",
+      "category": "security",
+      "title": "FinCEN 部分系統遭未授權存取，特定申報期限延至 12/30",
+      "teaser": "部分系統預防性離線；官方命令提供有限申報寬免，並非所有機構都免除反洗錢義務，也未證實入侵造成申報中斷。",
+      "summary": "Federal News Network 26日實讀並引述FinCEN警示：有限範圍系統遭未授權存取，部分系統預防性離線，正在調查。此次無法直接讀到BSA網站警示正文，事件範圍依具名媒體原文歸屬。",
+      "why": "申報人須依官方條件確認是否適用，其他反洗錢監控義務仍持續。",
+      "limit": "命令以服務中斷為由，未認定入侵是中斷原因；攻擊者、資料外洩及完整影響仍未確認。",
+      "details": [
+        {
+          "heading": "已確認的變化",
+          "points": [
+            "Federal News Network 26日實讀並引述FinCEN警示：有限範圍系統遭未授權存取，部分系統預防性離線，正在調查。此次無法直接讀到BSA網站警示正文，事件範圍依具名媒體原文歸屬。",
+            "另實讀24日官方命令FIN-2026-R002：符合條件、原到期日介於11/18至12/29的申報，改於12/30前提交。涵蓋11/18已用SDTM提交BSA報告的金融機構，以及特定實質受益人報告、FinCEN ID更新。"
+          ]
+        },
+        {
+          "heading": "為何重要與限制",
+          "points": [
+            "申報人須依官方條件確認是否適用，其他反洗錢監控義務仍持續。 命令以服務中斷為由，未認定入侵是中斷原因；攻擊者、資料外洩及完整影響仍未確認。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "FinCEN 官方有限寬免命令",
+          "url": "https://www.fincen.gov/sites/default/files/100/ORDER-FIN-2026-R002.pdf",
+          "published": "2026-11-24",
+          "checked_at": "2026-11-27T05:08:23+08:00"
+        },
+        {
+          "name": "Federal News Network 原始報導",
+          "url": "https://federalnewsnetwork.com/cybersecurity/2026/11/treasury-fincen-systems-latest-to-be-hit-by-cyber-incident/?readmore=1",
+          "published": "2026-11-26",
+          "checked_at": "2026-11-27T05:08:23+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "部分系統離線：入侵範圍仍調查",
+          "核對身分、管道與原到期日",
+          "符合命令條件：12/30前申報"
+        ],
+        "caption": "Daily Brief 原創圖解；依本則來源整理。"
+      }
+    },
+    {
+      "id": "juniper-conductor-exploitation",
+      "category": "security",
+      "title": "Juniper Conductor 漏洞已遭利用，核對 7.0.5／7.1.7／7.2.3",
+      "teaser": "加拿大官方更新確認 CVE-2026-103406 已列入已知遭利用清單。修補早於本次警報，管理端應優先核對版本與異常活動。",
+      "summary": "加拿大Cyber Centre於25日更新AV26-1101，確認CISA同日將CVE-2026-103406列入已知遭利用漏洞清單；這是利用情勢的新進展，不是今天才有修補。",
+      "why": "集中管理端的風險會牽動多台網路設備；管理者應優先升級受支援分支，檢查管理介面曝露與異常紀錄。",
+      "limit": "警報未提供受害數量或完整入侵規模；升級不能證明既有入侵已清除，不提供攻擊操作。",
+      "details": [
+        {
+          "heading": "已確認的變化",
+          "points": [
+            "加拿大Cyber Centre於25日更新AV26-1101，確認CISA同日將CVE-2026-103406列入已知遭利用漏洞清單；這是利用情勢的新進展，不是今天才有修補。",
+            "警報列Session Smart Conductor與Router受影響分支，修復門檻為7.0.5、7.1.7及7.2.3。供應商公告本次只顯示頁面殼，無法直接核對每個元件細節，故版本範圍明確歸屬加拿大官方警報。"
+          ]
+        },
+        {
+          "heading": "為何重要與限制",
+          "points": [
+            "集中管理端的風險會牽動多台網路設備；管理者應優先升級受支援分支，檢查管理介面曝露與異常紀錄。 警報未提供受害數量或完整入侵規模；升級不能證明既有入侵已清除，不提供攻擊操作。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "加拿大Cyber Centre 官方Juniper更新",
+          "url": "https://www.cyber.gc.ca/en/alerts-advisories/juniper-networks-security-advisory-av26-1101",
+          "published": "2026-11-25",
+          "checked_at": "2026-11-27T05:08:23+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "已知遭利用：CVE-2026-103406",
+          "分支門檻：7.0.5／7.1.7／7.2.3",
+          "更新後仍需檢查異常與曝露"
+        ],
+        "caption": "Daily Brief 原創圖解；依本則來源整理。"
+      }
+    },
+    {
+      "id": "bok-rate-hike",
+      "category": "markets",
+      "title": "韓國央行升息 25 基點至 3.25%，5 比 2 通過",
+      "teaser": "央行以成長增強、通膨持續高於目標及金融穩定風險為由升息；這是已公布決策，不是市場預測，也不代表後續升息時間已定。",
+      "summary": "韓國央行26日貨幣政策聲明決定，基準利率由3.00%升至3.25%，增加0.25個百分點、即25基點；5位委員支持，2位主張維持3.00%。比較基準是本次決策前的政策利率。",
+      "why": "政策利率影響融資與利差判斷；應分清央行已採取行動與市場對未來路徑的預期。",
+      "limit": "後續調升時點仍取決於通膨、經濟與金融穩定，不推定韓元或債券必然朝單一方向變動。",
+      "details": [
+        {
+          "heading": "已確認的變化",
+          "points": [
+            "韓國央行26日貨幣政策聲明決定，基準利率由3.00%升至3.25%，增加0.25個百分點、即25基點；5位委員支持，2位主張維持3.00%。比較基準是本次決策前的政策利率。",
+            "聲明指出國內成長增強、通膨可能在相當期間高於目標，並須留意首爾及周邊房市與家庭債務。央行也觀察到AI投資疑慮引發股市修正，不能只用股市走弱推論必然降息。"
+          ]
+        },
+        {
+          "heading": "為何重要與限制",
+          "points": [
+            "政策利率影響融資與利差判斷；應分清央行已採取行動與市場對未來路徑的預期。 後續調升時點仍取決於通膨、經濟與金融穩定，不推定韓元或債券必然朝單一方向變動。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "韓國央行官方決策與記者會開場",
+          "url": "https://www.bok.or.kr/eng/bbs/E0000634/view.do?depth=400423&menuNo=400423&nttId=11067086&programType=newsDataEng&relate=Y",
+          "published": "2026-11-26",
+          "checked_at": "2026-11-27T05:08:23+08:00"
+        }
+      ],
+      "image": {
+        "image": "assets/bok-rate-2026-11-27.svg",
+        "alt": "韓國政策利率由3.00%升至3.25%，增加25基點；5位支持、2位反對。",
+        "kind": "original",
+        "credit": "Daily Brief原創圖表；來源：韓國央行2026/11/26政策聲明。"
+      }
+    },
+    {
+      "id": "ecb-leadership-nomination",
+      "category": "markets",
+      "title": "歐元區領袖支持 Hernández de Cos 接掌 ECB，仍待任命程序",
+      "teaser": "領袖已就人選達成共識，並非新總裁已上任。歐洲議會與ECB管委會審查仍須完成，不能將人事消息直接等同下一次利率決定。",
+      "summary": "AP於26日報導，歐元區領袖選定西班牙前央行總裁Pablo Hernández de Cos接替Christine Lagarde；歐洲理事會主席António Costa對外表示，領袖已同意三項高層人選。",
+      "why": "央行領導交接影響政策溝通與共識形成，投資者應追蹤正式任命及後續會議。",
+      "limit": "個人政策名聲不是管委會承諾；不能據此預言降息、債券上漲或歐元走勢。",
+      "details": [
+        {
+          "heading": "已確認的變化",
+          "points": [
+            "AP於26日報導，歐元區領袖選定西班牙前央行總裁Pablo Hernández de Cos接替Christine Lagarde；歐洲理事會主席António Costa對外表示，領袖已同意三項高層人選。",
+            "提名仍需經歐洲議會與ECB管委會審查。此次實讀AP原始報導及ITV刊載版本，官方當日任命文件未能取得；因此寫為領袖支持、程序待完成，不寫已就職。"
+          ]
+        },
+        {
+          "heading": "為何重要與限制",
+          "points": [
+            "央行領導交接影響政策溝通與共識形成，投資者應追蹤正式任命及後續會議。 個人政策名聲不是管委會承諾；不能據此預言降息、債券上漲或歐元走勢。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "AP原始ECB人事報導",
+          "url": "https://apnews.com/article/ecb-eurozone-pablo-hernandez-de-cos-lagarde-d308b6cfbe6399b131255f2a678b10e4",
+          "published": "2026-11-26",
+          "checked_at": "2026-11-27T05:08:23+08:00",
+          "verification_method": "web",
+          "verification_note": "本次網頁工具實讀AP原始報導正文，確認Costa對外表示三項人事共識、仍需議會與ECB審查，並讀到Lagarde使用若獲確認的條件語；ITV刊載版HTTP/2連線兩次中斷，改回同一AP原始報導，非搜尋摘要。"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "領袖支持：Hernández de Cos",
+          "仍需：議會與ECB管委會審查",
+          "正式任命、上任：分開追蹤"
+        ],
+        "caption": "Daily Brief 原創圖解；依本則來源整理。"
+      }
+    },
+    {
+      "id": "ecb-october-account",
+      "category": "markets",
+      "title": "ECB 10 月會議紀錄：升息壓力仍在，尚未預先承諾",
+      "teaser": "26日公布的紀錄顯示，部分成員認為需更快緊縮，但最終全體支持當次維持利率；這不是26日又一次利率決策。",
+      "summary": "26日公布的ECB 10/28–29會議紀錄顯示，有成員認為除非通膨展望顯著改善，仍需再升息，爭點在時機；能源成本與價格壓力持續是重要考量。本文實讀西班牙央行提供的官方紀錄PDF。",
+      "why": "讀紀錄要分清討論立場、當次決議與未來條件；新發布資訊會改變政策判讀，但不等於新政策已生效。",
+      "limit": "內容反映10月會議，不是11月26日經濟現況的完整更新，也不保證下一次會議必然升息。",
+      "details": [
+        {
+          "heading": "已確認的變化",
+          "points": [
+            "26日公布的ECB 10/28–29會議紀錄顯示，有成員認為除非通膨展望顯著改善，仍需再升息，爭點在時機；能源成本與價格壓力持續是重要考量。本文實讀西班牙央行提供的官方紀錄PDF。",
+            "儘管部分成員認為當次即可行動，所有成員最終支持維持政策利率，並要求溝通中強調使中期通膨回到2%的決心。紀錄明言不預先承諾升息，不能把個別論點當成已通過的新決策。"
+          ]
+        },
+        {
+          "heading": "為何重要與限制",
+          "points": [
+            "讀紀錄要分清討論立場、當次決議與未來條件；新發布資訊會改變政策判讀，但不等於新政策已生效。 內容反映10月會議，不是11月26日經濟現況的完整更新，也不保證下一次會議必然升息。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "西班牙央行提供ECB官方會議紀錄",
+          "url": "https://www.bde.es/f/webbe/GAP/Secciones/SalaPrensa/ComunicadosBCE/ResenasReunionesPoliticaMonetaria/Arc/Fic/Account-October.pdf",
+          "published": "2026-11-26",
+          "checked_at": "2026-11-27T05:08:23+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "10/28–29：討論升息時機",
+          "當次決議：全體支持維持",
+          "11/26發布：不預先承諾下次行動"
+        ],
+        "caption": "Daily Brief 原創圖解；依本則來源整理。"
+      }
+    },
+    {
+      "id": "github-lfs-resolved",
+      "category": "tech",
+      "title": "GitHub LFS 約三小時降級已恢復，一般 Git 操作未受影響",
+      "teaser": "平均2%、最高4%的LFS請求失敗，重試也讓傳輸變慢；官方將原因指向單一區域伺服器遭大量自動流量壓垮，未稱全球Git全面中斷。",
+      "summary": "GitHub官方事故報告指出，LFS於25日21:30至26日00:28 UTC降級，對應臺灣26日05:30至08:28；平均2%、最高4%的LFS請求失敗，更多請求先失敗後自動重試成功，造成傳輸變慢。",
+      "why": "大型素材與模型檔案流程應核對LFS傳輸結果和重試，不應僅因一般程式碼能推送就認定大檔案也完成。",
+      "limit": "未公布受影響用戶總數；官方未將流量事件定性為已確認攻擊，不另行推論。",
+      "details": [
+        {
+          "heading": "已確認的變化",
+          "points": [
+            "GitHub官方事故報告指出，LFS於25日21:30至26日00:28 UTC降級，對應臺灣26日05:30至08:28；平均2%、最高4%的LFS請求失敗，更多請求先失敗後自動重試成功，造成傳輸變慢。",
+            "單一區域LFS伺服器被大量自動、未驗證流量壓垮；官方將流量移至其他容量較足區域，00:28恢復正常錯誤率、00:43宣布結案。其他Git操作未受影響，勿與前一場多產品事故混淆。"
+          ]
+        },
+        {
+          "heading": "為何重要與限制",
+          "points": [
+            "大型素材與模型檔案流程應核對LFS傳輸結果和重試，不應僅因一般程式碼能推送就認定大檔案也完成。 未公布受影響用戶總數；官方未將流量事件定性為已確認攻擊，不另行推論。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "GitHub官方LFS事故報告",
+          "url": "https://www.githubstatus.com/incidents/m0wvf9pt3l0l",
+          "published": "2026-11-26",
+          "checked_at": "2026-11-27T05:08:23+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "臺灣26日05:30：LFS降級起點",
+          "08:28：錯誤率回復正常",
+          "08:43：結案；一般Git未受影響"
+        ],
+        "caption": "Daily Brief 原創圖解；依本則來源整理。"
+      }
+    },
+    {
+      "id": "cloudflare-r2-recovery",
+      "category": "tech",
+      "title": "Cloudflare R2、Stream、Pipelines 延遲事件已結案",
+      "teaser": "接續前期修正中的事故，官方於26日00:11 UTC宣布解決；此次只更新該事件，不把結案擴大到Cloudflare全部服務。",
+      "summary": "Cloudflare將前期R2、Stream、Pipelines高延遲事故於26日00:11 UTC（臺灣08:11）標記解決。事件始於25日20:08 UTC，21:00已進入修正後監測；此次有正式結案，與前期尚在修正的狀態不同。",
+      "why": "依賴儲存、影音與資料管線的團隊可重新核對延遲及工作結果，區分官方復原與個別尚待重跑的任務。",
+      "limit": "本則只代表這一事故結束，不能推論Workers、Queues或其他獨立事件也全部恢復。",
+      "details": [
+        {
+          "heading": "已確認的變化",
+          "points": [
+            "Cloudflare將前期R2、Stream、Pipelines高延遲事故於26日00:11 UTC（臺灣08:11）標記解決。事件始於25日20:08 UTC，21:00已進入修正後監測；此次有正式結案，與前期尚在修正的狀態不同。",
+            "官方列出的受影響服務為上述三項，未在本份事故頁說明地區、客戶總數或根因。21:00的監測並非當時就已宣布結案，時間線需保留這個差別。"
+          ]
+        },
+        {
+          "heading": "為何重要與限制",
+          "points": [
+            "依賴儲存、影音與資料管線的團隊可重新核對延遲及工作結果，區分官方復原與個別尚待重跑的任務。 本則只代表這一事故結束，不能推論Workers、Queues或其他獨立事件也全部恢復。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Cloudflare官方R2延遲事故結案",
+          "url": "https://www.cloudflarestatus.com/incidents/ef6928vi0mic",
+          "published": "2026-11-25",
+          "checked_at": "2026-11-27T05:08:23+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "25日20:08 UTC：通報高延遲",
+          "25日21:00 UTC：修正後監測",
+          "26日00:11 UTC：正式結案"
+        ],
+        "caption": "Daily Brief 原創圖解；依本則來源整理。"
+      },
+      "update_of": "2026-11-26",
+      "update_note": "同一事故新增26日00:11 UTC正式結案，不再沿用前期修正中狀態。"
+    },
+    {
+      "id": "bearman-haas-2027",
+      "category": "f1",
+      "title": "Bearman 續留 Haas 至 2027，下一季車手席位全數確認",
+      "teaser": "F1官方確認續約，Bearman將搭檔Rafael Camara。這是正式人事消息；合約年期之外的金額與條款未公布，不沿用先前談判傳聞。",
+      "summary": "F1官方26日09:04 UTC報導Haas宣布與Ollie Bearman完成新合約，2027繼續出賽，將是他連續第三季效力該隊；他也成為2027車手陣容最後一位確認人選。",
+      "why": "正式續約結束席位懸念，讀者可將下一季陣容和本季最後兩站安排分開看。",
+      "limit": "本則未取得薪酬、退出條款或2027以後安排，不推論下一步Ferrari升遷或保證車隊成績。",
+      "details": [
+        {
+          "heading": "已確認的變化",
+          "points": [
+            "F1官方26日09:04 UTC報導Haas宣布與Ollie Bearman完成新合約，2027繼續出賽，將是他連續第三季效力該隊；他也成為2027車手陣容最後一位確認人選。",
+            "明年隊友為Rafael Camara。官方報導同時說明Camara已提前接替Esteban Ocon，並將出賽本季最後兩站；這是陣容確認，不能把兩人的角色寫成正賽與後備對調。"
+          ]
+        },
+        {
+          "heading": "為何重要與限制",
+          "points": [
+            "正式續約結束席位懸念，讀者可將下一季陣容和本季最後兩站安排分開看。 本則未取得薪酬、退出條款或2027以後安排，不推論下一步Ferrari升遷或保證車隊成績。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Formula 1官方Bearman續約報導",
+          "url": "https://www.formula1.com/en/latest/article/bearman-to-continue-with-haas-for-2027-as-he-completes-next-years-grid.dRq9fWh9OGjhXuShgGnqE",
+          "published": "2026-11-26",
+          "checked_at": "2026-11-27T05:08:23+08:00"
+        }
+      ],
+      "visual": {
+        "type": "flow",
+        "items": [
+          "2027 Haas：Ollie Bearman",
+          "2027 Haas：Rafael Camara",
+          "Bearman續約：明年席位全數確認"
+        ],
+        "caption": "Daily Brief 原創圖解；依本則來源整理。"
+      }
+    }
+  ],
+  "source_checks": [
+    {
+      "name": "FinCEN 官方有限寬免命令",
+      "url": "https://www.fincen.gov/sites/default/files/100/ORDER-FIN-2026-R002.pdf",
+      "status": "checked",
+      "checked_at": "2026-11-27T05:08:23+08:00",
+      "note": "本次網頁工具實讀正文；保留原文日期，區分決策、調查與恢復階段。"
+    },
+    {
+      "name": "Federal News Network 原始報導",
+      "url": "https://federalnewsnetwork.com/cybersecurity/2026/11/treasury-fincen-systems-latest-to-be-hit-by-cyber-incident/?readmore=1",
+      "status": "checked",
+      "checked_at": "2026-11-27T05:08:23+08:00",
+      "note": "本次網頁工具實讀正文；保留原文日期，區分決策、調查與恢復階段。"
+    },
+    {
+      "name": "加拿大Cyber Centre 官方Juniper更新",
+      "url": "https://www.cyber.gc.ca/en/alerts-advisories/juniper-networks-security-advisory-av26-1101",
+      "status": "checked",
+      "checked_at": "2026-11-27T05:08:23+08:00",
+      "note": "本次網頁工具實讀正文；保留原文日期，區分決策、調查與恢復階段。"
+    },
+    {
+      "name": "韓國央行官方決策與記者會開場",
+      "url": "https://www.bok.or.kr/eng/bbs/E0000634/view.do?depth=400423&menuNo=400423&nttId=11067086&programType=newsDataEng&relate=Y",
+      "status": "checked",
+      "checked_at": "2026-11-27T05:08:23+08:00",
+      "note": "本次網頁工具實讀正文；保留原文日期，區分決策、調查與恢復階段。"
+    },
+    {
+      "name": "AP原始ECB人事報導",
+      "url": "https://apnews.com/article/ecb-eurozone-pablo-hernandez-de-cos-lagarde-d308b6cfbe6399b131255f2a678b10e4",
+      "status": "checked",
+      "checked_at": "2026-11-27T05:08:23+08:00",
+      "note": "實讀AP原始正文與ITV刊載版本；ITV一般HTTP/2連線兩次失敗，改以原始AP網址提供來源。"
+    },
+    {
+      "name": "西班牙央行提供ECB官方會議紀錄",
+      "url": "https://www.bde.es/f/webbe/GAP/Secciones/SalaPrensa/ComunicadosBCE/ResenasReunionesPoliticaMonetaria/Arc/Fic/Account-October.pdf",
+      "status": "checked",
+      "checked_at": "2026-11-27T05:08:23+08:00",
+      "note": "本次網頁工具實讀正文；保留原文日期，區分決策、調查與恢復階段。"
+    },
+    {
+      "name": "GitHub官方LFS事故報告",
+      "url": "https://www.githubstatus.com/incidents/m0wvf9pt3l0l",
+      "status": "checked",
+      "checked_at": "2026-11-27T05:08:23+08:00",
+      "note": "本次網頁工具實讀正文；保留原文日期，區分決策、調查與恢復階段。"
+    },
+    {
+      "name": "Cloudflare官方R2延遲事故結案",
+      "url": "https://www.cloudflarestatus.com/incidents/ef6928vi0mic",
+      "status": "checked",
+      "checked_at": "2026-11-27T05:08:23+08:00",
+      "note": "本次網頁工具實讀正文；保留原文日期，區分決策、調查與恢復階段。"
+    },
+    {
+      "name": "Formula 1官方Bearman續約報導",
+      "url": "https://www.formula1.com/en/latest/article/bearman-to-continue-with-haas-for-2027-as-he-completes-next-years-grid.dRq9fWh9OGjhXuShgGnqE",
+      "status": "checked",
+      "checked_at": "2026-11-27T05:08:23+08:00",
+      "note": "本次網頁工具實讀正文；保留原文日期，區分決策、調查與恢復階段。"
+    },
+    {
+      "name": "BSA E-Filing警示",
+      "url": "https://bsaefiling.fincen.gov/",
+      "status": "failed",
+      "checked_at": "2026-11-27T05:08:23+08:00",
+      "note": "無可讀正文；以FinCEN命令核對申報寬免，入侵範圍歸屬FNN原始報導。"
+    },
+    {
+      "name": "CISA KEV資料",
+      "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+      "status": "failed",
+      "checked_at": "2026-11-27T05:08:23+08:00",
+      "note": "網頁工具403；改讀加拿大官方25日更新，未假稱直接查閱CISA清單。"
+    },
+    {
+      "name": "Juniper原始公告",
+      "url": "https://supportportal.juniper.net/s/article/2026-10-On-Demand-Security-Bulletin-Session-Smart-Router-and-Session-Smart-Conductor-Multiple-internally-discovered-vulnerabilities-resolved",
+      "status": "failed",
+      "checked_at": "2026-11-27T05:08:23+08:00",
+      "note": "只有頁面殼；修復門檻以加拿大官方警報歸屬。"
+    },
+    {
+      "name": "OpenAI官方狀態",
+      "url": "https://status.openai.com/",
+      "status": "checked",
+      "checked_at": "2026-11-27T05:08:23+08:00",
+      "note": "實讀當前全部正常；不將狀態首頁當成過去完全沒有事故的證據。"
+    },
+    {
+      "name": "F1官方最新消息",
+      "url": "https://www.formula1.com/en/latest",
+      "status": "checked",
+      "checked_at": "2026-11-27T05:08:23+08:00",
+      "note": "實讀列表後深入Bearman正式續約，不把訪談與賽前預測當結果。"
+    },
+    {
+      "name": "NYSE官方交易日曆",
+      "url": "https://www.nyse.com/trade/hours-calendars",
+      "status": "checked",
+      "checked_at": "2026-11-27T05:08:23+08:00",
+      "note": "實讀26日感恩節休市、27日提早收盤；不捏造26日現貨美股收盤。"
+    }
+  ],
+  "visual_review": [
+    {
+      "story_id": "fincen-service-relief",
+      "decision": "diagram",
+      "reason": "用適用條件與日期流程呈現，避免把有限寬免誤解成全面停報。",
+      "implementation": "visual.type=flow"
+    },
+    {
+      "story_id": "juniper-conductor-exploitation",
+      "decision": "diagram",
+      "reason": "多分支修復門檻適合防護流程圖；不以裝飾產品照代替行動資訊。",
+      "implementation": "visual.type=flow"
+    },
+    {
+      "story_id": "bok-rate-hike",
+      "decision": "image",
+      "reason": "政策利率前後與基點換算適合原創數據圖，分清百分點及百分比。",
+      "implementation": "assets/bok-rate-2026-11-27.svg"
+    },
+    {
+      "story_id": "ecb-leadership-nomination",
+      "decision": "diagram",
+      "reason": "人事提名與就職容易混淆，使用程序圖區分完成線。",
+      "implementation": "visual.type=flow"
+    },
+    {
+      "story_id": "ecb-october-account",
+      "decision": "diagram",
+      "reason": "用會議與發布時間、討論與決策對照，避免把紀錄當作新升息。",
+      "implementation": "visual.type=flow"
+    },
+    {
+      "story_id": "github-lfs-resolved",
+      "decision": "diagram",
+      "reason": "時間軸與產品範圍能直接幫助讀者判斷自己的流程是否受影響。",
+      "implementation": "visual.type=flow"
+    },
+    {
+      "story_id": "cloudflare-r2-recovery",
+      "decision": "diagram",
+      "reason": "復原階段與時間軸能更正昨日未結案狀態，照片無助呈現差別。",
+      "implementation": "visual.type=flow"
+    },
+    {
+      "story_id": "bearman-haas-2027",
+      "decision": "diagram",
+      "reason": "雙人正賽陣容對照比未確認轉載權的車手照片更直接，避免職務誤讀。",
+      "implementation": "visual.type=flow"
+    }
+  ],
+  "discovery_review": {
+    "searches": [
+      {
+        "topic": "November 26 2026 major technology cloud outage news Microsoft Amazon Google",
+        "checked_at": "2026-11-27T05:08:23+08:00"
+      },
+      {
+        "topic": "November 26 2026 markets Reuters stocks bonds currencies",
+        "checked_at": "2026-11-27T05:08:23+08:00"
+      },
+      {
+        "topic": "November 26 2026 cybersecurity exploited breach",
+        "checked_at": "2026-11-27T05:08:23+08:00"
+      },
+      {
+        "topic": "November 26 2026 Formula 1 FIA news",
+        "checked_at": "2026-11-27T05:08:23+08:00"
+      },
+      {
+        "topic": "Juniper Session Smart Conductor November 25 2026 CVE exploited",
+        "checked_at": "2026-11-27T05:08:23+08:00"
+      },
+      {
+        "topic": "November 26 2026 FinCEN cyberattack official",
+        "checked_at": "2026-11-27T05:08:23+08:00"
+      },
+      {
+        "topic": "November 26 2026 ECB accounts October monetary policy",
+        "checked_at": "2026-11-27T05:08:23+08:00"
+      },
+      {
+        "topic": "site.bok.or.kr November 26 2026 3.25",
+        "checked_at": "2026-11-27T05:08:23+08:00"
+      },
+      {
+        "topic": "November 26 2026 latest major cloud outage cyberattack markets F1 headlines",
+        "checked_at": "2026-11-27T05:08:23+08:00"
+      },
+      {
+        "topic": "November 26 2026 bitcoin major news Reuters",
+        "checked_at": "2026-11-27T05:08:23+08:00"
+      }
+    ],
+    "candidates": [
+      {
+        "event": "FinCEN 部分系統遭未授權存取，特定申報期限延至 12/30",
+        "url": "https://www.fincen.gov/sites/default/files/100/ORDER-FIN-2026-R002.pdf",
+        "decision": "included",
+        "reason": "已實讀官方資料或具名原始採訪；有新決策、利用情勢、人事或正式復原進展。"
+      },
+      {
+        "event": "Juniper Conductor 漏洞已遭利用，核對 7.0.5／7.1.7／7.2.3",
+        "url": "https://www.cyber.gc.ca/en/alerts-advisories/juniper-networks-security-advisory-av26-1101",
+        "decision": "included",
+        "reason": "已實讀官方資料或具名原始採訪；有新決策、利用情勢、人事或正式復原進展。"
+      },
+      {
+        "event": "韓國央行升息 25 基點至 3.25%，5 比 2 通過",
+        "url": "https://www.bok.or.kr/eng/bbs/E0000634/view.do?depth=400423&menuNo=400423&nttId=11067086&programType=newsDataEng&relate=Y",
+        "decision": "included",
+        "reason": "已實讀官方資料或具名原始採訪；有新決策、利用情勢、人事或正式復原進展。"
+      },
+      {
+        "event": "歐元區領袖支持 Hernández de Cos 接掌 ECB，仍待任命程序",
+        "url": "https://apnews.com/article/ecb-eurozone-pablo-hernandez-de-cos-lagarde-d308b6cfbe6399b131255f2a678b10e4",
+        "decision": "included",
+        "reason": "已實讀官方資料或具名原始採訪；有新決策、利用情勢、人事或正式復原進展。"
+      },
+      {
+        "event": "ECB 10 月會議紀錄：升息壓力仍在，尚未預先承諾",
+        "url": "https://www.bde.es/f/webbe/GAP/Secciones/SalaPrensa/ComunicadosBCE/ResenasReunionesPoliticaMonetaria/Arc/Fic/Account-October.pdf",
+        "decision": "included",
+        "reason": "已實讀官方資料或具名原始採訪；有新決策、利用情勢、人事或正式復原進展。"
+      },
+      {
+        "event": "GitHub LFS 約三小時降級已恢復，一般 Git 操作未受影響",
+        "url": "https://www.githubstatus.com/incidents/m0wvf9pt3l0l",
+        "decision": "included",
+        "reason": "已實讀官方資料或具名原始採訪；有新決策、利用情勢、人事或正式復原進展。"
+      },
+      {
+        "event": "Cloudflare R2、Stream、Pipelines 延遲事件已結案",
+        "url": "https://www.cloudflarestatus.com/incidents/ef6928vi0mic",
+        "decision": "included",
+        "reason": "已實讀官方資料或具名原始採訪；有新決策、利用情勢、人事或正式復原進展。"
+      },
+      {
+        "event": "Bearman 續留 Haas 至 2027，下一季車手席位全數確認",
+        "url": "https://www.formula1.com/en/latest/article/bearman-to-continue-with-haas-for-2027-as-he-completes-next-years-grid.dRq9fWh9OGjhXuShgGnqE",
+        "decision": "included",
+        "reason": "已實讀官方資料或具名原始採訪；有新決策、利用情勢、人事或正式復原進展。"
+      },
+      {
+        "event": "FIFA資料遭竊報導",
+        "url": "https://www.aftonbladet.se/sportbladet/fotboll/a/7P0bj4/fifa-utsatt-for-cyberattack-information-stulen",
+        "decision": "pending",
+        "reason": "最後掃描發現，尚未核對FIFA完整原始回應與資料範圍，暫緩此則並非判為沒有資安新聞。"
+      },
+      {
+        "event": "Bitcoin反彈與ETF流出",
+        "url": "https://in.investing.com/news/cryptocurrency-news/bitcoin-recovers-to-609k-but-rates-regulatory-fears-persist-5727256",
+        "decision": "omitted",
+        "reason": "多為盤中價格波動，未取得可核實一致期間的重大新增政策或資金流證據，不例行堆價格。"
+      },
+      {
+        "event": "微軟Code Red與本月中斷總結",
+        "url": "https://harrylin0312.github.io/daily_brief/stories/2026-11-26/microsoft-code-red-response.html",
+        "decision": "omitted",
+        "reason": "與前期已刊Code Red整改比對，本次未核實新的重大中斷，不重刊。原候選TechRadar公開網址中的risk字串誤觸金鑰檢查，改以直接關聯的前期刊文作去重依據；未更動檢查程式。"
+      }
+    ],
+    "final_check": {
+      "checked_at": "2026-11-27T05:08:23+08:00",
+      "result": "再次跨來源掃描重大事故、資安、市場及F1；選入FinCEN與Juniper防護行動、央行決策及正式復原。FIFA待查不冒稱無消息；無新事實的微軟舊事故不重刊。"
+    }
+  },
+  "validation_review": {
+    "browser": "本次CUA清單無任何瀏覽器，未做手機與桌面視覺預覽；沿用未修改的已驗證模板。",
+    "static": "SVG720x460，同尺度零起點；圖內文字留白，圖解項目可換行，逐則核對標題長度與本機連結。"
+  }
+}
